@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "source": "샘플 데이터",
+    "created_at": "2023-06-13"
+  },
+  "documents": [
+    {
+      "doc_id": "SAMPLE_001",
+      "source_file": "sample_file_1.pdf",
+      "institution": "테스트금융주식회사",
+      "sanction_date": "2023.01.15",
+      "content": {
+        "sanction_type": "과태료",
+        "fine": {
+          "amount": 5000000,
+          "unit": "원",
+          "text": "과태료 5백만원"
+        },
+        "executive_sanction": "CEO 주의적 경고",
+        "sanction_facts": [
+          {
+            "title": "전자금융 안전조치 미흡",
+            "content": "전자금융거래법 제21조에 따른 안전조치 의무를 소홀히 하여 고객정보 유출 위험을 초래함"
+          }
+        ],
+        "full_text": "테스트금융(주)는 전자금융거래법 제21조에 따른 안전조치 의무를 소홀히 하여 고객정보 유출 위험을 초래하였으므로 과태료 5백만원의 제재를 결정함"
+      },
+      "metadata": {
+        "doc_type": "제재내용공개",
+        "char_count": 200,
+        "regulations": [
+          "전자금융거래법 제21조",
+          "전자금융감독규정 제13조"
+        ]
+      },
+      "quality_score": 4
+    },
+    {
+      "doc_id": "SAMPLE_002",
+      "source_file": "sample_file_2.pdf",
+      "institution": "샘플은행",
+      "sanction_date": "2023.02.20",
+      "content": {
+        "sanction_type": "기관경고",
+        "fine": {
+          "amount": 0,
+          "unit": "원",
+          "text": ""
+        },
+        "executive_sanction": "CIO 문책경고",
+        "sanction_facts": [
+          {
+            "title": "정보보호 인력 부족",
+            "content": "전자금융감독규정에 따른 정보보호 인력을 충분히 확보하지 않고 운영함"
+          },
+          {
+            "title": "보안 취약점 방치",
+            "content": "알려진 보안 취약점에 대한 조치를 6개월 이상 지연하여 조치함"
+          }
+        ],
+        "full_text": "샘플은행은 전자금융감독규정에 따른 정보보호 인력을 충분히 확보하지 않고 운영하였으며, 알려진 보안 취약점에 대한 조치를 6개월 이상 지연하여 조치한 사실이 확인되어 기관경고 조치함"
+      },
+      "metadata": {
+        "doc_type": "제재내용공개",
+        "char_count": 300,
+        "regulations": [
+          "전자금융감독규정 제36조",
+          "전자금융거래법 제21조의2"
+        ]
+      },
+      "quality_score": 5
+    },
+    {
+      "doc_id": "SAMPLE_003",
+      "source_file": "sample_file_3.hwp",
+      "institution": "예시보험",
+      "sanction_date": "2023.03.10",
+      "content": {
+        "sanction_type": "과태료",
+        "fine": {
+          "amount": 10000000,
+          "unit": "원",
+          "text": "과태료 1천만원"
+        },
+        "executive_sanction": "",
+        "sanction_facts": [
+          {
+            "title": "개인정보 유출사고",
+            "content": "고객 개인정보 관리 소홀로 인해 약 1,000명의 고객정보가 외부에 유출됨"
+          }
+        ],
+        "full_text": "예시보험은 고객 개인정보 관리 소홀로 인해 약 1,000명의 고객정보가 외부에 유출된 사실이 확인되어 과태료 1천만원을 부과함. 해당 사고는 내부 직원의 관리 소홀 및 시스템 보안 취약점으로 인해 발생하였음."
+      },
+      "metadata": {
+        "doc_type": "제재내용공개",
+        "char_count": 250,
+        "regulations": [
+          "개인정보보호법 제29조",
+          "신용정보법 제19조"
+        ]
+      },
+      "quality_score": 3
+    }
+  ]
+}

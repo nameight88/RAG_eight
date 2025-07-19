@@ -1,0 +1,35 @@
+# --- Core ---
+streamlit>=1.46.0,<1.48.0
+python-dotenv>=1.0.0,<2.0.0
+
+# --- Vector & Embedding ---
+faiss-cpu>=1.7.4,<1.12.0
+chromadb>=1.0.15,<1.1.0
+sentence-transformers>=2.2.2,<6.0.0
+
+# --- LangChain stack (3.9 compatible) ---
+langchain>=0.1.0,<0.2.0
+langchain-core>=0.1.52,<0.2.0
+langchain-openai>=0.1.0,<0.2.0
+langchain-huggingface>=0.0.3,<0.1.0
+langchain-text-splitters>=0.0.1,<0.1.0
+langsmith>=0.1.0,<0.2.0
+langchain-anthropic>=0.1.0,<0.2.0
+# --- OpenAI ---
+openai>=1.0.0,<2.0.0
+
+# --- Transformers / ML ---
+transformers>=4.30.0,<5.0.0
+tokenizers>=0.13.0,<0.22.0
+torch>=2.0.0,<3.0.0
+accelerate>=0.20.0,<2.0.0
+safetensors>=0.3.0,<0.6.0
+
+# --- Utils ---
+numpy>=1.24.0,<3.0.0
+pandas>=1.5.0,<3.0.0
+scikit-learn>=1.0.0,<2.0.0
+tqdm>=4.65.0,<5.0.0
+pyyaml>=6.0.0,<7.0.0
+pyarrow>=14.0.0,<22.0.0
+pydantic>=2.0.0,<3.0.0

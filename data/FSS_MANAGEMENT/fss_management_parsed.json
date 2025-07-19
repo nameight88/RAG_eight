@@ -1,0 +1,2553 @@
+{
+  "metadata": {
+    "source": "금융감독원 경영유의사항 공시",
+    "processed_date": "2025-07-20 00:17:16",
+    "total_documents": 92,
+    "relevant_documents": 4,
+    "keywords": [
+      "전자금융",
+      "정보처리위탁",
+      "정보처리 업무 위탁에 관한 규정",
+      "신용정보법",
+      "신용정보의 이용 및 보호에 관한 법률",
+      "신용정보업감독규정",
+      "신용정보업감독업무시행세칙"
+    ]
+  },
+  "statistics": {
+    "total_files": 92,
+    "processed_files": 92,
+    "failed_files": 0,
+    "relevant_files": 4,
+    "file_types": {
+      "pdf": 53,
+      "hwp": 39,
+      "hwpx": 0
+    }
+  },
+  "documents": [
+    {
+      "doc_id": "MGMT_20160616_고려신용정보_주식회사_201600026_11_고려신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20160616_고려신용정보_주식회사_201600026_11_고려신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "고려신용정보",
+      "date": "2016.06.16",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20160711_미래신용정보_주식회사_201500758_11_미래신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20160711_미래신용정보_주식회사_201500758_11_미래신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "미래신용정보",
+      "date": "2016.07.11",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20160809_아프로신용정보_주식회사_201600340_11_아프로신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20160809_아프로신용정보_주식회사_201600340_11_아프로신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "아프로신용정보",
+      "date": "2016.08.09",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20160905_코아신용정보_주식회사_201601780_11_코아신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20160905_코아신용정보_주식회사_201601780_11_코아신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "코아신용정보",
+      "date": "2016.09.05",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20161122_나이스정보통신_201603410_11_나이스정보통신_주__경영유의사항 등",
+      "source_file": "MGMT_20161122_나이스정보통신_201603410_11_나이스정보통신_주__경영유의사항 등.pdf",
+      "institution": "나이스정보통신",
+      "date": "2016. 11. 22",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항등 공개안 1. 금융기관명: 나이스정보통신 2. 조치일: 2016. 11. 22. 3. 조치내용 대상 내용 기관 경영유의2건, 4. 경영유의사항 가. 단말기관리시스템강화 나이스정보통신및동사소속의가맹점모집인(▲▲정보통신등289개)은 폐업등으로미사용중인단말기관리번호를미등록단말기에연결시키는편법적인 방식등으로개정여신전문금융업법시행(2015.7.21.) 이후3,219대의미등록단 말기를설치한사실이있는바, 앞으로유사사례가재발하지않도록미등록단말기의출고를제한하는등 단말기입출고시스템관리를철저히하고, 일정기간동안미사용된단말기관리 번호는자동폐기되도록하는등단말기관리번호관리점검체계를정비하고단 말기관련내부통제를강화할필요가있음 나. 단말기개통관련표준계약서관리·운용철저 단말기설치가맹점모집시자사소속가맹점모집인에게자체표준계약서 (VAN서비스이용계약서)를작성·배포하고있으나, 표준계약서회수및이용에 대한관리·통제가미흡하여표준계약서의이용률이저조하고가맹점모집인이전체 주민등록번호기재란이포함된계약서양식을임의로사용한후계약서를자체보관 함에따라가맹점모집인에의해가맹점주의개인정보가수집·유출될우려가있으므로 앞으로가맹점모집인이무단으로가맹점주의개인정보를수집하고계약서를 - 2 - 임의보관하지못하도록, 표준계약서사용활성화방안을마련운영할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 634,
+        "estimated_tokens": 47,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20161122_케이아이에스정보통신주식회사_201601160_11__주_스마트로_경영유의사항등",
+      "source_file": "MGMT_20161122_케이아이에스정보통신주식회사_201601160_11__주_스마트로_경영유의사항등.pdf",
+      "institution": "스마트로",
+      "date": "2016. 11. 22",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항등 공개안 1. 금융기관명: 스마트로 2. 조치일: 2016. 11. 22. 3. 조치내용 대상 내용 기관 경영유의1건 4. 경영유의사항 가. 단말기개통관련표준계약서관리·운용철저 단말기설치 가맹점모집시 자사소속 가맹점모집인에게자체표준계약서 (VAN서비스이용신청서)를작성·배포하고있으나, 표준계약서회수및이용에 대한관리·통제가미흡하여표준계약서의이용률이저조하고가맹점모집인이전체 주민등록번호기재란이포함된계약서양식을임의사용한후계약서를자체보관함에 따라가맹점모집인에의해수집된가맹점주의개인정보가유출될위험이있으므로, 앞으로가맹점모집인이무단으로가맹점주의개인정보를수집하고계약서를 임의보관하지못하도록, 표준계약서사용활성화방안을마련운영할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 365,
+        "estimated_tokens": 35,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20161122_퍼스트데이타코리아_유한회사_201602490_11_퍼스트데이터코리아_유__경영유의사항등",
+      "source_file": "MGMT_20161122_퍼스트데이타코리아_유한회사_201602490_11_퍼스트데이터코리아_유__경영유의사항등.pdf",
+      "institution": "퍼스트데이터코리아(유)",
+      "date": "2016. 11. 22",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항등 공개안 1. 금융기관명: 퍼스트데이터코리아(유) 2. 조치일: 2016. 11. 22. 3. 조치내용 대상 내용 기관 경영유의1건 4. 경영유의사항 가. 단말기개통관련표준계약서관리·운용철저 단말기 설치 가맹점 모집시 자사 소속 가맹점모집인에게 자체표준계약서 (MoneyOn서비스신청서)를작성·배포하고있으나, 표준계약서회수및이용에 대한관리·통제가미흡하여표준계약서의이용률이저조하고가맹점모집인이전체 주민등록번호기재란이포함된계약서양식을임의사용한후계약서를자체보관함에 따라가맹점모집인에의해수집된가맹점주의개인정보가유출될위험이있으므로 앞으로가맹점모집인이무단으로가맹점주의개인정보를수집하고계약서를 임의보관하지못하도록, 표준계약서사용활성화방안을마련운영할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 377,
+        "estimated_tokens": 39,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20161122_한국정보통신_201603400_11_한국정보통신_주__경영유의사항 등",
+      "source_file": "MGMT_20161122_한국정보통신_201603400_11_한국정보통신_주__경영유의사항 등.pdf",
+      "institution": "한국정보통신",
+      "date": "2016. 11. 22",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항등 공개안 1. 금융기관명: 한국정보통신 2. 조치일: 2016. 11. 22. 3. 조치내용 대상 내용 기관 경영유의2건, 개선사항2건 4. 조치대상사실 가. 경영유의사항 ⑴단말기관리시스템강화 한국정보통신및동사소속의가맹점모집인(▲▲▲등229개사)이기존에 부여된단말기관리번호에미등록단말기를추가교체하여설치하거나, 폐업등 으로미사용중인단말기관리번호를미등록단말기에연결시키는편법적인방식등 으로개정여신전문금융업법시행(2015.7.21.) 이후5,084대의미등록단말기를 설치한사실이있는바, 앞으로유사사례가재발하지않도록미등록단말기의출고를제한하는등단말기 입출고시스템관리를철저히하고, 일정기간동안미사용된단말기관리번호는 자동폐기되도록하는등단말기관리번호관리점검체계를정비하고단말기관련 내부통제를강화할필요가있음 ⑵단말기개통관련표준계약서관리·운용철저 단말기 설치 가맹점 모집시 자사 소속 가맹점모집인에게 자체표준계약서 (Easy Check)를작성·배포하고있으나, 표준계약서회수및이용에대한관리· 통제가미흡하여표준계약서의이용률이저조하고가맹점모집인이임의로작성한 - 2 - 계약서양식을사용하여가맹점주의주민등록번호등개인정보를불법수집한사 실이확인되었으므로 앞으로가맹점모집인이무단으로가맹점주의개인정보를수집하고계약서를 임의보관하지못하도록표준계약서사용활성화방안을마련운영할필요가있음 나. 개선사항 (1) 전산자료보호대책불합리 내부자료유출방지를위해데이터유출방지솔루션을설치·운영하고있으나, 검사착수일(2015.11.09.) 현재문서암호화기능을적용하지아니하고, 본사직원의 경우USB등이동식저장매체를통한자료반출신청·이용시팀별공용PC를사용 하고있어실제이용자의반출이력확인에어려움이있으므로  문서파일암호화및출력물워터마킹, USB등이동식저장매체자료반출통제등의기능 동솔루션의문서암호화기능을적용하여주요문서파일의통제를강화하고, 전산자료반출이력에대한개별확인이가능하도록관련절차등을개선하시기바람 (2) 카드정보관리불합리 검사착수일현재부가통신업(VAN) 관련포인트제휴신용카드 거래를처리 하는과정에서일부카드번호, 유효기간등의정보를데이터베이스에평문으로저장 하여정보의처리목적과상관없이동정보가노출되어부당하게이용될우려가있 으므로 동업무처리시카드번호는암호화또는일부마스킹하여저장하고보관이 불필요한정보는삭제하는등카드정보관리업무를개선하시기바람"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1120,
+        "estimated_tokens": 83,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20161220_우리신용정보_주식회사_201602320_11_우리신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20161220_우리신용정보_주식회사_201602320_11_우리신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "우리신용정보",
+      "date": "2016.12.20",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20161220_케이비신용정보_주식회사_201500900_11_KB신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20161220_케이비신용정보_주식회사_201500900_11_KB신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "케이비신용정보",
+      "date": "2016.12.20",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170223_한국정보통신_201608330_11_개선사항_공개안_한국정보통신",
+      "source_file": "MGMT_20170223_한국정보통신_201608330_11_개선사항_공개안_한국정보통신.hwp",
+      "institution": "한국정보통신",
+      "date": "2017.02.23",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170228_한국신용정보원_201608440_11_한국신용정보원 제재내용 공개안",
+      "source_file": "MGMT_20170228_한국신용정보원_201608440_11_한국신용정보원 제재내용 공개안.hwp",
+      "institution": "한국신용정보원",
+      "date": "2017.02.28",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170324_에프앤유신용정보_주식회사_201606870_11_에프앤유신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20170324_에프앤유신용정보_주식회사_201606870_11_에프앤유신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "에프앤유신용정보",
+      "date": "2017.03.24",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170609_아이비케이신용정보_주식회사_201700390_11_아이비케이신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20170609_아이비케이신용정보_주식회사_201700390_11_아이비케이신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "아이비케이신용정보",
+      "date": "2017.06.09",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170814_주신한데이타시스템_201703640_11_신한데이타시스템_경영유의 사항 등 공개안",
+      "source_file": "MGMT_20170814_주신한데이타시스템_201703640_11_신한데이타시스템_경영유의 사항 등 공개안.pdf",
+      "institution": "신한데이타시스템",
+      "date": "2016. 8. 14",
+      "is_relevant": true,
+      "found_keywords": [
+        "전자금융"
+      ],
+      "content": {
+        "full_text": "경영유의사항 등 공개안 1. 금융회사명: 신한데이타시스템 2. 조치일: 2016. 8. 14. 3. 조치내용 대상 내용 기관 경영유의사항1건, 개선사항2건 4. 조치대상사실 가. 경영유의사항 (1) IT부문감사및계약관련내부통제체계강화 OOOOOO팀소속감사담당인력O명이내부감사업무이외에도계약서검토 업무, 법률·규정검토및장애발생현황관리등타업무도수행하고있어감사실효성이 미흡할우려가있고 검사대상기간중실시한내부정기감사결과전자금융감독규정및IT내규준수 여부등IT부문내부통제전반에대한점검이미흡하며 계약관리업무가OOOOOO팀으로이관됨에따라OOOOOO팀이계약품의와 계약관련내부감사를모두담당하고있어계약관련내부통제가취약해질우려가 있으므로 감사인력을확충하고향후IT부문내부통제전반에대해감사를실시하는한편, 내부감사와계약관련업무담당조직을분리하는등감사및계약관련IT 내부통제 체계를강화할필요가있음 나. 개선사항 (1) 기술지원종료운영체제사용에따른보안통제미흡 검사착수일현재O대의서버에기술지원이종료된운영체제가탑재되어있어 동운영체제에대한취약점보완및기능개선등을위한보정작업이곤란하므로 기술지원이종료된운영체제의구체적인전환계획을수립하고운영체제전환이 이루어지기전까지강화된보안대책을마련·적용할필요가있음 (2) 내부사용자비밀번호암호화대책불합리 솔루션도입시관련솔루션에안전한암호알고리즘이적용되었는지를확인하는 절차가마련되어있지않고일부솔루션에과학기술정보통신부에서권고하는암호화 알고리즘을적용하지않고있으므로, 운영중인전체시스템을대상으로비밀번호에대한암호화알고리즘적용현황을 조사하여보안강도가미약한암호화알고리즘을사용하는시스템에대해서는암호화 알고리즘을수정하고향후솔루션등도입시안전한암호알고리즘이사용되는지검증하는 절차를마련할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 823,
+        "estimated_tokens": 54,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170911_새한신용정보_주식회사_201606410_11_새한신용정보 제재내용 홈페이지 공개안_경영유의_ 개선_",
+      "source_file": "MGMT_20170911_새한신용정보_주식회사_201606410_11_새한신용정보 제재내용 홈페이지 공개안_경영유의_ 개선_.hwp",
+      "institution": "새한신용정보",
+      "date": "2017.09.11",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170911_세일신용정보_주식회사_201608320_11_세일신용정보 경영유의사항_ 개선사항 홈페이지 공개",
+      "source_file": "MGMT_20170911_세일신용정보_주식회사_201608320_11_세일신용정보 경영유의사항_ 개선사항 홈페이지 공개.hwp",
+      "institution": "세일신용정보",
+      "date": "2017.09.11",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170911_케이에스신용정보_주식회사_201700490_11_케이에스신용정보 경영유의사항_ 개선사항 홈페이지 공개",
+      "source_file": "MGMT_20170911_케이에스신용정보_주식회사_201700490_11_케이에스신용정보 경영유의사항_ 개선사항 홈페이지 공개.hwp",
+      "institution": "케이에스신용정보",
+      "date": "2017.09.11",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170911_한국기업데이터_주식회사_201603150_11_한국기업데이터 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20170911_한국기업데이터_주식회사_201603150_11_한국기업데이터 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "한국기업데이터",
+      "date": "2017.09.11",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20170913_에스지아이신용정보_주식회사_201701790_11_SGI신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20170913_에스지아이신용정보_주식회사_201701790_11_SGI신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "에스지아이신용정보",
+      "date": "2017.09.13",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20171027_중앙신용정보_주식회사_201707240_11_중앙신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20171027_중앙신용정보_주식회사_201707240_11_중앙신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "중앙신용정보",
+      "date": "2017.10.27",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20180109_한국정보통신_201700780_11_한국정보통신_경영유의_ 개선_공시",
+      "source_file": "MGMT_20180109_한국정보통신_201700780_11_한국정보통신_경영유의_ 개선_공시.hwp",
+      "institution": "한국정보통신",
+      "date": "2018.01.09",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20180122_SM신용정보_주식회사_201703540_11_SM신용정보 제재내용 홈페이지 공개안_개선_",
+      "source_file": "MGMT_20180122_SM신용정보_주식회사_201703540_11_SM신용정보 제재내용 홈페이지 공개안_개선_.hwp",
+      "institution": "SM신용정보",
+      "date": "2018.01.22",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20180129_엠지신용정보_주식회사_201706390_11_엠지신용정보 개선사항 홈페이지 공개",
+      "source_file": "MGMT_20180129_엠지신용정보_주식회사_201706390_11_엠지신용정보 개선사항 홈페이지 공개.hwp",
+      "institution": "엠지신용정보",
+      "date": "2018.01.29",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20180202_펀드온라인코리아주식회사_201711050_11_20180202 경영유의_ 개선사항 공개안_펀드온라인코리아_",
+      "source_file": "MGMT_20180202_펀드온라인코리아주식회사_201711050_11_20180202 경영유의_ 개선사항 공개안_펀드온라인코리아_.pdf",
+      "institution": "펀드온라인코리아주식회사",
+      "date": "2018.02.02",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항 개선사항 공개안 ·"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 20,
+        "estimated_tokens": 4,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20180914_나이스신용정보_주식회사_201710070_11_경영유의사항 개선 등 공개_나이스신용정보",
+      "source_file": "MGMT_20180914_나이스신용정보_주식회사_201710070_11_경영유의사항 개선 등 공개_나이스신용정보.hwp",
+      "institution": "나이스신용정보",
+      "date": "2018.09.14",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20180921_한국기업데이터_주식회사_201800326_11_180921_경영유의사항 등 공개_F",
+      "source_file": "MGMT_20180921_한국기업데이터_주식회사_201800326_11_180921_경영유의사항 등 공개_F.hwp",
+      "institution": "한국기업데이터",
+      "date": "2018.09.21",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20181218_DGB신용정보_주식회사_201800309_11_DGB신용정보 경영유의사항  등 제재내용 홈페이지 공개",
+      "source_file": "MGMT_20181218_DGB신용정보_주식회사_201800309_11_DGB신용정보 경영유의사항  등 제재내용 홈페이지 공개.hwp",
+      "institution": "DGB신용정보",
+      "date": "2018.12.18",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190213_오케이신용정보_주식회사_201800836_11_경영유의사항 개선 등 공개_오케이신용정보",
+      "source_file": "MGMT_20190213_오케이신용정보_주식회사_201800836_11_경영유의사항 개선 등 공개_오케이신용정보.hwp",
+      "institution": "오케이신용정보",
+      "date": "2019.02.13",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190213_케이에스신용정보_주식회사_201800793_11_경영유의사항 개선 등 공개_케이에스신용정보",
+      "source_file": "MGMT_20190213_케이에스신용정보_주식회사_201800793_11_경영유의사항 개선 등 공개_케이에스신용정보.hwp",
+      "institution": "케이에스신용정보",
+      "date": "2019.02.13",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190213_코아신용정보_주식회사_201800805_11_경영유의사항 개선 등 공개_코아신용정보",
+      "source_file": "MGMT_20190213_코아신용정보_주식회사_201800805_11_경영유의사항 개선 등 공개_코아신용정보.hwp",
+      "institution": "코아신용정보",
+      "date": "2019.02.13",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190313_세일신용정보_주식회사_201800570_11_경영유의사항 개선 등 공개_세일신용정보",
+      "source_file": "MGMT_20190313_세일신용정보_주식회사_201800570_11_경영유의사항 개선 등 공개_세일신용정보.hwp",
+      "institution": "세일신용정보",
+      "date": "2019.03.13",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190313_한국티디비신용정보_주식회사_201800923_11_경영유의사항 개선 등 공개_한국티디비신용정보",
+      "source_file": "MGMT_20190313_한국티디비신용정보_주식회사_201800923_11_경영유의사항 개선 등 공개_한국티디비신용정보.hwp",
+      "institution": "한국티디비신용정보",
+      "date": "2019.03.13",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190320_새한신용정보_주식회사_201800637_11_경영유의사항 개선 등 공개_새한신용정보",
+      "source_file": "MGMT_20190320_새한신용정보_주식회사_201800637_11_경영유의사항 개선 등 공개_새한신용정보.hwp",
+      "institution": "새한신용정보",
+      "date": "2019.03.20",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190320_제이엠신용정보_주식회사_201800806_11_경영유의사항 개선 등 공개_제이엠신용정보",
+      "source_file": "MGMT_20190320_제이엠신용정보_주식회사_201800806_11_경영유의사항 개선 등 공개_제이엠신용정보.hwp",
+      "institution": "제이엠신용정보",
+      "date": "2019.03.20",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190617_BNK신용정보_주식회사_201800113_11_경영유의사항 개선 등 공개_비엔케이신용정보",
+      "source_file": "MGMT_20190617_BNK신용정보_주식회사_201800113_11_경영유의사항 개선 등 공개_비엔케이신용정보.hwp",
+      "institution": "BNK신용정보",
+      "date": "2019.06.17",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190617_에프앤유신용정보_주식회사_201800308_11_경영유의사항 개선 등 공개_에프앤유신용정보",
+      "source_file": "MGMT_20190617_에프앤유신용정보_주식회사_201800308_11_경영유의사항 개선 등 공개_에프앤유신용정보.hwp",
+      "institution": "에프앤유신용정보",
+      "date": "2019.06.17",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190807_고려신용정보_주식회사_201800835_11_경영유의사항 개선 등 공개_고려신용정보",
+      "source_file": "MGMT_20190807_고려신용정보_주식회사_201800835_11_경영유의사항 개선 등 공개_고려신용정보.hwp",
+      "institution": "고려신용정보",
+      "date": "2019.08.07",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190807_미래신용정보_주식회사_201900046_11_경영유의사항 개선 등 공개_미래신용정보",
+      "source_file": "MGMT_20190807_미래신용정보_주식회사_201900046_11_경영유의사항 개선 등 공개_미래신용정보.hwp",
+      "institution": "미래신용정보",
+      "date": "2019.08.07",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190807_케이비신용정보_주식회사_201800702_11_경영유의사항 개선 등 공개_케이비신용정보",
+      "source_file": "MGMT_20190807_케이비신용정보_주식회사_201800702_11_경영유의사항 개선 등 공개_케이비신용정보.hwp",
+      "institution": "케이비신용정보",
+      "date": "2019.08.07",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190819_DGB신용정보_주식회사_201900528_11_경영유의사항 개선 등 공개_DGB신용정보",
+      "source_file": "MGMT_20190819_DGB신용정보_주식회사_201900528_11_경영유의사항 개선 등 공개_DGB신용정보.hwp",
+      "institution": "DGB신용정보",
+      "date": "2019.08.19",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190917_KTB신용정보_주식회사_201900678_11_경영유의사항 개선 등 공개 KTB신용정보",
+      "source_file": "MGMT_20190917_KTB신용정보_주식회사_201900678_11_경영유의사항 개선 등 공개 KTB신용정보.hwp",
+      "institution": "KTB신용정보",
+      "date": "2019.09.17",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20190917_신한신용정보_주식회사_201900195_11_경영유의사항 개선 등 공개_신한신용정보",
+      "source_file": "MGMT_20190917_신한신용정보_주식회사_201900195_11_경영유의사항 개선 등 공개_신한신용정보.hwp",
+      "institution": "신한신용정보",
+      "date": "2019.09.17",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20191115_주KB데이타시스템_201900701_11_20191121_KB데이타시스템",
+      "source_file": "MGMT_20191115_주KB데이타시스템_201900701_11_20191121_KB데이타시스템.hwp",
+      "institution": "주KB데이타시스템",
+      "date": "2019.11.15",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20191125_우리신용정보_주식회사_201900806_11_경영유의사항 개선 등 공개 우리신용정보",
+      "source_file": "MGMT_20191125_우리신용정보_주식회사_201900806_11_경영유의사항 개선 등 공개 우리신용정보.hwp",
+      "institution": "우리신용정보",
+      "date": "2019.11.25",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "HWP 파일 텍스트 추출 실패"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 16,
+        "estimated_tokens": 5,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".hwp"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 3,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20191219_나이스신용정보_주식회사_201900964_11_경영유의사항 개선 등 공개_나이스신용정보",
+      "source_file": "MGMT_20191219_나이스신용정보_주식회사_201900964_11_경영유의사항 개선 등 공개_나이스신용정보.pdf",
+      "institution": "나이스신용정보",
+      "date": "2019. 12. 19",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개 1. 금융회사명: 나이스신용정보 2. 조치일: 2019. 12. 19. 3. 조치내용 대상 내용 기관 경영유의사항1건, 개선사항2건 4. 조치대상사실 가. 경영유의사항 ⑴ 위임직채권추심인등록말소업무철저 채권추심회사는위임직채권추심인과의위임계약이종료될경우지체없이 금융위원회에위임직채권추심인등록을말소하여야하는데도 검사대상기간중위임계약이종료된17명의위임직채권추심인에대한등록을 즉시말소하지아니하여최장6개월동안나이스신용정보소속으로등록되어 있었는바, 등록이말소되지않은위임직채권추심인이부당하게추심할우려가있으므로 위임계약종료즉시등록말소할필요가있음 나. 개선사항 ⑴ 상사채권관리시스템의채권추심관련기능개선 수임사실통보서등우편물발송관리업무개선 상사채권관리시스템에서수임사실통보서등채권추심관련우편발송시, 추심부서관리자가우편물양식을출력하고행정직원이우편물을발송하도록 업무처리가구분되어있는데 - 2 -  통신채권·금융채권시스템은우편물발송업체와전산망을연결하여자동발송하고 있으나, 상사채권시스템의경우발송건수가소량으로행정직원이우체국에 방문하는등직접처리 동시스템에는우편물출력일자만기록하고행정직원의실제발송내역을 기록·관리하지않고있어수임사실통보서발송여부를확인하지않은채추심이진행될 우려가있으므로 수임사실통보서등우편물의실제발송내역을전산에입력하도록시스템 기능을개선하고, 우편물발송관리의적정성에대한사후점검을실시하는등우편물 관리체계를개선할필요가있음 추심금지채권에대한정보조회제한필요 채권관리시스템에등록된채권중채권추심관련법규상추심중단사유(파산 면책자, 개인회생자등)에해당하거나추심불가채권으로확인된경우, 채권추심인이 동시스템을통해채무자에게문자및우편발송을할수없도록통제하고있으나 개인정보(집주소, 연락처등)에대한조회는여전히가능한상태로두고있어 추심금지채권에대한불법·부당한추심이이루어질우려가있으므로 채권추심인이채권추심관련법규상추심이금지된채권에대해서는 개인정보를확인할수없도록(비식별조치등) 채권관리시스템기능을개선할 필요가있음 ⑵ 채권추심관련문서에대한출력·파기관리강화 채권추심관련문서에대한파기관리강화 채무자의신용조회서및주민등록초본, 채권추심위임서류등채무자신상에 관한문서는해당부서에서매월전문업체에의뢰하여파기하고있으나 동문서의생성(발급) 기록만남고파기여부를기록·관리하지않고있어, 파기되지않고유출된문서를추심업무외에부당이용할우려가있으므로 채무자신상에관한문서를파기하는경우파기기록을유지·관리하여문서 생성내역과비교점검할수있도록하는등문서관리절차를강화할필요가있음 - 3 - 개인정보가포함된문서에대한출력관리강화 신용조사보고서등개인정보가포함된문서작업에대해서는신용조사원 1명을지정하여보고서작성및출력을허용하고문서출력기록을남기고있으나 문서출력기록에대해사후점검등내부통제가이루어지지않고있어, 문서를 무분별하게출력하여추심업무외에부당이용할우려가있으므로 개인정보가포함된문서작업을허용한직원에대해서는정기적으로문서 출력기록을추출하여적정성여부를점검하는등문서출력관리를강화할 필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1414,
+        "estimated_tokens": 93,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20191219_한국기업데이터_주식회사_201900766_11_개선사항 공개_한국기업데이터",
+      "source_file": "MGMT_20191219_한국기업데이터_주식회사_201900766_11_개선사항 공개_한국기업데이터.pdf",
+      "institution": "한국기업데이터",
+      "date": "2019. 12. 19",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 개선사항 공개 1. 금융회사명: 한국기업데이터 2. 조치일: 2019. 12. 19. 3. 조치내용 대상 내용 기관 개선사항1건 4. 조치대상사실 가. 개선사항 ⑴ 직원채용관련내규정비필요 직원채용과관련하여내규에전형방법을정하고있으나각전형방법별로 세부기준및방법등을규정하고있지아니하여  인사규정 제14조(전형방법) ①서류전형또는자격심사②필기시험또는실기시험③적성검사④면접 ⑤신체검사 검사대상기간중실제채용시전형방법에정한필기시험또는실기시험을 인성·직무능력검사로임의대체하였고, 면접위원과응시자간에이해관계가있을경우에도해당면접위원에대한 제척·회피기준이없는등채용이투명·공정하게이루어지지않을우려가있으므로 관련내규에각전형방법별세부기준및방법등을마련하여채용절차를 구체적으로정함으로써직원채용의투명성·공정성을제고할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 403,
+        "estimated_tokens": 38,
+        "created_at": "2025-07-20",
+        "regulations": [
+          "인사규정 제14조"
+        ],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20200131_SM신용정보_주식회사_201900748_11_개선사항 공개_에스엠신용정보",
+      "source_file": "MGMT_20200131_SM신용정보_주식회사_201900748_11_개선사항 공개_에스엠신용정보.pdf",
+      "institution": "에스엠신용정보",
+      "date": "2020. 1. 31",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 개선사항 공개 1. 금융회사명: 에스엠신용정보 2. 조치일: 2020. 1. 31. 3. 조치내용 대상 내용 기관 개선사항2건 4. 조치대상사실 가. 개선사항 ⑴채권추심관련우편물및문자메시지양식개선 채권관리시스템에서채무자에게문자메시지및우편안내물발송시양식 유형별로표준문구를사용토록하고있으나 방문안내1차, 상담안내등양식의보증인란에이름이외에 불필요한텍스트 (문자, 숫자등) 입력이가능하고, 입금안내, 입금약속등양식의지정계좌란에 임의입력이가능하여불법·부당한문구를삽입하거나채권추심인의개인계좌를기입 하여사용할우려가있으며, 채권추심관련우편안내문중법적조치의진행주체가모호한문구를사용하는 사례가있어오해의소지가있으므로  예) 채권자와협의아래법적조치등강제추심방법동원예정 채권관리시스템에등록된보증인정보나채권자지정계좌번호등이자동으로 입력되도록채권관리시스템기능을개선하고, 법적조치진행주체를명확히기재하고 오해의소지가있는표현을수정하는등채권추심관련우편안내문내용을개선하시기 바람 - 2 - ⑵상속인등채무관련인등록및확인절차개선 채무자의상속인등을채무관련인으로등록하기위하여관련법원사건번호및 판결일을시스템에입력하여지사장의승인을받도록하고있으나, 사건번호및판결일에대한확인절차가미흡하여확정판결이되지않은자를 채무관련인으로등록함으로써, 채무관련인이아닌자에대해채권추심을진행하거나 이로인한민원발생우려가있으므로 상속인등채무관련인을등록하는경우, 확정판결및채무관련인여부를확인 점검할수있도록절차를보완하시기바람  예) 대법원사건번호검색내역등을시스템입력시첨부하고, 감사팀에서사후점검시검증"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 758,
+        "estimated_tokens": 63,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20200219_새한신용정보_주식회사_202000463_11_경영유의사항 등 공개_새한신용정보",
+      "source_file": "MGMT_20200219_새한신용정보_주식회사_202000463_11_경영유의사항 등 공개_새한신용정보.pdf",
+      "institution": "새한신용정보",
+      "date": "2021. 2. 19",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개 1. 금융회사명: 새한신용정보 2. 조치일: 2021. 2. 19. 3. 조치내용 대상 내용 기관 경영유의사항2건, 개선사항1건 4. 조치대상사실 가. 경영유의사항 ⑴채권추심활동에대한내부통제강화 소속위임직채권추심인의불법추심행위를방지하기위해사무실근무시 유선전화통화내용을녹취하고, 외근시사무실전화를개인휴대폰으로착신 전환하여통화내용을녹취하고있으나, 위임직채권추심인이착신전환하지않고개인휴대폰을이용하여추심 하는경우에는동내부통제가무력화되어불법추심이발생할개연성이높은데도 별도의사전, 사후통제장치가없고, 최근개인휴대폰을이용한추심과관련된민원이발생하는등불법추심 행위방지관리에취약한상황이니, 개인휴대폰을이용한추심시불법행위가발생하지않도록내부통제및 사후관리방안을마련이행할필요가있음  예시) 사무실유선전화를이용한추심을원칙으로하되, 부득이하게개인휴대폰을 이용하여추심하는경우해당내용을녹취하고, 문자메시지를보관하며, 활동일지에 충실히기입등 - 2 - ⑵광고·홍보활동에대한내부통제강화 내규광고·홍보물등제작사용세칙에따르면소속점포는광고·홍보물 제작시대표이사의승인을득하여야하고개별위임직채권추심인은별도의 광고물을제작·사용하여서는아니되나, 소속점포에서대표이사의승인없이광고홈페이지를운영하고있고, 개별위임직채권추심인은떼인돈 등의부적절한문구가포함된별도의홍보물을 제작·사용하고있으며, 해촉된위임직채권추심인의블로그등에새한신용정보의상호, 해당추심인 휴대전화번호가기재되어있는등광고·홍보물에대한관리·통제를소홀히하고 있어불법·부당추심의위험이있는바, 광고·홍보활동과관련하여위임직채권추심인및지점교육을강화하고, 주기적으로블로그및홈페이지등을점검, 시정조치하는등내부통제를강화할 필요가있음 나. 개선사항 ⑴채무자정보과다조회점검실효성제고 새한신용정보는개인신용정보조회기록이상과다조회점검을위하여 부서·직원별조회기록적정성점검을정기적(월별·분기별)으로실시하고있으나, 조회건수가평소보다급증한부서및직원들에대한샘플링점검기준이 마련되어있지않고, 일정조회횟수초과자(예: 분기별신용조회건수100건 이상)에대한현황만을관리하고있는등형식적인점검에그칠우려가있으므로, 개인신용정보조회기록점검시부서및직원들에대한샘플링점검기준을 마련하고, 조회적정성점검결과를업무에반영하는등점검의실효성을 제고할수있는방안을마련할필요가있음  예시) 직전점검대비개인신용정보조회건수50% 이상증가부서·직원샘플링점검등"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1144,
+        "estimated_tokens": 83,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20200225_에이앤디신용정보_주식회사_202000010_11_개선사항 공개_에이앤디신용정보",
+      "source_file": "MGMT_20200225_에이앤디신용정보_주식회사_202000010_11_개선사항 공개_에이앤디신용정보.pdf",
+      "institution": "에이앤디신용정보",
+      "date": "2020. 2. 25",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 개선사항 공개 1. 금융회사명: 에이앤디신용정보 2. 조치일: 2020. 2. 25. 3. 조치내용 대상 내용 기관 개선사항2건 4. 조치대상사실 가. 개선사항 ⑴ 개인정보출력에대한보안관리강화 업무용PC 또는채권관리시스템에서개인정보가포함된화면을무단으로 캡쳐하여업무목적외활용되지않도록, 화면캡쳐기능을차단하고파일출력· 복사시출력직원의지문인증을필수로거치도록관리하고있으나, 일부부서장PC는화면캡쳐기능을허용하고, 화면캡쳐이미지, 문서파일 출력기록에대해개인정보포함여부, 업무관련출력여부등을확인하지않고 있어보안관리가미흡하므로  법원요청서류제출등출력업무가잦은부서관리자의업무용PC 화면캡쳐기능을허용하고있는업무용PC에서의출력기록에대한적정성 여부를주기적으로점검하는등개인정보출력에대한보안관리를강화할필요가 있음 ⑵ 침입차단시스템운영에대한보안관리강화 채권관리시스템을해킹등으로부터보호하기위해업무용PC에서무분별한 인터넷접속을통제하고자침입차단시스템(방화벽)을설치·운영하고있으나, - 2 - 임직원이사용하는업무용PC에대하여인터넷접속통제가일부미흡하여 알려지지않은유해사이트에접속할경우악성코드감염등에의한개인정보 유·노출이우려되므로  유해사이트차단시스템에서일부알려진유해사이트만차단하고있으나, 잘알려지지않거나신규유해사이트에대해서는접속차단이불가 임직원에대한인터넷접속을원칙적으로차단하되업무상필요한사이트에 한해감사부서등의승인을얻은후제한적으로허용하는등인터넷접속통제를 개선할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 704,
+        "estimated_tokens": 57,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20200225_엠지신용정보_주식회사_201901141_11_개선사항 공개_엠지신용정보",
+      "source_file": "MGMT_20200225_엠지신용정보_주식회사_201901141_11_개선사항 공개_엠지신용정보.pdf",
+      "institution": "엠지신용정보",
+      "date": "2020. 2. 25",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 개선사항 공개 1. 금융회사명: 엠지신용정보 2. 조치일: 2020. 2. 25. 3. 조치내용 대상 내용 기관 개선사항2건 4. 조치대상사실 가. 개선사항 ⑴ 채권관리시스템의채권추심관련기능개선 채권추심착수를위한수임사실통보기능개선 채권관리시스템에서채권수임사실통보서를우편발송할경우실제발송일이 아닌DM업체에발송의뢰한날을기준으로3영업일이경과한때부터추심업무가 가능토록하고있으나, 실제발송여부를확인하는기능이없어DM업체에서수임사실통보서를 지연발송하거나발송을누락할경우동통보서가채무자에게도달하기전에 추심하게될우려가있으므로  채권관리시스템상수임사실통보서를DM업체에우편발송을의뢰한날을 확인하는기능은있으나우편발송일등실제발송여부를확인하는기능이없음 실제우편발송일을확인하고, 통보서가채무자에게도달된이후에추심 업무가가능하도록전산시스템기능및관련절차를개선할필요가있음 채권추심관련신규서식에대한등록절차개선 채권추심업무관련문자메시지및우편물서식은감사부서의사전승인을 - 2 - 받은이후에채권관리시스템에등록하도록내규에정하였으나, 감사부서의사전승인없이도채권추심부서관리자가신규서식을임의로 등록할수있어불법·부당한내용의문자메시지및우편물이채무자에게발송될 우려가있으므로 채권관리시스템에신규서식등록시감사부서의사전승인을반드시거치도록 전산시스템기능및관련절차를개선할필요가있음 법적절차진행사실안내관련문자메시지발송절차개선 채권추심인이채무자에게지급명령접수완료등법적절차진행사실을안내할 경우채권관리시스템에등록된문자메시지서식중관련내용이있는서식을선택 하여발송하여야하나, 실제법적절차진행여부와상관없이관련문자메시지를선택·발송할수 있도록되어있어, 채권추심인이고의또는과실로사실여부를확인하지않고 채무자에게사실과다른내용의문자메시지를발송할우려가있으므로 사실여부가확인된건에대해서만관리자승인을거친후문자메시지가 발송되도록전산시스템기능및관련절차를개선할필요가있음 ⑵ 개인정보에대한보안관리강화 개인정보문서파일에대한암호화조치강화 문서파일반출시개인정보유·노출방지를위해업무용PC에있는문서파일을 자동암호화하거나정보보호감사에서암호화되지않은문서파일이검출된경우 수동으로암호화조치하고있으나, 일부추심부서만문서파일에대해자동암호화하고, 그외부서는다량의 문서파일을보유한직원에게만수동으로암호화하도록요구하는등암호화조치가 일부미흡하므로  반기별실시하는정보보호감사에서개인정보검출시스템으로개인정보문서파일 - 3 - 보유PC를검출하여보유건수가상위50명에해당하는직원에한해직접암호화 조치하도록요구하고있으나, 조치완료여부를확인하지않고상위50명에속하지 않는PC에대해서는조치요구를하지않는등사후관리미흡 모든개인정보문서파일에대해자동암호화조치하고, 암호화되지않은 문서파일이발견될경우후속조치를철저히이행하는등개인정보보호조치를 강화할필요가있음 개인정보출력에대한보안관리강화 업무용PC에서개인정보가포함된화면을무단으로캡쳐하거나개인정보가 있는문서를출력하여업무목적외활용되지않도록, 화면캡쳐기능을차단하고 출력문서에워터마크를적용하고있으나,  적용항목: 부서명, 직원명, 출력일시등 일부직원PC는화면캡쳐기능을허용하거나워터마크를적용하지않고 있어개인정보를화면캡쳐방식또는출력물형태로업무목적외활용할우려가 있으므로  제안서외부기관제출등출력업무가잦은직원의업무용PC 업무목적상PC 화면캡쳐의허용및출력물워터마크미적용이불가피한 경우에한해관리자승인을받아필요기간만허용하고, 정기적으로문서출력기록에 대한적정성여부를점검하는등보안관리를강화할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1630,
+        "estimated_tokens": 102,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20200406_한국신용정보원_201900930_11_경영유의사항 등 공개_한국신용정보원",
+      "source_file": "MGMT_20200406_한국신용정보원_201900930_11_경영유의사항 등 공개_한국신용정보원.pdf",
+      "institution": "한국신용정보원",
+      "date": "2020. 4. 6",
+      "is_relevant": true,
+      "found_keywords": [
+        "신용정보법"
+      ],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개 1. 금융회사명: 한국신용정보원 2. 조치일: 2020. 4. 6. 3. 조치내용 대상 내용 기관 경영유의사항5건, 개선사항5건 4. 조치대상사실 가. 경영유의사항 ⑴ 신용정보등록시사전검증강화방안마련 신용정보원은금융기관등이신용정보를등록·집중하는시점에정상정보 여부등을사전검증하여오류정보로추정시해당기관에확인또는재집중하도록 요청하고있으나, 요청한이후에는해당기관이오류정보에대해실제로확인또는재집중 하였는지여부를추적관리하지않고있으며, 사전검증기능에도일부개선할 부분이있는등집중되는신용정보의정확성이저하될우려가있으므로 등록되는정보에대한사전검증기준을개선하고, 사전검증결과오류정보로 추정되는정보에대해해당기관의확인및정보의재집중여부등을모니터링 하는등신용정보의사전검증관리를강화할필요가있음 ⑵ 신용정보정확성·최신성점검에대한사후관리강화  신용정보제공의무이행실태조사에대한사후관리방안마련 일반신용정보제공의무이행실태조사결과발견된등록누락·지연등에 대해제재금을부과하고있으며, 제재금부과가불필요하다고판단한불일치 정보에대해서는금융기관이스스로정비하도록하였으나, - 2 - 일부금융기관의경우이행실태조사완료이후에도불일치정보를정비 하지않은채미정비상태로남아있는등사후관리가미흡하므로 제재금부과와연계되지않고금융기관이스스로정비해야하는정보가 제대로정비될수있도록사후관리방안을마련할필요가있음  제재금부과대상기관에대한사후관리대책마련 일반신용정보의정확성여부의확인을위한정기점검시일부금융기관은 제재금이반복적으로부과되고있는데도, 해당기관에제재금부과이외에별다른조치를취하지않는등반복적으로 제재금이부과된기관에대한사후관리가미흡하므로 제재금부과가반복되는기관에대해서는개선계획을징구하는등근본적인 위규행위방지대책을마련할필요가있음 ⑶ 신용정보주체조회동의점검에따른후속조치강화 보험사가신용정보주체의조회동의를받고조회했는지여부를확인하기 위해조회동의점검을실시하고, 점검결과는개선사항과지적사항으로구분하여 처리하도록내규에정하였으나 2018년조회동의점검결과내규에서정한지적사항과개선사항에대한 분류가일부부정확하여조회동의점검의실효성이저하된사실이있으므로 조회동의점검방법과처리기준을철저히준수하고, 보험사가지적사항 등에대한개선계획제출시책임자의승인을받도록하는등점검에따른 후속조치를강화할필요가있음 ⑷ 보험사고정보의정확성확보방안마련 신용정보원은보험사고정보시스템(Insurance Claims Pooling System, ICPS)에집중된보험사고·보험계약정보등을각보험사에보험심사, 사기예방 목적으로활용토록제공하고있으나, - 3 - 별도운영중인보험신용정보시스템(Insurance Credit Information System, ICIS)과동시스템을보험사에서동시활용하고있어兩시스템간정보가불일치할경우 정보의정확성을담보하기어려우므로 보험사고정보시스템(ICPS)에집중된정보를보험사간협의등을통해정비 하거나, 보험신용정보시스템(ICIS)으로통합·운영하는등보험사고정보의정확성 확보방안을마련할필요가있음 ⑸ 주민등록번호변경사항관련사후관리강화 행정안전부등에서수집한주민등록번호변경정보를금융기관에제공하여 주민등록번호변경사실을확인하도록하고있으나, 주민등록번호변경사실이존재하는데도금융기관이변경전주민등록번호를 신용정보원에등록한사례가있는등신용정보의정확성이왜곡될우려가 있으므로 금융기관에대한주민등록번호변경사항제공및확인절차를강화하고, 이행실태조사등을통해적정성여부를점검하는등사후관리를강화할필요가 있음 나. 개선사항 (1) 신용정보집중관리위원회운영체계미흡  신용정보집중관리위원회보고체계일관성결여 내규신용정보집중관리위원회규정에서규정하고있는협의·심의·결정 사항의구분이불분명하고, 보고사항은규정에포함되어있지않은데도담당 임직원등의필요에따라보고하고있는등보고체계의일관성이결여될수 있으므로 협의·심의·결정사항을의결사항으로통일하는등명확히구분하고, 보고 필요사항을일관성있게운영할필요가있음 - 4 -  신용정보집중관리위원회소위원회운영미흡 신용정보법 제26조의2제3항, 동시행령제22조의2제2항에따라신용정보 집중관리위원회에신용정보별소위원회(3개)와공익위원으로구성된소위원회 (1개)를두고있으나, 관련내규상소위원회의구체적인역할및기능등이명확하지않고, 신용정보원설립이후소위원회개최사실이없는등그운영이미흡하므로 관련내규상소위원회의구조, 역할및기능을재검토하여구체화하는등 소위원회의실효성제고방안을마련할필요가있음 (2) 신용정보의정확성·최신성점검체계불합리  일반신용정보의정확성·최신성점검의실효성미흡 일반신용정보의정확성·최신성점검을위해이행실태조사및월정기점검을 실시하고, 점검결과부정확한정보등록등신용정보제공의무를위반한기관에 대해제재금을부과하고있으나, 각점검이별도의일정으로장기간(약56개월) 진행됨에따라점검의 보고주체가서로상이하고, 점검일정이서로중첩될경우정기점검이지연 되는등점검의적시성및효율성이미흡하므로 이원화된점검절차를통합하여일원화하는방안을마련하는등신용정보의 정확성및최신성점검실효성을제고할필요가있음  일반신용정보정확성·최신성점검관련제재금운영미흡 이행실태조사시제재금부과대상의경우자체정비기간을부여하여해당 금융기관이자체정비할수있도록하고, 정비완료시제재금을면제해주고 있으나, 자체정비한정보의정확성여부등은확인하지않은채, 제재금을면제해 주는등제재금을관대하게부과하는경향이있으므로 금융기관이제재금회피수단으로자체정비기간을활용하지못하도록 제재금부과기준을개선할필요가있음 - 5 -  불이익한신용정보의제재금부과기준불합리 연체정보등불이익한신용정보는신용정보주체의신용도에미치는영향이 크고, 그영향이장기간지속되는데도, 개설정보등신용도에미치는영향이미미한신용정보와동일한제재금을 부과하는등제재금부과의형평성이결여될수있으므로 신용정보주체의신용도에미치는영향등에따라제재금부과기준을 차등화하는등신용정보집중관리업무운용의실효성을제고할필요가있음  보험신용정보의정확성·최신성유지점검방식미흡 보험신용정보의정확성·최신성여부점검을위해이행실태조사를실시하고 보험사와신용정보원이보유한보험신용정보를주기적으로대조하여보험사가 신용정보원에정보의등록을누락하거나지연등록한경우등을확인하고있으나, 단순데이터대조방식은보험사에서실제와다르게입력한정보가오등록 정보인지여부를판단하는데한계가있어부정확한신용정보가집중·활용될 우려가있으므로 보험사의정보오입력여부를확인할수있도록현장조사등실효성있는 점검방식을도입하는등보험신용정보의정확성점검성이제고될수있도록 점검방식을개선할필요가있음  보험신용정보정확성·최신성유지점검관련제재금운영미흡 보험사에대한이행실태조사실시전데이터추출기준을사전안내하고, 조사결과에따라제재금을부과하고있으나 이행실태조사결과에대해보험사가데이터추출오류로소명할경우제재금 부과대상에서배제해주고있어이를제재금부과배제목적으로악용할 우려가있으므로 이행실태조사실시전보험사가추출한데이터를샘플링테스트할수있는 기능을지원하고, 본조사시데이터추출오류건에대해제재금을부과하는등 조사및제재금부과방식을개선할필요가있음 - 6 -  비대면채널에대한조회동의점검절차미흡 신용정보원으로부터보험신용정보를제공받으려는보험사가신용정보주체 로부터동의를받았는지여부에대해증빙자료를제출받아점검하고있으나 모바일, 웹페이지등비대면채널을통한보험가입, 보험금청구건에대한 정보주체의동의증빙자료는보험사의전산화면캡처이미지의동의여부(Y, N)만 확인하는방식으로이루어지고있어 동의일자, 표준동의양식사용여부등세부내용에대한확인이어려워 실제고객이조회동의하지않은신용정보에대해조회건이발생하더라도이를 인지하기어려우므로 비대면채널관련동의증빙자료제출시보험사의동의세부내용을확인 할수있는자료를추가로제출받아점검할수있도록하는등비대면채널 점검절차를개선할필요가있음  기술신용정보정확성·최신성유지점검방식미흡 은행및TCB사등금융기관에서신용정보원에집중한기술신용정보에 대해정확성여부를점검하고필수등록정보의항목중입력을누락한건에 대해재집중하도록처리하고있으나 기술신용정보의지연등록여부에대해서는점검하지않고있고, 필수등록 항목중일부항목을입력하지않더라도등록이가능하여정보의정확성이 저하될우려가있으므로 집중된기술신용정보의정확성최신성점검시정보의지연등록여부를 점검항목에포함시키고, 필수등록항목으로정한정보는등록이누락되지 않도록전산시스템기능을개선할필요가있음 (3) 개인신용정보시스템접근권한·접속기록관리미흡  개인신용정보처리시스템사용자접근권한관리절차불합리 업무목적으로일반·보험신용정보시스템등개인신용정보처리시스템을 사용하는직원이퇴직, 부서이동등인사이동으로기존시스템접근권한이 불필요해질경우내부절차에따라해당권한을변경, 말소등처리하고있으나 - 7 - 담당자가직원의인사이동을인지하지못하여시스템접근권한의변경, 말소처리가지연될경우에는기존권한이해제되지않은채업무목적외에 부당이용될우려가있으므로 개인신용정보처리시스템에대한접근권한변경사유가발생하면지체없이 후속조치(권한변경·말소등)가이루어지도록접근권한관리절차를개선하고, 사후점검시지연처리여부를확인할필요가있음  신용정보관리프로그램외부사용자접근권한·접속기록관리절차미흡 ① 신용정보관리프로그램외부사용자접근권한관리절차미흡 일반·보험신용정보관리프로그램을이용하는금융회사등외부기관사용자에 대해프로그램사용신청시인증절차를거친후담당업무별로접근권한을 부여하고, 시스템접속시기관인증, 사용자휴대폰본인인증등으로접근통제 하고있으나, 외부사용자가인사이동등으로접근권한변경사유발생시해당사용자가 신용정보원에통보해주지않을경우이를인지할수없어후속조치지연처리로 인하여접근권한이부당하게이용될우려가있으므로 외부사용자의인사이동등프로그램접근권한변경사유발생여부를 주기적으로확인하고, 사유발생시지체없이처리할수있도록신용정보관리 프로그램접근권한관리절차를개선할필요가있음 ② 신용정보관리프로그램외부사용자접속기록관리체계미흡 일반·보험신용정보관리프로그램을이용하는외부기관사용자에대해 프로그램접속시기록을남기고, 프로그램이용기관의관리자급직원이관리자 권한을신청하면본인이속한기관의프로그램사용자접속기록을관리할수 있는기능을부여하고있으나, 일반신용정보관리자권한신청이선택사항으로되어있어관리자권한을 신청하지않은기관은소속기관사용자들의프로그램접속기록관리·점검이 불가능하여개인신용정보과다조회등이상행위에대한발견·조치가어려우므로 관리자권한이프로그램이용기관관리자급직원에게필수적으로부여되도록 하고, 권한을부여받은관리자가실제로소속기관사용자의접속기록관리 - 8 - 점검을수행하는지확인하는등전산기능개선을통해프로그램접속기록 관리체계를강화할필요가있음 (4) 금융기관의파산·합병등발생시관리절차미흡 금융기관의파산·합병등사유발생시해당기관에서신용정보원에그 사실을통보하면신용정보원은기등록신용정보의이관또는해제등관련 후속조치를하고있으나, 파산·합병등발생사실을금융기관에서통보해주지않는한신용정보원이 이를모두인지하기어렵고, 대부업체의경우기등록신용정보의이관해제 등을수작업으로처리하고있어후속조치가지연될우려가있으므로 금융기관의파산·합병등사유발생시후속조치가지연되지않도록업무 처리절차및전산시스템기능을개선할필요가있음 (5) 금융질서문란정보등록절차미흡 신용정보원에등록된금융질서문란행위자는장기간금융거래가제한되는등 불이익을받고있어, 금융기관등에서금융질서문란정보를등록할경우신중을 기하여야하는데도 금융기관실무자의자의적판단에따라등록삭제한사례가있고, 일반 신용정보관리프로그램(웹방식)으로등록할경우금융질서문란정보가신용도 판단정보와동일한등록화면에포함되어있어등록에혼란을야기할우려가 있으므로 금융질서문란정보등록시해당기관책임자의확인을거치도록하고, 일반신용정보관리프로그램을통한신용정보등록시신용도판단정보와는별도의 화면으로금융질서문란정보를등록할수있도록전산시스템기능을개선하는등 등록절차를개선할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 5654,
+        "estimated_tokens": 306,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20200409_비엔케이시스템_201901137_11_경영유의 등_공개안_비엔케이시스템",
+      "source_file": "MGMT_20200409_비엔케이시스템_201901137_11_경영유의 등_공개안_비엔케이시스템.pdf",
+      "institution": "비엔케이시스템",
+      "date": "2020. 4. 9",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항 등 공개안 1. 금융기관명: 비엔케이시스템 2. 조치일: 2020. 4. 9. 3. 조치내용 대상 내용 기관 개선사항3건 4. 조치대상사실 가. 개선사항 (1) IT사업추진관련부정당업자관리미흡 내규 □□규정 제31조(부정당업자의입찰참가제한)에따라물품구매등을위한 입찰진행시부정당업자에대해서는O월이상△년이하의기간을정하여입찰에 참가하지못하도록규정하고있으나, 검사착수일현재회사내부적으로부정당업자의목록을관리하지않아부정당업자로 등록된이력이있는업자가입찰에참가하거나계약의상대방이될우려가있으므로  상호명, 대표자성명, 사업자등록번호, 제한기간, 제한사유등 관련내규에서제한하고있는부정당업자관리목록을별도로마련하고, 이를통합 구매시스템내협력업체정보와연계하여사업추진시부정당업자여부를확인 할수있도록절차등을개선할필요 (2) IT자원통합구매관련계약업무불합리 ①내규 OO OOOO OOOO 운영지침에따라BNK시스템이 계열사의IT자원구매업무를위임받아수행하고최종적으로동업무를위임한 계열사에구매한IT자원을재판매하는방식으로운영하고있으나, 구매대상의물건또는사업결과물등에대한소유권이구매업무를위임한계열사에 있음에도동사항을입찰공고문등에명시하지않아사후분쟁발생시소유권과 관련된혼선이발생할우려가있으므로 계열사로부터위임받아구매및재판매하는IT자원에대한최종소유권이해당 계열사에귀속됨을명확히할수있도록입찰공고문에명시하는등관련내규 (표준계약서등) 및업무절차등을개선할필요 ②일반경쟁방식의역경매(Rank Bidding) 입찰을필수참석자의참관하에실시하면서 , , ◎◎◎◎ 등의정보를입찰시간중△△△△△△시스템의 진행화면에표시하여입찰진행상황등을확인할수있으나, 입찰에결정적인영향을미칠수있는◎◎◎◎ 등민감한정보가역경매입찰 시간중노출됨으로써입찰업무에대한공정성저해가우려되므로 입찰업무에대한공정성을확보하기위하여◎◎◎◎ 등입찰관련민감한정보에 대해서는입찰종료후개찰시확인하도록하는등관련내부통제절차를개선할 필요 (3) 외주인력출입통제불합리 외주인력에대해서는   업무매뉴얼에따라보안서약서를 징구받고내부인력의통신망과분리·운영하고있으며, 외주인력의수행업무에 대해서는일일보안점검을실시하는등외주인력정보보호대책을마련하고있으나, 검사착수일현재▲▲▲▲본부사무공간내회의실에서외주인력이개발프로젝트 업무를수행하고있어공용기기사용및이동중내부자료가노출될우려가있으므로 외주인력에대해서는출입구가분리된별도의사무공간에서업무를수행하는등 외주인력출입통제절차를개선할필요"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1194,
+        "estimated_tokens": 84,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20200722_우리은행_201900657_11_우리은행_신용정보 부문검사_경영유의사항 등 공개안",
+      "source_file": "MGMT_20200722_우리은행_201900657_11_우리은행_신용정보 부문검사_경영유의사항 등 공개안.pdf",
+      "institution": "우리은행",
+      "date": "2020. 7. 22",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항등공개안 1. 금융회사명: 우리은행 2. 제재조치일: 2020. 7. 22. 3. 제재조치내용 제재대상 제재내용 기관 경영유의사항1건 ※ 경영유의사항은금융회사의주의또는자율적개선을요구하는행정지도적성격의조치임 4. 제재대상사실 가. 경영유의사항 (1) 금융질서문란정보등록및관리기준준수철저 한국신용정보원일반신용정보관리규약 및동규약실무해설에의하면금융질서문란 정보는법원의유죄판결확정및행정청의과태료처분등사실관계를객관적으로확인할 수있는경우에등록하도록하고있고 금융회사는금융질서문란정보등록사유와관련하여입은손해가전부배상또는회복 되었다고판단되는경우금융질서문란정보를해제하고해제사유가발생한날로부터5년간보존 하도록하고있는데도 ➀ 부는2019.5.3. 민원인○○○에대해법원의유죄판결확정등객관적인확인 자료없이금융질서문란행위자로등록하였으며 ➁ 2018.7.11.2019.2.28. 기간중기존에금융질서문란행위자로등록되어있던등8명이 대출금액을변제하자해당금융질서문란정보를5년간보존하지아니하고즉시삭제하였으며 ➂ 검사착수일현재금융질서문란행위자로등록되어있는 등16명이관련대출 금액을전액변제하였음에도해당금융질서문란정보를해제하지않았음 금융질서문란정보는대상자의금융거래를전면적으로제한하는등그효과가중대하므로 일반신용정보관리규약 등을준수하여신중하게등록하고체계적으로관리하시기바람"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 659,
+        "estimated_tokens": 48,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20200903_중앙신용정보_주식회사_201900963_11_경영유의사항 등 공개_중앙신용정보",
+      "source_file": "MGMT_20200903_중앙신용정보_주식회사_201900963_11_경영유의사항 등 공개_중앙신용정보.pdf",
+      "institution": "중앙신용정보",
+      "date": "2020. 9. 3",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개 1. 금융회사명: 중앙신용정보 2. 조치일: 2020. 9. 3. 3. 조치내용 대상 내용 기관 경영유의사항1건, 개선사항3건 4. 조치대상사실 가. 경영유의사항 ⑴채권추심부서관리자의성과급지급체계불합리 일부채권추심지점(대구부산순천)의경우관리자에대한성과급산정기준이 지점손익등업무실적에만의존하는방식으로구성되어있어  대구부산지점: (지점손익 전월분성과급- 공통비) X 50% 순천지점: (지점손익 전월분성과급- 공통비) X 100% 해당지점관리직이성과급을높이기위해위임직채권추심인의불법과도한 채권추심행위를묵인방조할우려가있으므로 관리자가불법·부당한채권추심행위를예방·통제해야하는책임을다할수 있도록합리적인성과급지급체계를마련할필요가있음  예) 민원발생건수, 추심인추심활동내역의적정성등을기준에포함 - 2 - 나. 개선사항 ⑴우편물발송및관리절차개선 수임사실통지서, 변제촉구서등모든우편물은채권관리시스템에등록된 표준우편물양식에따라외주업체를통해일괄발송하고있으며, 표준 우편물양식을변경하여사용해야할사유가있는경우본점검사부의사전 합의를거치고있으나, 지점에서변경된양식을직접인쇄하고발송함에따라임의로불필요한 문구를삽입하거나자필로기재하여발송하는등부당한추심활동이이루어질 우려가있으므로, 변경된우편물을본점에서직접발송하거나지점에서발송한우편물에 대한점검을강화하는등우편물에대한사전사후관리를강화할필요가있음 ⑵수임사실통지전채권추심에대한관리감독강화필요 수임사실통지서는일괄적으로문자메시지또는우편으로발송하고, 채권 추심인은수임사실통지일이후3일이경과한경우에만채권관리시스템을통해 채무자정보에접근하도록하고있으나, 영업추심업무를동시에수행하고있는일부직원의경우, 채권수임사실 통지가발송된날혹은발송되기이전에원본서류에기재된채무자연락처로통화를 시도하거나, 실제로채권추심에착수하는사례가발생하고있으므로, 수임사실통지완료이전에추심직원이채무자정보에접근하지못하도록 원본서류관리를강화하고, 영업추심업무를동시에수행하는직원의채권추심 활동에대한사후점검을강화하는등채권추심업무에대한관리감독절차를 강화할필요가있음  예) 녹취기록월별모니터링시수임사실통지일전발신및통화이력을점검 ⑶채무자정보과다조회점검기준및방법개선 채무자정보의오남용방지, 업무목적외조회여부등을모니터링하기위해 채무자정보(이름, 주소, 연락처등) 과다조회점검을매월실시하고있으나 - 3 - 일정조회횟수(예: 일500회X 월간영업일기준) 초과자만과다조회자로 판단하는등점검기준이단순하고, 과다조회점검기준이높아과다조회자로선정 되는자가거의없는등 형식적인점검에그칠우려가있음  18.1월19.9월점검기간(21회점검) 중과다조회자없음11회, 과다조회자1명10회 채무자정보의오남용방지모니터링등점검목적을달성하기위한실효성 있는점검기준및점검방법을마련할필요가있음  예) 채무자정보조회횟수가전월대비급증한부서및직원샘플링점검등"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1373,
+        "estimated_tokens": 111,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20210312_고려신용정보_주식회사_202000395_11_202000395_01_경영유의사항 개선 등 공개_고려신용정보",
+      "source_file": "MGMT_20210312_고려신용정보_주식회사_202000395_11_202000395_01_경영유의사항 개선 등 공개_고려신용정보.pdf",
+      "institution": "고려신용정보",
+      "date": "2021. 3. 12",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개 1. 금융회사명: 고려신용정보 2. 조치일: 2021. 3. 12. 3. 조치내용 대상 내용 기관 경영유의1건 4. 조치대상사실 가. 경영유의사항 소속위임직채권추심인의불법추심행위를방지하기위해문자 추심의경우표준화된추심문구만이용할수있도록시스템을통해 제한하고, 전화추심의경우통화내용을녹취하는등으로추심행위를 통제및관리하고있으나 위임직채권추심인이개인휴대폰을이용하여추심하는경우에는 동내부통제가무력화되어불법추심이발생할개연성이높은데도별도의 사전, 사후통제장치가없고, 소속위임직채권추심인의불법행위방지관리에취약한상황이니 개인휴대폰을이용한추심시불법행위가발생하지않도록내부통제 및사후관리방안을마련이행할필요가있음  예시) 개인휴대폰을이용하여추심가능한경우를예시하고, 개인휴대폰 추심시추심활동기록작성의무화, 채무자에게위임직채권추심인의 개인휴대폰번호노출제한등"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 431,
+        "estimated_tokens": 43,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20210614_미래신용정보_주식회사_202000603_11_경영유의사항 개선 등 공개_미래신용정보",
+      "source_file": "MGMT_20210614_미래신용정보_주식회사_202000603_11_경영유의사항 개선 등 공개_미래신용정보.pdf",
+      "institution": "미래신용정보",
+      "date": "2021. 6. 9",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개 1. 금융회사명: 미래신용정보 2. 조치일: 2021. 6. 9. 3. 조치내용 대상 내용 기관 경영유의1건, 개선사항1건 4. 조치대상사실 가. 경영유의사항 소속위임직채권추심인의불법추심행위를방지하기위해문자 추심의경우채권관리시스템을통해표준화된추심문구만이용할수 있도록제한하고, 전화추심의경우통화내용녹취등을통해추심행위를 통제및관리하고있으나 위임직채권추심인이개인휴대폰을이용하여추심하는경우에는 동내부통제가무력화되어불법추심이발생할개연성이높은데도별도의 통제장치를마련하지않고있으므로, 소속위임직채권추심인의불법행위방지관리를강화하기위해 개인휴대폰을이용한추심행위에대한내부통제및사후관리방안을 마련이행할필요가있음  예시) 외부방문활동등으로불가피하게개인휴대폰을이용하여추심시 해당내용녹취및문자메시지보관, 통화및문자내용기록의무화, 채무자에게위임직채권추심인의개인휴대폰번호노출제한등 - 2 - 나. 개선사항 미래신용정보는추심채권신규수임시채권자로부터제공받은 연락처와채권추심과정에서알게된채무자의연락처등을채권관리 시스템에입력·관리하여SMS 발송등채권추심업무에활용하고있으나, 본인확인이되지않거나, 시스템에잘못입력된연락처로채권 추심관련SMS가발송될경우채무자가아닌관계인등에게채무내용 또는신용에관한사실이알려질우려등이있으므로, 채무자의연락처가아닌것으로확인된연락처는즉시삭제처리 하는등채권추심업무를수행하는채권관리시스템등의통제기능을 개선할필요가있음  (예시1) 채권관리시스템상본인확인SMS 미발송연락처에대한추심기능차단 (예시2) 관계인의대위변제의사표시등이있는예외적인경우채무자및관계인 상호동의여부를채권관리시스템에기록·관리등"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 795,
+        "estimated_tokens": 65,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20220902_우리신용정보_주식회사_202100454_12_경영유의사항 개선 등 공개_우리신용정보",
+      "source_file": "MGMT_20220902_우리신용정보_주식회사_202100454_12_경영유의사항 개선 등 공개_우리신용정보.pdf",
+      "institution": "우리신용정보",
+      "date": "2022. 9. 2",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융회사명: 우리신용정보 2. 조치일: 2022. 9. 2. 3. 조치내용 대상 내용 기관 경영유의사항1건, 개선사항3건 ※ 경영유의사항 및 개선사항은 금융회사의 주의 또는 자율적 개선을 요구하는 행정지도적 성격의 조치임 4. 조치대상사실 가. 경영유의사항 (1) 개인휴대폰을활용한채권추심활동의내부통제강화 □우리신용정보는소속위임직채권추심인의불법추심행위를 방지하기위해전화추심의통화내용을녹취하는등으로추심 활동을통제및관리하고있으나 위임직채권추심인이개인휴대폰을추심에활용하는경우동 내부통제가무력화되어불법추심이발생할개연성이높은데도 별도의통제장치가없어 최근개인휴대폰을활용한불법추심민원이지속발생하는등소속 위임직채권추심인의불법추심방지·관리에취약한상황이므로 개인휴대폰을이용한소속위임직채권추심인의불법추심 행위가발생하지않도록내부통제및사후관리방안을 마련이행할필요가있음 - 2 -  예시) 개인휴대폰을활용하여추심가능한경우를예시하고, 예외적으로개인휴대폰을 추심에활용시, 추심활동기록작성의무화및관련증빙자료보관등 나. 개선사항 (1) 내부통제부서독립성강화 □내규내부통제규정 제5조및제29조에따르면조직과업무 분장은업무효율성과직무간의상호견제와균형이이루어지도록 설계하고, 내부통제총괄책임자(부장)의 업무 독립성을 보장하게되어있으나 내부통제총괄부서인부에서신용정보관리·보호인(◇◇ ◇◇본부장)의수행업무를담당할뿐아니라, 동업무의 일상감사를직접수행하여업무간이해상충이발생할우려가 있는등내부통제체계가부적절하므로  부가개인신용정보보호·관리업무를수행및보고하면신용정보관리·보호인의결재진행 내부통제업무의독립성및실효성이확보될수있도록조직및 업무규정을개선할필요가있음 (2) 채권관리시스템접근권한및점검업무개선 □내규전산보안관리규정 제13조에따르면시스템상고객정보가 포함된모든전산출력거래는원칙적으로차단·관리하되, 업무 처리상부득이한경우에권한을부여하여고객의개인신용정보를 조회할수있도록허용하고있으며, 고객의개인신용정보를 조회(활용)하는경우조회자의신원, 대상정보, 목적, 용도등을 기록·관리하고그조회기록에대해주기적으로적정성여부를 점검하여야하는데도  인쇄, 화면표시, 파일생성등을활용한고객의개인신용정보조회 - 3 - 일부위임직채권추심인에게채권추심업무에필요하지않은 신용정보조회권한이부여된사례가발견되고, ○○○○부·●● ●●부2개부서는과다조회등이상조회점검대상에서제외하는등 개인신용정보조회권한관리및점검이미흡하므로  채권별배분내역조회, 신용정보조회메뉴등에추심업무에불필요한출력, 엑셀저장권한  예시) 전월대비조회건수가70% 이상증가등과다조회에대한점검 개인신용정보오·남용방지를위해채권관리시스템내개인 신용정보조회적정성점검이체계적으로이루어질수있도록 채권관리시스템을개선하고점검절차를강화할필요가있음  예시) 개인신용정보조회시조회내역, 일시, 사유등이기록되도록하고이에대한 적정성점검실시 (3) 채권관리시스템문자메시지발송기능통제강화 □우리신용정보는소속위임직채권추심인이채권관리시스템을 통한채권추심업무수행시, 채무자에게정형화된문구의 문자메시지양식을사용하여발송하도록하고있으나, 법조치안내 관련문자메시지양식의경우채권추심에관한 법적인절차가확인되지않았음에도문자메시지전송이가능하고, 일부문자메시지양식의경우위임직채권추심인이임의로문구 수정이가능하여채무자에대한불법추심행위가발생할수있으므로, 법적인절차가확인되어야만법조치안내 관련양식문자 메시지전송이가능하고, 채권추심인이문자메시지양식을임의 수정할수없도록채권관리시스템을개선할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1702,
+        "estimated_tokens": 141,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20221005_나이스신용정보_주식회사_202100632_12_경영유의사항 개선 등 공개_나이스신용정보",
+      "source_file": "MGMT_20221005_나이스신용정보_주식회사_202100632_12_경영유의사항 개선 등 공개_나이스신용정보.pdf",
+      "institution": "나이스신용정보",
+      "date": "2022. 10. 5",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융회사명: 나이스신용정보 2. 조치일: 2022. 10. 5. 3. 조치내용 대상 내용 기관 경영유의사항3건, 개선사항2건 ※ 경영유의사항 및 개선사항은 금융회사의 주의 또는 자율적 개선을 요구하는 행정지도적 성격의 조치임 4. 조치대상사실 가. 경영유의사항 (1) 위임직채권추심인등록·말소업무소홀 □신용정보협회위임직채권추심인등록관리규정제11조제1항 및제3항에따르면채권추심회사는위임직채권추심인과의위임계약이 종료될경우지체없이금융위원회에위임직채권추심인등록을 말소하여야하는데도 검사대상기간(19.10.3.21.12.8.) 중위임계약이종료된15명의 위임직채권추심인에대한등록을지체없이말소하지아니하여 최장10개월동안나이스신용정보소속으로등록되어있었는바, 위임계약이종료될경우등록말소를지체없이처리하도록 프로세스를개선하고, 정기적으로점검할필요가있음 - 2 - (2) 휴대폰을이용한채권추심활동의내부통제강화 개인휴대폰을이용한채권추심활동내부통제강화 □위임직채권추심인의개인휴대폰을이용한추심행위는불법추심행위가 발생할개연성이높아적절한내부통제가필요함에도불구하고, 관련된내부통제가미흡하여개인휴대폰을이용하여법적절차를 거짓으로안내하는등불법추심행위가발생하고있고, 위임직채권추심인이소속부서를허위로기재한문자메시지를채무자에게 발송하는등개인휴대폰의이용과관련된민원이지속적으로제기되고있어 개인휴대폰을이용한불법추심행위가발생하지않도록사후관리등 내부통제방안을마련·이행할필요가있음 법인휴대폰을이용한채권추심활동내부통제강화 □회사는법인휴대폰(공용)을이용한채권추심시통화내용을자동 녹취하고, 법인휴대폰반출·입대장을기록·관리하는등업무처리를 관리하고있으나, 법인휴대폰에채무자의연락처및채무내용등이저장될수있어 위임직채권추심인에게채무자의개인신용정보가노출될우려가 있으므로, 채무자의개인신용정보보호를위하여공용법인휴대폰관련 내부통제및사후관리방안을마련·이행할필요가있음 (3) 내부감사기구독립성강화 □내규감사규정제2조및제19조에따르면감사는독립된감사 업무를수행하도록규정되어있고, 감사의직무수행을보조하기 위해내부감사조직(실)을운영하고있으나, - 3 - 실부서장및소속직원모두(3인) 사내실업무를겸직하고 있어, 내부감사업무의독립성이저해될우려가있으므로 조직및업무관련규정을개정하는등내부감사업무의중요성및 실효성을고려하여독립된감사기구를운영할필요가있음 나. 개선사항 (1) 주민등록초본파기업무개선 □내규채권추심업무규정제20조, 영업비밀보호세칙제21조등에 따라주민등록초본을채권추심업무에활용한경우, 관리책임자가 주민등록초본을폐기하고영업비밀관리대장에폐기일시등을기록 하도록하고있음에도, 영업비밀관리책임자(각부서장)는주민등록초본을폐기하고폐기 일시등을영업비밀관리대장에기록하고있지않아폐기일시및 여부파악등의사후관리가어려우며, 보호책임자(본부장)의 관리감독도이루어지지않고있어폐기결과점검등이미흡하므로, 주민등록초본폐기기록을채권관리시스템에등록·관리하도록 시스템을개선하고, 보호책임자가폐기절차의적정성등을 정기적으로점검할필요가있음 (2) 채권관리시스템운영불합리 □채권수임시채권자로부터제공받은채무자의연락처와채권추심 과정에서알게된채무자의연락처등을채권관리시스템에저장하여 채권추심문자메시지발송등채권추심업무에활용하고있으나, 본인확인이되지않거나, 채권관리시스템에잘못입력된연락처로 채권추심문자메시지가발송될경우채무자가아닌관계인등에게 채무내용또는신용에관한사실이알려질우려가있으므로 - 4 - 채권추심과정에서채무자의연락처가아닌것으로확인된 연락처는즉시삭제하고, 관계인의대위변제의사표시등에따라 관계인의연락처를시스템에저장하는경우채무자및관계인의 상호동의여부등을시스템에기록·관리할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1773,
+        "estimated_tokens": 126,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20230421_BNK신용정보_주식회사_202200545_11_경영유의사항 개선 등 공개_BNK신용정보",
+      "source_file": "MGMT_20230421_BNK신용정보_주식회사_202200545_11_경영유의사항 개선 등 공개_BNK신용정보.pdf",
+      "institution": "BNK신용정보",
+      "date": "2023. 4. 21",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융회사명: BNK신용정보 2. 조치일: 2023. 4. 21. 3. 조치내용 대상 내용 기관 경영유의사항1건, 개선사항4건 ※ 경영유의사항 및 개선사항은 금융회사의 주의 또는 자율적 개선을 요구하는 행정지도적 성격의 조치임 4. 조치대상사실 가. 경영유의사항 (1) 소속위임직채권추심인에대한관리강화 □BNK신용정보는채권추심업종사자의불법추심행위를방지하기 위한교육을수시·정기로실시하고, 채권추심활동및추심기법등 업무수행과관련된채권추심관리업무매뉴얼을교부해왔으나,  채권추심업무준수사항교육, 공정채권추심교육, 금융감독원반복검사지적사항 사례교육 등  채권추심실무매뉴얼로서, 상담스크립트및불법추심행위관련주의사항등이포함 2019년11월소속위임직채권추심인의퇴직금청구소송이후, 위임직채권추심인의근로자성을최소화하기위하여수시·정기 교육대상에서위임직채권추심인을제외하고채권추심관리업무 매뉴얼을회수하는등소속위임직채권추심인에대한통제를 단계적으로약화하고있는상황에서 - 2 - A지역채권수임확대를위한A영업부추가신설과채권수임 확대를위한채권전담조직신설을고려하는등영업조직의 강화를기업성장추진전략으로구상하고있음에따라불법추심 행위방지를위한채권추심인관리절차가소홀해질우려가있는바,  BNK신용정보의수임채권잔액대부분이, 채권으로채권비중은 낮은상황 소속위임직채권추심인의불법·부당추심행위방지를위한관리· 감독방안을합리적으로마련하여운영할필요가있음 나. 개선사항 (1) 수임사실통지절차개선 □BNK신용정보는채권자로부터채권을수임받을때연락처및 소재지등채무자정보를함께전달받고, 동채무자정보를 이용하여SMS 또는우편발송등의방법으로채권수임사실을 통지하고있으나,  위임직채권추심인은채무자정보를수임사실통지이후(SMS 발송후1영업일, 우편발송후3영업일)부터확인가능 우편으로발송한수임사실통지서가주소불명등의사유로반송된 경우그사유를확인하지아니하고반송된수임사실통지서를 폐기처리하여추심활동을실시하는등우편을이용한수임사실 통지절차가불합리하게운영되고있는바, 관련수임사실통지 절차를합리적으로개선할필요  회사는수임사실통지서를반송불요로발송하고있으며, 반송불요임에도반송된 수임사실통지서를폐기처리 - 3 - (2) 개인휴대폰을활용한추심활동관리강화 □채권추심인의불법추심행위를방지하기위해내규채권추심 업무방법서제20조(추심활동의기록관리및보고)에따라회사의 전화를이용하여통화내용(채권추심인휴대폰으로착신된경우 포함)을녹취하고있으나, 개인휴대폰으로채무자에게연락을취하는경우 내부통제가 무력화되어불법추심이발생할개연성이높은데도, 개인휴대폰을 이용한추심업무내역을채권관리시스템내상담내역에기록하지 않고, 통화내용의적정여부도점검하지않고있으므로  2022.10.31. 기준전체(65명) 위임직채권추심인중53%(35명)가개인휴대폰으로 착신하여추심업무수행중 개인휴대폰을이용한위임직채권추심인(계약직포함)의불법추심 행위가발생하지않도록관련내부통제및사후관리방안을 체계적으로마련하여운영할필요 (3) 채권추심업무점검및사후관리절차개선 (가) 추심업무점검기준개선 □채권관리시스템에기록된상담내역은본점에서점검대상자2명을 선정하여일일점검을실시하고있고, 녹취기록은각업무담당 부서장(본점, 지점)이소속채권추심인중1명을점검대상자로 선정하여매월점검하고있으나, 점검대상자선정방법, 점검대상인원수의적정성에대한검토 없이본점의점검자또는각업무담당부서장임의로선정하여 점검하고있으며, - 4 - 일부상담내역은점검하지않았음에도감사일지에적정한것으로 기록하고있고, 채권관리시스템종합상담화면내메모란에특이 사항이기재된경우도점검을수행하지않고있으므로  2022.1.1.10.31. 기간중본점에서실시하는상담내역일일점검중22회를점검하지 않았음에도감사일지에는점검하여적정한것으로기록  일부채권추심인이메모란에관계인연락처를기재한것이확인 추심업무에대한점검이실효성있게이루어질수있도록점검 대상자선정방법, 점검대상인원수및점검대상항목등점검 기준을합리적으로정비·운영할필요가있음 (나) 위임직채권추심인사후관리기준개선 □내규채권추심업무방법서제21조(민원처리) 및제25조(불법추심 정보집중·활용)에따라회사가민원등을통해채권추심업종사자에 대한불법추심사실등을확인하는경우동종사자에대한합당한 조치를취하여야하나, 위임직채권추심인의위법·부당한행위에대한위반동기(고의 중과실), 피해결과의정도등을판단하기위한제재기준이마련 되어있지않고, 불법추심피해자에대한조치(정정·사과등) 및 유사사례예방교육등의조치기준이마련되어있지않으므로 위법·부당한추심행위또는관련민원이발견되었을경우합당한 조치를취할수있도록위법행위자제재기준및사후관리기준 (피해자조치, 유사사례예방조치등)을합리적으로마련·운영할 필요가있음 - 5 - (4) 채무자개인정보관리절차개선 □채무자소재파악등추심업무에필요한채무자의주민등록초본을 채권추심인본인이동사무소에직접방문하여발급하도록하는 한편, 추심인은초본발급비용보전을위해본인판단하에해당 서류를회사에제출하고있으나, 채무자초본의제출시기, 초본관리대장등채무자의개인정보 관리를위한절차가마련되어있지않아일부초본이회수되지 않은사례가확인되었으며,  2022.10.1.10.31.기간중발급한초본(1,673건) 중, 22.10.31. 기준24명이발급한 초본380건은7일이상지연하여제출되지않고있음 회사내초본등추심업무관련서류를복사스캔할수있는 복합기를운영하면서도복사및스캔시사용내역에대한이력 관리가미흡하여채무자의개인정보가오남용될우려가있으므로, 채무자개인정보오남용을방지할수있도록주민등록초본서류 회수확인, 복사스캔사용등에대한개인정보관리절차를 마련하여이행할필요"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 2673,
+        "estimated_tokens": 196,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20230915_아이비케이신용정보_주식회사_202200546_12_경영유의사항 개선 등 공개_아이비케이신용정보",
+      "source_file": "MGMT_20230915_아이비케이신용정보_주식회사_202200546_12_경영유의사항 개선 등 공개_아이비케이신용정보.pdf",
+      "institution": "아이비케이신용정보",
+      "date": "2023. 9. 15",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항등공개안 1. 금융회사명: 아이비케이신용정보 2. 조치일: 2023. 9. 15. 3. 조치내용 대상 내용 기관 경영유의사항1건, 개선사항4건 ※ 경영유의사항 및 개선사항은 금융회사의 주의 또는 자율적 개선을 요구하는 행정지도적 성격의 조치임 4. 조치대상사실 가. 경영유의사항 (1) 추심활동에대한기록·점검강화 □ 아이비케이신용정보는 내규 채권추심업무요강에 따라 추심활동기록을채권관리시스템에기재하도록정하고있고, 내규자점감사업무기준에따라자체감사자가추심활동기록을 활용한불법추심점검을하도록하고있음에도불구하고, 소속위임직채권추심인의채권관리시스템을통한추심활동기록 현황을점검한결과채권관리시스템에추심활동기록이대부분 없는상태로서, 채권추심인이휴대폰을활용하여채권추심을하였거나, 추심활동중민원이발생하였음에도채권관리시스템에기록하지 않은사례가다수확인되고, 자체감사결과보고서에점검대상자선정내역을명시하지않고 점검결과(적정)에대한증빙을누락한사례가존재하며, 민원이 발생한추심인에대해서도추심활동기록에대한점검을실시하지 않은사례가다수확인되는바, - 2 - 채권관리시스템을통한추심활동기록및이에대한점검을철저히 하도록내부통제절차를마련할필요 나. 개선사항 (1) 수임사실통지절차개선 □아이비케이신용정보는채권자로부터채권을수임받을때연락처 및소재지등채무자정보를함께전달받고, 동채무자정보를 이용하여SMS 또는우편발송등의방법으로채권수임사실을 통지하고있으나,  위임직채권추심인은채무자정보를수임사실통지이후(SMS 발송후1영업일, 우편 발송후4영업일)부터확인가능 우편으로발송한수임사실통지서가주소불명등의사유로반송된 경우가있음에도불구하고반송사유확인및재통지여부등을 검토하지아니하고반송된수임사실통지서는폐기처리하고추심 활동을개시하는등우편을이용한수임사실통지에관한절차가 불합리하게운영되고있으므로, 관련수임사실통지절차를합리적으로 개선할필요 (2) 대위변제에관한내규개선 □관계인(제3자)이대위변제의사를표시할경우, 채권추심인은양 당사자간의대위변제동의여부(채무내용안내동의포함)를반드시 확인한후채무사실을관계인에게안내해야하나, 양당사자간의대위변제동의여부를명확히확인하지않은 상태에서채무관계인에게채무자의채무내용을알리는사례가 확인되었으므로, 관련내규상대위변제시필요한절차(동의여부 확인및관련증빙확보등)를마련하여시행할필요가있음 - 3 - (3) 채권추심업무점검및사후관리기준개선 (가) 추심업무점검기준개선 □추심업무점검담당자는내규자점감사업무기준에따라추심활동 기록을채권관리시스템등을통해점검하고있으나, 동내규에는점검대상자선정기준이없고, 점검실익이크지않은 항목만을점검항목으로정하고있으며, 유선을통한추심활동 점검은녹취모니터링대장을통해채무자본인확인여부및 채무자응대요령정도만점검하는수준에그치고있으므로  우편물·문자메시지금지문구사용여부, 수임사실통지여부등 관련내규상점검대상자선정기준및실효성있는점검항목을 마련하고, 유선을통한추심업무점검기준을강화할필요가있음 (나) 위임직채권추심인부당행위에대한조치기준개선 □위임직채권추심인의위법·부당행위에대한조치를위해위임 계약서에해지사유를명시하고있으나,  위임계약서제8조(해지사유) 신정법·채권추심법에서금지한방법으로추심활동을한경우, 채권추심 가이드라인을준수하지않은경우, 부당한목적으로채무자의채무금을대납한경우 명시 해지사유발생시부당행위에대한위반동기(고의·중과실), 피해 결과의정도등을고려한조치기준이없어실질적인위임계약 해지여부판단이곤란하므로, 위임직채권추심인의부당추심행위에대한조치기준을보다 합리적으로마련하여운영할필요가있음 - 4 - (다) 추심활동기록및유지기준개선 □내규채권추심업무요강제16조(추심활동기록)에따르면, 추심활동 중내규에명시된사항발생시그기록을채권관리시스템에유지· 관리하도록하고있으나, 동조항의기록사항은민원발생시사후기록, 채무자자산변동, 채무감면 등으로한정되어있고, 위임직채권추심인이휴대폰으로 추심활동을한경우통화, 문자메시지외에카카오톡등상용메신저는 기록필요대상에제외되어있는바, 관련내규상추심활동기록필요사항을보다실효성있는항목으로 지정하여명시하고, 기록필요대상에상용메신저(카카오톡등)를 추가하도록개선할필요가있음 (4) 채무자개인정보관리절차개선 □아이비케이신용정보는채무자소재파악등을위해채무자의 주민등록초본(이하, 초본이라함)을채권추심인본인이동사무소에 직접방문하여발급하도록하고, 채권추심인은초본발급비용 보전을위해본인판단하에해당서류를회사에제출하고있으나, 발급받은초본의회사앞제출시기, 초본관리대장운영등채무자의 개인정보관리를위한초본관리절차를마련하고있지않아일부 초본이제출되지않은사례가확인되었고,  2022.10.1.10.31. 기간중채권추심인171명이15,183건의초본을발부하였고, 2022.11.11. 기준68명이발급한초본285건은제출되지않고있음 회사내추심업무관련서류(초본등)를복사스캔할수있는복합기를 사용하면서복사이력관리를제대로하지않고있는상황인바, 채무자개인정보보호를위해초본관리절차(제출시기, 관리대장 운영등) 및추심업무관련서류의복합기사용이력관리절차등을 마련할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 2413,
+        "estimated_tokens": 178,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250214_한국평가데이터_주식회사_202200678_12_한국평가데이터__경영유의사항 등 공시",
+      "source_file": "MGMT_20250214_한국평가데이터_주식회사_202200678_12_한국평가데이터__경영유의사항 등 공시.pdf",
+      "institution": "한국평가데이터",
+      "date": "2025. 2. 14",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항등공개안 1. 금융회사명: 한국평가데이터 2. 조치일: 2025. 2. 14. 3. 조치내용 대상 내용 기관 개선사항2건 4. 조치대상사실 가. 개선사항 ⑴고객평가활용자료의보관·관리미흡 회사는고객제출자료관리관련내규에따라고객인평가대상기업이제출한자료는 전산시스템에저장하여관리토록하고있으나  고객제출자료관리지침제2조에는고객제출자료를전산시스템에저장·관리토록규정하고고객제출자료 운용기준제5조는고객제출자료의범위와활용기준을규정 조사·평가과정에서기업평가를위해SNS, 홈페이지등을통해취득한공개자료의 경우별도의저장및관리방법을정하지않고있어, 특정기업에대한평가목적으로수 집·보관된자료임에도다른기업을평가하는데중복활용된사례가다수확인되었다. 조치할사항 따라서, 회사는기업에대한조사·평가과정에서취득한자료는고객제출자료수준 으로엄격하게관리하는등기업평가자료의보관·관리를위한업무처리절차를개선하 시기바랍니다. (2) 영업업무이해상충내부심사미흡 회사는이행상충방지관련내규에따라평가일(상품생성완료일)로부터전후1개월이내 에피평가기관에대해조회상품영업업무를수행하는경우, 영업업무를수행한것으로확정되는 - 2 - 날로부터7영업일이내에이해상충여부확인을요청하여내부심사위원회에서이해상충여부 를심사토록하고있다.  이해상충방지지침및내부심사지침  1) 심사대상여부및이해상충여부확인요청기한준수여부, 2) 조회상품가입사유및최근조회상품활용이력, 3) 조회상품가입고객의최근재무상황등신용등급결정과관련한사항, 4) 기타필요한사항 그러나, 심사에필요한세부적인점검항목과적정성판단기준등이마련되어있지않아이 해상충여부심사가형식적으로만이루어질우려가있으며, 실제이해상충여부에대한확인요 청기한을준수하지않거나, 이해상충우려가있어조회상품가입이취소된건에대해서도심 사결과적정한것으로통보되는등내부심사위원회운영이미흡하다. 조치할사항 따라서, 회사는영업업무와관련된이해상충에관한구체적인심사항목및기준등을 마련하여영업업무수행과정에서이해상충이발생하지않도록내부심사를강화하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 973,
+        "estimated_tokens": 70,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250428_빌리언폴드자산운용_202300690_12_경영유의사항 등 공개안__빌리언폴드자산운용",
+      "source_file": "MGMT_20250428_빌리언폴드자산운용_202300690_12_경영유의사항 등 공개안__빌리언폴드자산운용.pdf",
+      "institution": "빌리언폴드자산운용",
+      "date": "2025. 4. 28",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항등공개안 1. 금융회사명: 빌리언폴드자산운용 2. 제재조치일: 2025. 4. 28. 3. 제재조치내용 제재대상 제재내용 기관 경영유의사항2건 4. 제재대상사실 가. 경영유의사항 (1) 정보교류차단관련내부통제기준내실화 빌리언폴드자산운용(이하회사)는타자산운용사와투자자문 계약을2021.11.23.부터체결하여회사의주식형펀드의포트폴리오 구성내역중일부정보를타자산운용사에제공하였으나, 회사내규(내부통제기준)에계열회사를포함한제삼자의범위를 구체적으로정하고있지않고있고, 同정보가정보교류차단대상 인지여부에대해사전검토를실시하지않은사실이있으므로 향후대외정보교류차단대상제삼자범위를명확히정의하고, 정보교류차단대상인지여부가모호한경우담당임원의사전 검토및승인을득할필요가있음 (2) 펀드의대출계약시이자율제한관련검토철저 여신금융기관(펀드포함)이대출을하는경우그명칭이무엇이든 대출과관련하여받는것은모두이자로보고, 법정최고이자율을 초과하여이자를받아서는아니되는데도 회사는2개의블라인드펀드를설정및운용하며투자대상기업과 신주인수권부사채인수계약을체결하는과정에서 이자율제한위반가능성이있어블라인드1호·2호펀드의사채 인수계약서변경조치를취한바있으므로, 향후펀드의대출심사시각종수수료를포함하여펀드가수취하는 총이자율이대부업법에따른최고이자율을초과하는지여부에 대한검토를철저히할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 642,
+        "estimated_tokens": 44,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250428_주식회사_리딩플러스_202400800_11_리딩플러스_경영유의사항_등_공개안_F",
+      "source_file": "MGMT_20250428_주식회사_리딩플러스_202400800_11_리딩플러스_경영유의사항_등_공개안_F.pdf",
+      "institution": "주식회사리딩플러스",
+      "date": "2025. 4. 28",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항 등 공개안 1. 금융기관명: 주식회사리딩플러스 2. 제재조치일: 2025. 4. 28. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의사항1건 4. 제재대상사실 가. 경영유의사항 (1) 동산담보연계대출(의류) 관련업무처리절차강화 온라인투자연계금융업자는연계대출채권취급시담보물의담보가치를확인하고, 대출금상환시까지동담보물에대하여선량한관리자의주의로서이를관리하여야한다. 하지만회사는2019.9.5.경부터취급한동산담보연계대출의동산담보물인의류 실사과정에서, 창고업자가제시하는일부담보물만확인하는등점검수준이미흡하였고, 창고실사에대한점검결과를작성하는방법이구체적이지않아해당내용으로는보관 중인담보물의무단반출사실등을적시에인지대응하지못하여담보물을관리하지 못할우려가있다.  조치할사항 따라서회사는동산담보연계대출취급시담보물에대한실효성있는현장점검을 실시하고, 점검결과확인된사항을구체적으로작성하여담보물의실재성을상시관리 할수있는체계를강화하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 471,
+        "estimated_tokens": 39,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250509_에이아이파트너스자산운용_주식회사_202300765_13_에이아이파트너스자산운용_경영유의사항 공개안",
+      "source_file": "MGMT_20250509_에이아이파트너스자산운용_주식회사_202300765_13_에이아이파트너스자산운용_경영유의사항 공개안.pdf",
+      "institution": "에이아이파트너스자산운용",
+      "date": "2025. 5. 9",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항공개안 1. 금융회사명: 에이아이파트너스자산운용 2. 제재조치일: 2025. 5. 9. 3. 제재조치내용 제재대상 제재내용 기관 경영유의사항1건 4. 제재대상사실 가. 경영유의사항 (1) 고유재산운용절차강화 에이아이파트너스자산운용의고유재산운용규정에의하면, 고유재산 운용담당자는고유재산운용계획을수립하여위험관리책임자의확인을 득하여야하며, 구체적투자방법에대해위원회의사전승인을득한후 운용하여야하는데도, 대표이사가고유재산을운용하면서채권, SPC 투자혹은보유주식의 손실한도초과건등에대하여만고유재산심의위원회를거쳤으며(검사 대상기간중9회), 상장주식매매시(연평균160회)에는운용계획, 개별종목선정등과관련 하여위원회사전승인없이대표이사개인의의사결정에따라운용한 사실이있다. 조치할사항 - 2 - 향후고유재산운용관련내부통제제도가작동할수있도록대표이사가 아닌직원에게고유재산운용업무를분장하고, 준법감시인이심의위원회 운영절차를모니터링하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 477,
+        "estimated_tokens": 47,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250509_현대차증권주식회사_202400497_14_현대차증권_개선사항 공개안",
+      "source_file": "MGMT_20250509_현대차증권주식회사_202400497_14_현대차증권_개선사항 공개안.pdf",
+      "institution": "현대차증권",
+      "date": "2025. 5. 9",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항 등 공개안 1. 금융회사명 : 현대차증권 2. 조치일 : 2025. 5. 9. 3. 조치내용 대상 내 용 기 관 개선사항 4건 4. 조치대상사실 가. 개선사항 (1) 고객확인 업무 체계 미흡 회사는 내규 자금세탁방지 및 공중협박자금조달금지에 관한 세부업무에 관한 지침에 따라 고객확인 업무 지침을 작성하고 고객확인의무를 이행하고 있으나 아래와 같이 미흡한 사항이 있다. 고위험 고객 등에 대해 강화된 고객확인을 수행하면서 해당 고객에 대해 거래목적 및 자금원천 등 추가정보를 확인하고 있으나, 고객이 추가정보를 기타로 선택하는 경우 기타에 대한 세부내용을 전산상 필수 입력사항으로 운영하지 않고, 고객확인 재이행시 강화된 고객확인 대상 고객인 경우 추가정보를 전산상 필수로 입력하도록 하는 절차를 마련하지 않아 강화된 고객확인이 실질적으로 이루어지지 않을 우려가 있다. 조치할 사항 따라서 회사는 강화된 고객확인시 추가정보를 기타로 선택한 경우 세부내용 및 고객 확인 재이행시 추가정보를 필수로 입력하도록 전산시스템을 개선하고 추가정보 확인이 누락되지 않도록 직원교육을 강화하시기 바랍니다. 법인 계좌개설시 계좌개설 신청서 및 고객거래 확인서 등을 징구하여 법인의 신원을 확인하는 등 법인에 대한 고객확인을 수행하고 있으나, A부문에서 계약 등 계좌개설 없는 금융거래로 인해 고객확인 의무를 이행하는 경우 별도의 세부 업무지침 및 고객확인 양식을 마련하지 않고 있어 담당부서에 따라 고객확인 업무가 일관되게 수행되지 않을 우려가 있다. 조치할 사항 따라서 회사는 계좌개설 없는 금융거래에 대해 일관된 고객확인 업무를 수행할 수 있도록 세부 업무지침 및 고객확인 양식을 마련하시기 바랍니다. 자금세탁행위와 관련된 위험도에 따른 고객확인을 위해 위험평가모형을 운영중으로 자금세탁 위험평가를 위해 고객을 신규고객과 기존고객으로 구분하여 각각에 대해 다른 모델을 적용하여 평가하고 있음에도, 신규고객과 기존고객을 구분하는 기준이 불명확하여, 기존고객 또는 기존고객의 추가 거래에 대해 신규고객의 위험평가 모델을 적용하는 등 고객의 자금세탁 위험평가의 일관성이 결여될 뿐 아니라 부적정하게 평가된 위험에 따라 고객확인을 할 우려가 있다. 또한 자금세탁 위험평가모형의 위험요소 중 국가위험을 비정기적으로 변경 반영하고 있으나 그밖에 위험평가모형 평가결과의 적정성, 평가세부요소 및 가중치의 적정성 등 위험평가모형 운영에 대한 주기적인 점검을 실시하지 않고 있다. 조치할 사항 따라서 회사는 고객위험평가 결과 및 고객확인의 정합성 제고를 위해 자금세탁 위험 평가 대상 고객을 정확히 구분하여 내규에 반영하고, 위험평가모형에 대한 주기적인 점검 절차를 마련하시기 바랍니다. (2) 사기이용계좌 거래 모니터링 미흡 회사는 고객의 거래 등에 대하여 지속적으로 모니터링할 수 있는 의심스러운 거래 모니터링 체계를 수립 및 운영하고 있으나, 지급정지 등록된 사기이용계좌에 대한 의심스러운 거래 모니터링을 하면서 체계적인 모니터링 절차를 마련하지 않고 자금세탁방지 업무 담당자가 사기이용계좌 등록 시스템을 통해 임의로 검토하는 등 사기이용계좌에 대한 의심스러운 거래 모니터링 절차가 미흡하다. 조치할 사항 따라서 회사는 사기이용계좌 관련 의심스러운 거래 추출기준과 체계적인 모니터링 절차를 마련하여 사기이용계좌로 확정된 계좌에 대한 의심스러운 거래 모니터링의 실효성을 제고하시기 바랍니다. (3) 신상품 등 위험평가 운영 미흡 회사는 내규 자금세탁방지 및 공중협박자금조달금지에 관한 세부업무에 관한 지침에 따라 신규 상품 및 서비스를 출시하기 전 자금세탁 위험평가를 실시하고 있으나, 신규 상품 및 서비스 위험평가 체크리스트 및 평가대상에 대한 정의, 위험평가 생략 사유 등 위험평가의 기준과 절차를 구체적으로 규정한 업무 지침서가 마련되어 있지 않아 담당자에 따라 위험평가가 주관적으로 수행될 우려가 있고, 또한, 위험평가 결과 고위험으로 위험등급이 산정되었음에도 위험요소를 관리·경감 하는 노력이나 별도의 검토절차 없이 출시하는 등 신규 상품 및 서비스 사전위험평가 업무절차의 운영이 미흡하다. 조치할 사항 따라서 회사는 신규 상품 및 서비스 위험평가 체크리스트 및 평가대상의 정의, 위험평가 생략사유에 대한 구체적인 판단기준 등을 마련하고, 실효성 있는 위험평가가 이루어질 수 있도록 위험평가 결과가 고위험인 경우 위험요소를 관리·경감할 수 있는 업무절차를 마련 하시기 바랍니다. (4) 자금세탁방지 업무 내규 운영 미흡 회사는 내규 자금세탁방지 및 공중협박자금조달금지에 관한 세부업무에 관한 지침을 마련하여 운영 중이나 다음과 같이 일부 미흡한 사항이 있다. ①가상자산사업자 고객에 대한 고객확인 절차를 내규에 마련하여 운영하고 있으나, 가상자산사업자에 대한 구체적인 고객확인 필요사항 및 거래거절·종료 절차 등이 반영되지 않아 해당 활동이 임의로 수행될 우려가 있다. ②거래 모니터링을 통해 식별된 비정상적인 거래행위 또는 유형을 분석하는 체계를 마련하고 있으나 의심스러운 거래 및 고액 현금거래 관련 보고제외 사유에 대한 적정성 점검 절차를 마련하지 않아 지속적인 거래 모니터링 절차가 임의로 수행될 우려가 있다. ③비대면 거래에서의 고객확인 관련하여 내규에 절차와 방법을 마련하고 있으나 본인 인증 및 실명확인 등에 관한 사항만을 정하고 있어 비대면 거래와 관련된 자금세탁등의 위험에 대한 대처가 미흡할 우려가 있다. ④내규에 고객위험평가에 관한 사항을 포함하여 운영하고 있으나 위험평가 절차 및 방법 등이 구체적으로 기재되어 있지 않아 고객의 자금세탁위험이 적정하게 식별 및 평가되지 못할 우려가 있다. 조치할 사항 따라서 회사는 다음과 같이 자금세탁방지 업무의 구체적 업무처리 절차와 방법을 내규에 반영하여 충실히 이행하시기 바랍니다. ①가상자산사업자 고객에 대한 고객확인 사항, 거래거절·종료 절차 및 방법 등 가상 자산사업자 고객에 대한 고객확인 이행시 준수해야 할 구체적인 절차와 방법을 내규에 반영하시기 바랍니다. ②의심스러운 거래 및 고액 현금거래 관련 보고제외 사유에 대한 적정성을 주기적으로 점검보고하는 절차를 마련하여 운영하시기 바랍니다. ③비대면 거래와 관련하여 자금세탁등의 위험에 대처할 수 있도록 비대면 거래에서의 고객확인 관련 구체적인 업무처리 절차와 방법을 내규에 반영하여 운영하시기 바랍니다. ④고객위험을 식별하고 평가함에 있어 고객의 자금세탁행위등의 위험도가 적정하게 반영될 수 있도록 고객위험평가에 관한 구체적인 절차와 방법을 보완하여 내규에 반영 하시기 바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 3267,
+        "estimated_tokens": 735,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250512_주식회사_페블즈자산운용_202400227_12_페블즈자산운용_경영유의사항 공개안",
+      "source_file": "MGMT_20250512_주식회사_페블즈자산운용_202400227_12_페블즈자산운용_경영유의사항 공개안.pdf",
+      "institution": "페블즈자산운용",
+      "date": "2025. 5. 12",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항공개안 1. 금융회사명: 페블즈자산운용 2. 제재조치일: 2025. 5. 12. 3. 제재조치내용 제재대상 제재내용 기관 경영유의사항1건 4. 제재대상사실 가. 경영유의사항 (1) 자문계약체결및운영에관한내부통제강화필요 페블즈자산운용은2020.1.1. 최대주주의관계인甲과경영자문계약을 체결한뒤20.2월24.2월기간중약7억원의자문료를지급한사실이있다. ※ 자문활동일지를매월작성·관리(프로젝트명, 활동내용, 진행상황등)하고있으나, 성과에대한검토, 계약갱신에대한심사없이계약을유지하는등내부통제미흡 조치할사항 자문기관선정과관련한내규, 자문활동에대한합리적평가절차를마련 하여자문계약체결및운영에관한내부통제를강화하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 360,
+        "estimated_tokens": 37,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250514_애큐온저축은행_202400705_11_250526_애큐온저축은행 제재내용_경영유의_ 공개 표준안 F",
+      "source_file": "MGMT_20250514_애큐온저축은행_202400705_11_250526_애큐온저축은행 제재내용_경영유의_ 공개 표준안 F.pdf",
+      "institution": "애큐온저축은행",
+      "date": "2025. 5. 14",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항 등 공개안 1. 금융기관명: 애큐온저축은행 2. 제재조치일: 2025. 5. 14. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의사항4건 4. 제재대상사실 가. 경영유의사항 (1) 경영계획에대한이사회의총괄기능강화 애큐온저축은행(이하회사)은이사회에서2024년당기순이익목표등을포함한 경영목표를의결한이후, 대출채권대손충당금추가적립및환입예상, 비용절감계획을 반영하여2024년당기순이익목표를상향조정하였음에도이사회가수정된경영목표를 별도로검토하도록하지않고2024년중분기별경영실적보고시에수정된경영목표 대비이행실적을보고하는절차로갈음한사실이있으므로, 회사는앞으로경영계획상당기순이익등경영목표를일부조정할경우이사회에 별도안건으로부의하여검토하도록하는등저축은행경영목표결정에관한이사회의 총괄감시기능을강화하시기바랍니다. (2) 퇴직연금관련유동성관리강화 검사기준일현재회사는총수신대비퇴직연금비중을전년동기대비크게축소 하였으나여전히높은수준이며, 퇴직연금감축분을수시입출식요구불예금위주로충당함에따라, 검사기준일 현재총수신대비요구불예금비중이전년동기대비크게증가하는등자금조달구조의 단기화로유동성위험이증가하였으며, 퇴직연금만기가특정시기에집중되어있고, 퇴직연금사업자중상위5개사업자에대한편중도도높은수준이다. 따라서회사는퇴직연금의수신비중축소및유동성위험의확대방지를위해 장·단기수신비중을관리하시기바랍니다. 또한, 퇴직연금등수신의만기분산을위한 정책을수립하고, 사업자별취급한도를조정하는등실효성있는유동성관리방안을 마련이행하시기바랍니다. (3) 환매조건부채권을통한건전성지표관리불합리 회사는월중에여유자금을MMF 등단기금융상품에투자하다가월말에는국채, 통안채등을담보로하는단기환매조건부채권(RP)에자금을운용하여위험가중자산을 축소하고총여신을증가시키는방법으로BIS기준자기자본비율, 고정이하여신비율등 건전성지표를관리하고있다. 이에따라검사기준일현재회사는만기2일인환매조건부채권(RP)을매수하여 BIS기준자기자본비율증가및고정이하여신비율감소등건전성지표가일시적으로 개선되는효과가발생하였으며, 이러한방식의지표관리는저축은행의건전성을저해할 우려가있다. 따라서회사는앞으로단기환매조건부채권(RP)매매에대한합리적운용기준을 내규에반영하는등여유자금운용업무기준을마련하시기바랍니다. (4) 금융사고예방관련내부통제강화 (가) 차주앞PF 대출잔액통지절차강화 상호저축은행중앙회가마련한금융사고예방을위한저축은행내부통제개선방안에 따르면, 금융사고예방대책중하나로저축은행은차주에게PF대출잔액을정기적으로 통지하는절차를마련하여야한다. 그러나회사는검사착수일현재차주에게PF대출잔액을통지하는절차를내규에 반영하지않았고, 한도성PF대출을실행한일부차주에게만대출잔액을통지하고브릿지성 PF대출등은통지대상에서제외하였다. 따라서회사는앞으로PF대출잔액통지절차를내규에반영하고금융사고발생 위험이높은PF성대출전체차주에게정기적으로대출잔액을통지하시기바랍니다. (나) 순환근무제실효성제고 내규금융사고예방지침 및순환근무제운영매뉴얼 등에의하면회사는금융 사고예방을위해임직원에대한순환근무를실시해야함에도,  영업점동일점포3년, 본점5년(순환근무가불가피할경우대표이사승인을통해예외를허용) 검사대상기간중직원의실질적인직무순환없이소속팀명변경을순환근무로 인정하였고, 동일영업점에서장기근무한직원에대해예외승인없이순환근무를 실시하지않은사례가있으므로, 회사는실질적인직무순환이이루어지도록순환근무제를엄격히시행하고, 인력 운용상순환근무가불가피한경우예외승인절차를거치는등순환근무제의실효성을 제고하시기바랍니다. (다) 중요증서·실물에대한접근통제 상호저축은행중앙회가마련한금융사고예방을위한저축은행내부통제개선방안에 따르면중요증서·실물은담당자를지정하여금고에보관하고사용및반납이력을기록· 관리하여야함에도, 회사는2024.2.20.2024.11.28. 금고에보관하고있는중요증서에대한반출입관리 대장을작성하지않고있어중요증서의임의사용등으로인한사고위험에노출될우려가 있으므로,  법인인감증명서, 보안카드, 인감도장, OTP 등 회사는앞으로금고에보관하고있는중요증서에대한반출입이력을철저히관리 하는등중요증서에대한접근통제를강화하시기바랍니다. (라) 고객및거래처의이해상충방지대책강화 회사내규윤리강령 등은고객과의이해상충방지를위해임직원및거래처간 직·간접적금전거래를금지하고있음에도, 회사는검사착수일현재임직원과거래처간의 금전거래를예방·적발하기위한절차를마련·운영하고있지않으므로, 회사는앞으로임직원저축은행계좌등에대한모니터링을강화하는등거래처와의 금전거래를방지하기위한실질적인대책을마련·운영하시기바랍니다. (마) 누적송금액등에대한결재절차강화 상호저축은행중앙회가마련한금융사고예방을위한저축은행내부통제개선방안에 의하면일정기간누적송금액기준의전결권을신설하여전결권자의분할송금및 임의송금을억제하는한편, 지점장(부서장) 부재시하위직급자가대결한사항에대해 지점장사후결재를의무화하도록하고있다. 회사는검사착수일현재본점의경우누적송금액기준전결권을운영하지않고 있으며, 지점의경우개별송금액과누적송금액의전결권자를동일하게설정하는등 누적송금액전결제도를형식적으로운영하는한편, 하위직급자가대결한사항에대한 상위직급자의사후결재절차를마련하고있지않다. 회사는본점의누적송금액전결제도를신설하고, 지점의누적송금액전결권자를 개별송금액전결권자의상위직급자로설정하는한편, 하위직급자가대결한사항에 대한사후결재를의무화하는등전결절차를강화하여운영하시기바랍니다. (바) 내부회계관리제도운영의실효성제고 회사내규내부회계관리지침 등에따르면회사는회계정보를작성·공시하기 위해필요한통제항목을설계하여내부회계관리제도를실효성있게운영해야하고, 외부감사인은내부회계관리제도검토결과를공시해야함에도, 회사는부정위험등회계정보왜곡방지를위한통제항목을내부회계관리항목에 반영하지않고있어부정위험방지를위한중요내부통제가외부감사인검토대상에서 누락될우려가있으므로, 회사는앞으로부정위험등재무제표에대한회계정보왜곡방지를위해내부회계 관리항목에통제항목을반영하여외부감사인의검토를받는등금융사고예방통제에 대한점검절차를체계화하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 2826,
+        "estimated_tokens": 155,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250515_삼성증권주_202200201_12_삼성증권 수시검사_공시__경영유의",
+      "source_file": "MGMT_20250515_삼성증권주_202200201_12_삼성증권 수시검사_공시__경영유의.pdf",
+      "institution": "삼성증권",
+      "date": "2025. 5. 15",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융기관명: 삼성증권 2. 제재조치일: 2025. 5. 15. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의2건 4. 제재대상사실 가. 경영유의사항 (1) 신규출시상품에대한심사절차강화 신상품의판매여부결정시, 상품위원회의심의를거치도록하고있으나, 새로운 투자구조의상품이라도투자대상자산운용전략등이기존상품과유사하면신상품으로분류 하지않고동위원회의심의를생략하고있는바,  예) 동일펀드내하위클래스를독립적으로운용하는형태등 새로운위험요소가내재된상품임에도상품위원회심의절차없이출시되지않도록 실효성있는신상품판단기준을마련하여운영할필요가있다. 신상품검토시수수료수준의적정성은고려하고있으나, 보수체계에대한점검 절차미흡으로비합리적보수구조의상품이판매된사례가있으므로,  예) 단순히매입보유하는전략임에도, 연3%의운용보수와펀드수익의50%의성과보수를운용사에지급 보수체계적정성점검절차를강화하여투자자에게불리한보수구조의상품이출시 되지않도록유의할필요가있다. - 2 - (2) 비정형신탁상품취급시통제절차강화 투자기간이비정상적으로길거나, 운용전략보수구조등이비합리적인신탁상품을 고객요청등에따라설정하는경우, 동신탁거래가부정한목적으로이용될가능성을파악 하고이를통제하는절차가마련되어있지않으므로, 신탁의구조및거래목적등을확인하여의심거래여부등을판단하고거래를 거절할수있는절차를마련하여, 해당신탁이부정한목적으로이용되지않도록유의 하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 696,
+        "estimated_tokens": 60,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250515_현대카드_202400721_11_250523 _현대카드_ 제재내용 공개_경영유의사항 등_F",
+      "source_file": "MGMT_20250515_현대카드_202400721_11_250523 _현대카드_ 제재내용 공개_경영유의사항 등_F.pdf",
+      "institution": "현대카드",
+      "date": "2025. 5. 15",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융기관명: 현대카드 2. 제재조치일: 2025. 5. 15. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의사항8건, 개선사항15건 4. 제재대상사실 가. 경영유의사항 (1) 카드론건전성및이용한도관리강화 회사의2024년9월말카드론잔액은전년말대비증가하였는데특히카드론 취급저신용자의비중이증가추세이며저신용자의연체율은카드론전체연체율 보다O배높은수준이다. 2024년9월말카드론잔액중다중채무자의잔액은전년말대비증가 하여전체의O%를차지하고있다. 신용카드발급및이용한도부여에관한모범규준제12조에따르면 회원의신용도등에따라대출가능금액을차등화하여야하는데 회사는신용도와직접적인관련이없는사유로카드론대출가능금액을 산정한사례가있는등리스크관리가미흡한상황이다. - 2 - 조치할사항 회사는저신용자및다중채무자대상카드론취급현황및연체율등 건전성현황을면밀히모니터링하고, 카드론한도산출시신용도, 상환능력등을 고려하는등한도관리를강화하시기바랍니다. (2) 리볼빙취급및사후관리강화 회사의2024년9월말결제성리볼빙이월잔액은전년말대비O% 증가 하였는데, 리스크관리강화등으로전년말까지감소하다가2024년2분기이후 증가세로전환하였다. 2024년9월말기준신규리볼빙약정회원기준으로최소결제비율10%를 적용받는비중은O%로전년말대비O%p 급증하였다. 향후약정회원중저신용자비중이증가하거나최소결제비율10%를적용 받는회원이증가할수록결제능력이급격히악화되는경우부실화될가능성이있다. 조치할사항 회사는결제성리볼빙저신용자비중및최소결제비율10%를적용받는 회원이증가하는경우상환능력악화가능성이있으므로리스크관리를강화 하시기바랍니다. (3) 금융소비자보호담당임원의독립성강화 회사는내규를통해금융소비자보호총괄기관의업무를수행하는금융 소비자보호담당임원의자격요건, 업무수행의독립성보장, 임기등전반적인 기준및절차를마련하여운영하고있다. 이에따라금융소비자보호담당임원은금융소비자보호총괄기관의업무를금융 상품개발및판매업무로부터독립하여수행하고있으나, 계열사의금융소비자 보호담당임원을겸직하고있어업무의독립성및충실성측면에서회사의 소비자보호총괄업무를충실히수행하기어려워금융소비자보호 기능이 약화될우려가있다. - 3 - 조치할사항 회사는금융소비자보호담당임원(CCO)이금융소비자업무를독립적으로 충실히수행할수있도록업무운영방식을개선하시기바랍니다. (4) 금융소비자보호내부통제체계강화 회사는내규를통해금융소비자보호관련법령준수를위한금융소비자 보호총괄기관, 업무담당직원의자격요건, 업무수행기준및절차등전반적인 업무체계를마련하여운영하고있다. 하지만동내규에금융소비자보호관련조직을실제업무수행부서가아닌 금융소비자보호총괄기관으로명시하고있고, 내부통제기준준수여부에대한 점검및위규사실확인시조치기준등세부업무처리절차가마련되어있지 않으며, 금융소비자보호업무담당직원의자격요건을충족하지않으나예외적으로 금융소비자보호담당임원이전문지식및실무경험을갖춘것으로인정하는자를 담당직원으로임명하는예외적인경우담당직원으로임명하기위한예외승인 절차가부재하고, 금융소비자보호내부통제위원회를서면으로개최하는경우회의 소집과동일한효력을갖기위한서면협의과정이마련되어있지않는등금융 소비자보호업무에대한구체적지침이미흡한상황이다. 조치할사항 회사는금융소비자보호업무와관련하여업무수행조직구조및세부 업무처리절차, 담당직원예외승인절차등구체적업무처리기준을마련 하고관련내규에반영하여운영하시기바랍니다. (5) PLCC(상업자표시전용카드) 상품관련마케팅비용관리강화 회사는2024년9월말현재O개제휴사와계약을체결하여PLCC상품을 제공하고있으며이는전체카드회원의O%를차지하고있고 PLCC 계약체결시회사와제휴사간포인트비용분담률및유효(사용)기간 (110년) 등을정하고있는데 - 4 - 회사가포인트비용의일정수준(예: 100%)을분담하는건이많음에도 수익성분석이적절히이루어지지않아마케팅비용(제3자포인트비용)이과다 지급될소지가있다. 조치할사항 회사는마케팅비용이과다하게지급되지않도록PLCC 계약시제휴사와의 포인트비용분담률을합리적으로반영하고PLCC상품의수익성분석을강화 하시기바랍니다. (6) IT조직및인력운용체계정비 ①AI 등新사업조직의IT운영·통제적용에관한사항 회사는AI 등新사업조직을IT직원과업무직원이함께소속되어전산 시스템을개발·운영하는애자일(Agile) 방식으로운영하면서동조직에대한IT 감사를실시하지않고, IT자체감사등의상시감시체계를마련하지않았으며, IT내규등을명시적으로적용하지않아IT내부통제및사고예방활동이미흡할 우려가있다. 조치할사항 회사는전산시스템을개발운영하는부서에대해서는CIO와협업하여IT 부서에준하는내부통제절차를수립운영하고, 애자일부서에대한IT감사, IT 자체감사및상시감시방안을내규에마련하여운영하시기바랍니다. ②적정한업무범위및책임을고려한인력운용에관한사항 회사는대규모IT 조직인력을운영하는데도감사실인력O명이IT감사 업무를전담하고있고, 회사의정보보호최고책임자는계열사및자회사의정보 보호최고책임자및신용정보관리보호인업무까지겸직하고있어업무범위및 책임이과도하게집중되고내부통제활동이부실화될우려가있다. 조치할사항 회사는감사실의IT감사인력을확충하고정보보호최고책임자산하운영 조직을효율화하는등개선방안을마련하여시행하시기바랍니다. - 5 - (7) IT자체감사운영강화 회사는내규에따라IT자체감사인이점검대상방법기간결과등을명시한 구체적인자체감사계획을수립하고, 자체감사실시후그결과를소속실·본부장에게 보고하고평가받아야하는데도, IT자체감사계획수립시구체적인내용을기재하지않고감사항목만을 명시하고있으며, 감사결과는결과위주로만간략하게기재하고IT자체감사를 다소형식적으로수행하고있어주요IT내부통제준수여부등이적정하게점검되지 않을우려가있다. 조치할사항 회사는IT자체감사절차, 범위, 점검항목등을구체적으로마련하고, IT 자체감사를철저하게수행하기위한방안을마련하여시행하시기바랍니다. (8) 제휴사고객정보관리시스템통제강화 ①현대카드의정보수집및활용에관한사항 회사는O개사와PLCC 관련정보공유제휴를맺고고객이결제한상품명 등의상품정보를제공받고있으나, 제휴사가고객이동의한정보만제공하는지검증하는절차를마련하지않았 으며, 이로인해제휴사의오류또는실수로미동의정보가수신될경우고객의 상품정보를장기간무단수집및활용할우려가있다. 조치할사항 회사는제휴사의제공정보에대하여고객동의여부를확인할수있는 교차검증절차를마련하시기바랍니다. ②현대카드의정보제공에관한사항 회사는고객으로부터정보제공동의를받고제휴O개사에결제금액등 결제관련정보를제공하고있으며고객동의여부를고객정보제공동의관리 시스템에저장·관리하고있으나, - 6 - 동관리시스템은최종발급한신용카드의동의여부만저장·관리하고있어, 동일한제휴사에대해복수의신용카드를발급받은고객이카드별로정보제공 동의를다르게하는경우, 마지막발급받은신용카드의동의여부에따라미동의한 신용카드의결제관련정보가제휴사에제공될우려가있다. 조치할사항 회사는고객의정보제공동의가신용카드별로관리되도록관련시스템을 보완하는등개선방안을마련하여, 미동의고객정보가수집되거나제휴사에제공되지 않도록관리체계를강화하시기바랍니다. 나. 개선사항 (1) 카드대출금리산정체계미흡 ①기준가격산정절차불합리 카드대출금리체계의합리성제고를위한모범규준제5조에따르면 기본원가는신용원가, 업무원가, 조달원가및자본원가등으로구분하여합리 적인기준에따라체계적으로산정하며, 기준가격은기본원가에목표이익률등을감안하여가격등급및대출상품별로 산정하여야한다. 하지만회사는내규에기본원가가일정수준이상변동한경우에만기본 원가를조정할수있다고규정하고있어 차기가격심사위원회개회전기본원가항목의변동이급격하게변동하지 않는경우에는기본원가상승분을목표이익률에가산하는방식으로기본원가를 불합리하게산정한사례가있다. 조치할사항 회사는앞으로조달원가등기본원가가변동되는경우기본원가의항목별 원가에각각구분하여반영하도록내규를개선하시기바랍니다. - 7 - ②전략마진운영한도검토미흡 내규에따르면목표이익률구성항목인전략마진의해당연도운영한도는 매년1분기가격결정시정하도록되어있다. 하지만회사는2023년및2024년에는가격심의위원회안건에구체적인 근거를제시하지않는등전략마진운용한도의적정성에대해별도의검토없이 2022년1분기한도를그대로적용하였다. 조치할사항 회사는앞으로매년1분기에전략마진을설정하고이후매분기전략마진의 적정성에대해검토하고그결과를가격심사위원회에보고하시기바랍니다. (2) 카드대출금리역전관련사후관리미흡 카드대출금리체계의합리성제고를위한모범규준제16조에따르면 내부심사위원회는대출금리, 연체이자율산출및운영의적정성을주기적으로 점검하고필요시적절한조치를취해야한다. 하지만회사는카드론금리할인마케팅을실시하는과정에서2022년2분기 금리할인마케팅대상확대로인한금리역전이발생하였으나 별도의조치를취하지않아신용도가높은차주가낮은차주보다더높은 금리를적용받는경우가발생하였다. 조치할사항 회사는앞으로금리역전발생시발생원인에대한분석및대응조치를 적시에실시하고, 금리역전징후 인지시가격심사위원회에대응방안을신속히 보고하는등운영방식을개선하시기바랍니다.  예: 등급간금리간격(하위등급의운영가격 상위등급의기준가격)이일정수준이하등 (3) 상품심의위원회운영미흡 내규에따르면신규상품출시후일정기간경과시모니터링을실시하여 운영현황(외형, 비용효율성등)을분석하고심의위원회에보고하여야하는데 - 8 - 회사는 상품심의위원회에서 예상손익만을 심의함에 따라 손익분석이 제한적으로이루어졌으며실제손실이발생한상품에대하여대응방안을보고 하지않은사례가있었다. 조치할사항 회사는앞으로상품심의안건에실제손익을포함하여심의하고, 손실발생시 대응방안을마련보고하는등상품심의위원회운영절차를개선하시기바랍니다. (4) 차량특별한도운영미흡 신용카드발급및이용한도부여에관한모범규준제9조에따르면 특별한사정이있는회원에게한시적으로이용한도를증액할수있어 회사는차량구매등일시적으로이용한도가부족한회원을대상으로 영업부서재량으로특별한도를부여하는영업추천제를적용하여한도를 증액하고있다. 하지만회사의영업추천제대상중대부분을차지하는일정금액이하의 한도증액은담당자가전결가능하여자의적으로한도가책정될우려가있다. 조치할사항 회사는앞으로차량특별한도가과도하게산정되지않도록영업추천제 대상중일정금액이하의전결권을합리적으로조정하시기바랍니다. (5) 수익성분석위원회운영미흡 ①수익성분석관련내규의구체성부족 내규에따르면수익성분석위원회는대형가맹점판촉수익성검토를해야 하고마케팅행사에따른수익성분석자료를수익성분석위원회에보고하고 부진행사를선정하도록되어있다. - 9 - 하지만회사는대형가맹점에대하여회사와공동판촉에해당될경우에만 수익성검토를하고있으며, 부진행사의정의등구체적인기준이마련되어있지 않다. ②수익성분석관련내규체계불합리 내규에따르면기존상품대상으로단일마케팅행사비용이O원이상에 대해수익성분석을실시하도록하고있으나 다른내규에서는단일행사비용기준으로더큰금액인□원이상의 마케팅행사를대상으로수익성과관련된주요사항을심의하도록정하고있어 □원미만의마케팅행사비용에대하여는수익성심의가이루어지지 않고있음에따라시의적절한분석이이루어지지않을우려가있다. 조치할사항 회사는앞으로대형가맹점판촉수익성검토및마케팅행사결과부진 행사분석을위한구체적인기준을마련하는등수익성분석관련합리적인 점검기준을마련하고관련내규를정비하시기바랍니다. (6) 사외이사평가방식미흡 내규에따라회사는사외이사의활동내역을기초로매년사외이사에대한 평가를실시하고있으며동평가의공정성과투명성을제고하기위해세부평가 절차및방법을정기이사회에서정하고있다. 하지만회사는당해연도의평가절차및방법이매년평가대상기간중 평가가진행되기직전분기의이사회에서정해지므로피평가자가미리평가에 대비하기어렵고, 평가에활용할수있는근거자료를평가자에게제공하지않아 평가의공정성및신뢰성이저하될우려가있다. 조치할사항 회사는앞으로사외이사평가와관련하여평가항목, 평가대상기간, 평가 시기등세부절차를평가대상기간전에미리공지하여피평가자가대비할수 - 10 - 있도록하고평가시관련부서에서각사외이사의연간활동내역을제공하는등 평가관련절차를개선하시기바랍니다. (7) 겸직임원의업무적정성평가체계미흡 내규에따라준법감시인은겸직업무를수행하는임직원에대해반기마다 금융시장의안정성저해여부, 고객과의이해상충발생여부등을점검및 평가하고있다. 그러나동평가에활용하는평가항목이평가목적에부합하는지여부에 대해서는점검하는절차가없고, 해당겸직임원을대상으로업무상이해상충 발생여부등을직접확인하는절차도없으며, 평가결과도검토내용, 입증 자료등없이적정 등의의견으로완료되어임직원겸직평가제도의실효성이 미흡한수준이다. 조치할사항 회사는앞으로임직원겸직업무의적정성평가시평가항목의타당성점검, 업무수행당사자의이해상충여부등확인, 평가결과의신뢰성확보등겸직 업무의적정성평가및점검절차를개선하시기바랍니다. (8) 저신용자회원신용카드이용한도하향기준미흡 내규에는저신용자회원의이용한도하향시재산정한최대부여가능한도와 무관하게기존이용한도의특정비율을하향할수있도록규정하고있다. 하지만기존한도에서특정비율만큼하향조정하는방식은기존이용 한도가재산정한최대부여가능한도이내여서한도하향조정필요성이낮은 회원의이용한도도일괄적으로하향조정하게될가능성이있다. 조치할사항 회사는앞으로저신용자회원에대한신용카드부여한도하향조정시 기존이용한도가재산정된최대부여가능한도를초과하여한도하향이필요한 회원의이용한도만하향조정될수있도록저신용자회원한도하향기준을 개선하시기바랍니다. - 11 - (9) 카드상품에대한수익성분석방식개선필요 여신금융협회카드상품수익성분석체계가이드라인(이하모범규준) 제4조제5항에서는새로운카드상품개발시신용판매수익이신용판매비용 보다크도록설계하여야한다고규정하고있고, 모범규준제6조제2항에서는카드상품출시이후에는내부통제부서에서 상품손익상황을정기적으로점검하고손실발생시원인분석및대응방안을 이사회또는이사회산하소위원회에보고하여야한다고규정하고있다. 하지만회사는새로운카드상품개발시신용판매수익이신용판매비용 보다크도록별도로계산하여설계하지않고모든수익과비용을고려한수익성 분석만수행하며, 회사내규에도이를명확히규정하고있지않다. 또한, 상품출시이후손익상황에대해서정기적으로점검하고, 손실발생시 대응방안등을이사회또는이사회산하소위원회에보고하는절차에대해 내규에명확히규정하고있지않다. 조치할사항 회사는앞으로새로운카드상품개발시모범규준제4조에따라신용판매 수익이신용판매비용보다크도록설계하는별도의분석절차를회사내규에 마련하고이에따라운영하시기바랍니다. 아울러모범규준제6조제2항에따라상품출시이후손익상황에대해서 정기적인점검및손실발생시대응방안등을이사회또는이사회산하 소위원회에보고하는절차를내규에반영하여운영하시기바랍니다. (10) 금리인하요구권관련내부통제미흡 ①금리인하요구권내규미흡 내규에따르면차주는재무또는신용상태의개선이있는경우회사에 각각또는두가지모두에대해금리인하를요구할수있다. - 12 - 하지만회사는차주의금리인하심사결과재무및신용상태모두 개선된것으로인정되어도중복적용을허용하지않아차주의금리인하폭을 제한할우려가있다. 조치할사항 회사는앞으로차주의재무및신용상태개선이동시에발생한경우 금리인하의중복적용이가능하도록내규를개선하시기바랍니다. ②금리인하요구권제도운영적정성점검미흡 내규에따르면회사는차주의금리인하요구에대한결과를10영업일 이내에차주에게통지하여야한다. 하지만회사는검사대상기간중현업부서에서금리인하요구권심사결과를 O건미발송하거나O건지연발송한사실이있고, 준법부서가현업부서의업무 적정성점검시점검대상샘플을직접선정하지않고현업부서에서제공하는 샘플을이용함에따라점검의실효성이약화되며, 점검대상의샘플건수가발송 건수에비해과소하다. 조치할사항 회사는앞으로준법부서가직접데이터를전수점검하여미발송시적절한 조치가이루어지도록하는등점검절차를개선하시기바랍니다. (11) 불법모집발생영업점관리자에대한평가방식미흡 내규에따르면회사는불법모집이발생한영업점에인사·평가상불이익을 부과하여야한다. 하지만회사는불법모집발생영업점의관리책임자에대한불이익부과시 누적패널티를도입하면서도누적횟수를연초마다초기화하여중징계사안이 경징계로조치되는등불합리한사례가발생하였다. - 13 - 조치할사항 회사는앞으로불법모집발생영업점의관리자에대한패널티부과방식을 합리적으로개선하시기바랍니다. (12) IT부문내규관리체계미흡 회사는규정, 세칙, 지침등의체계로내규를구성하도록정하고있으나 IT내규는동내규체계를준수하지않고편람, 기준서, 준칙등으로제정운용하고있고, 주요IT업무절차는내규화하지않고부서단위로별도운영하고있다. 또한, IT내규에IT업무절차등을구체적으로명시하지않고동내규가IT 업무를전반적으로포함하지않아IT업무수행이체계적으로이루어지지않을 우려가있다. 조치할사항 회사는IT내규를회사내규체계에따라체계적으로정비하고IT업무전반에 대한절차방법등을표준화하는등IT업무가일관성있게수행될수있도록IT부문 내규관리체계를개선하시기바랍니다. (13) 정보시스템성능관리미흡 회사는내규에따라정보시스템을성능관리대상으로정하고CPU, 메모리, 스토리지, 네트워크등의임계치를설정하여관리하고있으나, 업무별정보시스템임계치를내규로규정하지않고내부보고문서로만 작성·관리하고있어, 동문서의보존기간(5년) 경과시파기등으로성능관리 운영기준이확인되지않거나업무절차가지속되지않을우려가있고 별도검토없이관련가이드라인대비성능관리임계치기준을완화하여 관리하고있어서버자원부족으로인한오류가발생하는등전산자원성능이 미흡하게관리될우려가있다. - 14 - 조치할사항 회사는시스템자원부족으로인한서비스장애를방지하기위해업무 특성을고려한임계치기준을내규에구체적으로마련하고적정한전산자원을 확보하는등시스템성능관리체계를개선하시기바랍니다. (14) 노후전산장비및기술지원종료운영체제관리미흡 ①노후전산장비관리소홀 회사는내규에서버등노후전산장비폐기를위한관리기준및절차를 마련하고있으나, 임의로폐기기준을마련적용하면서운영중인노후전산 장비를별도검토없이폐기대상에서일괄제외하는등폐기절차를미흡하게 운영하고있어, 운영전산장비의기능이저하되거나성능장애가발생할우려가있다. 조치할사항 회사는노후장비폐기시관련내규를준수하여관리하고, 동내규가실제 업무에반영될수있도록폐기기준등을개선하시기바랍니다. ②기술지원종료된운영체제관리소홀 회사는서버O대에제조사의기술지원이종료된운영체제(OS)를사용하고 있어제조사로부터업그레이드및보안패치등의서비스지원을받지못하고 있고, 이로인해오류·장애발생시신속한대응이어려우며신규취약점을악용한 침해행위에노출될우려가있다. 조치할사항 회사는기술지원이종료된운영체제는업그레이드기술지원연장등을통해 장애를예방하고, 구체적인관리방안을마련하여운영하시기바랍니다. (15) 전산원장계상액관리미흡 회사는내규에따라대차대조표등중요자료의계상액과전산원장파일의 계상액에대한상호일치여부를전산시스템을통해주기적으로확인하고, 불일치항목은그원인및조치내용을5년간보관하고있으나, - 15 - 불일치항목에대한원인및조치내용을간략하고형식적으로기록하고 있어전산원장불일치에대한사후검토가적절히수행되지않을우려가있다. 조치할사항 회사는대차대조표등중요자료와전산원장의계상액불일치에대한원인 및조치내용을상세하게작성하여관리할수있도록개선하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 8865,
+        "estimated_tokens": 506,
+        "created_at": "2025-07-20",
+        "regulations": [
+          "신용카드발급및이용한도부여에관한모범규준 제12조",
+          "카드대출금리체계의합리성제고를위한모범규준 제5조",
+          "카드대출금리체계의합리성제고를위한모범규준 제16조",
+          "신용카드발급및이용한도부여에관한모범규준 제9조"
+        ],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250522_국민은행_202400481_12_250522_개선내용 공개_국민은행_F",
+      "source_file": "MGMT_20250522_국민은행_202400481_12_250522_개선내용 공개_국민은행_F.pdf",
+      "institution": "국민은행",
+      "date": "2025. 5. 22",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융기관명: 국민은행 2. 조치일: 2025. 5. 22. 3. 조치내용 대 상 내 용 기 관 개선사항5건 4. 조치대상사실 가. 개선사항 (1) 고객신원확인업무미흡 회사는자금세탁방지및공중협박자금조달금지에관한업무규정제38조등에 따라고객의신원확인을위하여개인고객의경우성명, 실명번호, 국적(외국인의경우), 주소·연락처, 직업또는업종정보등을확인하고, 법인·단체고객의경우법인명, 실명 번호, 사업장의주소·연락처, 대표자정보, 설립목적(비영리법인의경우) 및업종정보 등을확인하고있다. 하지만회사는비대면채널을통한개인고객신원확인시직업과상이한직장 업종을입력하여도이를통제하는수단이없어, 직업을무직 또는학생으로입력한 고객이직장업종을귀금속소매업, 철도여객운송업, 경찰 등으로입력하는등고객의 신원확인이일부형식적으로수행되고있고, 법인고객의경우업종정보의입력기준미비로동일업종고객임에도담당자에 따라업종이상이하게입력되거나, 고객정보의변동이없음에도업종을변경하여 동일법인의위험평가결과가달라진사례가있다.  대부업자의경우그외기타여신금융업 이외에전자상거래소매업, 경영컨설팅업, 시설물유지 - 2 - 관리공사업, 기타공동주택건설업 등으로입력  유한회사ㅇㅇ의경우22. 4. 12. 기타의복소매업으로등록시고위험으로평가되었으나, 22. 4. 19. 농수산물건조, 선별및기타수확후서비스업으로등록되며중위험으로평가 또한, 외국인고객의경우실제국적을확인하고도국적정보입력시기타 국가선택이가능하도록운영함에따라고객위험도평가가적절히이루어지지않을 우려가있다. 조치할사항 따라서회사는고객신원확인시업종, 직업, 국적정보가정확히수집·입력되도록 시스템을개선하는한편, 업종정보입력기준을마련하고직원교육을강화하시기 바랍니다. (2) 의심스러운거래제외사유작성미흡 회사는특정금융정보법제4조에따른의심스러운거래보고(STR)를수행하기 위해2024. 7. 31. 기준총●개의의심스러운거래추출시나리오를운영중이며, 의심 스러운거래발생시영업점담당자가STR 여부를일차적으로검토후내부보고 체계에따라보고책임자(甲)가최종검토및승인을하고있다.  영업점내부통제책임자A 보고책임자 하지만STR 대상여부를검토하면서기보고처리요건에부합하지않음에도 기보고를사유로보고제외하거나, 보고제외사유에사실과다르거나형식적인내용 을기재하는등의심스러운거래모니터링업무를부실하게수행한사실이있다.  최근●개월이내동일Rule, 동일계좌, 동일점포발생거래  (예) 보고제외사유에확인결과통상적인거래임 등형식적으로기재, 거래일로부터▲개월년 이상초과한과거시점에기보고한사실을사유로보고제외 조치할사항 따라서회사는STR 여부가충실히검토될수있도록보고제외사유의적정성을 점검하는절차를정비하고, 임직원에대한실효성있는내부교육을강화하는등 의심스러운거래모니터링이효과적으로운영될수있도록관련절차를개선하시기 - 3 - 바랍니다. (3) 고액현금거래보고업무미흡 회사는특정금융정보법제4조의2에따른고액현금거래보고(CTR)를수행하기 위해CTR 대상거래를추출하도록시스템을개발하고, 추출된거래에대해영업점 담당자가실제현금거래여부를확인한후내부보고체계에따라보고책임자(甲)가 최종검토및승인을하고있다.  영업점창구직원A 보고책임자 (가) 하지만회사는영업점담당자가실제현금거래를대체거래로착오처리 할가능성이있음에도영업점의현금거래처리누락여부를점검할수있는절차가 마련되어있지않아CTR 누락가능성이있고,  영업점의현금시재또는회계계정원장대사등을통한점검 (나) 새로운상품·서비스개발또는변경시상품·서비스담당부서에서자체적 으로CTR 대상거래추출을위한전산개발을수행하도록하면서A의협의및점검 절차가마련되지않아전산시스템상보고대상추출여부및추출데이터가적정하게반영 되지않을우려가있다.  23.6월B의외화예금신규·해지거래관련CTR 전산착오개발로인한데이터적재오류발생 사례확인(CTR 4건정정, 2건추가보고) (다) A는CTR 업무적정성을주기적으로점검하고있으나, 이미현금거래로 추출된거래에대한보고여부검토프로세스위주로점검이이루어지고, 보고대상 현금거래추출의적절성에대한검증이미흡하여추출시스템오류에따른보고 누락가능성이있다. 조치할사항 따라서회사는영업점의CTR 관련점검절차를개선하고, 상품·서비스담당 부서의CTR 대상거래추출관련전산개발에대한모니터링을강화하는한편, CTR 대상거래추출에대한점검을강화하여보고의정확성을제고하시기바랍니다. (4) 전사적자금세탁위험평가업무미흡 회사는내규자금세탁방지업무규정에따라연1회이상전사적자금세탁위험을 - 4 - 평가하여관리하고, 평가결과및위험관리방안을이사회에보고하고있다. 하지만전사적자금세탁위험평가대상에서해외점포는제외되어있어은행 전체관점에서관련된모든위험요소들이고려되지않을우려가있다.  검사일현재●개국외지점및▲개국외현지법인(지분투자자회사포함) 보유 조치할사항 따라서회사는전사적자금세탁위험평가및이에따른위험관리방안도출시 해외점포의자금세탁위험도종합적으로고려될수있도록개선하시기바랍니다. (5) 자금세탁방지업무에대한독립적감사미흡 회사는자금세탁방지및공중협박자금조달금지에관한업무규정및내규자금 세탁방지업무규정에따라연1회이상자금세탁방지업무수행에대한독립적감사를 실시하고있다. 하지만독립적감사결과에대한이사회보고시자금세탁방지제도평가등급 요약위주로만보고되고있어독립적감사에따른지적사항및사후조치결과에대한 이사회보고가미흡하다.  자금세탁방지부·영업점·국외점포에대한감사결과를고려하여●개자금세탁방지제도평가 항목에대하여3등급(양호·보통·미흡)으로평가 또한검사대상기간중영업점자금세탁방지업무관련한필수점검사항을정하 고있지않으며, 내규표준감사절차서에기재되어있는예시적점검사항의경우 실제업무방법과불일치하는부분이있는등영업점에대한독립적감사업무가 일부형식적으로수행되고있다.  (예) 의심되는거래보고(STR) 제도의적정이행여부 점검시감사내용에보고및미보고사유, 보고시거래내용, 자금세탁이의심되는사유등을자세히기술하였는지여부를점검토록하 고있으나, 실제로는의심거래보고관련비밀유지의무준수를위해의심스러운거래보고업 무절차이행의적정성여부등에대해제한적으로점검수행  21.9.4. 24.3.31. 기간중총▲건의영업점종합감사를실시하면서자금세탁방지업무에 대한점검을수행하였으나자금세탁방지업무관련지적전무 조치할사항 - 5 - 따라서회사는독립적감사에따른지적사항및사후조치결과에대한이사회 보고를강화하는한편, 영업점자금세탁방지업무에대한독립적감사가형식적으로 이루어지지않도록필수점검사항을마련하고, 내규표준감사절차서의자금세탁 방지업무점검관련내용을실제업무절차및방법과일치시키는등관련업무를 개선하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 3157,
+        "estimated_tokens": 231,
+        "created_at": "2025-07-20",
+        "regulations": [
+          "특정금융정보법 제4조"
+        ],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250602_농협손해보험주식회사_202300848_11_농협손해보험_주__경영유의사항 등 공개안_F",
+      "source_file": "MGMT_20250602_농협손해보험주식회사_202300848_11_농협손해보험_주__경영유의사항 등 공개안_F.pdf",
+      "institution": "농협손해보험",
+      "date": "2025. 6. 2",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항·개선사항 공개안 1. 금융기관명: 농협손해보험 2. 제재조치일: 2025. 6. 2. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의2건, 개선1건 4. 제재대상사실 가. 경영유의사항 (1) 보험모집조직교육관련내부통제강화필요 보험회사는보험소비자의합리적선택이침해되지않도록보험상품에대한정확한 지식과정보를제공하고, 보험계약체결을권유할때건전한모집질서를저해하는일이 없도록모집조직을충실히교육관리하여야한다. 회사는보험대리점등모집조직에정기적으로배포하는소식지 자료에소비자가 오인할수있는내용이포함되어있는지여부등을사전심의하고있다. 그러나검사 대상기간중소식지에구체적근거없이단순히자사상품이우수하다는내용이포함된 문구등을기재한사례가있었다. 또한금융감독원이절판마케팅등을통한불건전영업행위방지를요구한이후에도 회사는소식지를통해어린이보험등의절판마케팅을독려한사례가확인되었다. 조치할사항 따라서회사는보험모집조직교육목적으로작성되는자료등에대한사전심의기준 및절차강화, 대상확대등을추진하고, 동자료에대한점검기준을구체적으로마련할 필요가있습니다. (2) 장기보험손해조사비율검증절차강화필요 보험회사는예정손해조사비율을산출할때, 산출기준, 적정성점검, 검증및의사결정 등에대한절차와기준을마련하고이를준수함으로써업무처리의객관성과일관성을 제고할필요가있다. 회사는예정손해조사비율산출을위해2022년부터장기보험예정손해조사비율산출 및적용업무방법을마련하여시행하고있고, 이에따르면예정손해조사비율은선임계리사 또는외부기관의검증절차를거친후상품개발위원회에서최종적으로정하도록하고있다. 회사는2022년예정손해조사비율산출시선임계리사의검증절차후상품개발위원회의 의결절차를거쳤으나, 2023년예정손해조사비율산출시에는기초통계기간이변경되었음에도 예정손해조사비율이전년도와동일하다는이유로별도검증절차없이상품개발위원회 의결만을거쳐적용한사실이있었다. 조치할사항 따라서회사는장기손해보험손해조사비율산출시기초자료검토및분석, 산출방법의 적정성등을객관적으로평가하여합리적검증이이루어질수있도록선임계리사또는 외부기관의검증을철저히수행하고동검증절차가누락되지않도록하는등관련검증 절차의실효성을강화할필요가있습니다. 나. 개선사항 (1) 보험금누락방지시스템등운영미흡 회사는보험금지급심사시보험소비자가가입한보장급부의적정성을점검하여, 보험금지급누락을사전에방지하기위한보험금누락방지시스템을운영하고있다. 그러나회사는2020년7월이후판매된일부신담보를시스템상점검대상에반영하지 않거나, 보험금심사시담당자의점검내용에대한사후모니터링이적절히이루어지지 않은사례가있는등보험금누락방지시스템운영에있어미흡한점이있었다. 또한입원일당또는수술비특약보험금지급시보험료납입면제가적용될가능성이 있을경우보험계약자등에게조직검사결과지등서류를추가로요청하고있는데추가 요청기간등에대한기준과절차가없어납입면제해당여부가확인되지못한채로 장기간유지되는등납입면제업무운영상미흡한점이있었다. 조치할사항 따라서회사는보험소비자가가입한담보에대한보험금지급이누락되지않도록 신규담보항목의시스템반영여부에대한점검절차를강화하고보험금심사담당자 점검내역에대한사후모니터링을적시에실시하는등보험금누락방지시스템을더욱 충실하게운영할필요가있습니다. 또한납입면제업무가적시에처리될수있도록보험료 납입면제를위한기준과절차를합리적으로마련·정비하는등관련업무를강화할필요가 있습니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1564,
+        "estimated_tokens": 87,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250602_알펜루트자산운용_202000124_12_알펜루트_경영유의공시_F",
+      "source_file": "MGMT_20250602_알펜루트자산운용_202000124_12_알펜루트_경영유의공시_F.pdf",
+      "institution": "알펜루트자산운용",
+      "date": "2025. 6. 2",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항 공개 1. 금융기관명: 알펜루트자산운용 2. 조치일: 2025. 6. 2. 3. 조치내용 제재대상 제재내용 기 관 경영유의사항2건 4. 조치대상사실 가. 경영유의사항 (1) 집합투자재산평가절차강화필요 알펜루트자산운용(이하알펜루트자산운용)은2018.6월부터채권평가회사인의 평가를받아비상장주식등을평가하는과정에서집합투자재산평가위원회를개최하지 아니한경우가있으므로, 집합투자재산평가위원회를통해투자대상자산의취득가격, 거래가격, 외부평가기관이 제공한가격등을고려하여충실의무를준수하고평가의일관성을유지하여해당자산을 평가하는등관련평가절차를강화할필요가있음 (2) 재간접투자시사모요건충족여부모니터링강화필요 사모집합투자기구투자자총수산출시다른집합투자기구(이하투자펀드)가그집합투자 기구(이하피투자펀드)의집합투자증권발행총수10% 이상을취득하는경우투자펀드의 투자자수를합하여산출한피투자펀드의투자자총수가49인을초과하여서는아니되므로, 알펜루트자산운용이자기운용집합투자기구간재간접투자구조에서투자펀드가피투자 펀드의발행총수의10% 미만을취득하였으나이후환매, 기준가조정등에따라투자 펀드의보유비율이일시적으로10% 이상이되어피투자펀드의투자자총수가49인을초과 하게되는결과가초래되는경우가있으므로, 관련법령및집합투자규약에서정하고있는공모와사모의구분취지가훼손되지않도록 내부통제절차를강화할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 655,
+        "estimated_tokens": 46,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250602_엔에이치아문디자산운용주식회사_202300755_12_20250611_엔에이치아문디자산운용_경영유의사항_공개",
+      "source_file": "MGMT_20250602_엔에이치아문디자산운용주식회사_202300755_12_20250611_엔에이치아문디자산운용_경영유의사항_공개.pdf",
+      "institution": "엔에이치아문디자산운용",
+      "date": "2025. 6. 2",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 공개안 1. 금융기관명: 엔에이치아문디자산운용 2. 조치일: 2025. 6. 2. 3. 조치내용 제재대상 제재내용 기 관 경영유의사항4건 4. 제재대상사실 가. 경영유의사항 (1) 글로벌대체투자관련현안발생사업장대응매뉴얼개선 회사는글로벌대체투자시부실징후등현안발생사업장관련대응매뉴얼이 부실하여이슈발생시효과적이고일관된대응이이루어지지않을우려가있다. 조치할사항 따라서회사는앞으로부실징후등현안발생사업장에대한점검을위한상세한 절차규정및정보접근성을강화하는등의대응방안을반영하여매뉴얼을개선하시기 바랍니다. (2) 운용역등의펀드등투자관리강화 회사는운용역및특수관계인의펀드, 리츠등에대한투자내역이관리되지않아 운용역등이회사펀드거래상대방의이해관계자가되어도이를알수없어이해상충 등의검토가불가능한상황이다. - 2 - 조치할사항 따라서회사는앞으로펀드등의거래시운용역및특수관계인의거래상대방과의 이해관계여부를보고받는등관리절차를강화하시기바랍니다. (3) 이해상충관리철저 회사는펀드를운용하는과정에서이해상충가능성을평가·파악한후평가내용 및투자자통지내역등을자료로관리하고있지않다. 조치할사항 따라서회사는앞으로이해상충관리내역을문서화하는등관리를철저히하시기 바랍니다. (4) 감사실업무내실강화 회사는감사실직원이장기간실장1명으로이루어져있어회사규모에비해 감사부서의인력이부족하여실효성있는감사업무수행이어려운상황이다. 조치할사항 따라서회사는앞으로감사실직원을충원하는등감사업무내실을강화하시기 바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 714,
+        "estimated_tokens": 58,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250602_현대해상화재보험주식회사_202300847_11_현대해상화재보험_주__경영유의사항 등 공개안_F",
+      "source_file": "MGMT_20250602_현대해상화재보험주식회사_202300847_11_현대해상화재보험_주__경영유의사항 등 공개안_F.pdf",
+      "institution": "현대해상화재보험",
+      "date": "2025. 6. 2",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항·개선사항 공개안 1. 금융기관명: 현대해상화재보험 2. 제재조치일: 2025. 6. 2. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의2건, 개선1건 4. 제재대상사실 가. 경영유의사항 (1) 보험모집조직교육관련내부통제강화필요 보험회사는보험소비자의합리적선택이침해되지않도록보험상품에대한정확한 지식과정보를제공하고, 보험계약체결을권유할때건전한모집질서를저해하는일이 없도록모집조직을충실히교육관리하여야한다. 회사는교육담당자또는지점장에게정기적으로배포하는모집조직교육자료에 소비자가오인할수있는내용이포함되어있는지여부등을체크리스트에따라사전 점검하고있다. 그러나검사대상기간중법인보험대리점(GA) 모집조직에게알림톡(카카오톡메시지) 으로전달되는교육자료에구체적근거없이단순히자사상품이우수하다는내용이 포함된문구등을기재한사례가있었다. 또한금융감독원이절판마케팅등을통한불건전영업행위방지를요구한이후에도 일부영업지점에서모집조직에운전자보험및어린이보험등의절판마케팅을반복적으로 독려한사례가확인되었다. 조치할사항 따라서회사는보험모집조직교육목적으로작성되는자료에대한사전심의기준 및절차강화, 대상확대등을추진하고, 동자료에대한점검기준을구체적으로마련할 필요가있습니다. (2) 장기보험손해조사비율산출업무의합리성제고필요 보험회사는예정손해조사비율을산출할때, 과거실제지급된손해조사비와보험료 수입을통한손해조사비재원규모의변동추세를합리적으로고려하고, 객관적통계 자료및기법등을통해향후지출될손해조사비를일관성있게산출할필요가있다. 회사는예정손해조사비율산출을위해2022년부터손해조사비율산출및적용 매뉴얼을마련하여시행하고있다. 그러나회사는예정손해조사비율을산출하면서실제손해조사비(분자)의기초통계 기간과적용시점사이의추세변동만을반영하고보장보험료(분모)의변동요인은고려하지 않았다. 이에따라예정손해조사비율산출과정의합리성이저해되는문제가있었다. 조치할사항 따라서회사는예정손해조사비율산출시손해조사비와보장보험료의변동요인을 모두고려하는등장기손해보험손해조사비율산출기준의합리성을제고할필요가 있습니다. 나. 개선사항 (1) 실손의료보험보험금지급절차미흡 보험회사는보험약관에따라정확한보험금을지급해야하고, 보험금지급기준 관련판례등이확인된경우그취지와판단기준등을반영하여내부절차및기준을 운영함으로써보험금지급업무의일관성과합리성을제고할필요가있다. 회사는민간치료사가시행한발달지연치료가실손의료보험보험금지급대상인지를 심사하기위해, 2023.7월부터민간치료사가발달지연치료를시행한경우주치의가해당 치료를주도하였는지여부를확인하여보험금지급여부를결정하도록보험금지급심사 절차를마련하였다. 이와관련하여법원은치료행위가민간치료사에의해이루어졌더라도동치료가 의사의진단, 처방, 지시등에따라의사의관리감독하에이루어졌다면보험금지급 대상에포함될수있다고판단하였다.  ①치료가의사의진단, 처방에따라개시, 종결되고있고, ②치료행위는병원소속민간치료사들 에의해이루어지고있으나이는의사의처방, 지시에따른것이므로의사의의료행위를보조 하기위한것으로볼수있고, ③진료기록지에의료법상필수적기록사항이포함되어있 으므로민간치료사의치료가심리상담센터등에서제공되는상담서비스등과유사한측면 이있다하더라도실손보험약관에서정하는보상대상이아니라고보기어려움(부산고등법원 2020.4.23. 선고2019나53658) 그러나회사는민간치료사의치료행위가주치의의관리·감독하에이루어졌는지 여부를심사하는절차와관련하여매회주치의진료여부, 의사의치료실점유여부, 의사의 치료시간등을고객에게직접확인하는절차를포함하는등보험금청구권자에게지나친 부담을가중하는내용을포함한사실이있다. 조치할사항 따라서회사는발달지연치료관련보험금지급심사시법원판례의취지등이 합리적으로반영되도록내부절차및기준등을정비하고, 민원분쟁발생방지를위해 보험금청구자에게과도한자료등을요구하는일이없도록하는등관련업무를개선 하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1801,
+        "estimated_tokens": 104,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250602_흥국화재해상보험주식회사_202300410_11_흥국화재_주_에 대한 수시검사 제재내용 곰시_경영유의",
+      "source_file": "MGMT_20250602_흥국화재해상보험주식회사_202300410_11_흥국화재_주_에 대한 수시검사 제재내용 곰시_경영유의.pdf",
+      "institution": "흥국화재해상보험",
+      "date": "2025. 6. 2",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항공개안 1. 금융회사명: 흥국화재해상보험 2. 제재조치일: 2025. 6. 2. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의2건 4. 제재대상사실 가. 물품구매등계약업무관련내부통제강화필요 보험회사는계약체결과정에대한적정성점검및사후관리등을통해예산및 사업비집행의객관성및투명성을제고할필요가있다. 흥국화재해상보험(이하회사)는물품구매및렌탈계약을체결하면서일부 계약서에계약서상필수적항목을기재하지않았고, 계약체결에필요한인장사용시 내규인장관리지침에서정한사전승인절차를준수하지않는등계약체결과정에 문제점이있음에도이에대한점검을소홀히하였으며,  계약체결일자, 계약의상대방등 계약체결이후계약서일부를분실하거나계약기간이만료된계약에대해별도의 연장계약없이거래관계를지속하는등사후관리업무에도미흡한부분이있었다. 따라서, 회사는물품구매렌탈계약등계약체결과정의적정성점검및사후관리 업무를철저히하여유사사례가재발하지않도록관련내부통제를철저히하시기 바랍니다. - 2 - 나. 대출모집위탁업무운영철저필요 회사는대출거래계약체결이행을위한개인(신용)정보수집이용제공조회상세 동의서에대출계약모집뿐만아니라유지·관리등을위한목적으로대출모집인 에게개인(신용)정보를제공할수있음을기재하여차주로부터동의를받고있으나, 대출모집법인과체결한업무위탁계약서에는업무위탁의범위를대출신청상담, 대출구비서류의접수·확인및제출등대출계약모집업무로만한정하는등동의를 받은개인(신용)정보제공목적과업무위탁범위의문구및내용이서로다르게 기재되어있었다. 따라서회사는차주가동의한개인(신용)정보의이용·제공목적과업무위탁범위가 일치하는지여부에대한점검절차를강화하는등관련내부통제를철저히할 필요가있습니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 804,
+        "estimated_tokens": 54,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250604_동서울_202500003_11_250604_동서울신협 수시검사_경영유의사항 공개안_F",
+      "source_file": "MGMT_20250604_동서울_202500003_11_250604_동서울신협 수시검사_경영유의사항 공개안_F.pdf",
+      "institution": "동서울",
+      "date": "2025.06.04",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 Ⅲ    중앙회가 지정한 개 동반조합과 개 성장조합이 협약에 의해 취급한 대출동반조합 및 성장 1 1 ( 조합을 제외한 다른 금융회사가 공동으로 대출을 취급하지 않는 경우에 한정)  동서울신협 백만원 조합 백만원 9,860 , A 3,000 - 2 - Ⅲ   소송 등 법적절차로 인해 공매 절차 지연이 불가피한 경우는 제외   명세는 현지 교부하였음 Ⅴ    조합은 최장 년 범위 내에서 원금상환을 유예분할상환대출은 유예기간 동안 이자만 부담일시 3 ( , 상환대출은 상환기간 연장을 의미하거나 이자 일부상환을 유예할 수 있음 ) - 3 -  명세는 현지 교부하였음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 359,
+        "estimated_tokens": 100,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250604_상주농협_202500004_11_250604_상주농협 수시검사_경영유의사항 공개안_F",
+      "source_file": "MGMT_20250604_상주농협_202500004_11_250604_상주농협 수시검사_경영유의사항 공개안_F.pdf",
+      "institution": "(경북)상주농업협동조합",
+      "date": "2025. 6. 4",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융회사명: (경북)상주농업협동조합 2. 조치일: 2025. 6. 4. 3. 조치내용 대상 내용 기관 경영유의사항3건 4. 조치대상사실 가. 경영유의사항 (1) 여신감리업무실효성제고필요 내규상호금융리스크관리업무방법제10장제1절제4조제2항 등에의하면 조합은여신규모및업무량등을고려하여1인이상의여신감리역을선정 하여, 여신심사ㆍ사후관리ㆍ자산건전성분류의적정성여부점검등의업무를 수행하여야한다.  여신감리역은 1인 이상을 의무적으로 선정하되, 조합의 여신규모 및 업무량 등을 고려하 여 신규·수시 여신감리, 정기 여신감리를 구분하여 담당하게 할 수 있다 그러나상주농업협동조합은여신감리역1인(감사실과장1명)이조합의정기ㆍ 수시감리및여신사후모니터링업무를감사업무및준법감시인업무와 겸직하여단독으로수행하고있어업무수행에한계가있다. 또한, 여신감리점검결과를증빙서류없이형식적으로적정으로분류하여 해당영업팀에통보하는등여신건전성및신용리스크관리업무가효율적 으로수행되지못하고있다. - 2 - 조치할사항 상주농업협동조합은조합의여신규모및업무량등을고려하여적정한여신 감리인력을충원하고, 과도한겸직을해소하는한편, 여신감리점검결과통보시 증빙자료첨부를의무화하고관리자확인절차를거치도록하는등관련업 무절차개선을통해여신감리업무의실효성을제고하시기바랍니다. (2) 자체채무조정의심의관련내부통제강화 내규여신업무방법제3편제4장제4절제4조제1항에의하면조합은취약 차주지원, 이자감면및이자상환유예를포함한채무조정제도지원여부 결정시채권관리위원회의심의·의결을거쳐야한다.  본절에 따른 채무조정제도 지원 시에는 채권관리위원회를 구성하여 채무조정 승인 여부를 심의·의결한다. 그러나상주농업협동조합은취약차주지원의경우에만채권관리위원회의 의결을거쳤으며이자감면, 이자상환유예대상결정시에는채권관리위원회 의결없이상임이사전결로처리하였다. 조치할사항 상주농업협동조합은내규를정비하여이자감면, 이자상환유예를포함한모든 자체채무조정제도지원시채권관리위원회의심의·의결을거치도록하시기 바랍니다.  여신업무방법 외 채권관리업무방법 등에도 채무조정 제도를 별개로 규정하여 내규 사이 채무조정의 유형·조건 등이 서로 일치하지 않는 바, 여신업무방법상 채무조정 방식으로 통합하여 운영함이 바람직 (3) 부실PF 사업장사후관리강화 내규여신업무방법제2편제2장제7절제15조에의하면조합은PF대출부실 우려 등급사업장에대해서는신속하게정리하는것을원칙으로하여야 한다. - 3 - 그러나상주농업협동조합은부실우려사업장인A에대한PF대출의만기가 도래하자특별한이유없이만기를1년연장하여부실정리가지연되었다. 조치할사항 상주농업협동조합은상기사업장에대해서는대주단과협의하여실효성있는 정리계획을마련하여신속히이행하고, 향후부실사업장에대한PF대출 만기도래시사업성및정리계획에대한객관적이고엄정한평가를통해 실효성있게관리하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1398,
+        "estimated_tokens": 140,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250604_현대카드_202400721_13_현대카드_개선사항 공개안",
+      "source_file": "MGMT_20250604_현대카드_202400721_13_현대카드_개선사항 공개안.pdf",
+      "institution": "현대카드",
+      "date": "2025. 6. 4",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항 등 공개안 1. 금융회사명: 현대카드 2. 조치일: 2025. 6. 4. 3. 조치내용 대상 내용 기 관 개선사항2건 4. 조치대상사실 가. 개선사항 (1) 고객확인업무체계미흡 회사는내규자금세탁방지업무지침에따라고객확인업무지침을작성하고고객 확인의무를이행하고있으나아래와같이미흡한사항이있다. 고위험고객등에대해강화된고객확인을수행하면서해당고객에대해금융 거래등의목적및거래자금의원천등추가정보를확인하고있으나, 고객이추가정보를기타로선택하는경우기타에대한상세내용을필수로입력하지 않더라도고객확인업무가완료될수있고, 금융거래등의목적에타당성없는정보가 입력된사례가발견되는등강화된고객확인정보에대한관리체계가미흡하다. 조치할사항 따라서회사는강화된고객확인시추가정보를기타로선택하는경우상세내용을 필수로입력하여야만고객확인업무가완료되도록전산시스템을개선하는한편, 금융거래 등의목적및거래자금의원천등추가정보에대한적정성을주기적으로점검하는절차를 마련하여강화된고객확인정보에대한관리체계를강화하시기바랍니다. 자금세탁등의위험도에따른고객확인재이행주기를설정운용하면서재이행 주기도래1개월전고객에게모바일앱등을통한알림으로고객확인재이행이필요함을 안내하고있으나, 비대면으로고객확인을수행한경우에는위험도에따른구분없이일괄적으로재이행 주기를설정하는등내규와다르게운영하고있고, 고객확인재이행주기경과고객에 대한고객확인재이행안내및재이행여부모니터링절차등이마련되지않아고객확인 재이행이장기간지체될우려가있다. 조치할사항 따라서회사는자금세탁등의위험도에따른고객확인재이행주기에맞춰지속적인 고객확인을수행하는등내규에부합하는업무체계를구축하고, 고객확인재이행주기 경과고객이조속히고객확인을재이행할수있도록개별안내를강화하는한편, 고객 확인재이행률등재이행현황에대해주기적인모니터링을실시하는등지속적인고객 확인관련업무를개선하시기바랍니다. 기존고객에대하여매월자금세탁위험평가를실시하여고객확인재이행주기를 설정하고고위험으로평가된고객의경우강화된고객확인을수행하도록업무체계를 마련하였으나, 자금세탁방지시스템재구축이후매월실시하는고객위험평가결과값이채널계(고객 정보관리) 시스템에반영되지않아고위험으로평가된고객이중·저위험으로관리되는 등고객위험평가업무가적정하게이루어지지못할우려가있다. 조치할사항 따라서회사는자금세탁방지시스템에서매월실시하는고객위험평가결과값이채널계 (고객정보관리) 시스템에적정하게반영되도록전산시스템을개선하고, 고객위험평가업무 운영의적정성을주기적으로점검하는절차를마련하시기바랍니다. 기존고객이귀화등의사유로국적이변경되어고객정보변경을요청하는경우 국적변경을확인할수있는서류를받아변경내용을채널계(고객정보관리) 시스템에 반영하고있으나, 채널계(고객정보관리) 시스템에서변경된국적정보가자금세탁방지시스템과연동되지 않아자금세탁방지시스템에서고객확인재이행주기도래전까지최신의고객정보를 반영하지못해고객의자금세탁위험도가적정하게평가되지않을우려가있다. 조치할사항 따라서회사는기존고객의고객확인정보가변경되는경우변경된최신의고객정보가 자금세탁방지시스템에도적시에반영되도록전산시스템을개선하고, 고객확인정보변경 등업무처리의정확성을주기적으로점검하시기바랍니다. (2) 의심스러운거래모니터링체계운영미흡 회사는내규자금세탁방지업무지침에따라고객의거래등에대하여지속적으로 모니터링할수있는의심스러운거래모니터링체계를수립및운영하고있으나아래와 같이미흡한점이있다. 의심스러운거래추출기준에대해연1회적정성을점검하고, 기존추출기준의 개선폐지및신규추출기준개발시추출기준의유효성등에대한검토를거치도록하는 한편, 추출기준변경이력을전산으로관리하는절차를마련하고있음에도 정기적인추출기준적정성점검을생략하거나, 점검을실시하더라도추출기준제개정시 추출기준에대한유효성검토등이미흡하여일부추출기준은정의된요건대로설계 되지않고, 모니터링대상금융거래등의범위가충분하지않은사례가있으며, 변경사유 승인일자등추출기준변경이력을전산으로관리하지않는등의심스러운거래모니터링이 효과적으로수행되지않을우려가있다. 조치할사항 따라서회사는운영중인의심스러운거래추출기준에대해설계오류여부, 모니터링 범위의적정성등을포함한구체적인적정성점검기준을마련하여운영하는한편, 추출 기준제개정시추출기준의유효성등에대한검토를충실히수행하고변경이력을 전산상체계적으로관리하는등의심스러운거래모니터링업무의실효성을제고하시기 바랍니다. 수사기관영장등외부기관정보요청건에대해소관부서로부터관련자료를 공유받아의심스러운거래여부를검토하는절차를마련하여운영하고있으나 소관부서로부터자료를공유받은외부기관정보요청건중의심스러운거래여부 검토가불명확한사례가확인되는등외부기관정보요청건에대한의심스러운거래 모니터링체계에미흡한점이있다. 조치할사항 따라서회사는수사기관영장등외부기관정보요청건에대한의심스러운거래검토가 누락되거나지연되지않도록의심스러운거래모니터링체계를개선하시기바랍니다. 의심스러운거래모니터링을통해추출된거래에대한금융정보분석원보고여부를 결정하기위해내부보고체계(자금세탁방지보고담당자보고및보고책임자결재)를마련 하여운영하고있으나, 보고담당자가의심스러운거래보고여부를검토하여보고한후보고책임자가결재 하기까지장기간이소요되고있어금융정보분석원앞의심스러운거래보고의적시성이 저하될우려가있다. 조치할사항 따라서회사는의심스러운거래보고가적시에이루어질수있도록내부보고체계를 개선하여운영하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 2482,
+        "estimated_tokens": 123,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250609_주식회사_케이비금융지주_202400482_11_KB금융지주 정기검사 경영유의사항 등 공개안",
+      "source_file": "MGMT_20250609_주식회사_케이비금융지주_202400482_11_KB금융지주 정기검사 경영유의사항 등 공개안.pdf",
+      "institution": "KB금융지주",
+      "date": "2025. 6. 9",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융기관명: KB금융지주 2. 제재조치일: 2025. 6. 9. 3. 제재조치내용 제재대상 제재내용 기관  경영유의사항4건  개선사항4건 4. 제재대상사실 가. 경영유의사항 (1) 그룹자회사의대손충당금산출방법론적용에관한통할기능강화 지주회사는연회대손충당금산출에영향을미치는각자회사의미래경기전망시나리오 적용방법론등을검토하고개선등을요구하고있다. 그러나2024.월현재각자회사의미래경기전망시나리오적용방법을살펴보면기업 익스포져의경우자회사들에게동일하게적용되는데반해, 소매익스포져의경우자회사별 시나리오선택및가중치적용방식이상이하며, 소속자회사A, 자회사B는위기상황시나리오를전혀반영하지않고자회사A의경우 보수적시나리오비중(.%)을낮게반영하는등미래경기전망시나리오를합리적으로 적정하게반영하지않고있다. - 2 - 조치할사항 따라서지주회사는그룹자회사별대손충당금을산출하는경우미래경기전망시나리오 적용이합리적으로적정하게이루어지도록그룹자회사의대손충당금산출방법론 적용에관한통할기능을강화하시기바랍니다. (2) 책임준공형토지신탁에대한리스크관리강화 지주회사내규BIS위험가중자산산출지침제8조등에따르면지주회사는자본비율을 산출하는경우부외항목의익스포져를해당거래와관련된계약금액에항목의특성에 따라정해진신용환산율을곱하여산출해야하며, 특정거래와관련된우발채무(계약이행 보증등)에는신용환산율을%로적용해야한다. 그러나지주회사는자본비율을산출하는경우자회사C의책임준공확약형관리형토지신탁 약정이우발채무에해당하는데도부외항목으로인식하지않아위험가중자산및대손 충당금을과소산출하였다. 조치할사항 따라서지주회사는관련규정에따라PF대출약정시점에책임준공확약형관리형토지신탁 약정등부외항목을반영하여위험가중자산및대손충당금을산출하는등관련리스크를 정확하게인식하고관리하시기바랍니다. (3) 자회사C 등자회사경영관리강화 지주회사는자회사경영관리업무를영위하기위하여관련내규등을제정하여운영 중이나, 자회사C 등자회사를경영관리함에있어아래와같은문제점이확인되었다. (가) 자회사C에대한리스크관리미흡 지주회사는자회사C(이하동사라함)이책임준공형신탁집중수주및부실로인한신탁 계정대여금증가로NCR(영업용순자본비율)이악화되고신용등급이하락하는등건전 경영악화가가시화됨에따라2023.월이후지속적으로동사에대해자금지원을하고 있는상황이다. - 3 - 하지만자금지원을하게된과정을살펴보면지주회사는다른자회사(자회사D 제외)에 대해서는리스크관리위원회·협의회심의나의결이필요한신상품·신규사업을지주회사와의 사전협의대상으로정하고있는반면, 동사의책임준공형신탁업무는그성질상위험성이 높은업무임에도사전협의대상으로규정하지않아동사가해당업무를도입운영 할때리스크사전협의를실시하지않았고, 2021년이래각종부동산시장의부정적전망및동사의자본비율하락등을인지했음에도 불구하고동사와2022년경영계획을사전협의하면서이에대한면밀한리스크분석 없이승인하였으며, 책임준공형신탁부실로인하여동사의신탁계정대가증가하고있는데도편중도관련 별도한도를뒤늦게설정·운영하거나Total Exposure 중책임준공형신탁업무에대한 Sub-Limit을% 이내로만배분하는등동사에대한리스크관리가미흡한사실이 있다. (나) 자회사자금지원업무체계관리미흡 내규계열사자금지원지침은조달부대비용, 대손비용, 가산금리등을자금지원금리산정 요인에포함시키지않아지주회사의실질적인자금조달비용등이충분히반영되지않은채 자금지원금리가산정될우려가있으며, 자회사에자금을지원한이후이를관리하기위한내규를마련하지않는등자금집행 적정성에대한체계적관리에소홀한사실이있다. (다) 자회사경영상황관리미흡 자회사경영관리를위해관련내규에따라자회사로부터각종사항들을보고받아야 함에도내규상보고기한이명확하지않고관련전산시스템등이미비하여 다수의미보고 지연보고사례가지속발생하는등자회사경영상황관리의적시성을제고하기위한 조치가부족하다. - 4 - 조치할사항 따라서지주회사는내규리스크관리업무매뉴얼을개정하여사전협의대상을확대하여 위험성있는동사신규사업및신상품에대한사전관리가가능토록업무체계를개선하고, 동사의경영계획안에대한내실있는분석·검토및사전협의를수행하여경영계획이 적정하게수립될수있도록지원을강화하며, 책임준공형신탁업무에대한편중리스크 관리한도를강화하는등동사에대한지주회사의경영관리체계를강화하는한편, 자회사자금지원의경우에는지주회사의실제자금조달비용등을고려하여합리적이고 공정한금리를부과하고, 지원한자금의집행적정성에대한사후관리관련내규를마련 하는등자회사자금지원과관련된업무체계를개선하며, 내규계열사경영관리규정5의각보고사항에대한보고기한명확화및관련전산 시스템구축등을통해자회사경영상황을적시에파악관리하시기바랍니다. (4) 자회사임직원보수체계결정체계미흡 지주회사는자회사에보수체계운영관련정책을시달하고있고자회사A 등자회사 임직원의보수및지급방식은자회사평가보상위원회에서직접결정하고있으나, 내규계열사경영관리규정은지주회사가자회사대표이사등경영진에대한평가및 보상에관한사항을결정할수있도록정하고있고, 매년지주회사평가보상위원회가마 련하는그룹경영진성과보상체계및관련안내를통해지주회장의자회사평가결과를 자회사대표이사의보수결정에활용토록하는등자회사평가보상위원회의보수관련 사항에대한독립적심의·의결기능이저해되고있다. 조치할사항 따라서지주회사는내규계열사경영관리규정을개정하여현실적합성을제고하고, 그룹경영진성과보상체계를수립하는경우은행등자회사평가보상위원회의심의·의결 기능을제고할수있는보상체계를채택하는등지주회사의자회사성과평가업무체계를 개선하시기바랍니다. - 5 - 나. 개선사항 (1) 자회사발행신종자본증권인수등자금지원절차관련업무체계개선 지주회사는내규이사회규정상건당발행금액이자기자본의분의을초과하는 자회사발행신종자본증권인수등자회사의자본확충수단에준하는자금지원의경우만 이사회결의사항으로규정하고있으나, 자회사에대한연간자금지원한도액은이사회승인사항으로정하지않아연간자회사 자금지원에대한그룹차원의리스크관리에부족한부분이있고, 자회사가발행한신종 자본증권을인수하는경우리스크관리부서와의별도사전협의절차가없어해당인수 행위가지주회사에미치는리스크가적시에인식되지못할우려가있으며, 인수하는신종자본증권의발행금액이고액임에도자기자본의분의이하인경우 (이하미초과건)에는이사회에동내용이미보고되는등이사회의직무수행에필요한 정보가미흡하게제공될우려가있다. 조치할사항 지주회사는자회사에대한연간자금지원한도액에대해이사회승인을받는한편, 자회사가발행한신종자본증권을인수하는경우에는사전에리스크관리부서와협의하는 절차를마련하고, 미초과건에대해서도이사회에사후보고하는등관련내규를개선 하시기바랍니다. (2) 비상조달계획내자금조달규모산출체계미흡 지주회사는내규유동성리스크관리지침에따라고유시장결합위기등다양한위기 상황을가정한시나리오분석을실시하고, 동분석결과를감안하여비상조달계획(CFP)의 시나리오별유동성자금조달가능금액규모를산정할필요가있다. 그러나위기상황시나리오(고유시장결합)별로지주회사의유동성조달가능금액규모에 차이가있음에도비상조달계획상구분되어있지않고결합위기상황에서의조달가능 금액만제시하고있어, 고유및시장위기가발생하는경우조달가능금액을확인하기 곤란한측면이있다. - 6 - 조치할사항 비상조달계획수립시다양한위기상황시나리오(고유시장결합)별위기수준을감안한 조달가능금액을각각구분하여제시하도록개선하시기바랍니다. (3) 사회공헌활동업무체계적정성제고 지주회사는ESG 경영을위한각종사회공헌활동을수행하고있으며관련내용을이사회내 소위원회인ESG위원회에보고하고, 내규ESG위원회규정에서지주회사의연간기부금 운영한도는이사회결의사항으로규정하고있으나, ESG위원회에는사회공헌활동의목적및사업내용등을포괄적으로소개하는내용위주로만 보고되고있으며, 지주회사의연간기부금운영한도대비기부실적을포함한그룹 전체의기부실적및사회공헌활동지출규모등그룹차원의사회공헌활동실적은이사회 (ESG위원회포함)에서논의되지않고있다. 조치할사항 관련내규에기부금운영현황을보고사항으로규정하고, 이사회(ESG위원회포함)에서 그룹차원의기부금및주요사회공헌활동실적등을논의할수있는방안을마련하여 사회공헌활동업무체계의적정성을제고하시기바랍니다. (4) 임원성과급환수범위(Band) 개선 지주회사는내규이사회규정제11조에따라이사회결의를통해경영진성과급환수 사유해당여부및성과급환수범위를결정하고있다. 이사회는2017년제차이사회 결의안을준용하여현재기준의성과급환수범위(Band)를정하였으며이를성과급 환수를하는경우참고자료로사용중이다. 그러나, 문책경고(등기임원) 및감봉(집행임원)의경우환수범위(Band)의최소기준을 %로정하고있어성과급환수율이자의적·온정적으로정해질우려가있고, 성과급환수 범위(Band)가내규에정해져있지않아동내용을내규화하여명확하게관리할필요가 있다. - 7 - 조치할사항 문책경고(등기임원) 및감봉(집행임원)의성과급환수범위(Band) 최소기준을상향하여 환수제도의실효성을제고하고, 성과급환수범위(Band)의명확한관리를위해성과급 환수범위(Band)를등기임원및집행임원의보수관련내규에규정하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 4227,
+        "estimated_tokens": 224,
+        "created_at": "2025-07-20",
+        "regulations": [
+          "이사회규정 제11조"
+        ],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250613_토스뱅크_주식회사_202400673_12_개선내용 공개안_토스뱅크_",
+      "source_file": "MGMT_20250613_토스뱅크_주식회사_202400673_12_개선내용 공개안_토스뱅크_.pdf",
+      "institution": "토스뱅크",
+      "date": "2025. 6. 13",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "개선내용 공개안 1. 금융회사명: 토스뱅크 2. 조치일: 2025. 6. 13. 3. 조치내용 대 상 내 용 기 관 개선사항3건 4. 조치대상사실 가. 개선사항 (1) 의심스러운거래보고업무운영불합리 회사는의심스러운거래보고(STR)를수행하기위해검사착수일현재 총●개의의심스러운거래추출기준을운영중이며, 추출된거래에대하여 자금세탁방지팀에서의심거래여부를검토하고보고대상으로확정된거래를 FIU에보고하고있다. 하지만회사는모임통장상품을이용하여고액현금거래보고(CTR) 회피 목적의분할현금거래가발생할수있음에도이를STR 추출기준에반영하지 않고있어의심거래보고대상으로검토되지않을우려가있고, 의심스러운거래검토관련업무절차마련이미흡하여의심거래추출기준에 의해추출된일부거래에대한검토가1년이상장기간소요되는등의심스러운 거래가적시에보고되지않을가능성이있다. 조치할사항 따라서회사는모임통장의모임장과공동명의자의명의가혼합된1천만원 이상의분할현금거래에대하여STR 여부가검토될수있도록의심스러운 거래추출기준을개선하는한편, 의심스러운거래검토절차를구체화하고, 검토지연여부모니터링등을위한업무절차를마련하시기바랍니다. (2) 고객위험평가업무운영불합리 회사는고객위험평가모형에따라고객의자금세탁위험도를평가하고고위험 으로평가된고객에대해강화된고객확인을수행하고있다. 하지만①개인및개인사업자의연령별위험점수를변경하였음에도시스템상 개인고객에대해서만변경사항이반영됨에따라개인사업자에대한위험평가 시에는변경전의연령별위험점수가적용되고있고, ②개인사업자에대한고객확인재이행시시스템설정오류로인하여신규 수집된정보가아닌기존정보로고객위험평가를수행하였으며, ③법인고객의설립일자가시스템상필수사항으로통제되지않아설립일자를 미입력하는경우위험평가요소인설립경과기간이●년으로계산되어위험 점수가●점으로일괄적용되고있다. 또한④고객위험평가항목에업종을포함하면서●개고위험업종에대하여 ●점을부여하고나머지●개업종은모두●점을부여하여업종별위험도를 세밀하게반영하지못할우려가있으며, ⑤고객의위험평가점수가정의서대로적정하게산출되고있는지여부에 대한주기적인검토절차가마련되지않아고객위험평가점수산출에오류가 있을경우적시에발견되지않을우려가있다. 조치할사항 따라서회사는고객위험평가관련전산시스템적용오류사항을시정하고 개인사업자및법인고객에대한위험평가를재실시하는한편, 고객위험평가 모형의적정성을재점검하고, 위험평가점수산출의적정여부에대한주기적인 검토절차를마련하여고객위험평가모형이고객의위험도를적절히반영할 수있도록개선하시기바랍니다. (3) 신상품등에대한사전위험평가체계미흡 자금세탁방지및공중협박자금조달금지에관한업무규정제38조제2항에 의하면법인·단체고객의신원확인시비영리법인의경우법인명, 실명번호, 주소·소재지, 대표자정보및설립목적등을확인하여야한다. 회사는고객의신원확인시법인·단체고객을●가지유형으로분류하고 이중비영리법인을선택할경우설립목적을필수적으로확인하도록운영 하고있으나, 공공기관및국가·지방자치단체인비영리법인의경우설립목적이 필수사항으로통제되고있지않아설립목적확인·검증이누락될우려가있다. 조치할사항 따라서회사는공공기관및국가·지방자치단체로분류된비영리법인에 대하여설립목적을필수로입력하도록전산시스템을개선하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1501,
+        "estimated_tokens": 86,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250617_피에프씨테크놀로지스_주식회사_202200487_12_피에프씨테크놀로지스_경영유의사항_등_공개안",
+      "source_file": "MGMT_20250617_피에프씨테크놀로지스_주식회사_202200487_12_피에프씨테크놀로지스_경영유의사항_등_공개안.pdf",
+      "institution": "피에프씨테크놀로지스(舊피플펀드컴퍼니)",
+      "date": "2025. 6. 17",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항 등 공개안 1. 금융기관명: 피에프씨테크놀로지스(舊피플펀드컴퍼니) 2. 제재조치일: 2025. 6. 17. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의사항1건 4. 제재대상사실 가. 경영유의사항 (1) 재무건전성제고및이사회운영의내실도모 피에프씨테크놀로지스는2021.9월말기준자기자본이17억93백만원으로자기 자본등록요건인30억원에미달하고2021.3분기당기순손실이120억32백만원에이르는등 재무건전성이취약한상황에서 2021.11.18. A 및2021.12.13. B 등2개법인과총350억원을한도로자금을대여 하는계약을체결하였는데 동금액은2021.9월말기준자기자본(17.9억원)의19.5배에달하는거액으로신용 리스크를수반하고피에프씨테크놀로지스재무건전성에중대한영향을미칠것으로 우려되는데도해당계약체결과관련한이사회의의사록이존재하지않는등이사회의 의사결정여부를확인할수없으므로 앞으로중요사항에대해이사회를개최하는경우온라인투자연계금융업자의재무 건전성등에미치는영향을충분히논의한후결정할수있도록관련내규에반영하는등 필요한조치를취하고, 이사회의사록에는의견개진내용을작성유지하는등이사회 운영의내실을도모할필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 564,
+        "estimated_tokens": 42,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250618_대신증권주식회사_202400806_11_경영유의사항 공개안_대신증권_주_",
+      "source_file": "MGMT_20250618_대신증권주식회사_202400806_11_경영유의사항 공개안_대신증권_주_.pdf",
+      "institution": "대신증권일본(동경)현지법인",
+      "date": "2025.6.18",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 공개안 1. 금융기관명: 대신증권일본(동경)현지법인 2. 제재조치일: 2025.6.18. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의사항1건 4. 제재대상사실 가. 경영유의사항 (1) 투자조언업영위필요 본금융상품거래법상투자조언업자는금융상품거래업등을할수있게된날로 부터3개월이내에업무를개시하여야하고, 3개월이상그업무를휴지하면아니된다.  우리나라의자본시장법과유사한일본의자본시장기본법  우리나라투자자문업자와유사하게투자자문계약에의거유가증권, 금융상품등의가치및투자 판단에관해조언 하지만, 대신증권는2020.5.20. 일본동경에현지법인을설립한후2022.12.16. 투자조언업자로등록하였으나검사종료일까지투자조언업을영위하고있지아니한바 투자 조언업등록유지요건충족을위하여관련업무를영위할필요가있다.  대신증권동경현지법인은현재대신증권·B등C의계열사를대상으로일반컨설팅서비스 (일본부동산시장동향조사등)만을제공 (관련부서: 전략지원실)"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 487,
+        "estimated_tokens": 44,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250625_우리자산신탁_202400617_12__공개안_우리자산신탁__개선사항 공개내용",
+      "source_file": "MGMT_20250625_우리자산신탁_202400617_12__공개안_우리자산신탁__개선사항 공개내용.pdf",
+      "institution": "우리자산신탁",
+      "date": "2025. 6. 25",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 개선사항 공개안 1. 금융기관명: 우리자산신탁 2. 제재조치일: 2025. 6. 25. 3. 제재조치내용 제재대상 제재내용 기 관 개선사항1건 4. 제재대상사실 가. 개선사항 (1) 임직원금융투자상품매매내역확인절차미흡 우리자산신탁는자본시장과금융투자업에관한법률제63조, 자본시장과금융 투자업에관한법률시행령제64조상임직원금융투자상품매매내역을확인하기위해 내규에따라분기별로소속임직원에대해금융투자상품매매계좌개설및거래신고서 등을징구하는등프로세스를마련하였으나,  계좌개설및거래내역증빙자료포함 임직원신고내역과제출된증빙자료를대사하거나, 2개이상의계좌가신고된경우 예외사유해당여부등에대한점검및경위서징구등세부검증절차가미흡하여관련 절차를개선할필요  관련규정 1. 자본시장과금융투자업에관한법률 제63조제2항, 제3항 2. 자본시장과금융투자업에관한법률시행령 제64조 제2항내지제4항"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 444,
+        "estimated_tokens": 47,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250701_대덕자산운용_주식회사_202300504_12_대덕자산운용_주__경영유의_공개안",
+      "source_file": "MGMT_20250701_대덕자산운용_주식회사_202300504_12_대덕자산운용_주__경영유의_공개안.pdf",
+      "institution": "대덕자산운용",
+      "date": "2025. 7. 1",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 공개안 1. 금융기관명: 대덕자산운용 2. 조치일: 2025. 7. 1. 3. 조치내용 대상 내용 기관 경영유의사항2건 4. 조치대상사실 가. 경영유의사항 (1) 자문수수료등계약관련내부통제강화 회사가자문계약제도를운용함에있어서자문계약서상구체적인자문내역이기재 되지않거나자문용역결과관리가미흡한사례가확인된다. 조치할사항 향후자문용역계약체결시자문내역명확화및자문용역사후관리강화등관련된 내부통제절차를강화하시기바랍니다. - 2 - (2) 성과급에대한객관적인지급기준마련 회사는자체급여규정상경영성과및개인영업성과에근거하여성과급을지급 할수있도록규정하고있으나, 각지표별성과측정을위한객관적인기준없이 대표이사의평가에의해성과급지급률을결정하는등지급체계의투명성과객관성 이결여되어있다. 조치할사항 향후각지표별성과측정을위한계량지표를설정하는등객관적인성과급지급 기준을마련할필요가있습니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 441,
+        "estimated_tokens": 43,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250703_동원제일저축은행_202400688_12__부산_동원제일저축은행 경영유의사항 등 공개안_F",
+      "source_file": "MGMT_20250703_동원제일저축은행_202400688_12__부산_동원제일저축은행 경영유의사항 등 공개안_F.pdf",
+      "institution": "(부산)동원제일저축은행",
+      "date": "2025. 7. 3",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융기관명: (부산)동원제일저축은행 2. 조치일: 2025. 7. 3. 3. 조치내용 대상 내용 기관 경영유의사항2건 4. 조치대상사실 가. 경영유의사항 (1) 감사조직정비및감사업무의독립성강화 상호저축은행은감사위원회및감사보조조직이경영진및타부서로부터 독립된위치에서감사업무를충실히수행하도록하여야함에도, 2024.9월말현재상근감사위원을포함한감사위원전원이타위원회직무를 겸임하고있고, 감사위원이소속된법무법인에회사업무와관련한법률자문을 의뢰한사실이있어감사위원회업무의독립성침해및이해상충의소지가있으며, 감사부서의부서원들이타부서업무를겸직하거나파견근무를수행하고 있고, 감사부서가대표이사의요청에따라2020.7.31.경부터급여부문에대해 감사를실시하지않는등독립된감사업무를수행하지못하고있는바, 앞으로원활한감사업무수행을위해감사조직을정비하고, 감사위원회및 감사보조조직이경영진등으로부터독립적인위치에서감사업무를수행할수 있도록감사업무의독립성을강화할필요가있음 - 2 - (2) 여·수신편중리스크관리강화 상호저축은행은여신업무를처리함에있어산업별, 고객그룹별여신운용의 다양화를통해여신편중현상을방지하여야하고, 특정부분에의과도한위험 집중을방지하기위하여위험을적절하게분산하여야함에도 2024.9월말현재PF대출, 건설업, 부동산업관련대출액이총여신의61.7%를 차지하는등부동산부문에여신이편중되어있어향후부동산경기침체시 자산건전성이악화될우려가있으며, 정기예금만기구조가하반기에집중되어2024.9월유동성비율이급감하였고, 2024.10월의경우예금만기도래금액이2024년하반기정기예금만기도래금액의 41.7%를차지하는등만기쏠림현상이발생하고있는바, 앞으로업종에대한여신편중이발생하지않도록여신포트폴리오다변화 등을통해여신유형별규모및증가율을적정한수준으로관리하고, 정기예금등 수신의만기가특정시기에편중하지않도록완화하는등리스크관리를강화할 필요가있음"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 901,
+        "estimated_tokens": 63,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250708_세일신용정보_주식회사_202300381_12_세일신용정보_경영유의 등",
+      "source_file": "MGMT_20250708_세일신용정보_주식회사_202300381_12_세일신용정보_경영유의 등.pdf",
+      "institution": "세일신용정보",
+      "date": "2025. 7. 8",
+      "is_relevant": true,
+      "found_keywords": [
+        "신용정보법"
+      ],
+      "content": {
+        "full_text": "- 1 - 경영유의사항등공개안 1. 금융회사명: 세일신용정보 2. 제재조치일: 2025. 7. 8. 3. 제재조치내용 제재대상 제재내용 기관 경영유의사항3건, 개선사항15건 ※ 경영유의사항 및 개선사항은 금융회사의 주의 또는 자율적 개선을 요구하는 행정지도적 성격의 조치임 4. 조치대상사실 가. 경영유의사항 (1) 지점및영업소에대한실효성있는관리방안마련필요 2023.7.18. 현재세일신용정보는위임직채권추심인만으로구성된총19개의지점 및영업소조직(5개지점, 14개영업소)을운영중으로본점에서는이들지점및 영업소에대해직접적인통제를하지않고있고, 영업소를관할하는지점에서도업무 취급에대한적정성을확인하지않고있으며, A 소재의사업본부는지점형태로운영 하면서도지점장없이본점에서근무하는이사가직접관리하고있는등지점및영업소에 대한전반적인관리수준이취약함 따라서회사는지점및영업소개설및운영에관한사항을내규로마련하고, 지점 및영업소에서발생하는부당추심행위등의방지를위해실효성있는관리방안을 마련하여시행하시기바람 (2) 지점장급여체계정비및시행필요 세일신용정보에대한2016년부문검사결과, 위임직채권추심인의채무변제금회수실적에만 의존하는지점장의성과급체계가부당한채권추심행위를방조할우려가있어 이에대해합리적인급여체계를마련하도록경영유의사항으로조치(2017.9.11.)하였고, 회사는이에대해지점장급여체계를개선한것으로정리보고(2018.11.30.)를하였음 - 2 -  지점장 급여체계가 최저임금을 기본급으로 지급하고 위임직채권추심인의 채무변제금 회수실적에만 의존한 성과급 체제로 운영하고 있어 지점장이 부당한 채권추심행위를 방조할 우려가 있으므로 지점장의 부당한 채권추심행위를 예방·통제할 수 있는 합리적인 급여체계 마련 필요  지점장 급여가 지점실적에 크게 연동됨에 따라 불법추심 방지 등을 위해 민원 등 관리소홀 문제 발생시 지점장 성과급을 차감하는 방안을 마련한 것으로 정리보고  본사에서 검토 후 민원 건당 해당 지점장 성과급 B원 공제 하지만회사는금번검사결과, 동보고와달리지점장급여체계를개선하지않은채 여전히지점장급여가지점실적에크게연동되는급여체계를유지하고있음  (지점장 現 급여체계) 기본급(CD만원)  지점매출액 - (추심인 수수료  지점 등 경비) 따라서회사는지점장급여체계에대한개선방안을마련하여즉시시행하시기바람 (3) 채권추심업무수행내역기록및관리강화 세일신용정보에대한2016년및2018년부문검사결과, 회사의채권추심업무 수행내역에대한기록등이미흡한것으로나타나이에대해경영유의사항으로 조치(2017.9.11., 2019.3.13.) 하였고이에대해회사는해당내역에대한기록관리를 강화한것으로정리보고(2018.7.27., 2019.10.4.) 하였음  (2016년 지적사항 내용) 추심활동내역을 거의 입력하지 않고 있으므로 추심활동내역이 충실히 기록될 수 있도록 관리방안을 마련하고 추심활동 상황을 수시로 확인할 필요 (2018년 지적사항 내용) 추심활동 기록에 대한 세부작성기준을 마련하고 실제 추심활동 입력내용은 샘플링을 통해 녹취내용과 대조해 보는 등 채권추심활동 기록에 대한 관리 강화 필요  (2016년) 추심활동 기록이 없으면 채무변제금을 전산처리 불가하도록 시스템 변경 (2018년) 채권추심활동 내용의 세부적인 작성기준을 제정하여 전 지점에 배포 하지만, 금번검사결과, 수임기간1개월이상채권(157,529건) 중77.2%(121,656건)가 채권관리시스템에채권추심업무수행내역기록이전혀없고여타채권도관련 업무수행내역이형식적으로기재되어있는등해당지적사항이개선되지않고있음 따라서회사는채권추심업무수행내역이채권관리시스템을통해충실히기록및관리될수 있도록실질적인방안을마련하여시행하시기바람 - 3 - 나. 개선사항 (1) 수임채권소멸시효확인절차미흡 세일신용정보는채무자에게수임사실을통지하면서추심채권의소멸시효완성여부를 함께안내하고있으나, 2023.7.18. 현재지점(영업소)에서채권추심을수임하면서소멸시효완성소지가있는 647건에대해소멸시효완성여부를채권자에게확인하지않은상태이며  수임채권을 표본점검(1,085건)한 결과 이 중 59.6%(647건)에 해당 2019.4.30.2022.10.11. 기간중소속위임직채권추심인2인은소멸시효완성소지가 있는채권에대해시효중단여부를확인하지않고일부감면, 소액상환유도등 방식으로채권을추심하였음  E지점 甲, F영업소 乙 등 2인 따라서앞으로회사는채권추심수임시소멸시효완성여부가확인되지않은채권은 수임하지않도록하고추심중인채권이소멸시효가완성될소지가있는경우시효 중단사유가확인되기전까지는추심을중단할수있도록수임채권소멸시효확인 절차를실효성있게마련하여시행하시기바람 (2) 수임채권원인서류채권관리시스템등록미흡 세일신용정보는내규채권추심업무규정제8조에따라채권추심위임계약체결시 해당채권의서류를철저히검증하여수임가능한채권인지, 허위또는위·변조가있었는지를 확인해야하고, 수임채권의적정성에대한사후점검을위해판결문, 공증등원인서류는 채권관리시스템에등록하여상시조회할수있어야함에도 지점에서는원인서류없이도채권관리시스템의채권일괄등록 기능을사용하여본점 결재없이추심채권으로등록할수있는바, 실제로2023.7.18. 현재채권관리시스템에 등록된수임채권을표본점검(60,753건)한결과이중34.6%(22,414건)가원인서류를 등록하지않았음 - 4 - 따라서회사는원인서류가미비한수임채권은채권관리시스템에등록되지않도록하고 등록된원인서류를통해수임가능여부등을사후점검할수있도록원인서류관리에 대한실효성있는방안을마련하여시행하시기바람 (3) 수임채권중복등록방지방안마련및시행필요 세일신용정보는채권자와채권추심계약을체결한후수임채권을채권관리시스템에 등록하면서채무자에게수임사실을우편으로통지하고있으나 2023.7.18. 현재 수임채권에 대해 표본 점검(759건)을 실시한 결과 이 중 30.3%(230건)는채권관리시스템에중복등록되어채무자에게반복적으로채권추심 수임사실이통지된것으로확인되었음 따라서회사는수임채권을채권관리시스템에중복등록함으로써채무자에게반복적으로 수임사실이통지되지않도록실효성있는방안을마련하여시행하시기바람 (4) 광고및홍보물에대한내부통제강화필요 내규일반규정제15조에따르면광고·홍보물제작시회사의명의및연락처를사용해야하고 위임직채권추심인의개인휴대전화번호등을사용해서는아니되며떼인돈 등부정적 이미지를주는용어를사용할수없고광고물제작및사용시회사의사전허가를 받아야하는한편, 위임직채권추심인개인이별도의광고물을제작및사용하여서는 아니됨에도 일부소속위임직채권추심인의경우회사의사전승인절차를거치지않고개인 휴대전화번호를광고에이용하거나떼인돈받아드립니다 등의부적절한표현이 포함된광고·홍보물을유튜브또는블로그등에게재한사례가확인되었음 따라서세일신용정보는위임직채권추심인이광고및홍보물을제작·사용시회사의 사전허가를거치도록하는등이에대한내부통제를강화할수있도록관련방안을 마련하여시행하시기바람 - 5 - (5) 채권존재여부관련분쟁중인채권에대한추심절차개선 내규채권추심업무규정제9조에따르면채권의유무에대한분쟁소지가있는 채권또는채권·채무관계가불명확한채권은수임하여서는아니됨에도 G지점, H지점및I지점에서는각각1건의채권에대해채권추심수임당시채권자 및채무자간채권의존재여부에대한분쟁이진행중임에도동채권을수임하여추심한 사실이있음 따라서세일신용정보는채권추심수임시해당채권의존재여부에대한분쟁이진행중인 경우에는수임하지않도록하고, 채권추심시추심하고있는채권에대해소송등으로 분쟁이발생하는경우는추심을중단할수있도록관련절차를실효성있게마련하여 시행하시기바람 (6) 동일채무자에대한독촉우편물발송건수관리방안마련 내규일반규정제14조제3항에따르면채무자의요청및단순안내를제외한이메일, 문자메시지를과도하게보내지않아야하며채권별일3회이내로발송하여야함에도 2023.7.18. 현재채무자에게변제독촉을위한우편물을발송하면서동일채권에대해 하루중3회이상채무자에게채권추심목적으로우편물을발송한사례가243건(채무자수 229명)이확인되었음  법적절차 예고장, 법적절차 진행안내장, 채무변제 독촉장 등 따라서세일신용정보는동일채무자에대한채무독촉우편물이과도하게발송되지 않도록일일우편물발송건수를관리할수있는방안을마련하여시행하시기바람 (7) 관련법규개정사항등내규반영필요 세일신용정보는신용정보법및채권추심법상의무사항을내규일반규정 및채권추심업무규정에규정하고있으나, 내규개정(2013.9.2.) 이후관련법규개정사항을현행화하지않아임직원및위임직채권 추심인이관련법규를오인또는미숙지하여법규를위반할소지가있음 - 6 -  채권추심법 제8조의3(관계인에 대한 연락금지), 제9조(폭행·협박 등의 금지) 제7호 누락 등 따라서회사는관련법규개정사항등을내규에반영하고향후에도내규가현행화될수 있도록관련부서가주기적으로점검하는등관련절차를마련할필요가있음 (8) 위임직채권추심인에대한내실있는교육실시필요 세일신용정보는위임직채권추심인등에대한준법교육을실시하면서본점에서 직접실시하는교육은마련하지않은채반기별로법규상금지사항을그대로기재한 지침을지점앞으로통보한뒤단순히교육이수서명만징구하여확인하는등형식적으로만 교육을운영하고있어위임직채권추심인에대한준법교육이충실히실시되고있지 않았음 이에따라회사는소속위임직채권추심인에대해본점에서직접불법추심행위 방지를위한교육을추가로실시하는등실효성있는교육방안을마련하여해당 방안에따라내실있는교육을시행하시기바람 (9) 관련법규준수여부등에대한자체점검실효성제고 세일신용정보는내규감사규정제8조에따른연간감사계획에의하여본·지점을 대상으로연1회이상정기감사를실시하도록되어있으나, 지점(영업소포함) 업무수행내역에대해서는자체점검을제대로실시하지않아 채권추심활동의적정성점검이미흡한수준임  통상 2인이 3일 이내에 지점 전반을 점검, 추심활동기록 및 녹취기록 등에 대한 점검 없이 본사 접수 민원 위주로만 점검(자체감사시 적발사례 없음)하는 등 점검이 미흡한 수준 본지점에대해채권추심활동의적정성을점검할수있도록구체적인점검기준을마련하는등 실효성있는자체점검방안을마련및시행하시기바람 - 7 - (10) 매입채권과수임채권의구분관리필요 세일신용정보는채권추심위임계약이체결된채권(수임채권)은채권관리시스템에 등록하여관리하고있으나, 14년말회사가J대부로부터매입한채권(매입채권) 6건은수임채권이아님에도 채권관리시스템에등록하여수임채권과동일한방식으로관리하면서추심한사실이있음 따라서회사는매입채권에대해서는채권관리시스템에등록및추심하지않도록수임 채권과구분하여관리하시기바람 (11) 수임채권의이자제한법위반여부점검절차마련 내규채권추심업무규정제8조에따르면세일신용정보는허위또는무효인 채권에대해서는채권자(의뢰인)에게명백히수임거부의사를밝혀야하나 회사는수임채권이이자제한법에따른이자한도를초과하여무효에해당하는채권인지 여부를별도점검하고있지않으며관련점검절차도마련하고있지않음 따라서회사는채권자와채권추심위임계약체결시이자제한법을초과하는채권은 수임할수없다는사실을계약서에명시하고채권자로부터채권추심수임시이자한도 초과여부를점검하는등수임및추심과정에서이자제한법을위반하지않도록관련 점검절차를마련하시기바람 (12) 채권추심계약시추심업무범위고지명확화 세일신용정보는채권추심계약서에채권추심수수료율또는신용조사수수료를기재하고 있으나동항목과관련한업무범위를계약서에명시하지않고채권자에게는구두로만 설명하고있어향후채권자와의분쟁이발생할소지가있음  신용조사수수료만 기재되는 경우 추심 업무 범위에서 변제촉구, 변제금 수령 등은 제외되며, 채권추심 수수료율만 기재되는 경우는 신용조사 보고서가 제공되지 않음 따라서회사는채권자와위임계약체결시채권추심수수료율또는신용조사수수료 기재에따른채권추심의업무범위를채권자에게명확하게설명하는한편동내용을 계약서에도명시하시기바람 - 8 - (13) 위임직채권추심인보유채권의수임금지절차마련 세일신용정보는K영업소소속위임직채권추심인丙와L지점소속위임직채권추심인 丁에대해위임직채권추심인본인이보유하는채권에대해서채권추심위임계약을 체결하였으며丁의채권은丁본인이직접추심한사실이있음 추심채권의채권자가소속위임직채권추심인인경우, 해당채권을채무자가상환하더라도 채권추심인이동사실을회사에게알려주지않고채권추심수수료를정상납입하지않은채 위임계약을종료하는등의문제가발생할우려가있음 따라서회사는소속위임직채권추심인이채권자인경우에는해당채권에대한채권 추심위임계약을체결하지않도록내규를개선하고관련내부점검절차를마련하시기바람 (14) 채무사실관련안내장내용점검절차마련 세일신용정보는채권추심을위해수임사실통지서, 채무독촉장등각종안내장을 채무자에게발송하면서채권자로부터수임한채권에대한정보를정확하게알려주어야함에도 기재사항중일부가채권자의채권정보누락또는전산오류발생등으로인하여 오기재·누락되는경우가있음  채권자로부터 대량 수임시 제공받은 채권정보의 누락·오류(예 : 채무발생일 대신 소멸시효일 제공), 전산 오류로 인하여 수임사실과는 다른 표기(예 : 특정할 수 없음으로 표시) 등 따라서회사는수임단계에서채권자로부터제공받는채권정보가충분하지않을경우, 안내장발송등채권추심을제한하고채무자에게안내장기재사항이정확하게표시될수 있도록안내장서식및기재사항의오류를점검할수있는절차를마련하시기바람 (15) 법적절차진행안내장서식개선 내규채권추심업무규정제16조(채무변제촉구)에따라회사는채무자에대한 변제촉구를위해채무안내장서식을마련하여사용하고있으나법적절차진행 안내장은제목으로인하여법적절차가진행되는것으로채무자가오인할소지가있음 따라서세일신용정보는채무자로하여금법적절차가진행되고있는것으로오인하지않도록 안내장제목을변경하고변경된안내장서식은내규에반영하시기바람"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 6437,
+        "estimated_tokens": 526,
+        "created_at": "2025-07-20",
+        "regulations": [
+          "채권추심업무규정 제8조",
+          "일반규정 제15조",
+          "채권추심업무규정 제9조",
+          "감사규정 제8조",
+          "채권추심업무규정 제16조",
+          "채권추심법 제8조"
+        ],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250708_케이에스신용정보_주식회사_202300379_12_케이에스신용정보_경영유의 등",
+      "source_file": "MGMT_20250708_케이에스신용정보_주식회사_202300379_12_케이에스신용정보_경영유의 등.pdf",
+      "institution": "케이에스신용정보",
+      "date": "2025. 7. 8",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항등공개안 1. 금융회사명: 케이에스신용정보 2. 제재조치일: 2025. 7. 8. 3. 제재조치내용 제재대상 제재내용 기관 경영유의사항1건, 개선사항6건 ※ 경영유의사항 및 개선사항은 금융회사의 주의 또는 자율적 개선을 요구하는 행정지도적 성격의 조치임 4. 조치대상사실 가. 경영유의사항 (1) 채권추심업무수행내역미등록 케이에스신용정보에대한2018년부문검사결과, 채권추심업무수행내역의기록· 관리기준을마련하고추심업무처리기록관리를강화하도록경영유의사항으로조치 (2019.2.13.)하였으나, 금번검사결과, 수임기간1개월이상채권(308,754건) 중33%(102,024건)는채권관리시스템에 추심기록이전혀없고여타채권도관련업무수행내역이형식적으로기재되어있는등 해당지적사항이개선되지않고있음 따라서회사는채권추심업무수행내역이채권관리시스템을통해기록및관리될수 있도록실질적인방안을마련하여시행하시기바람 나. 개선사항 (1) 수임채권소멸시효확인절차미흡 케이에스신용정보는내규신용조사및채권추심업무규정제31조에따라소멸시효가 완성된금융채권및민·상사채권에대해서는수임을할수없도록하고있으나, - 2 - A로부터장비사용료, 위약금등에대한채권추심을수임하면서채권자로부터연체 발생일외에는소멸시효완성여부를확인할수있는정보를입수하지않고있으며 연체발생일로부터5년경과되어소멸시효완성소지가있는채권2,448건에대해 소멸시효완성여부를채권자에게확인하지않고수임하여추심한사실이있음 따라서앞으로회사는소멸시효완성여부가확인되지않은채권은수임하지않도록 관련절차를실효성있게마련하여시행하시기바람 (2) 수임채권원인서류채권관리시스템등록미흡 내규신용조사및채권추심업무규정제31조에따라케이에스신용정보는채권 추심계약체결시채권추심이허용된채권인지여부를철저히확인해야하고, 수임채권의 적정성에대한사후점검을하기위해서는판결문, 공증등원인서류를채권관리시스템에 등록하여상시조회할수있어야함에도 지점에서는원인서류없이도채권관리시스템의채권일괄등록 기능을사용하면본점 결재없이추심채권으로등록할수있는바실제로채권관리시스템에등록된수임 채권을표본점검(30,149건)한결과이중11.8%(3,554건)에대하여원인서류를등록하지 않은사실이있음 회사는원인서류가미비한수임채권은채권관리시스템에등록되지않도록하고등록된 원인서류를통해수임가능여부를사후점검할수있도록원인서류관리에관하여 실효성있는방안을마련하여시행하시기바람 (3) 채권추심위임계약서보관및폐기절차개선 내규신용조사및채권추심업무규정제50조에따르면위임계약서는채권추심 종결시3년간보관후폐기해야하고, 신용조사및채권추심업무규정제32조에 따르면폐기해야할위임계약서는지점에보관하여서는아니됨에도 내규채권추심위임계약서관리지침제11조에서는종결된채권추심위임계약서를3년간 보관후폐기처리가아닌5년간보관하도록하고있어내규간채권추심위임계약서 보관기간이상이하게규정되어있으며폐기해야할계약서를본사에서별도편철하여 보관하지않고지점에서보관하고있음 - 3 - 케이에스신용정보는종결된위임계약서를보관하는기간에대하여내규간상충되지 않도록내규를정비하고내규에따라종결된계약서는본사에서별도편철보관하여 관리할수있도록위임계약서보관및폐기절차를개선하시기바람 (4) 동일채무자에대한독촉우편물발송건수관리방안마련 내규신용조사및채권추심업무규정제42조제2항에따르면채무자의소재가 파악된경우에는전화, 서면또는면담에의하여채무변제를촉구하되일일허용 횟수는채권별2회로제한되어있음에도 채무자에게변제독촉을위한우편물을발송하면서동일채권에대해하루중3회 이상채무자에게채권추심목적으로우편물을발송한사례가4건(채무자수4명)이 확인되었음 케이에스신용정보는동일채무자에대한채무독촉우편물발송시일일발송건수를 관리할수있는방안을마련하여시행하시기바람 (5) 채권추심관련안내장사용절차개선 내규신용조사및채권추심업무규정제42조제6항에따르면채무자에대한 독촉장을발송하는경우케이에스신용정보에서공식적으로제작, 사용중인독촉장을 사용하여야함에도 위임직채권추심인이개인적으로작성한양식을이용하여채권추심관련독촉장을발송하면서 법적조치의진행주체가모호한문구가독촉장에포함된경우가발생하였음  (예시) 위임직 채권추심인 甲은 당사는 기존 우편 및 유선 독촉 등의 선의적 방법으로는 더 이상 귀하의 채무 상환이 어렵다고 판단되어, 집행권원(관할법원사건번호)에 의거, 실사 확인이 완료되는 대로, 부득이 채권회수를 위한 강제집행을 개시할 예정입니다.라는 문구를 강제집행 관련 안내문에 삽입 회사또는채권추심인이우편또는SMS 등을이용하여추심관련안내장을발송하는 경우채권관리시스템에등록되어있는표준양식만사용할수있도록하고, 개별양식을 사용한안내장발송은제한하는등표준양식이아닌안내장을사용하지않도록안내장 사용절차를개선하시기바람 - 4 - (6) 채무사실관련안내장내용점검절차마련 케이에스신용정보는채권추심을위해수임사실통지서, 채무독촉장등각종 안내장을채무자에게발송하면서채권자로부터수임한채권정보를정확하게알려 주어야함에도기재사항중일부가제대로표시되지않는경우가발생하였음  채권자로부터 채무정보를 부정확하게 제공(예: 채무금액을 0원으로 기재) 받아 안내장에 오기재된 경우, 안내장에 표준 서면양식의 표시항목 중 연체발생일 등이 누락된 경우 등 회사는수임단계에서채권자로부터제공받는채권정보가누락된경우안내장발송등 채권추심을제한하고채무자에게안내장기재사항이정확하게표시될수있도록 안내장양식및기재사항의오류여부에대한점검절차를마련하시기바람"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 2559,
+        "estimated_tokens": 194,
+        "created_at": "2025-07-20",
+        "regulations": [
+          "신용조사및채권추심업무규정 제31조",
+          "신용조사및채권추심업무규정 제42조"
+        ],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250709_위너스자산운용_202300280_11_경영유의사항 공개안_위너스자산운용",
+      "source_file": "MGMT_20250709_위너스자산운용_202300280_11_경영유의사항 공개안_위너스자산운용.pdf",
+      "institution": "위너스자산운용",
+      "date": "2025. 7. 9",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 공개안 1. 금융기관명: 위너스자산운용 2. 제재조치일: 2025. 7. 9. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의사항1건 4. 제재대상사실 가. 경영유의사항 (1) 주식파생형펀드관련리스크관리강화필요 위너스자산운용의내규위험관리기준에서위험관리부서는위험수준 및허용한도준수상황을상시모니터링하고그결과를주기적으로경영진에보고 해야하며, 이를위한위험관리정보시스템을운영하도록규정하고있고, 동 내규의해외옵션운용에관한리스크관리가이드라인에서손절매기준을 투자원금대비-10%로설정하고시장급락시4단계에걸친대응조치(추가진입 금지, 비중축소, 손절매정리, 포지션완전정리)를취하도록규정하고있다. 하지만해당손절매기준의10% 손실산정기준이불명확하고4단계위기 대응조치와관련해서는시장급락및각위험단계인식기준을정하고있지않아 손절매가원칙에따라작동하기어려운상황이었다.  손절매기준의10% 손실산정시점이옵션만기시점기준인지, 옵션만기전시점을 포함하는지기재되어있지아니함 조치할사항 따라서위너스자산운용은손절매기준을명확화하는등집합투자재산의 가치가급변할수있는주식파생형펀드운용과관련한리스크관리가적시에 실효성있게운영될수있도록관련제도를보완하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 591,
+        "estimated_tokens": 50,
+        "created_at": "2025-07-20",
+        "regulations": [],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250710_신한라이프생명보험주식회사_202300754_13_신한라이프생명_주_ 정기검사 경영유의 등 공개안",
+      "source_file": "MGMT_20250710_신한라이프생명보험주식회사_202300754_13_신한라이프생명_주_ 정기검사 경영유의 등 공개안.pdf",
+      "institution": "신한라이프생명보험",
+      "date": "2025. 7. 10",
+      "is_relevant": true,
+      "found_keywords": [
+        "전자금융"
+      ],
+      "content": {
+        "full_text": "- 1 - 경영유의사항 등 공개안 1. 금융기관명: 신한라이프생명보험 2. 조치일(검사서통보일) : 2025. 7. 10. 3. 조치내용 대 상 내 용 기 관 경영유의사항12건, 개선사항18건 4. 조치대상사실 가. 경영유의사항 (1) 마케팅동의정보관리미흡 신한라이프생명보험(이하회사)는상품서비스소개및판매(이하마케팅) 동의를한고객의성명, 동의기간, 동의시작일, 동의종료일, 광고성정보수신동의 여부, 동의채널(전화, 문자, 이메일, 우편) 등마케팅동의관련정보를관리하고있음 하지만2019.1.1.2023.10.31. 기간중아래(가)(마)와같이마케팅동의관련 정보관리를소홀히하여, 고객의동의내용과달리고객정보를마케팅에활용하게될 우려가있으므로정확한마케팅동의정보를전산유지·관리할필요가있음 (가) 동의기간을계약유지기간으로설정한고객의경우, 동고객가입보험계약이 보험료미납으로실효되어계약이해지된상태임에도마케팅동의는유효한것으로 관리함에따라, 마케팅동의유효기간이종료된4,056건을마케팅동의가유효한것으로 관리하였음 (나) 고객이설정한마케팅동의기간이종료되었는데도마케팅동의여부를 미동의로변경하지않아, 마케팅동의유효기간이종료된1,001건을마케팅동의가 유효한것으로관리하였음  2023. 4. 18. 마케팅동의종료처리배치작업오류에기인 - 2 - (다) 고객이동의기간을1년5년으로설정하여마케팅에동의했는데도시스템상 동의기간을계약유지기간 등으로저장하여3,069건을고객이동의한기간과다르게 관리하였음 (라) 고객이마케팅에동의하지않았는데도이에동의한것으로전산입력하거나 (동의체크누락등포함), 고객이작성한서면동의서전산입력을누락하여동의정보를 최신화하지않는등80건을고객의실제마케팅동의사실과다르게관리하였음 (마) 고객이광고성정보수신에동의하지않은979건에대해문자(SMS)를통한 광고성정보수신에동의한것으로관리하였음 조치할사항 회사는마케팅동의와관련한관리체계를개선하여고객정보가동의내용과달리 활용되지않도록관리하시기바람 (2) 보험금심의위원회심의및운영업무강화 보험금심의위원회는내규인보험금심의위원회운영시행세칙제2조및제4조에 따라보험소비자의권익이침해되어서는아니된다는원칙하에보험금지급심사기준의 개정이필요한경우적기에변경할수있도록심의및의결하여야함 하지만회사는(구)신한생명-(구)오렌지라이프양사간상이한보험금지급기준을 2021년7월합병이후에통합한사실이있음  합병이후2022. 4.2022. 12. 기간중총86건의수술보험금지급기준사후통합 또한보험금지급기준을통합된기준으로개정할때보험금심의위원회가보험 소비자의권익침해여부등을개정이후에심의한사실이있음  보험금심의위원회수술보험금지급기준통합(총86건) 안건에대해2023.10.26. 일괄사후심의 조치할사항 회사는현재까지통합되지않은보험금지급기준이있는지검토하고, 지급기준 개정시보험금심의위원회에즉시보고하여적기에심의및의결할수있도록관련 업무를개선하시기바람 - 3 - (3) 통신판매보험대리점에대한사업비지급관련관리·감독강화 회사는통신판매보험대리점과체결한모집업무위탁계약서등에따라정상적인 거래관행에비추어부당하게수수료, 비용등을보험대리점에지원하여서는아니되고, 보험계약의해지등위탁계약서에서정한기지급수수료의환수사유가발생할경우 익월에지급할보험대리점수수료에서차감하는방법을통해환수할수있음 또한, 금융기관보험대리점에대해서는보험업감독규정별표7-2에따라금융기관 보험대리점의보험모집과관련된시책비등일체비용을금융기관보험대리점이부담 하도록하여야함 하지만회사는검사대상기간(2019년1월2023년10월) 중A 등10개통신판매 보험대리점에대하여정상적거래관행에서벗어나대리점소속보험설계사들의위촉 축하수당, 리쿠르팅시책비등수수료등으로147억원을부당하게해당대리점에지원한 사실이있음 또한, 회사는보험모집업무위탁계약이체결된B 등5개금융기관보험대리점에 보험모집관련시책비등으로58억원을지급한사실이있음 그리고C 등12개보험대리점에대한모집수수료환수사유가발생하였을때익월에 지급할보험대리점수수료에서차감하는방식등으로환수하지아니하고, 대리점소속 보험설계사에게직접환수하는등환수방식을운영함에따라2023년10월말기준총 6억원을환수하지못하고있음 조치할사항 회사는보험대리점등에부당한사업비(수수료, 비용)가지급되지않도록관련 업무처리기준등을개선하고관리·감독을강화하여주시기바람 (4) 변액보험펀드위험등급분류업무개선필요 회사변액보험계약권유세칙제12조에의하면변액보험펀드별위험등급분류는 안전자산편입비중및수익률변동성등을종합적으로감안하여야하고, 펀드설정 경과시점을기준으로3년미경과펀드는안전자산편입비중을기준으로하고있음 - 4 - 다만, 분류하고3년이경과한펀드는수익률변동성을기준으로분류함을원칙으로 하고있으나투자자보호를위해위험등급을보수적으로부여하고자하는펀드등의 경우에는회사판단에따라3년경과후에도안전자산편입비중에따라분류할수있도록 정하고있음 이에따라회사는검사대상기간중변액보험에편입된펀드의위험등급을분류 하면서관련세칙에따라펀드설정일3년미경과시점까지는안전자산편입비중으로 분류하고, 3년경과후에는예외없이수익률변동성만을기준으로위험등급을분류하였음 그결과2019년2021년까지초고위험으로분류된펀드의위험등급이2022년 저위험등급으로분류되었음  검사대상기간중펀드(2018.1.4. 설정) 위험등급분류내역: 2019년(초고위험) 2020년(초고위험) 2021년(초고위험) 2022년(저위험) 2023년(고위험) 하지만, 해당펀드의경우펀드자산의60% 이상을주가지수와연계된파생결합 상품등에투자하고기초자산운용성과에따라만기시점에원금손실이발생할수있는 위험성이내재되어있어투자자보호가필요한상품이므로위험등급분류시이를적극적 으로고려할필요가있음 조치할사항 회사는펀드등고위험펀드의위험등급분류시투자자보호를위해펀드별 특성, 안전자산편입비중과수익률변동성등을종합적으로고려하여적정위험등급으로 분류될수있도록관리를강화하시기바람 (5) 보험계약대출관련운영미흡 회사내규인보험계약대출운용시행지침제3조제3항은보험계약대출최대한도 변경시리스크관리운영위원회의승인을얻도록명시하고있으며, 제6조제1항은금리 확정형보험계약의대출금리상한을규정하고있음 2021년(구)신한생명과(구)오렌지라이프와의합병등으로인해적용금리별보험료 적립금구조등이변경되었다면보험계약대출적용금리등의적정성검토가이루어질 필요가있음 - 5 - 하지만2022년10월리스크관리운영위원회의승인없이보험계약대출최대한도를 해약환급금의95%에서90%로축소한사실이있으며, 내규에보험계약대출금리한도에 대한검토주기등검토기준이없어합병전인2014년6월결정된금리확정형보험계약의 대출금리상한을합병이후인검사실시일현재까지검토없이장기간적용하고있음 조치할사항 회사는내규인보험계약대출운용시행지침등관련규정에따라보험계약대출 최대한도변경시리스크관리운영위원회의승인을얻고, 보험계약대출금리한도의적정성을 검토하는주기및조건등에대한기준을마련하여운영하는등내부통제를강화하시기바람 (6) 투자자산평가의견서, 심사의견서작성등에관한사항 회사내규인자산운용규정제4조에따라자산운용관련부서는자산을운용함에 있어안정성, 유동성, 수익성및공공성이확보되도록관련법령및내규에따라선량한 관리자의주의의무를다하며, 자산운용과관련된리스크는정확하게측정되어의사결정에 반영되어야함 회사의자산운용부서인D, E 등이작성한평가의견서·투자심사서(이하심사서등) 에는대체투자자산의기초자산하락등으로기한의이익상실(EOD) 사유발생, 약정 (Covernant) 위반등이발생할경우, 담보권실행, 자산매각, 채권매각등다양한회수 (Exit)전략을제시하고있음  자산운용딜을소싱(Sourcing)하는부서에서투자집행을위해투자심사요청전작성하는문서 따라서보유자산에서부실등이발생하였을때의회수전략과같은중요정보는 정확하게분석한후심사서등에담아회사의투자심의기구인투자심사위원회의의사 결정에반영하고있으나, 아래와같은한계점및운영사례가있음 (가) 현재와같은금융시장악화로거시적인공통의위험(systematic risk)이현실화 된상황에서는, 보유대체투자자산에서기한의이익상실사유또는차환(Refinancing) 실패등이발생할경우시장내유동성악화로거래가활성화되기어려운점이있음 이러한금융시장악화상황에서는재무약정위반이발생한경우에수익증권의회사의 심사서에포함된다양한회수전략을실시하기어려우며, 회사는실제로재무약정위반이 발생하자심사서에서제시한전략과달리단순대주단의동의로만기연장한사례가있음 - 6 - (나) 또한해외부동산투자의경우국내자산운용사의정보력, 네트워크등이제한 되어있어해외자산운용사대비현지자산관리및운영능력이떨어지는측면이있고, 이에따라현지에서담보권을실행하여담보자산을직접운영하는데한계가존재함 조치할사항 회사는심사서등을작성할때실행가능한수준의위험대응전략을의사결정기구에 보고하여투자집행시의사결정에적정하게반영될수있도록하고, 국내운용사를 통한해외부동산투자의사결정시해외자산관리및운영능력에대해서도검증하는등 리스크관리를강화하여운영하시기바람 (7) 자산운용협의체및회의체운영강화 회사는내규인(구)자산운용시행세칙(2023년3월개정전) 제28조및제29조에 따라자산운용관련협의체및회의체인자산운용협의회 및투자전략회의를운영함 2023년3월일임운용체계전환에따라더이상자산운용그룹내부협의체를운영 하지않는다는의사결정에따라2023년3월내규인(구)자산운용시행세칙내제6장 협의체및회의체운영에관한사항을삭제하였고자산운용협의회 및투자전략회의를 폐지함 그러나과거자산운용협의회의에서논의했던자산군별운용방향및세부전략등은 일임운용체계하에서도실무부서간의주기적인협의및논의가필요한사항임 회사는F 와의투자일임계약서상자산운용지침서 제22조1)에서정한F 와의운용 협의회를개최하여일반계정의운용방향에대해논의하도록하고있으나, 일임운용사와의 계약사항일뿐별도회사내규등을통해개최주기, 참석대상및논의안건등이 규정2)되어있지않은상황임 1) 운용사는매월1회운용보고서를작성하여회사에제출하고양자간의합의에의해운용 협의회를개최한다. 2) (구)자산운용협의회는분기별로관련부서임원이회의에참석하도록규정되어있으나, 일임운용사와의운용협의회는양자간합의에의해개최되어개최주기가불분명함 또한투자전략회의를대체하여팀장회의 및투자손익관리회의 등을운영하고 있으나, 정기적으로개최하지않고관련회의안건등의기록도미흡함 - 7 - 조치할사항 회사는자산운용운용방향및세부전략을심도있게검토하고자산운용그룹대내 외적인유기적협력을도모하기하기위하여관련내규등을재검토하고, 변경된내규에 따라자산운용협의체및회의체운영을강화하시기바람 (8) 위탁운용사선정및사후관리체계강화 회사는내규인위탁운용시행지침에위탁운용선정과정, 평가기준, 모니터링등의 기준을마련하고있음 2021.7.1. 합병이전에는(구)신한생명의내규인유가증권위탁투자운용시행세칙에따라 운용성과(수익률, 성과지표, 성과일관성, 변동성) 등을고려한1차정량평가를거친후2차정성 평가를통해최종운용사를선정하였음 하지만, (구)신한생명-(구)오렌지라이프합병이후위탁운용사선정기준및절차를 1차정성평가및2차구술평가합산방식으로변경하여운용사의운용성과등을객관적 으로정량평가할수있는항목을삭제하였음  2022년9월1차정성평가(95점) 및2차구술평가(95점)를거쳐신한자산운용을단기자금외 주식, 채권등전통자산전체의일임운용자산운용사로선정 또한, 동지침제14조(정기평가)에따라매년위탁운용사에대한성과평가를실시 하여야함에도2022년9월신한자산운용과일임계약체결이후1년이경과한2023년 12월현재까지정기평가를실시하지않았음 조치할사항 회사는자산운용위탁사선정의객관성및공정성이확보될수있도록정량평가 항목을재검토하고, 성과평가를정기적으로실시하는등위탁운용사선정및사후관리 체계를개선하시기바람 (9) 유동성리스크관리강화 (가) 회사는내규인리스크관리시행세칙제31조(유동성리스크관리방법) 등에 따라장단기자금수급계획, 자산과부채의기간별ㆍ금액별구성규모, 유동성리스크에대비한 단기유동성자산의보유수준등을고려하여유동성리스크를관리하고있음 - 8 - 이러한유동성리스크를효과적으로관리하기위해서는운용자산수익률과적립금 부리이율을비교ㆍ검토하고이에대한역마진규모및향후자금유출등을충분히고려 하여유동성리스크를관리하는것이바람직함 하지만회사는2022년12월2023년재무계획수립시세전손익7,091억원을전망 하면서기타손익中퇴직연금역마진(△450억원)을금융손익(954억원)으로보전할계획이 었으나, 2023년실제퇴직연금손실예상금액은역마진(△477억원)과연말유동성확보를위한 채권매각손실(△350억원)을합한△827억원으로계획(△450억원)대비약84% 이상추가손실이 예상됨 약23조원규모의퇴직연금을운용하면서2022년11월2023년12월기간중운용 자산수익률이적립금부리이율보다최대13.21%p 낮고역마진상황이지속되는상황 으로동기간중누적손실은약1,191억원(예상치포함)이며일반계정(주주지분) 이익 으로특별계정의손실을계속보전(특별계정의잡이익처리)해오고있음 또한매년12월주기적으로만기도래하는퇴직연금자금유출을방어하기위하여, 운용자산수익률보다현저히높은적립금부리이율을제시하여역마진상황이지속되고있음 특별계정운영에있어자산듀레이션이부채듀레이션보다길어듀레이션미스매치가 발생함에따라금리변동에따른유동성리스크가지속될우려가있음 (나) 회사의내규인리스크관리시행세칙제31조(유동성리스크관리방법)에따르면 회사내각부서는유동성리스크에영향을줄수있는제기준및업무에대하여리스크관리 담당부서에공유하고, 위험관리책임자의합의를득하여야함 하지만회사는자회사인신한라이프베트남의2024년주식, 채권등에대한투자 계획이회사의유동성리스크에영향을줄수있음에도, 회사는자회사의자산운용계획과 관련한별도의유동성리스크에대한분석을하지않았음 (다) 회사내규인리스크관리운영위원회규정제3조(결의사항)에따르면신규사업 진출, 주요정책의수립및변경등리스크에영향을미치는사항은리스크관리운영 위원회에서결의하여야하고, 위험관리위원회규정제7조(결의사항등)에따르면신규 사업진출및투자에관한사항및기타이사회가필요하다고인정하는사항등에대하여 위험관리위원회에서심의하여야함 2022년퇴직연금관련유동성리스크발생가능성이높은상황에서신사업진출 및시행시기이연등이사회결정이필요한사항에대하여는리스크관리운영위원회및 - 9 - 위험관리위원회의심도있는검토가필요하므로이에대해동위원회에상정하여심의 하는등리스크관리가바람직함 회사는2022. 9. 19. 제6차임시위험관리위원회에서퇴직연금사업경쟁력강화 등을이유로신탁업진출에대해심의하여신탁업진출안을심의함 그러나회사는신탁업심의이후이사회승인전까지저축성보험만기도래등으로 인한유동성리스크증가를대비할필요가있음에도유동성리스크리뷰등사후모니터링을 실시하지않는등대응책마련을마련하지않음 그결과유동성리스크증가에대한대응방안중하나인신탁업시행시기이연등에 대한리스크관리운영위원회및위험관리위원회의심의없이정기이사회(2022. 12. 5.)에서 이를승인함 조치할사항 (가) 회사는퇴직연금계정운영시적정한유동성확보를위하여사전에역마진 규모, 만기분산, 물량조정등을심도있게검토하여적정한적립금부리이율을산출하고, 자산부채듀레이션매칭을강화하고일반계정의손실을축소할수있도록퇴직연금 계정의건전성및수익성을안정적으로관리하시기바람 (나) 자회사의자산운용계획상유동성리스크에영향을줄수있는제기준및업무에 대해서영향분석을검토하고유동성리스크에영향이있다고판단되는경우유동성 리스크분석결과를리스크관리담당부서에공유하고위험관리책임자의합의를득하는등 자회사의유동성리스크관리를강화하시기바람 (다) 회사내규에따라신규사업진출, 주요정책의수립및변경등리스크에 영향을미치는사항및이사회결의가필요한사항은리스크관리운영위원회및위험 관리위원회에서리스크에대한검토가이루어질수있도록리스크관리체계를강화 하시기바람 (10) 정보기술부문중장기계획수립필요 회사는 전사차원의 비전 및 전략과 연계한 중장기 정보기술부문계획(ISP : Information Strategy Plan)은수립하지않은채매년연간정보기술부문계획을수립 하여추진하고있어 - 10 - 중복투자가발생하거나기추진사업의불가피한변경·취소등으로정보기술사업의 실효성과일관성이훼손될우려가있음 조치할사항 회사의비전및전략에맞춘중장기정보기술부문계획을수립하고이와유기적 으로연계된연간정보기술부문계획을수립운용하시기바람 (11) 고객정보관리강화필요 회사는신한생명·오렌지라이프생명합병에따른IT시스템통합과정에서고객 주민등록번호에대한확인·검증작업을실시하지않아고객15,362명(16,846계약건)의 주민등록번호에오류가발생함  주민등록번호13번째숫자오류로인한비정상적인주민등록번호존재 또한, 합병前양사에모두계약을보유하고있으나양사에서관리하는고객성명이 상이(16,094명)한경우정확한확인과정을거쳐정비하여야하나, 별도의확인없이 최근성명정보로일괄정비하여오류가능성이존재함 조치할사항 오류가발생한고객정보(주민등록번호, 성명)를정확한정보로수정하고, 고객 정보확인·검증절차를강화하시기바람 (12) 정보시스템침해사고예방을위한실효성제고방안강구필요 회사는정보처리시스템의안정적운영을위해보정필요사항에대해시스템운영에 지장을초래하지않는범위에서보정작업(Patch)을진행해야하는데도제조사기술지원이 종료된운영체제를사용하는등운영시스템에대한보정작업을적시에수행하지않음 또한, 무선통신망을통한불법접속을방지하기위해사용자인증, 암호화등보안 대책을수립·운영하고있으나, 무선접속장비(Access Point : AP) 노후화로인해접속명 (SSID) 숨김기능이불가한상태로운영함 이에따라, 정보시스템오류·장애발생시신속한대응이불가하거나신규취약점에 대해보안이취약해질우려가있고, 인가받지않은접속자가무선통신망에접속을시도할 우려가있음 - 11 - 조치할사항 회사는서버·데이터베이스·무선통신망등전산장비에대한노후화현황을파악 하고기술지원이종료된운영체제및무선통신망설비등에대한전환계획을수립하여 전환을진행하시기바람 또한, 정보기술부문예산에시스템교체및기술지원연장관련금액을반영 하여전환前적절한유지보수를받는등대책을마련하고, 보정작업필요성의정기적 검토절차를내규에반영하는등관리를강화하시기바람 - 12 - 나. 개선사항 (1) 용역·구매계약체결절차미흡 회사내규계약규정제6조는계약시일반경쟁에부치는것을원칙으로하되특별한 사유가있다고인정되는경우에제한경쟁지명경쟁수의계약을체결하고해당사유를명시 하도록하고있으며, 같은규정제49조는지명경쟁입찰이가능한경우를예시하고있음 그러나재계약시일반경쟁입찰 가능여부에대한확인없이기존계약업체등을 대상으로지명경쟁입찰을실시한사례및참가자격을제한한일반경쟁입찰(또는제한 경쟁입찰)로계약의목적이달성가능한지에대한검토없이지명경쟁입찰을선택하는 사례가있으며, 같은규정제6조와달리제4장지명경쟁입찰(제49조제51조)에는지명경쟁입찰에 부치는사유를품의서등에명시하도록규정하고있지않아1), 지명경쟁입찰건에대해 사업시행품의또는계약체결품의에지명경쟁입찰로결정한사유를구체적으로기재하지 않은사례2) 가있어구매업무의공정성을저해할우려가있음 1) 수의계약 시에는사유를구체적으로명시하도록규정(계약규정제52조제1항본문) 2) 2021년7월2023년6월중지명경쟁입찰총20건중사유미기재15건 조치할사항 회사는지명경쟁입찰시사유기재여부에관하여계약규정을재검토하여지명 경쟁입찰 방식을결정하는경우에는그사유를구체적으로기재하도록하시기바람 또한지명경쟁입찰 사유및제한경쟁입찰 여부를확인하는절차를강화하여 내규에따라가급적일반경쟁입찰 방식으로이루어질수있도록구매업무의공정성을 강화하시기바람 (2) 의료자문편중방지기준의실효성미흡 회사는보험금지급심사를위한의료자문업무를위해내규인의료자문업무시행 세칙을마련하고, 2021년9월자문의편중방지기준을도입하여정기적(연4회)으로 의료자문업무모니터링결과를보험금심의위원회에보고하고있음 - 13 - 하지만회사는자문의편중방지기준을분기별자문건수비율만을기준으로설정1) 하고있으며, 실제자문비율(점유율)2)을고려하지않은채분기별특정자문의점유율을 20%로설정하여의료자문의편중방지업무의실효성이미흡한측면이있음 1) 분기별특정자문의점유율20% 초과제한설정(타회사의경우건수제한도규정) 2) 편중방지기준(20%) 도입이전자문의중최고점유율: 7.4% 또한, 특정자문의자문건수비율제한이외에특정의료기관이나의료자문중개 업체에대한편중에대해서는별도로제한하고있지않음 조치할사항 회사의관련심의기구인보험금심의위원회는자문의편중방지기준의적정성을 심의하여실효성있고합리적인편중방지기준을마련하는등의료자문편중방지업무를 개선하시기바람  내규인의료자문업무시행세칙제5조제1항: 보험금심의위원회는의료자문이보험금부지급 또는삭감수단으로남용되지않도록자문의선정및편중방지기준의적정성등을심의한다. (3) 보험금처리지연안내업무미흡 회사는내규인보험금심사업무매뉴얼에따라지급기일1) 내에보험금을지급 하지못할것으로예상되는경우그구체적인사유등을피보험자등에게통지하도록 규정2)하고있음 1) 보험금청구를접수한날로부터3영업일이내보험금지급을원칙으로하고, 지급사유의 조사나확인이필요할때는10영업일이내지급 2) 지급기일이내에보험금을지급하지못할것으로예상되는경우에는그구체적인사유, 지급예정일및보험금가지급제도에대하여피보험자또는보험수익자에게즉시통지 하여드립니다. 하지만해당보험금청구건과관련된보험금의종류, 조사필요사항등구체적인 지연사유없이포괄적이고일반적지연사유를안내하고있음  해당병원의사면담일정및관련사실확인관계로처리가지연되고있습니다. 조치할사항 회사는보험금지급기일초과예상건에대해구체적인지연사유를기재하여 피보험자등에게통지하는등보험금처리지연안내업무를개선하시기바람 - 14 - (4) 보험금누락방지업무미흡 회사는보험수익자가정당하게수령할보험금이누락되지않도록보험금청구시 제출된증빙서류의기재내용을기초로관련보장급부의지급여부를사전점검해주는 보험금누락방지시스템을운용하고있음 하지만, (구)신한생명-(구)오렌지라이프합병이후통합시스템(S-Life) 구축으로시스템 변경사항이발생하였음에도2019년6월작성된보험금누락방지시스템사용자매뉴얼에 변경사항을반영하지않고검사종료일(2023.12.15.) 현재까지그대로사용하였음 또한, 단순시스템사용방법만을안내한상태로, 담보등이신규로개발될경우 동담보등이보험금누락방지시스템에적정하게반영되었는지를점검하여야하는데도 동점검을위한점검방법·주기·기한및점검자등구체적인점검기준이마련되어있지않음 조치할사항 회사는시스템변경사항이있을경우매뉴얼에적시에반영하고, 담보등이신규로 개발될경우동담보에대한보험금누락방지를위해시스템점검방법·주기·기한및 점검자등구체적인기준을마련할필요가있으므로관련업무를개선하시기바람 (5) 계리적가정설정업무미흡 회사는내규인보험계리업무운영규정제5조제2항에따라최적기초율산출에 있어신뢰성있는경험통계등을고려하여합리적으로산출하여야하고그과정에서 계리적일관성을유지하여야함 그리고금융감독원이제시한보험회사책임준비금산출및수익인식가이드라인 제3장제3조제3항에서실손의료보험에대한갱신보험료가정산출시, 1차년도및 최종수렴시점의위험손해율을토대로선형모형을사용하도록규정하고있음 하지만회사는실손의료보험에대한갱신보험료가정산출시2023년통계를사용 하지않은데반해보험금가정산출시2023년통계를사용하는등통계사용에있어 일관성이결여되었음 또한회사내규인실손목표손해율4.6(최종산출및적용)에따라1차년도 및최종수렴시점의합산비율을토대로실손의료보험갱신보험료가정을위한선형 모형을설계하였으나, 이는보험회사책임준비금산출및수익인식가이드라인에서 제시한내용에부합되지않음 - 15 - 조치할사항 회사는내규인보험계리업무운영규정에따라실손의료보험과관련한경험통계 (보험금및위험손해율등)를일관되게사용하고, 보험회사책임준비금산출및수익인식 가이드라인에부합하게위험손해율산출모형을설계하시기바람 (6) 보험상품교육및안내자료내부통제미흡 회사의보험상품교육및안내자료제작등과관련하여아래와같이미흡한 점이있으므로이를개선할필요가있음 보험상품교육자료관리관련 회사는2019년5월금융감독원검사시보험상품교육자료등관리미흡에대한 개선방안1)으로, 상품관련교육자료에소비자보호를마련한3대기본지키기2) 등을 포함하는등전면개선하겠다고하였음 1) 감사결과조치요구사항정리보고서(2020. 4. 10.) 2) 중요상품설명, 청약서등자필서명, 청약서부본전달첨부 하지만2020년4월이후제작된상품교육자료중일부에3대기본지키기 등이 충분하게기재되어있지않음  보험등교안6건(상품15종) 보험상품동영상교육자료관리관련 회사는보험상품교육자료를제작할때유관부서의사전검토및준법감시인의 승인을받는절차(이하사전검토및승인절차라함)를운영하고있음  FC 사업그룹교육자료관리지침(2023. 2. 1. 제정), 준법감시업무규정(2023. 2. 1. 개정) 등 하지만2023.2.1.2023.11.30. 기간중회사온라인FC교육게시판에등록된일부 상품및교육영상 자료중2건은사전검토및승인절차없이제작·게시된것으로확인되었음 종신보험상품안내자료내용관련 회사는보험상품안내자료등에상품의특성및내용을정확하게기술하여오인의 소지가없도록하여야함에도, 일부종신보험상품안내자료에미흡한점이확인되었음 - 16 - 해약환급금예시에서해약환급금에반영된납입완료보너스1)의설명이없어2) 예시된해약환급금에납입완료보너스가반영되지않은것으로오인할소지가있음 1) 상품에따라유지보너스, 고액유지보너스가있음 2) 보험등7건 조치할사항 회사는보험상품안내및교육자료의제작및관리와관련한내부통제절차를 준수하고관련내규정비필요성을검토하시고, 유관부서간업무협조체계도강화하는 등관련업무를합리적으로개선하시기바람 (7) 자산건전성분류업무미흡 ①회사는내규인자산건전성분류시행세칙에따르면매월말차주의채무상환 능력, 연체기간, 부도여부, 담보현황, 금융거래내용등을종합적으로감안하여보유자산의 건전성분류를하여야함 특히, 유가증권의경우동세칙에따라유가증권건전성분류시정량적기준 이외에기초자산부실화및부도발생여부, 이자배당중단등자산가치에영향을 미치는사유를종합적으로고려하여야함 하지만, 신용등급이없거나신용등급별분류기준을적용하기어려운경우수익 증권의손실수준에따른분류기준외에손상징후를반영한구체적분류기준이없어 배당이장기간중단된집합투자기구에대해서도정상자산으로분류한사례가있음  의배당이2018년11월부터중단되었음에도취득가대비평가이익률1431% 수준을 고려하여정상 자산으로분류 ②회사는내규인여신감리시행세칙에근거하여부실가능성에따라자산에대한 모니터링등급을5단계로분류하고여신감리담당부서는각모니터링등급별로동 세칙에따라관리하여야함  정상, 관찰, 주의, 조기경보, 문제정리 동세칙에서모니터링등급이주의 이하에대해서는신용등급및자산건전성 분류하향에대해검토하도록정하고있음에도, 모니터링등급이주의이하인일부 기업대출자산에대하여자산건전성등급조정하면서관련검토기록이없는등미흡한 사례가있음 - 17 -  에대하여매각지연의사유로2022년하반기정기여신감리에서모니터링등급을주의로 분류하였으나, 신용등급및자산건전성분류하향검토없이2023년3분기까지주의로유지 조치할사항 ①회사는이자배당의지연또는중단, 공사지연또는중단, 기한이익상실(EOD) 사유발생가능성, 투자조건조정협의등손상징후를반영한구체적자산건전성분류 기준을마련하는등자산건전성분류기준을합리적으로개선하시기바람 ②기업여신에부여하는모니터링등급에따른자산건전성등급조정결정시관련 자료의기록관리를철저히하는등기업대출자산건전성분류절차를개선하시기바람 (8) 특별계정단기자금차입절차미흡 보험업법제108조및보험업법시행령제53조에따르면보험회사는퇴직보험 계약에대해특별계정을설정하여운영할수있으며, 특별계정에속하는자산은다른 특별계정에속하는자산및그밖의자산과구분하여회계처리하여야하며, 특별계정별로 자산의100분의10 범위내에서일반계정으로부터의만기1개월이내의단기자금을금융 위원회가정하여고시하는금리기준으로차입할수있도록허용하고있음 회사는2022.12.30. 퇴직보험계약으로설정된특별계정의유동성을확보하기위하여 일반계정으로부터4,600억원을만기1개월이내단기자금으로차입하였으나, 이에대한 의사결정을대주(貸主)인운용전략팀이아닌차주(借主)인특별계정운용팀이품의한후 담당임원의전결로처리하였음 또한, 동단기자금차입이후차입금액을변경하여만기1개월이내로갱신계약을 진행하면서차주인특별계정운용팀이상환금액, 차입금액및적용이자등을재무담당 임원의합의및담당임원전결로처리하였음  금융위는만기1개월이내의단기차입을갱신하는경우도거래상대방또는차입금액에변경이 있는경우로서갱신계약의기간이만기1개월이내라면새로운단기자금차입에해당한다고해석 회사는단기차입금리를금융투자협회에서제공하는차입일또는차입일이전의 동일만기RP금리로정하고있으나,  보험업법시행령상차입일에자본시장법제355조에따른자금중개회사를경유한동일만기자금 거래의중개금리(종가)를의미하나, 차입일에동일만기자금거래가없는경우에는명확한기준없음 - 18 - 2023.4.21.2023.5.19. 기간(28일) 중1,600억원단기자금차입금리를적용하는데 있어동일차입기간의2023.4.11. 거래28일물RP금리(3.64%)가아닌차입일로부터가장 최근거래된2023.4.12. 거래30일물금리(3.55%)를적용함으로써특별계정에서일반계정 으로이자1,105만원을과소지급한사실이있음  1,600억원 (3.64% - 3.55%)  28  365  11,046,575원(시정완료) 조치할사항 회사는특별계정이일반계정으로부터자금을차입할경우특별계정의자산운용을 담당하는부서가일반계정의자산운용을담당하는부서에자금을요청하고, 일반계정의 자산운용을담당하는부서가차입(대출)금및차입(대출)금리에대한품의를진행하도록 하는등절차를합리적으로개선하시기바람 또한, 차입일과차입기간이동일한RP거래금리를적용하기불가능한경우합리적인 금리적용기준등관련내부통제를마련하시기바람 (9) 고객확인업무운영체계미흡 회사는내규인자금세탁방지업무규정제20조에따라금융거래를하는때에자금 세탁행위등에이용되지않도록실제소유자확인등특정금융정보거래법제5조의2에 따라실제소유자확인등고객에대하여합당한주의를기울이기위해신규계약시고객 거래확인서, 주주명부, 법인등기부등본, 사업등록증등을고객으로부터제출받고있음 계약담당자는고객이제출한서류를바탕으로실제소유자를확인하고계약관리 시스템에입력하고, 입력된실제소유자를준법감시팀에서검증하여실제소유자정보가 잘못된경우계약담당자에게통보하고서류및입력내용을보완하도록하고있음 하지만법인의실제소유자를확인하고도계약관리시스템에는대표자를실제소유자로 등록하는등고객확인정보를일부오기재하였고, 준법감시팀에서는시스템에입력된 정보로검증하여계약담당자에게보완요청후보완완료여부를확인하지않는등일부 고객검증관련미흡한사례가있음 조치할사항 회사는고객확인정보의전산오기재를방지하기위해관련서류확인및준법 감시재검증절차를철저히하는등관련내부통제를강화하시기바람 - 19 - (10) IT부서자체감사업무불합리 회사내규ICT자체감사시행세칙에따르면, IT부서자체감사자는IT업무전반을 독립적이며공정하게감사해야함  (주요내용) 업무와관련된모든문제에대해독립적이며공정하게감사업무수행및 정기감사는정해진주기에따라전반적인IT업무프로세스에대해실시 하지만IT부서자체감사자가본인의인사고과권자(DX기획챕터장) 업무인IT기획 업무를감사하는등감사업무의독립성확보가어려운구조로운영하였음 또한, 20개IT영역에대해연1회정기감사를실시하고있으나감사영역을IT부문 (DX그룹) 내로국한하고있고, 내규에정보보호부문(정보보호팀) 업무에대한자체감사에 관한사항이부재하며감사실시이력도없음  내부통제규정, 인력조직및예산, 정보기술계획수립추진, 외부주문등준수사항, 비상대책등수립운용, 감사결과이행, 단말기보호대책등 조치할사항 IT부서자체감사자에대한평가체계를개선하여감사업무의독립성을확보하고, 정보보호팀업무에대한자체감사실시를위한근거내규를마련하시기바람  예시. IT부서자체감사자평가는CIO(DX그룹장)가평가 (11) 이벤트관련수집정보파기미흡 신용정보제공·이용자는개인(신용)정보수집이용시정보주체로부터받은동의서에 부합하도록이용하고목적달성후에는동의서에명시된파기절차를이행해야함 하지만회사는2019. 2. 설계사세일즈플랫폼옴니(OMNI) 구축후이벤트를실시 하면서이벤트참여자에게받은동의서에보유기간경과시수집정보전체를파기하는 것으로명시하였으나, 참여자개인식별정보는파기하고이벤트설문답변상세 정보 (101,659건)를파기하지않았음 조치할사항 회사는수집정보에대해주기적으로보유근거및파기여부를검토하여보유기간이 경과된수집정보를적시에파기하시기바람 - 20 - (12) IT아웃소싱관리업무불합리 회사는IT통합이후인2022. 9. G 와IT도급계약을체결하고최초로서비스수준협약 (SLA : Service Level Agreement)을마련운영하면서, 평가결과에따른페널티·인센티브에 대해1년간의계도기간을거친후적용하기로하였음 하지만2023. 4. 재계약시1년간의평가결과가변별력이없다는사유(평균94.5점)로 페널티·인센티브를적용하지않았고, 이에따라동IT도급계약의서비스품질수준이 저하될우려가있음 또한평가항목별평가기준을착오적용한사례가다수확인되었음  착오평가이력10회존재(※ 누적착오평가점수: 107.7점정정평가점수: 89.3점) 조치할사항 회사는SLA 따라외부주문업무에대한정확한평가를실시하고, 외주부문서비스 품질수준을관리할수있도록페널티·인센티브적용방안등을마련·운영하시기바람 (13) IT계약및검수업무미흡 회사는내규계약규정및구매업무시행세칙에따라검사대상기간동안총 292건의정보시스템구축및도입계약을체결하면서 관련내규에입찰보증금및제안평가항목배점에대한사항을마련하지않았으며, 이에따라입찰보증금없이입찰을실시(45건)하여낙찰자의계약포기시페널티부과가 곤란하거나재입찰로인해사업이지연될우려가있음 또한, 평가방안을사전에설정하지않고 계약을체결(39건)하여공정성문제가 제기될우려가있고, 최종의사결정권자결재전사업을미리착수하여계약체결전 구축사에게인력장비투입부담을가중시킨계약(38건)과검수목표일이후검수를 완료한검수지연계약(82건)이있음  기술가격평가비중만사전승인후제안서접수후평가방안확정 - 21 - 조치할사항 회사는관련내규를보완하여계약체결시입찰보증금및제안평가항목배점기준등 미비한부분을보완하고, 계약체결및검수소요기간이충분히확보되도록관련절차를 개선하는등IT계약및검수업무를충실히이행하시기바람 (14) 정보시스템취약점점검방식및사후관리미흡 내규정보보호시행세칙에따라회사는전자금융기반시설및홈페이지에대한 취약점분석·평가업무를외부기관(H, I)에위탁하여주기적으로수행하고있음 취약점분석·평가시객관성을확보할수있도록가급적보유한정보자산전체를 평가대상으로선정해야하고, 점검결과에서확인된중요취약점은즉시조치해야하며 불가능한경우단기·중기·장기이행계획을수립해야함 하지만회사는2023년H 등외부기관에취약점분석·평가를위탁하면서전체 정보자산의약8.6%만대상으로선정하여취약점점검을실시하였으며, 발견된취약점에 대해즉시조치가필요한사항인데도이행기간을1년으로수립하여다음연도점검시 동일·유사한취약점이반복해서발견됨 또한, J에취약점분석평가결과보고시동일유형을합산하는방식으로취약점 건수를축소보고한사례가있음  (사례) 51개서버에취약점이확인되었으나, 동일한유형의취약점(운영체제지원기간종료) 이라는사유로1개의취약점으로집계및보고 조치할사항 회사는취약점분석·평가시중요정보자산이제외되지않도록평가대상선정기준을 마련하고평가대상을확대할필요가있으며, 취약점에대한합리적인조치기간및보고 기준을마련하는등취약점분석·평가관리체계를개선하시기바람 (15) 백업전산자료검증업무미흡 내규백업및소산관리시행지침에따라회사는백업(소산) 데이터의정상복구 여부를검증하기위해연1회이상복구테스트를실시하고있음 - 22 - 하지만복구테스트수행시테스트대상데이터를일부시스템1)으로한정하고 그외2)는복구테스트를실시하지않아비상상황발생시주요백업데이터가적시에 복구되지않을우려가있음 1) 2019년2022년일괄작업(Batch) DB서버, 2023년개인신용정보DB서버의데이터 2) 일괄작업(Batch)·개인신용정보DB서버외시스템의데이터, 소산자료(백업테이프등), 파일시스템등 조치할사항 회사는주요시스템의소산자료(백업테이프등), 파일시스템등백업데이터에 대한복구테스트를수행하는절차를마련하는등백업데이터의복구테스트대상을 확대하시기바람 (16) 정보시스템성능관리미흡 내규시스템운영시행지침에따르면, 정보시스템의성능저하또는용량부족으로 인한장애를예방하기위해업무의중요도및운영환경등을고려하여성능관리대상 시스템을선정하고성능추이를분석해야함 하지만회사는성능관리대상선정을위한구체적인평가기준을마련하지않고 처리계(보험핵심시스템), 홈페이지및모바일앱등일부주요시스템에대해서만성능 추이를분석하고있음 그외콜센터등대고객시스템에대해실시간성능모니터링은실시하고있으나, 성능추이분석대상에는제외하고있어성능부족으로인한장애예방조치가적시에 수행되지않을우려가있음 조치할사항 회사는업무중요도및운영환경을고려하여성능관리대상선정기준을수립하고, 선정된시스템의전산자원사용량추이등을체계적으로관리하는등정보시스템성능 관리기준수립·운용방법을개선하시기바람 (17) 이용자정보변환및사후확인절차미흡 내규정보보호시행세칙에따라이용자정보를데이터변환솔루션을이용하여 테스트시변환하여사용하고있음 - 23 - 하지만회사는테스트데이터변환신청시변환대상, 이용목적, 사용자, 사용기간, 승인자, 폐기절차등이포함된구체적인내부기준을정하고있지않아 업무담당자가이용자정보중변환대상을직접선택할수있고, 테스트종료 후데이터삭제여부에대한점검이이루어지지않고있어이용자정보변환이누락 되거나, 테스트완료후변환데이터가삭제되지않을우려가있음 조치할사항 회사는테스트시데이터변환관련구체적인기준을마련하고, 테스트종료후 삭제여부를주기적으로점검하는등이용자정보사용에대한통제를강화하시기바람 (18) 모바일앱프로그램통제미흡 회사는모바일앱보호를위해앱위·변조방지, 키패드보안, 모바일백신, 통신구간 암호화등의보안대책을적용하고있음 하지만전자금융거래모바일앱배포용단말기(2대)를앱배포사이트외에는접속 되지않도록관리하지않아모바일앱자료유출시배포용단말기정보등을이용한 피싱앱이유포될우려가있음  회사공식모바일앱으로가장하여개인정보유출또는금전결제를유도하는악성앱 또한, 업무담당자가형상관리시스템을통하지않고업무용단말기에보관중인 프로그램으로모바일앱배포도가능하여책임자의승인을받지않고모바일앱이배포 되거나, 업무담당자착오등으로구버전의모바일앱이배포될우려가있음 조치할사항 회사는모바일앱배포용단말기는앱배포사이트에만접속을허용하고, 모바일앱 프로그램은형상관리시스템을통해서만배포될수있도록시스템을개선하시기바람"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 18022,
+        "estimated_tokens": 1047,
+        "created_at": "2025-07-20",
+        "regulations": [
+          "보험업법시행령상차입일에자본시장법 제355조",
+          "세탁행위등에이용되지않도록실제소유자확인등특정금융정보거래법 제5조",
+          "같은규정 제49조",
+          "같은규정 제6조"
+        ],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250710_한국성장금융투자운용주_202400330_11_한국성장금융투자운용_경영유의사항 공개안",
+      "source_file": "MGMT_20250710_한국성장금융투자운용주_202400330_11_한국성장금융투자운용_경영유의사항 공개안.pdf",
+      "institution": "한국성장금융투자운용",
+      "date": "2025. 7. 10",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "경영유의사항 공개안 1. 금융기관명: 한국성장금융투자운용 2. 제재조치일: 2025. 7. 10. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의사항4건 4. 제재대상사실 가. 경영유의사항 (1) 자펀드기초자산에대한사후관리강화 한국성장금융투자운용(이하 회사)는 정책지원 목적의공공자금이 투입되는 모펀드의사업목적및주목적투자대상에맞게자펀드투자가집행되고있는지확인 하고적정한자산건전성관리를위하여출자이후에도지속적으로자펀드의기초자산 내역을점검하여야한다. 하지만회사는모·자펀드현황, 자펀드기초자산등을수기로관리하고있어자료 관리의효율성이저하되며, 편입후개별자산내역등에대한편드별관리·점검도수행 하지않았다. 조치할사항 따라서회사는앞으로자펀드의운용내역을체계적으로관리·점검할수있도록내부 규정과관련전산시스템등을도입하여기초자산에대한관리를강화하시기바랍니다. (2) 외국펀드위탁운용사선정절차강화 회사는프로젝트펀드등의위탁운용사선정시운용사제안 형태로외국펀드를 선정하고운용을위탁하고있으나, 외국펀드선정기준에금융위원회등록 여부가포함 되어있지않다.  외국집합투자업자등이외국펀드를국내에판매하고자할경우에는금융위원회에사전 등록하여야함(자본시장법제279조제1항) 조치할사항 향후회사가외국펀드에투자하는경우선정기준에금융위원회등록여부를반영 하는등외국펀드위탁운용사선정절차등을강화하시기바랍니다. (3) 위탁운용사등선정시감독당국제재관련사항적용절차개선 회사는자펀드위탁운용사및모펀드파트너사등선정시감독당국의제재내역 등을제출하게하고이를위반하면불이익을부과하고있으나, 제재내역등을확인하지 않고선정한사례가있고위반에대해통상부과하는불이익이경미(사업참여배제 1년)하여실효성이떨어진다.  적기시정조치상태인A자산운용을위탁운용사로선정(2020.12.) 조치할사항 따라서선정심사시제재내역등을필수적으로확인하고, 제재내역등이있는 운용사를심사시별도의검토문서를첨부하는절차를마련하며, 제재내역등의제출 위반시불이익을강화하는등위탁운용사선정과정상제재관련사항적용절차를 정비하여운영하시기바랍니다.  예) 3년간선정배제, 관리보수삭감등 (4) 위탁운용사선정시제척·회피절차등도입 회사는자펀드위탁운용사및모펀드파트너사등의선정심사에참여하는내·외부 평가위원선임에대한별도의제척·회피관련절차등을마련하고있지않아공정한 심사·평가가저해될우려가있다. 조치할사항 따라서위탁운용사및파트너사선정관련내·외부평가위원구성시의제척·회피 제도등관련내규및절차를도입하시기바랍니다."
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 1168,
+        "estimated_tokens": 81,
+        "created_at": "2025-07-20",
+        "regulations": [
+          "자본시장법 제279조"
+        ],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    },
+    {
+      "doc_id": "MGMT_20250714_KB부동산신탁주_202400770_11_제재내용 공개_KB신탁_",
+      "source_file": "MGMT_20250714_KB부동산신탁주_202400770_11_제재내용 공개_KB신탁_.pdf",
+      "institution": "KB부동산신탁",
+      "date": "2025. 7. 14",
+      "is_relevant": false,
+      "found_keywords": [],
+      "content": {
+        "full_text": "- 1 - 제재내용 공개 1. 금융기관명: KB부동산신탁 2. 제재조치일: 2025. 7. 14. 3. 제재조치내용 제재대상 제재내용 기 관 경영유의 4. 제재대상사실 가. 경영유의사항 (1) 비분양형토지신탁의자산건전성분류기준개선 회사는내규자산건전성분류지침제5조등에따라준공후비분양형토지신탁의 신탁계정대여금에대한자산건전성분류시해당사업의사업수지 및준공후이자납부 가능여부 기준을적용하고있으나,  사용승인 이후 현금수입액으로 신탁계정대여금 이자를 납부할 수 있는지 여부 동지침에따르면준공후상당기간매각이지연되어만기가연장되거나연체가 발생하는등자산건전성이급격히악화될우려가있는사업이라하더라도신탁계정대여금 이자의일부를납부할수있는경우등은해당사업의자산건전성을요주의로분류하고, 최근12개월간필수운영비를차감한현금수입액이없는경우는고정 이하로분류하도록 하고있어매각지연에따른사업의부실위험을충분히반영하지못하고있으므로,  최근 12개월 간 필수운영비를 차감한 누적 현금수입액이 동 기간 신탁계정대여금 이 자(원금가산액 포함)의 50% 미만인 경우 또는 최근 6개월간 현금수입액이 없는 경우 준공후비분양형토지신탁의신탁계정대여금에대한자산건전성분류시매각지연에 - 2 - 따른사업의부실위험을충분히반영할수있도록자산건전성분류기준을개선할필요가 있다.  관련규정 1. 내규자산건전성분류지침제5조등 (2) 경영실태평가계량지표관리강화 경영실태평가계량지표는금융회사의재무건전성을나타내는척도로선제적지표 관리가필요함에도, 회사는일부항목을제외하고는경영실태평가계량지표에대한 주기적인모니터링을실시하지않고있으므로,  영업용순자본비율, 유동성비율의 경우 내규 리스크관리지침에 따라 리스크관리협의회 에 주기적으로 보고 경영실태평가계량지표, 동지표의변동원인및대응방안(지표하락시)의경영진보고 등경영실태평가계량지표관리를강화할필요가있다.  관련규정 1. 내규리스크관리규정제21조등"
+      },
+      "metadata": {
+        "doc_type": "경영유의사항",
+        "char_count": 946,
+        "estimated_tokens": 104,
+        "created_at": "2025-07-20",
+        "regulations": [
+          "자산건전성분류지침 제5조",
+          "리스크관리규정 제21조"
+        ],
+        "file_extension": ".pdf"
+      },
+      "llm_metadata": {
+        "keywords": [],
+        "regulations": "",
+        "fines": "",
+        "executive_sanction": ""
+      },
+      "quality_score": 4,
+      "status": "처리완료"
+    }
+  ]
+}

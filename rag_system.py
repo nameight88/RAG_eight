@@ -1,0 +1,927 @@
+"""
+금융감독원 제재/경영유의사항 코퍼스를 활용한 RAG 질의응답 시스템
+- 벡터 저장소에서 관련 문서 검색
+- LLM을 이용한 질의응답
+"""
+
+import os
+import json
+import re
+import torch
+from typing import List, Dict, Any, Optional, Tuple
+from datetime import datetime, timedelta
+from dotenv import load_dotenv
+from langchain.chains import RetrievalQA
+from langchain_community.vectorstores import FAISS, Chroma
+from langchain_huggingface import HuggingFaceEmbeddings
+# OpenAI 의존성 복원
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+from langchain_community.llms import HuggingFacePipeline
+from langchain_anthropic import ChatAnthropic
+from langchain.prompts import PromptTemplate
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+
+# .env 파일에서 환경 변수 로드
+load_dotenv()
+
+
+class FSSRagSystem:
+    """금융감독원 제재/경영유의사항 RAG 시스템"""
+    
+    # 벡터 저장소 캐시 - 경로별로 저장
+    _vector_store_cache = {}
+    # 임베딩 모델 캐시
+    _embeddings_cache = {}
+    
+    def __init__(
+        self,
+        vector_db_path: str = "./data/vector_db/fss_sanctions",
+        embed_model_name: str = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        top_k: int = 5,
+        use_anthropic: bool = False,
+        use_openai_embeddings: bool = True,
+        use_faiss: bool = True,
+        use_openai_llm: bool = True,
+    ) -> None:
+        """FSS RAG 시스템 초기화"""
+        
+        # 설정 저장
+        self.vector_db_path = os.path.abspath(vector_db_path)
+        self.embed_model_name = embed_model_name
+        self.top_k = top_k
+        self.use_anthropic = use_anthropic  # Anthropic Claude 사용 여부
+        self.anthropic_api_key = os.getenv("ANTHROPIC_APIKEY")
+        self.use_openai_llm = use_openai_llm  # OpenAI LLM 사용 여부
+        self.use_openai_embeddings = use_openai_embeddings  # OpenAI 임베딩 사용 여부
+        self.use_faiss = use_faiss  # FAISS 사용 여부 (False면 Chroma 사용)
+        
+        # 제재 데이터인지 경영유의인지 판단
+        if "sanctions" in vector_db_path:
+            self.db_type = "sanctions"
+        elif "management" in vector_db_path:
+            self.db_type = "management"
+        else:
+            self.db_type = "unknown"
+            
+        print(f"🔄 DB 타입: {self.db_type}")
+        
+        # OpenAI 설정
+        self.openai_api_key = os.getenv("OPENAI_API_KEY")
+        self.llm_model_name = "gpt-3.5-turbo"  # 기본 모델
+        
+        # 초기화
+        self.embeddings = None
+        self.vector_store = None
+        self.llm = None
+        self.qa_chain = None
+        
+        # 벡터 저장소 로드 시도
+        self.load_vector_store()
+    
+    def get_embeddings(self):
+        """임베딩 모델 가져오기 (캐시 활용)"""
+        cache_key = f"openai_{self.openai_api_key}" if self.use_openai_embeddings else self.embed_model_name
+        
+        # 캐시에 이미 있는지 확인
+        if cache_key in FSSRagSystem._embeddings_cache:
+            print(f"📚 캐시된 임베딩 모델 사용: {cache_key}")
+            return FSSRagSystem._embeddings_cache[cache_key]
+        
+        try:
+            # OpenAI API 사용
+            if self.use_openai_embeddings and self.openai_api_key:
+                print(f"🧠 OpenAI 임베딩 API 초기화 중...")
+                embeddings = OpenAIEmbeddings(
+                    model="text-embedding-3-small", 
+                    openai_api_key=self.openai_api_key
+                )
+                print(f"✅ OpenAI 임베딩 초기화 완료")
+            # 로컬/HuggingFace 모델 사용
+            else:
+                print(f"🧠 HuggingFace 임베딩 모델 초기화 중: {self.embed_model_name}")
+                embeddings = HuggingFaceEmbeddings(
+                    model_name=self.embed_model_name,
+                    model_kwargs={'device': 'cuda' if torch.cuda.is_available() else 'cpu'},
+                    encode_kwargs={'normalize_embeddings': True}
+                )
+                print(f"✅ 임베딩 모델 초기화 완료")
+                
+            # 캐시에 저장
+            FSSRagSystem._embeddings_cache[cache_key] = embeddings
+            
+            return embeddings
+            
+        except Exception as e:
+            print(f"❌ 임베딩 모델 초기화 실패: {e}")
+            return None
+    
+    def load_faiss_from_local(self, local_path: str) -> Any:
+        """로컬 저장소에서 FAISS 로드"""
+        try:
+            print(f"✅ 기존 FAISS 벡터 저장소를 로드합니다: {local_path}")
+            
+            # 보안 옵션 추가: allow_dangerous_deserialization=True
+            faiss_vectorstore = FAISS.load_local(
+                local_path,
+                self.embeddings,
+                allow_dangerous_deserialization=True  # 안전하지 않은 역직렬화 허용 (직접 생성한 안전한 파일임)
+            )
+            return faiss_vectorstore
+            
+        except Exception as e:
+            print(f"❌ FAISS 벡터 저장소 로드 실패: {e}")
+            return None
+    
+    def load_vector_store(self):
+        """벡터 저장소 로드 (메타데이터 기반)"""
+        try:
+            print(f"📚 벡터 저장소 로드 중: {self.vector_db_path}")
+
+            # 벡터 저장소 정보 파일 경로
+            info_path = os.path.join(self.vector_db_path, 'vector_store_info.json')
+            if not os.path.exists(info_path):
+                print(f"❌ 'vector_store_info.json' 파일을 찾을 수 없습니다: {info_path}")
+                print("오류: 벡터 저장소의 메타데이터가 없어 임베딩 모델을 확인할 수 없습니다.")
+                print("데이터 생성 파이프라인을 다시 실행하여 벡터 저장소를 재생성해주세요.")
+                return False
+
+            with open(info_path, 'r', encoding='utf-8') as f:
+                vs_info = json.load(f)
+            
+            use_openai = vs_info.get('use_openai', False)
+            embed_model = vs_info.get('embed_model', 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2').replace("openai/", "")
+
+            # 임베딩 모델 초기화
+            if use_openai:
+                print(f"🧠 OpenAI 임베딩 API 초기화 중 ({embed_model})...")
+                from langchain_openai import OpenAIEmbeddings
+                self.embeddings = OpenAIEmbeddings(
+                    model=embed_model,
+                    openai_api_key=self.openai_api_key
+                )
+                print(f"✅ OpenAI 임베딩 초기화 완료")
+            else:
+                print(f"🧠 HuggingFace 임베딩 초기화 중: {embed_model}")
+                from langchain_community.embeddings import HuggingFaceEmbeddings
+                self.embeddings = HuggingFaceEmbeddings(
+                    model_name=embed_model,
+                    model_kwargs={'device': 'cuda' if torch.cuda.is_available() else 'cpu'},
+                    encode_kwargs={'normalize_embeddings': True}
+                )
+                print(f"✅ HuggingFace 임베딩 초기화 완료")
+
+            # 벡터 저장소 로드 (FAISS 또는 Chroma)
+            vector_store_type = vs_info.get('vector_store_type', 'FAISS' if self.use_faiss else 'Chroma').upper()
+
+            if vector_store_type == 'FAISS':
+                faiss_path = os.path.join(self.vector_db_path, "faiss")
+                if not os.path.exists(os.path.join(faiss_path, "index.faiss")):
+                    print(f"❌ FAISS 인덱스 파일을 찾을 수 없습니다: {faiss_path}")
+                    return False
+                
+                print(f"✅ 기존 FAISS 벡터 저장소를 로드합니다: {faiss_path}")
+                from langchain_community.vectorstores import FAISS
+                self.vector_store = FAISS.load_local(
+                    faiss_path,
+                    self.embeddings,
+                    allow_dangerous_deserialization=True
+                )
+            elif vector_store_type == 'CHROMA':
+                chroma_path = self.vector_db_path
+                print(f"✅ 기존 Chroma 벡터 저장소를 로드합니다: {chroma_path}")
+                from langchain_community.vectorstores import Chroma
+                self.vector_store = Chroma(
+                    persist_directory=chroma_path,
+                    embedding_function=self.embeddings
+                )
+            else:
+                print(f"❌ 알 수 없는 벡터 저장소 타입입니다: {vector_store_type}")
+                return False
+
+            print(f"✅ 벡터 저장소 로드 완료")
+            self.check_vector_store()
+            return True
+
+        except Exception as e:
+            print(f"❌ 벡터 저장소 로드 중 치명적 오류 발생: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            return False
+
+    def check_vector_store(self):
+        """벡터 저장소 상태 및 기능 확인"""
+        try:
+            print("🔍 벡터 저장소 상태 확인 중...")
+            
+            # 메서드 확인
+            methods = [
+                method for method in dir(self.vector_store)
+                if callable(getattr(self.vector_store, method)) and not method.startswith("_")
+            ]
+            print(f"✅ 사용 가능한 메서드: {', '.join(methods[:5])}... (총 {len(methods)}개)")
+            
+            # 간단한 검색 테스트
+            try:
+                print("🔍 간단한 검색 테스트 중...")
+                test_query = "금융"
+                if hasattr(self.vector_store, "similarity_search") and callable(getattr(self.vector_store, "similarity_search")):
+                    results = self.vector_store.similarity_search(test_query, k=1)
+                    if results:
+                        print(f"✅ 테스트 검색 성공: {len(results)}개 결과")
+                        # 첫 번째 결과 메타데이터 확인
+                        if results[0].metadata:
+                            print(f"📄 메타데이터 키: {', '.join(list(results[0].metadata.keys()))}")
+                    else:
+                        print("⚠️ 테스트 검색 결과 없음")
+                else:
+                    print("⚠️ similarity_search 메서드 없음")
+            except Exception as e:
+                print(f"❌ 테스트 검색 실패: {str(e)}")
+            
+        except Exception as e:
+            print(f"❌ 벡터 저장소 확인 중 오류: {str(e)}")
+    
+    def initialize_llm(self) -> None:
+        """LLM 초기화"""
+        try:
+            # Anthropic Claude API 사용
+            if self.use_anthropic:
+                try:
+                    # Anthropic API 키 확인
+                    anthropic_api_key = self.anthropic_api_key or os.getenv("ANTHROPIC_APIKEY")
+                    if not anthropic_api_key:
+                        print("❌ Anthropic API 키가 설정되지 않았습니다.")
+                        return
+                    
+                    print("🧠 Anthropic Claude API 초기화 중...")
+                    from langchain_anthropic import ChatAnthropic
+                    
+                    # LLM 초기화
+                    self.llm = ChatAnthropic(
+                        model="claude-3-opus-20240229",  # 최신 Claude 모델
+                        anthropic_api_key=anthropic_api_key
+                    )
+                    print("✅ Anthropic Claude API 초기화 완료")
+                    
+                except Exception as e:
+                    print(f"❌ Anthropic API 초기화 실패: {str(e)}")
+                    import traceback
+                    traceback.print_exc()
+                    return
+            # OpenAI API 사용
+            else:
+                try:
+                    openai_api_key = os.getenv("OPENAI_API_KEY")
+                    if not openai_api_key:
+                        print("❌ OpenAI API 키가 설정되지 않았습니다.")
+                        return
+                    
+                    print(f"🧠 OpenAI API 초기화 중: {self.llm_model_name}...")
+                    from langchain_openai import ChatOpenAI
+                    
+                    # LLM 초기화
+                    self.llm = ChatOpenAI(
+                        model=self.llm_model_name,
+                        temperature=0.3,
+                        openai_api_key=openai_api_key
+                    )
+                    print("✅ OpenAI API 초기화 완료")
+                    
+                except Exception as e:
+                    print(f"❌ OpenAI API 초기화 실패: {str(e)}")
+                    import traceback
+                    traceback.print_exc()
+                    return
+        
+            # QA 체인 설정
+            self.setup_qa_chain()
+            
+        except Exception as e:
+            print(f"❌ LLM 초기화 중 오류: {str(e)}")
+            import traceback
+            traceback.print_exc()
+
+    def setup_qa_chain(self) -> None:
+        """QA 체인 설정"""
+        try:
+            # 벡터 저장소와 LLM이 모두 초기화되었는지 확인
+            if not self.vector_store:
+                print("❌ 벡터 저장소가 초기화되지 않았습니다.")
+                return
+            
+            if not self.llm:
+                print("❌ LLM이 초기화되지 않았습니다.")
+                return
+            
+            # QA 체인을 직접 구성하지 않고 검색 과정을 별도로 관리
+            print("✅ QA 체인 생성 완료")
+            self.qa_chain = True  # 더미 값, QA 체인이 준비되었다는 표시용
+            
+        except Exception as e:
+            print(f"❌ QA 체인 설정 중 오류: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            self.qa_chain = None
+    
+    def _match_filters(self, metadata: Dict[str, Any], filters: Dict[str, Any]) -> bool:
+        """메타데이터가 필터 조건에 맞는지 확인"""
+        if not filters:
+            return True
+        
+        # 기관 유형 필터링
+        if 'institution_types' in filters and filters['institution_types']:
+            institution = metadata.get('institution', '').lower()
+            found_match = False
+            for inst_type in filters['institution_types']:
+                if inst_type.lower() in institution:
+                    found_match = True
+                    break
+            if not found_match:
+                return False
+        
+        # 날짜 필터링
+        if 'date_filter' in filters and 'date_value' in filters:
+            date_str = metadata.get('date', '')
+            if not date_str:
+                # 다른 날짜 관련 필드 확인
+                date_str = metadata.get('sanction_date', '')
+                if not date_str:
+                    date_str = metadata.get('disclosure_date', '')
+                
+                # 여전히 날짜 정보가 없는 경우
+                if not date_str:
+                    print(f"⚠️ 날짜 정보 없음: {metadata}")
+                    return False
+                
+            # 날짜 형식 정규화 (YYYY.MM.DD 또는 YYYY-MM-DD)
+            date_str = date_str.replace('-', '.').strip()
+            
+            # 연도만 추출
+            year_match = re.search(r'(20\d{2})', date_str)
+            if not year_match:
+                print(f"⚠️ 날짜 형식 인식 불가: {date_str}")
+                return False
+                
+            document_year = year_match.group(1)
+            filter_year = filters['date_value']
+            
+            # 최근 1년 필터링 (예: 2023년 이상)
+            if len(filter_year) == 4 and filter_year.isdigit():
+                if int(document_year) < int(filter_year):
+                    return False
+            
+            print(f"✅ 날짜 매칭: 문서={document_year}, 필터={filter_year}")
+        
+        return True
+
+    def preprocess_query(self, query: str) -> Tuple[str, Dict[str, Any]]:
+        """질문 전처리 및 필터 추출"""
+        processed_query = query
+        
+        # 필터 초기화
+        filters = {}
+        
+        # 은행/보험사/증권사 필터링
+        institution_types = []
+        if '은행' in query:
+            institution_types.append('은행')
+        if '보험' in query:
+            institution_types.append('보험')
+        if '증권' in query:
+            institution_types.append('증권')
+        if '카드' in query:
+            institution_types.append('카드')
+        if '금융' in query:
+            institution_types.append('금융')
+        
+        if institution_types:
+            filters['institution_types'] = institution_types
+        
+        # 날짜 필터링 (최근 1년, 올해, 2023년 등)
+        date_filter = None
+        if '최근 1년' in query or '지난 1년' in query:
+            date_filter = 'date'
+            # 현재 연도를 사용
+            current_year = datetime.now().year
+            date_value = str(current_year - 1)  # 1년 전부터
+            filters['date_filter'] = date_filter
+            filters['date_value'] = date_value
+            print(f"📅 날짜 필터링: {date_value}년부터")
+        elif '올해' in query:
+            date_filter = 'date'
+            date_value = str(datetime.now().year)
+            filters['date_filter'] = date_filter
+            filters['date_value'] = date_value
+            print(f"📅 날짜 필터링: {date_value}년")
+        else:
+            # 연도 추출 (YYYY년)
+            year_match = re.search(r'(20\d{2})년', query)
+            if year_match:
+                date_filter = 'date'
+                date_value = year_match.group(1)
+                filters['date_filter'] = date_filter
+                filters['date_value'] = date_value
+                print(f"📅 날짜 필터링: {date_value}년")
+        
+        # 문서 유형 필터링
+        doc_type_filter = None
+        if '경영유의' in query or '경영 유의' in query:
+            doc_type_filter = 'management'
+        elif '제재' in query or '징계' in query or '과태료' in query or '과징금' in query:
+            doc_type_filter = 'sanctions'
+
+        if doc_type_filter:
+            filters['doc_type'] = doc_type_filter
+        
+        return processed_query, filters
+    
+    def answer_question(self, question: str) -> Dict[str, Any]:
+        """질문에 답변"""
+        try:
+            # 벡터 저장소 체크
+            if not self.vector_store:
+                return {
+                    "answer": "벡터 저장소가 로드되지 않았습니다. 먼저 벡터 저장소를 로드해주세요.",
+                    "sources": []
+                }
+                
+            # LLM 체크
+            if not self.llm:
+                return {
+                    "answer": "LLM이 초기화되지 않았습니다. 사이드바에서 'LLM 초기화' 버튼을 클릭해주세요.",
+                    "sources": []
+                }
+                
+            # 질문 전처리
+            print(f"❓ 질문 처리: '{question}'")
+            processed_query, filters = self.preprocess_query(question)
+            
+            # 문서 유형 필터 확인
+            if 'doc_type' in filters and filters['doc_type'] != self.db_type:
+                if filters['doc_type'] == 'management':
+                    return {
+                        "answer": "현재 제재 DB가 선택되어 있습니다. 경영유의사항에 대해 질문하시려면 DB를 변경해주세요.",
+                        "sources": []
+                    }
+                else:
+                    return {
+                        "answer": "현재 경영유의 DB가 선택되어 있습니다. 제재 정보에 대해 질문하시려면 DB를 변경해주세요.",
+                        "sources": []
+                    }
+            
+            if filters:
+                print(f"🔍 추출된 필터: {filters}")
+            
+            # 문서 검색 수행
+            search_results = self.search_documents(processed_query, k=5)
+            
+            # 검색 결과가 없는 경우
+            if not search_results:
+                return {
+                    "answer": "질문과 관련된 문서를 찾을 수 없습니다. 다른 질문을 시도해보세요.",
+                    "sources": []
+                }
+            
+            # 검색된 문서들로 컨텍스트 구성
+            context = ""
+            sources = []
+            
+            for idx, doc in enumerate(search_results):
+                metadata = doc.get("metadata", {})
+                content = doc.get("content", "")
+                institution = metadata.get("institution", "미상")
+                date = metadata.get("date", "미상")
+                
+                context += f"[문서 {idx+1}]\n"
+                context += f"내용: {doc['content']}\n"
+                context += f"출처: {doc['metadata']}\n\n"
+                
+                sources.append({
+                    "content": content,
+                    "metadata": metadata
+                })
+            
+            # LLM으로 답변 생성
+            try:
+                prompt = f"""다음은 금융감독원 제재 및 경영유의 정보에 대한 자료입니다:
+
+{context}
+
+질문: {question}
+
+위 자료를 바탕으로 질문에 답변해주세요. 자료에 나오지 않는 내용이면 '관련 정보가 없습니다'라고 답변해주세요."""
+
+                if hasattr(self.llm, "invoke"):
+                    result = self.llm.invoke(prompt)
+                    if hasattr(result, "content"):
+                        answer = result.content
+                    else:
+                        answer = str(result)
+                else:
+                    # 구 방식 호출
+                    answer = self.llm(prompt)
+                
+                return {
+                    "answer": answer,
+                    "sources": sources
+                }
+                
+            except Exception as e:
+                print(f"❌ LLM 호출 오류: {e}")
+                import traceback
+                traceback.print_exc()
+                
+                # 오류 발생 시 검색 결과만 반환
+                answer = f"답변 생성 중 오류가 발생했습니다. 관련 문서 검색 결과:\n\n"
+                for i, doc in enumerate(search_results):
+                    metadata = doc.get("metadata", {})
+                    institution = metadata.get('institution', 'N/A')
+                    date = metadata.get('date', 'N/A')
+                    answer += f"{i+1}. {institution} ({date})\n"
+                
+                return {
+                    "answer": answer,
+                    "sources": sources
+                }
+                
+        except Exception as e:
+            print(f"❌ 질문 처리 중 오류: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            
+            return {
+                "answer": "질문을 처리하는 중 오류가 발생했습니다. 다시 시도해주세요.",
+                "sources": []
+            }
+    
+    def _apply_filters(self, docs, filters):
+        """추출된 필터를 기반으로 문서 필터링"""
+        if not filters:
+            return docs
+        
+        filtered_docs = []
+        
+        for doc in docs:
+            metadata = doc.metadata
+            include_doc = True
+            
+            # 날짜 필터 적용
+            if "date_filter" in filters and "date_value" in filters:
+                date_field = filters["date_filter"]
+                min_year = filters["date_value"]
+                
+                if date_field in metadata:
+                    doc_date = metadata[date_field]
+                    try:
+                        # 날짜 형식 다양성 처리 (YYYY.MM.DD 또는 YYYY-MM-DD)
+                        doc_year = re.search(r"(\d{4})", doc_date).group(1)
+                        if doc_year < min_year:
+                            include_doc = False
+                    except:
+                        pass
+            
+            # 기관 유형 필터 적용
+            if "institution_types" in filters and include_doc:
+                institution = metadata.get("institution", "").lower()
+                
+                institution_match = False
+                for inst_type in filters["institution_types"]:
+                    if inst_type.lower() in institution:
+                        institution_match = True
+                        break
+                
+                if not institution_match:
+                    include_doc = False
+            
+            # 제재 유형 필터 적용
+            if "sanction_types" in filters and include_doc:
+                sanction_type = metadata.get("sanction_type", "").lower()
+                management_type = metadata.get("management_type", "").lower()
+                
+                type_field = sanction_type if sanction_type else management_type
+                
+                sanction_match = False
+                for sanc_type in filters["sanction_types"]:
+                    if sanc_type.lower() in type_field or sanc_type.lower() in doc.page_content.lower():
+                        sanction_match = True
+                        break
+                
+                if not sanction_match:
+                    include_doc = False
+            
+            # 법규 필터 적용
+            if "regulations" in filters and include_doc:
+                # 메타데이터에 regulations 필드가 있으면 사용
+                regulations = []
+                if "regulations" in metadata and isinstance(metadata["regulations"], list):
+                    regulations = metadata["regulations"]
+                
+                # 본문 검색
+                content_lower = doc.page_content.lower()
+                
+                reg_match = False
+                for reg in filters["regulations"]:
+                    # 메타데이터 검색
+                    for doc_reg in regulations:
+                        if reg.lower() in doc_reg.lower():
+                            reg_match = True
+                            break
+                    
+                    # 본문 검색
+                    if reg.lower() in content_lower:
+                        reg_match = True
+                        break
+                
+                if not reg_match:
+                    include_doc = False
+            
+            # 내부통제 필터 적용
+            if "internal_control" in filters and filters["internal_control"] and include_doc:
+                content_lower = doc.page_content.lower()
+                
+                internal_control_keywords = ["내부통제", "내부 통제", "통제", "관리체계", "관리 체계"]
+                internal_control_match = any(keyword in content_lower for keyword in internal_control_keywords)
+                
+                if not internal_control_match:
+                    include_doc = False
+            
+            # 필터를 모두 통과한 문서만 추가
+            if include_doc:
+                filtered_docs.append(doc)
+        
+        return filtered_docs
+    
+    def search_documents(self, query: str, k: int = 5) -> List[Dict[str, Any]]:
+        """벡터 저장소에서 문서 검색"""
+        try:
+            if not self.vector_store:
+                print("❌ 벡터 저장소가 로드되지 않았습니다.")
+                return []
+            
+            # 전처리된 쿼리 생성
+            processed_query, filters = self.preprocess_query(query)
+            
+            try:
+                # 검색 수행 (다양한 방법 시도)
+                docs = []
+                
+                # 방법 1: 기본 similarity_search 시도
+                try:
+                    print("📚 기본 similarity_search 시도...")
+                    docs = self.vector_store.similarity_search(processed_query, k=k*2)  # 더 많이 가져와서 필터링
+                except Exception as e1:
+                    print(f"❌ 기본 검색 실패: {e1}")
+                    
+                    # 방법 2: as_retriever 사용 시도
+                    try:
+                        print("📚 retriever 방식 시도...")
+                        retriever = self.vector_store.as_retriever(search_kwargs={"k": k*2})
+                        docs = retriever.get_relevant_documents(processed_query)
+                    except Exception as e2:
+                        print(f"❌ retriever 방식 실패: {e2}")
+                        
+                        # 방법 3: max_marginal_relevance_search 시도
+                        try:
+                            print("📚 max_marginal_relevance_search 시도...")
+                            docs = self.vector_store.max_marginal_relevance_search(processed_query, k=k*2)
+                        except Exception as e3:
+                            print(f"❌ 모든 검색 방법 실패: {e3}")
+                            return []
+                
+                # 검색 결과가 비어있으면 반환
+                if not docs:
+                    print("❌ 검색 결과가 없습니다.")
+                    return []
+                    
+                print(f"✅ 검색 결과: {len(docs)}개 문서 찾음")
+                
+                # 필터링 적용
+                filtered_results = []
+                
+                for doc in docs:
+                    metadata = doc.metadata
+                    content = doc.page_content
+                    
+                    # 필터링 적용
+                    if filters and not self._match_filters(metadata, filters):
+                        continue
+                        
+                    result = {
+                        "content": content,
+                        "metadata": metadata,
+                        "score": 1.0  # 점수 정보 없음
+                    }
+                    filtered_results.append(result)
+                
+                print(f"✅ 필터링 후 결과: {len(filtered_results)}개 문서")
+                
+                # 최대 k개 반환
+                return filtered_results[:k]
+                
+            except Exception as e:
+                print(f"❌ 검색 중 오류: {str(e)}")
+                import traceback
+                traceback.print_exc()
+                return []
+        
+        except Exception as e:
+            print(f"❌ 검색 실행 중 오류: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            return []
+    
+    def _doc_passes_filters(self, doc, filters):
+        """문서가 필터 조건을 만족하는지 확인"""
+        if not filters:
+            return True
+        
+        metadata = doc.metadata
+        
+        # 날짜 필터 적용
+        if "date_filter" in filters and "date_value" in filters:
+            date_field = filters["date_filter"]
+            min_year = filters["date_value"]
+            
+            if date_field in metadata:
+                doc_date = metadata[date_field]
+                try:
+                    # 날짜 형식 다양성 처리 (YYYY.MM.DD 또는 YYYY-MM-DD)
+                    doc_year = re.search(r"(\d{4})", doc_date).group(1)
+                    if doc_year < min_year:
+                        return False
+                except:
+                    pass
+        
+        # 기관 유형 필터 적용
+        if "institution_types" in filters:
+            institution = metadata.get("institution", "").lower()
+            
+            institution_match = False
+            for inst_type in filters["institution_types"]:
+                if inst_type.lower() in institution:
+                    institution_match = True
+                    break
+            
+            if not institution_match:
+                return False
+        
+        # 제재 유형 필터 적용
+        if "sanction_types" in filters:
+            sanction_type = metadata.get("sanction_type", "").lower()
+            management_type = metadata.get("management_type", "").lower()
+            
+            type_field = sanction_type if sanction_type else management_type
+            
+            sanction_match = False
+            for sanc_type in filters["sanction_types"]:
+                if sanc_type.lower() in type_field or sanc_type.lower() in doc.page_content.lower():
+                    sanction_match = True
+                    break
+            
+            if not sanction_match:
+                return False
+        
+        # 법규 필터 적용
+        if "regulations" in filters:
+            # 메타데이터에 regulations 필드가 있으면 사용
+            regulations = []
+            if "regulations" in metadata and isinstance(metadata["regulations"], list):
+                regulations = metadata["regulations"]
+            
+            # 본문 검색
+            content_lower = doc.page_content.lower()
+            
+            reg_match = False
+            for reg in filters["regulations"]:
+                # 메타데이터 검색
+                for doc_reg in regulations:
+                    if reg.lower() in doc_reg.lower():
+                        reg_match = True
+                        break
+                
+                # 본문 검색
+                if reg.lower() in content_lower:
+                    reg_match = True
+                    break
+            
+            if not reg_match:
+                return False
+        
+        # 내부통제 필터 적용
+        if "internal_control" in filters and filters["internal_control"]:
+            content_lower = doc.page_content.lower()
+            
+            internal_control_keywords = ["내부통제", "내부 통제", "통제", "관리체계", "관리 체계"]
+            internal_control_match = any(keyword in content_lower for keyword in internal_control_keywords)
+            
+            if not internal_control_match:
+                return False
+        
+        return True
+    
+    def interactive_mode(self) -> None:
+        """대화형 모드"""
+        print("\n🤖 금융 제재/경영유의사항 RAG 시스템을 시작합니다. 종료하려면 'exit' 또는 'quit'을 입력하세요.")
+        print("💡 'search:'로 시작하면 검색 모드, 그 외에는 질의응답 모드로 동작합니다.")
+        
+        while True:
+            user_input = input("\n❓ 입력: ")
+            if user_input.lower() in ["exit", "quit", "종료"]:
+                print("👋 RAG 시스템을 종료합니다.")
+                break
+            
+            # 검색 모드
+            if user_input.lower().startswith("search:"):
+                query = user_input[7:].strip()
+                if not query:
+                    print("❌ 검색어를 입력해주세요.")
+                    continue
+                
+                print(f"🔍 검색: '{query}'")
+                results = self.search_documents(query)
+                
+                if not results:
+                    print("검색 결과가 없습니다.")
+                    continue
+                
+                print("\n📚 검색 결과:")
+                for i, result in enumerate(results):
+                    print(f"\n결과 #{i+1} (점수: {result['score']:.4f})")
+                    
+                    # DB 타입에 따라 다른 필드 출력
+                    if self.db_type == "sanctions":
+                        print(f"기관: {result['metadata'].get('institution', 'N/A')}")
+                        print(f"제재일: {result['metadata'].get('sanction_date', 'N/A')}")
+                        print(f"유형: {result['metadata'].get('sanction_type', 'N/A')}")
+                    else:
+                        print(f"기관: {result['metadata'].get('institution', 'N/A')}")
+                        print(f"공시일: {result['metadata'].get('disclosure_date', 'N/A')}")
+                        print(f"유형: {result['metadata'].get('management_type', 'N/A')}")
+                    
+                    print(f"내용: {result['content'][:200]}...")
+            
+            # 질의응답 모드
+            else:
+                result = self.answer_question(user_input)
+                
+                print("\n🤖 답변:")
+                print(result["answer"])
+                
+                if result["sources"]:
+                    print("\n📚 참고 문서:")
+                    for i, source in enumerate(result["sources"][:3]):  # 상위 3개만 표시
+                        print(f"\n출처 #{i+1}:")
+                        
+                        # DB 타입에 따라 다른 필드 출력
+                        if self.db_type == "sanctions":
+                            print(f"기관: {source['metadata'].get('institution', 'N/A')}")
+                            print(f"제재일: {source['metadata'].get('sanction_date', 'N/A')}")
+                            print(f"유형: {source['metadata'].get('sanction_type', 'N/A')}")
+                        else:
+                            print(f"기관: {source['metadata'].get('institution', 'N/A')}")
+                            print(f"공시일: {source['metadata'].get('disclosure_date', 'N/A')}")
+                            print(f"유형: {source['metadata'].get('management_type', 'N/A')}")
+                        
+                        print(f"내용: {source['content']}")
+
+
+# 사용 예시
+if __name__ == "__main__":
+    # 사용할 벡터 DB 선택
+    db_type = input("사용할 벡터 DB를 선택하세요 (1: 제재정보, 2: 경영유의사항): ")
+    
+    if db_type == "2":
+        vector_db_path = "./data/vector_db/fss_management"
+        print("경영유의사항 벡터 DB를 사용합니다.")
+    else:
+        vector_db_path = "./data/vector_db/fss_sanctions"
+        print("제재정보 벡터 DB를 사용합니다.")
+    
+    # LLM 선택
+    use_anthropic = input("Anthropic Claude API를 사용하시겠습니까? (y/n): ").lower() == 'y'
+    
+    if use_anthropic:
+        # API 키 입력
+        anthropic_api_key = input("Anthropic API 키를 입력하세요: ")
+        
+        rag_system = FSSRagSystem(
+            vector_db_path=vector_db_path,
+            embed_model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            use_anthropic=True,
+            anthropic_api_key=anthropic_api_key,
+            top_k=5,
+            use_openai_embeddings=False,  # 로컬 임베딩 사용
+            use_openai_llm=False
+        )
+    else:
+        rag_system = FSSRagSystem(
+            vector_db_path=vector_db_path,
+            embed_model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+            llm_model_name="gpt-3.5-turbo",
+            top_k=5,
+            use_openai_embeddings=False,  # 로컬 임베딩 사용
+            use_openai_llm=True
+        )
+    
+    # 대화형 모드 시작
+    rag_system.interactive_mode() 
