@@ -149,17 +149,38 @@ class FSSRagSystem:
                 vs_info = json.load(f)
             
             use_openai = vs_info.get('use_openai', False)
-            embed_model = vs_info.get('embed_model', 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2').replace("openai/", "")
+            embed_model = vs_info.get('embed_model', 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2')
+            if isinstance(embed_model, str):
+                embed_model = embed_model.replace("openai/", "")
 
-            # 임베딩 모델 초기화
+            # OpenAI API 키 확인 및 설정
             if use_openai:
                 print(f"🧠 OpenAI 임베딩 API 초기화 중 ({embed_model})...")
-                from langchain_openai import OpenAIEmbeddings
-                self.embeddings = OpenAIEmbeddings(
-                    model=embed_model,
-                    openai_api_key=self.openai_api_key
-                )
-                print(f"✅ OpenAI 임베딩 초기화 완료")
+                if not self.openai_api_key:
+                    self.openai_api_key = os.getenv("OPENAI_API_KEY")
+                    if not self.openai_api_key:
+                        print("❌ OpenAI API 키가 설정되지 않았습니다.")
+                        return False
+                
+                try:
+                    from langchain_openai import OpenAIEmbeddings
+                    self.embeddings = OpenAIEmbeddings(
+                        model=embed_model,
+                        openai_api_key=self.openai_api_key,
+                        show_progress_bar=True,
+                        request_timeout=60
+                    )
+                    # 임베딩 테스트
+                    test_text = "테스트"
+                    try:
+                        test_embedding = self.embeddings.embed_query(test_text)
+                        print(f"✅ OpenAI 임베딩 테스트 성공 (벡터 크기: {len(test_embedding)})")
+                    except Exception as e:
+                        print(f"❌ OpenAI 임베딩 테스트 실패: {str(e)}")
+                        return False
+                except Exception as e:
+                    print(f"❌ OpenAI 임베딩 초기화 실패: {str(e)}")
+                    return False
             else:
                 print(f"🧠 HuggingFace 임베딩 초기화 중: {embed_model}")
                 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -168,7 +189,6 @@ class FSSRagSystem:
                     model_kwargs={'device': 'cpu'},  # CUDA 오류 방지
                     encode_kwargs={'normalize_embeddings': True}
                 )
-                print(f"✅ HuggingFace 임베딩 초기화 완료")
 
             # 벡터 저장소 로드 (FAISS 또는 Chroma)
             vector_store_type = vs_info.get('vector_store_type', 'FAISS' if self.use_faiss else 'Chroma').upper()
@@ -209,7 +229,7 @@ class FSSRagSystem:
                     
                     # 3. 벡터 저장소 수동 생성
                     vector_store = FAISS(
-                        embedding_function=self.embeddings,
+                        embedding_function=self.embeddings.embed_query,  # 함수만 전달
                         index=index,
                         docstore=docstore,
                         index_to_docstore_id=index_to_docstore_id
