@@ -8,6 +8,8 @@ import os
 import json
 import re
 import torch
+import pickle  # pickle 모듈 추가
+import numpy as np  # numpy 모듈 추가
 from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
@@ -20,6 +22,14 @@ from langchain_community.llms import HuggingFacePipeline
 from langchain_anthropic import ChatAnthropic
 from langchain.prompts import PromptTemplate
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+
+# FAISS 관련 임포트
+try:
+    import faiss
+    FAISS_AVAILABLE = True
+except ImportError:
+    print("⚠️ FAISS를 임포트할 수 없습니다. pip install faiss-cpu를 실행하여 설치해주세요.")
+    FAISS_AVAILABLE = False
 
 # .env 파일에서 환경 변수 로드
 load_dotenv()
@@ -137,6 +147,11 @@ class FSSRagSystem:
         try:
             print(f"📚 벡터 저장소 로드 중: {self.vector_db_path}")
 
+            # FAISS 사용 가능 여부 확인
+            if self.use_faiss and not FAISS_AVAILABLE:
+                print("⚠️ FAISS를 사용할 수 없어 Chroma로 전환합니다.")
+                self.use_faiss = False
+
             # 벡터 저장소 정보 파일 경로
             info_path = os.path.join(self.vector_db_path, 'vector_store_info.json')
             if not os.path.exists(info_path):
@@ -193,7 +208,7 @@ class FSSRagSystem:
             # 벡터 저장소 로드 (FAISS 또는 Chroma)
             vector_store_type = vs_info.get('vector_store_type', 'FAISS' if self.use_faiss else 'Chroma').upper()
 
-            if vector_store_type == 'FAISS':
+            if vector_store_type == 'FAISS' and FAISS_AVAILABLE:
                 faiss_path = os.path.join(self.vector_db_path, "faiss")
                 index_path = os.path.join(faiss_path, "index.faiss")
                 docstore_path = os.path.join(faiss_path, "index.pkl")
@@ -205,21 +220,18 @@ class FSSRagSystem:
                 try:
                     print(f"✅ 기존 FAISS 벡터 저장소를 로드합니다: {faiss_path}")
                     
-                    # 새로운 접근 방식: 수동으로 FAISS 재생성
-                    from langchain_community.vectorstores import FAISS
-                    import faiss
-                    import pickle
-                    import numpy as np
-                    
                     # 1. FAISS 인덱스 로드
                     index = faiss.read_index(index_path)
                     
-                    # 2. 문서 저장소 로드 (안전모드)
+                    # 2. 문서 저장소 로드
                     with open(docstore_path, 'rb') as f:
                         try:
                             docstore_data = pickle.load(f)
+                            print(f"📚 문서 저장소 데이터 타입: {type(docstore_data)}")
+                            
                             if isinstance(docstore_data, tuple) and len(docstore_data) == 2:
                                 docstore, index_to_docstore_id = docstore_data
+                                print("✅ 기존 형식 문서 저장소 로드 성공")
                             else:
                                 print("❌ 잘못된 문서 저장소 형식")
                                 return False
@@ -227,28 +239,42 @@ class FSSRagSystem:
                             print(f"❌ 문서 저장소 로드 실패: {e}")
                             return False
                     
-                    # 3. 벡터 저장소 수동 생성
-                    vector_store = FAISS(
-                        embedding_function=self.embeddings.embed_query,  # 함수만 전달
-                        index=index,
-                        docstore=docstore,
-                        index_to_docstore_id=index_to_docstore_id
-                    )
-                    
-                    self.vector_store = vector_store
-                    print("✅ FAISS 벡터 저장소 로드 완료 (안전 모드)")
+                    # 3. 벡터 저장소 직접 로드
+                    try:
+                        from langchain_community.vectorstores.faiss import FAISS
+                        vector_store = FAISS(
+                            embedding_function=self.embeddings.embed_query,
+                            index=index,
+                            docstore=docstore,
+                            index_to_docstore_id=index_to_docstore_id
+                        )
+                        
+                        # 벡터 저장소 테스트
+                        test_query = "테스트"
+                        test_results = vector_store.similarity_search(test_query, k=1)
+                        if test_results:
+                            print(f"✅ 벡터 저장소 검색 테스트 성공 (결과 수: {len(test_results)})")
+                        else:
+                            print("❌ 벡터 저장소 검색 테스트 실패")
+                            return False
+                        
+                        self.vector_store = vector_store
+                        print("✅ FAISS 벡터 저장소 로드 완료")
+                        return True
+                        
+                    except Exception as e:
+                        print(f"❌ 벡터 저장소 초기화 실패: {str(e)}")
+                        import traceback
+                        traceback.print_exc()
+                        return False
                     
                 except Exception as e:
-                    print(f"❌ FAISS 벡터 저장소 로드 실패: {str(e)}")
+                    print(f"❌ FAISS 로드 실패: {str(e)}")
                     import traceback
                     traceback.print_exc()
-                    
-                    # 대안: Chroma 사용 시도
-                    print("⚠️ FAISS 로드 실패로 Chroma 사용을 시도합니다...")
-                    self.use_faiss = False
                     return False
                     
-            elif vector_store_type == 'CHROMA':
+            elif vector_store_type == 'CHROMA' or (vector_store_type == 'FAISS' and not FAISS_AVAILABLE):
                 chroma_path = self.vector_db_path
                 print(f"✅ 기존 Chroma 벡터 저장소를 로드합니다: {chroma_path}")
                 try:

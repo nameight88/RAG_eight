@@ -121,14 +121,21 @@ if "vector_store_loaded" not in st.session_state:
 with st.sidebar:
     st.markdown("### API 키 설정")
     api_key = st.text_input("OpenAI API 키", value=st.session_state.openai_api_key, type="password")
+    
     if api_key:
-        st.session_state.openai_api_key = api_key
-        os.environ["OPENAI_API_KEY"] = api_key
-        if st.session_state.openai_api_key != api_key:
-            st.session_state.vector_store_loaded = False
+        # API 키 형식 검증
+        if not api_key.startswith('sk-') or len(api_key) < 40:
+            st.error("❌ 올바르지 않은 OpenAI API 키 형식입니다. 'sk-'로 시작하는 올바른 API 키를 입력해주세요.")
+        else:
+            st.session_state.openai_api_key = api_key
+            os.environ["OPENAI_API_KEY"] = api_key
+            if st.session_state.openai_api_key != api_key:
+                st.session_state.vector_store_loaded = False
+            st.success("✅ OpenAI API 키가 설정되었습니다.")
     
     if not st.session_state.openai_api_key:
         st.error("⚠️ OpenAI API 키가 필요합니다!")
+        st.info("OpenAI API 키는 https://platform.openai.com/account/api-keys 에서 확인할 수 있습니다.")
 
 # 벡터 저장소 로드 함수 (최초 1회만 실행)
 def load_vector_store():
@@ -137,6 +144,12 @@ def load_vector_store():
         # API 키 확인
         if not st.session_state.openai_api_key:
             st.error("⚠️ OpenAI API 키를 입력해주세요!")
+            st.info("OpenAI API 키는 https://platform.openai.com/account/api-keys 에서 확인할 수 있습니다.")
+            return False
+            
+        # API 키 형식 검증
+        if not st.session_state.openai_api_key.startswith('sk-') or len(st.session_state.openai_api_key) < 40:
+            st.error("❌ 올바르지 않은 OpenAI API 키 형식입니다. 'sk-'로 시작하는 올바른 API 키를 입력해주세요.")
             return False
             
         with st.spinner("벡터 저장소 로드 중..."):
@@ -276,16 +289,9 @@ with st.sidebar:
             st.info("OpenAI API 키를 설정하거나 HuggingFace 임베딩을 사용하세요.")
 
     # 벡터 저장소 타입 선택
-    vector_store_type = st.radio(
-        "벡터 저장소 타입",
-        ["FAISS", "Chroma"],
-        index=0 if st.session_state.use_faiss else 1
-    )
-
-    use_faiss = (vector_store_type == "FAISS")
-    if use_faiss != st.session_state.use_faiss:
-        st.session_state.use_faiss = use_faiss
-        st.session_state.vector_store_loaded = False  # 벡터 저장소 타입이 변경되어 재로드 필요
+    st.markdown("### 벡터 저장소 타입")
+    st.info("FAISS 벡터 저장소를 사용합니다.")
+    st.session_state.use_faiss = True  # 항상 FAISS 사용
 
     # HuggingFace 임베딩 모델 선택 (OpenAI를 사용하지 않을 경우에만 표시)
     if not st.session_state.use_openai_embeddings:
