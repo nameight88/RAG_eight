@@ -132,13 +132,14 @@ def load_vector_store():
                 # 벡터 저장소 로드 성공 여부 확인
                 if st.session_state.rag_system.vector_store:
                     st.session_state.vector_store_loaded = True
+                    st.sidebar.success("✅ 벡터 저장소 로드 성공!")
                     return True
                 else:
-                    st.sidebar.error("벡터 저장소 로드에 실패했습니다. 경로를 확인해주세요.")
+                    st.sidebar.error("❌ 벡터 저장소 로드에 실패했습니다. 벡터 저장소 경로와 파일을 확인해주세요.")
                     st.session_state.vector_store_loaded = False
                     return False
             except Exception as e:
-                st.sidebar.error(f"벡터 저장소 로드 실패: {str(e)}")
+                st.sidebar.error(f"❌ 벡터 저장소 로드 실패: {str(e)}")
                 st.session_state.vector_store_loaded = False
                 return False
     return True
@@ -373,8 +374,16 @@ for i, message in enumerate(st.session_state.chat_history):
                         metadata = source.get("metadata", {})
                         
                         # DB 타입에 따라 날짜와 유형을 결정합니다.
-                        date_to_display = metadata.get('sanction_date') or metadata.get('disclosure_date', 'N/A')
-                        type_to_display = metadata.get('sanction_type') or metadata.get('management_type', 'N/A')
+                        date_to_display = metadata.get('date', metadata.get('sanction_date', metadata.get('disclosure_date', 'N/A')))
+                        
+                        if 'doc_type' in metadata:
+                            type_to_display = metadata.get('doc_type', 'N/A')
+                        elif 'sanction_type' in metadata:
+                            type_to_display = metadata.get('sanction_type', 'N/A')
+                        elif 'management_type' in metadata:
+                            type_to_display = metadata.get('management_type', 'N/A') 
+                        else:
+                            type_to_display = 'N/A'
 
                         st.markdown(f"""
                         <div class="source-card">

@@ -165,7 +165,7 @@ class FSSRagSystem:
                 from langchain_community.embeddings import HuggingFaceEmbeddings
                 self.embeddings = HuggingFaceEmbeddings(
                     model_name=embed_model,
-                    model_kwargs={'device': 'cuda' if torch.cuda.is_available() else 'cpu'},
+                    model_kwargs={'device': 'cpu'},  # CUDA 오류 방지
                     encode_kwargs={'normalize_embeddings': True}
                 )
                 print(f"✅ HuggingFace 임베딩 초기화 완료")
@@ -175,25 +175,71 @@ class FSSRagSystem:
 
             if vector_store_type == 'FAISS':
                 faiss_path = os.path.join(self.vector_db_path, "faiss")
-                if not os.path.exists(os.path.join(faiss_path, "index.faiss")):
+                index_path = os.path.join(faiss_path, "index.faiss")
+                docstore_path = os.path.join(faiss_path, "index.pkl")
+                
+                if not os.path.exists(index_path) or not os.path.exists(docstore_path):
                     print(f"❌ FAISS 인덱스 파일을 찾을 수 없습니다: {faiss_path}")
                     return False
                 
-                print(f"✅ 기존 FAISS 벡터 저장소를 로드합니다: {faiss_path}")
-                from langchain_community.vectorstores import FAISS
-                self.vector_store = FAISS.load_local(
-                    faiss_path,
-                    self.embeddings,
-                    allow_dangerous_deserialization=True
-                )
+                try:
+                    print(f"✅ 기존 FAISS 벡터 저장소를 로드합니다: {faiss_path}")
+                    
+                    # 새로운 접근 방식: 수동으로 FAISS 재생성
+                    from langchain_community.vectorstores import FAISS
+                    import faiss
+                    import pickle
+                    import numpy as np
+                    
+                    # 1. FAISS 인덱스 로드
+                    index = faiss.read_index(index_path)
+                    
+                    # 2. 문서 저장소 로드 (안전모드)
+                    with open(docstore_path, 'rb') as f:
+                        try:
+                            docstore_data = pickle.load(f)
+                            if isinstance(docstore_data, tuple) and len(docstore_data) == 2:
+                                docstore, index_to_docstore_id = docstore_data
+                            else:
+                                print("❌ 잘못된 문서 저장소 형식")
+                                return False
+                        except Exception as e:
+                            print(f"❌ 문서 저장소 로드 실패: {e}")
+                            return False
+                    
+                    # 3. 벡터 저장소 수동 생성
+                    vector_store = FAISS(
+                        embedding_function=self.embeddings,
+                        index=index,
+                        docstore=docstore,
+                        index_to_docstore_id=index_to_docstore_id
+                    )
+                    
+                    self.vector_store = vector_store
+                    print("✅ FAISS 벡터 저장소 로드 완료 (안전 모드)")
+                    
+                except Exception as e:
+                    print(f"❌ FAISS 벡터 저장소 로드 실패: {str(e)}")
+                    import traceback
+                    traceback.print_exc()
+                    
+                    # 대안: Chroma 사용 시도
+                    print("⚠️ FAISS 로드 실패로 Chroma 사용을 시도합니다...")
+                    self.use_faiss = False
+                    return False
+                    
             elif vector_store_type == 'CHROMA':
                 chroma_path = self.vector_db_path
                 print(f"✅ 기존 Chroma 벡터 저장소를 로드합니다: {chroma_path}")
-                from langchain_community.vectorstores import Chroma
-                self.vector_store = Chroma(
-                    persist_directory=chroma_path,
-                    embedding_function=self.embeddings
-                )
+                try:
+                    from langchain_community.vectorstores import Chroma
+                    self.vector_store = Chroma(
+                        persist_directory=chroma_path,
+                        embedding_function=self.embeddings
+                    )
+                except Exception as e:
+                    print(f"❌ Chroma 벡터 저장소 로드 실패: {e}")
+                    return False
             else:
                 print(f"❌ 알 수 없는 벡터 저장소 타입입니다: {vector_store_type}")
                 return False
@@ -254,14 +300,29 @@ class FSSRagSystem:
                         return
                     
                     print("🧠 Anthropic Claude API 초기화 중...")
-                    from langchain_anthropic import ChatAnthropic
-                    
-                    # LLM 초기화
-                    self.llm = ChatAnthropic(
-                        model="claude-3-opus-20240229",  # 최신 Claude 모델
-                        anthropic_api_key=anthropic_api_key
-                    )
-                    print("✅ Anthropic Claude API 초기화 완료")
+                    try:
+                        # 신규 버전 import 시도
+                        try:
+                            from langchain_anthropic import ChatAnthropic
+                            
+                            # LLM 초기화
+                            self.llm = ChatAnthropic(
+                                model="claude-3-opus-20240229",  # 최신 Claude 모델
+                                anthropic_api_key=anthropic_api_key
+                            )
+                        except ImportError:
+                            # 기존 버전 fallback
+                            print("⚠️ langchain_anthropic 임포트 실패, 기존 방식 시도...")
+                            from langchain.chat_models import ChatAnthropic
+                            self.llm = ChatAnthropic(
+                                model_name="claude-3-opus-20240229",  # 최신 Claude 모델
+                                anthropic_api_key=anthropic_api_key
+                            )
+                        
+                        print("✅ Anthropic Claude API 초기화 완료")
+                    except Exception as anthro_error:
+                        print(f"❌ Anthropic 초기화 실패: {anthro_error}")
+                        return
                     
                 except Exception as e:
                     print(f"❌ Anthropic API 초기화 실패: {str(e)}")
@@ -277,14 +338,34 @@ class FSSRagSystem:
                         return
                     
                     print(f"🧠 OpenAI API 초기화 중: {self.llm_model_name}...")
-                    from langchain_openai import ChatOpenAI
                     
-                    # LLM 초기화
-                    self.llm = ChatOpenAI(
-                        model=self.llm_model_name,
-                        temperature=0.3,
-                        openai_api_key=openai_api_key
-                    )
+                    # 모델 이름 호환성 확인
+                    model_name = self.llm_model_name
+                    if model_name == "gpt-3.5-turbo":
+                        print("⚠️ 'gpt-3.5-turbo'는 레거시 이름입니다. 'gpt-3.5-turbo-0125'로 변경합니다.")
+                        model_name = "gpt-3.5-turbo-0125"
+                    
+                    # 임포트 시도
+                    try:
+                        # 신규 버전 import
+                        from langchain_openai import ChatOpenAI
+                        
+                        # LLM 초기화
+                        self.llm = ChatOpenAI(
+                            model=model_name,
+                            temperature=0.3,
+                            openai_api_key=openai_api_key
+                        )
+                    except ImportError:
+                        # 기존 버전 fallback
+                        print("⚠️ langchain_openai 임포트 실패, 기존 방식 시도...")
+                        from langchain.chat_models import ChatOpenAI
+                        self.llm = ChatOpenAI(
+                            model_name=model_name,
+                            temperature=0.3,
+                            openai_api_key=openai_api_key
+                        )
+                    
                     print("✅ OpenAI API 초기화 완료")
                     
                 except Exception as e:
@@ -292,7 +373,7 @@ class FSSRagSystem:
                     import traceback
                     traceback.print_exc()
                     return
-        
+            
             # QA 체인 설정
             self.setup_qa_chain()
             
@@ -477,6 +558,7 @@ class FSSRagSystem:
             
             # 검색 결과가 없는 경우
             if not search_results:
+                print("⚠️ 검색 결과 없음")
                 return {
                     "answer": "질문과 관련된 문서를 찾을 수 없습니다. 다른 질문을 시도해보세요.",
                     "sources": []
@@ -487,39 +569,93 @@ class FSSRagSystem:
             sources = []
             
             for idx, doc in enumerate(search_results):
-                metadata = doc.get("metadata", {})
-                content = doc.get("content", "")
-                institution = metadata.get("institution", "미상")
-                date = metadata.get("date", "미상")
-                
-                context += f"[문서 {idx+1}]\n"
-                context += f"내용: {doc['content']}\n"
-                context += f"출처: {doc['metadata']}\n\n"
-                
-                sources.append({
-                    "content": content,
-                    "metadata": metadata
-                })
+                try:
+                    metadata = doc.get("metadata", {})
+                    content = doc.get("content", "")
+                    
+                    # 유효한 메타데이터 확인
+                    institution = metadata.get("institution", "")
+                    if not institution:
+                        institution = "미상"
+                        
+                    # 날짜 필드 확인
+                    date = metadata.get("date", "")
+                    if not date:
+                        date = metadata.get("sanction_date", "")
+                    if not date:
+                        date = metadata.get("disclosure_date", "")
+                    if not date:
+                        date = "날짜 미상"
+                    
+                    # 문서 타입 확인
+                    doc_type = metadata.get("doc_type", "")
+                    if not doc_type and self.db_type == "sanctions":
+                        doc_type = "제재정보"
+                    elif not doc_type:
+                        doc_type = "경영유의사항"
+                    
+                    context += f"[문서 {idx+1}]\n"
+                    context += f"기관: {institution}\n"
+                    context += f"날짜: {date}\n"
+                    context += f"유형: {doc_type}\n"
+                    context += f"내용:\n{content}\n\n"
+                    
+                    sources.append({
+                        "content": content,
+                        "metadata": metadata
+                    })
+                except Exception as doc_error:
+                    print(f"⚠️ 문서 처리 오류 (무시됨): {doc_error}")
+                    continue
             
             # LLM으로 답변 생성
             try:
-                prompt = f"""다음은 금융감독원 제재 및 경영유의 정보에 대한 자료입니다:
+                # 컨텍스트가 너무 길면 자르기
+                if len(context) > 12000:
+                    print(f"⚠️ 컨텍스트가 너무 깁니다: {len(context)}자 → 12000자로 자릅니다")
+                    context = context[:12000] + "..."
+                    
+                prompt = f"""당신은 금융감독원 제재 및 경영유의 정보 검색 시스템의 일부입니다. 
+다음은 검색된 금융감독원 관련 자료입니다:
 
 {context}
 
 질문: {question}
 
-위 자료를 바탕으로 질문에 답변해주세요. 자료에 나오지 않는 내용이면 '관련 정보가 없습니다'라고 답변해주세요."""
+위 자료를 바탕으로 질문에 답변해주세요.
+1. 자료에 나오지 않는 내용이면 "관련 정보가 없습니다"라고 답변하세요.
+2. 기관명, 날짜, 제재 유형, 금액 등 구체적인 정보를 포함해서 답변하세요.
+3. 자료의 출처를 명확하게 인용하세요.
+4. 간결하고 명확하게 답변하세요.
+"""
 
-                if hasattr(self.llm, "invoke"):
-                    result = self.llm.invoke(prompt)
-                    if hasattr(result, "content"):
-                        answer = result.content
+                print("🧠 LLM에 답변 요청 중...")
+                answer = ""
+                
+                # 다양한 LLM 호출 방식 시도
+                try:
+                    # 방식 1: invoke 메서드 (최신 LangChain)
+                    if hasattr(self.llm, "invoke"):
+                        result = self.llm.invoke(prompt)
+                        if hasattr(result, "content"):
+                            answer = result.content
+                        else:
+                            answer = str(result)
+                    # 방식 2: __call__ 메서드 (구 LangChain)
                     else:
-                        answer = str(result)
-                else:
-                    # 구 방식 호출
-                    answer = self.llm(prompt)
+                        answer = str(self.llm(prompt))
+                        
+                    print("✅ LLM 응답 수신 완료")
+                    
+                except Exception as llm_error:
+                    print(f"❌ LLM 호출 실패: {llm_error}")
+                    # 기본 응답 생성
+                    answer = "죄송합니다. LLM 처리 중 오류가 발생했습니다. 검색된 관련 문서는 다음과 같습니다:\n\n"
+                    for idx, doc in enumerate(search_results[:3]):
+                        metadata = doc.get("metadata", {})
+                        institution = metadata.get('institution', 'N/A')
+                        date = metadata.get('date', metadata.get('sanction_date', metadata.get('disclosure_date', 'N/A')))
+                        answer += f"{idx+1}. {institution} ({date})\n"
                 
                 return {
                     "answer": answer,
@@ -527,7 +663,7 @@ class FSSRagSystem:
                 }
                 
             except Exception as e:
-                print(f"❌ LLM 호출 오류: {e}")
+                print(f"❌ 답변 생성 중 오류: {str(e)}")
                 import traceback
                 traceback.print_exc()
                 
@@ -536,7 +672,7 @@ class FSSRagSystem:
                 for i, doc in enumerate(search_results):
                     metadata = doc.get("metadata", {})
                     institution = metadata.get('institution', 'N/A')
-                    date = metadata.get('date', 'N/A')
+                    date = metadata.get('date', metadata.get('sanction_date', metadata.get('disclosure_date', 'N/A')))
                     answer += f"{i+1}. {institution} ({date})\n"
                 
                 return {
@@ -661,46 +797,77 @@ class FSSRagSystem:
             # 전처리된 쿼리 생성
             processed_query, filters = self.preprocess_query(query)
             
+            print(f"🔍 검색어: '{processed_query}', 필터: {filters}")
+            
             try:
-                # 검색 수행 (다양한 방법 시도)
-                docs = []
+                # 다양한 검색 방식 시도
+                docs = None
                 
-                # 방법 1: 기본 similarity_search 시도
+                # 1. 단순 검색 (가장 안정적)
                 try:
-                    print("📚 기본 similarity_search 시도...")
-                    docs = self.vector_store.similarity_search(processed_query, k=k*2)  # 더 많이 가져와서 필터링
+                    print("📚 검색 방식 1: similarity_search 시도...")
+                    docs = self.vector_store.similarity_search(
+                        processed_query, 
+                        k=k*2  # 필터링 후 충분한 결과 확보를 위해 더 많이 검색
+                    )
+                    print(f"✅ 검색 성공: {len(docs)}개 문서 찾음")
                 except Exception as e1:
-                    print(f"❌ 기본 검색 실패: {e1}")
+                    print(f"⚠️ similarity_search 실패: {str(e1)}")
                     
-                    # 방법 2: as_retriever 사용 시도
+                    # 2. 검색 문서 직접 구성
                     try:
-                        print("📚 retriever 방식 시도...")
-                        retriever = self.vector_store.as_retriever(search_kwargs={"k": k*2})
-                        docs = retriever.get_relevant_documents(processed_query)
+                        print("📚 검색 방식 2: 직접 검색 시도...")
+                        if hasattr(self.vector_store, "_collection"):
+                            # Chroma용 검색
+                            from langchain_core.documents import Document
+                            
+                            # 임베딩 생성
+                            query_embedding = self.embeddings.embed_query(processed_query)
+                            
+                            # Chroma 컬렉션에서 직접 검색
+                            results = self.vector_store._collection.query(
+                                query_embeddings=[query_embedding],
+                                n_results=k*2
+                            )
+                            
+                            # 문서 구성
+                            docs = []
+                            for i, (id, dist) in enumerate(zip(results['ids'][0], results['distances'][0])):
+                                if i >= k*2:
+                                    break
+                                metadata = json.loads(results['metadatas'][0][i]) if results['metadatas'][0][i] else {}
+                                content = results['documents'][0][i] if results['documents'][0][i] else ""
+                                docs.append(Document(page_content=content, metadata=metadata))
+                            
+                            print(f"✅ Chroma 직접 검색 성공: {len(docs)}개 문서 찾음")
                     except Exception as e2:
-                        print(f"❌ retriever 방식 실패: {e2}")
+                        print(f"⚠️ 직접 검색 실패: {str(e2)}")
                         
-                        # 방법 3: max_marginal_relevance_search 시도
+                        # 3. 최후의 방법 - 모든 문서 반환
                         try:
-                            print("📚 max_marginal_relevance_search 시도...")
-                            docs = self.vector_store.max_marginal_relevance_search(processed_query, k=k*2)
+                            print("📚 검색 방식 3: 모든 문서 반환 시도...")
+                            if hasattr(self.vector_store, "docstore"):
+                                # FAISS용 모든 문서 가져오기
+                                all_docs = []
+                                for doc_id in list(self.vector_store.docstore._dict.values())[:k*2]:
+                                    all_docs.append(doc_id)
+                                docs = all_docs
+                                print(f"✅ 모든 문서 검색 성공: {len(docs)}개 문서 찾음")
                         except Exception as e3:
-                            print(f"❌ 모든 검색 방법 실패: {e3}")
+                            print(f"❌ 모든 검색 방식 실패: {str(e3)}")
                             return []
                 
-                # 검색 결과가 비어있으면 반환
-                if not docs:
+                # 검색 결과 없으면 종료
+                if not docs or len(docs) == 0:
                     print("❌ 검색 결과가 없습니다.")
                     return []
-                    
-                print(f"✅ 검색 결과: {len(docs)}개 문서 찾음")
                 
                 # 필터링 적용
                 filtered_results = []
                 
                 for doc in docs:
-                    metadata = doc.metadata
-                    content = doc.page_content
+                    metadata = doc.metadata if hasattr(doc, "metadata") else {}
+                    content = doc.page_content if hasattr(doc, "page_content") else str(doc)
                     
                     # 필터링 적용
                     if filters and not self._match_filters(metadata, filters):
@@ -713,7 +880,18 @@ class FSSRagSystem:
                     }
                     filtered_results.append(result)
                 
-                print(f"✅ 필터링 후 결과: {len(filtered_results)}개 문서")
+                print(f"✅ 필터링 후: {len(filtered_results)}개 문서 남음")
+                
+                # 결과가 없을 경우 필터 없이 반환
+                if not filtered_results and filters and docs:
+                    print("⚠️ 필터링 결과가 없어 필터 없이 모든 결과 반환")
+                    filtered_results = [
+                        {
+                            "content": doc.page_content if hasattr(doc, "page_content") else str(doc),
+                            "metadata": doc.metadata if hasattr(doc, "metadata") else {},
+                            "score": 1.0
+                        } for doc in docs[:k]
+                    ]
                 
                 # 최대 k개 반환
                 return filtered_results[:k]
