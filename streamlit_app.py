@@ -97,7 +97,7 @@ if "rag_system" not in st.session_state:
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 if "vector_db_path" not in st.session_state:
-    st.session_state.vector_db_path = "./data/vector_db/fss_sanctions"
+    st.session_state.vector_db_path = "data/vector_db/fss_sanctions"  # './' 제거
 if "embed_model" not in st.session_state:
     st.session_state.embed_model = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 if "use_openai_embeddings" not in st.session_state:
@@ -123,12 +123,33 @@ def load_vector_store():
             try:
                 # 현재 스크립트의 디렉토리를 기준으로 상대 경로 설정
                 current_dir = os.path.dirname(os.path.abspath(__file__))
-                vector_db_path = os.path.join(current_dir, st.session_state.vector_db_path.lstrip('./'))
+                vector_db_path = os.path.join(current_dir, st.session_state.vector_db_path)
+                
+                # 디버그 정보 출력
+                st.write("디버그 정보:")
+                st.write(f"현재 디렉토리: {current_dir}")
+                st.write(f"벡터 저장소 경로: {vector_db_path}")
+                st.write(f"경로 존재 여부: {os.path.exists(vector_db_path)}")
+                
+                if os.path.exists(vector_db_path):
+                    # 디렉토리 내용 출력
+                    st.write("디렉토리 내용:")
+                    for root, dirs, files in os.walk(vector_db_path):
+                        st.write(f"디렉토리: {root}")
+                        st.write(f"하위 디렉토리: {dirs}")
+                        st.write(f"파일들: {files}")
                 
                 # 벡터 저장소 디렉토리 존재 여부 확인
                 if not os.path.exists(vector_db_path):
                     st.error(f"❌ 벡터 저장소 디렉토리를 찾을 수 없습니다: {vector_db_path}")
-                    st.info("GitHub 저장소에 벡터 저장소 파일이 포함되어 있는지 확인해주세요.")
+                    st.info("벡터 저장소 디렉토리 구조를 확인해주세요.")
+                    return False
+                
+                # FAISS 디렉토리 경로 확인
+                faiss_dir = os.path.join(vector_db_path, "faiss")
+                if st.session_state.use_faiss and not os.path.exists(faiss_dir):
+                    st.error(f"❌ FAISS 디렉토리를 찾을 수 없습니다: {faiss_dir}")
+                    st.info("FAISS 벡터 저장소 파일이 올바른 위치에 있는지 확인해주세요.")
                     return False
                 
                 # 벡터 저장소만 로드하는 RAG 시스템 생성
@@ -146,13 +167,14 @@ def load_vector_store():
                     st.sidebar.success("✅ 벡터 저장소 로드 성공!")
                     return True
                 else:
-                    st.error("❌ 벡터 저장소 로드에 실패했습니다. 벡터 저장소 경로와 파일을 확인해주세요.")
-                    st.info("GitHub 저장소에 벡터 저장소 파일이 포함되어 있는지 확인해주세요.")
+                    st.error("❌ 벡터 저장소 로드에 실패했습니다.")
+                    st.info("1. 벡터 저장소 파일이 올바른 위치에 있는지 확인해주세요.")
+                    st.info("2. vector_store_info.json 파일이 존재하는지 확인해주세요.")
                     st.session_state.vector_store_loaded = False
                     return False
             except Exception as e:
                 st.error(f"❌ 벡터 저장소 로드 실패: {str(e)}")
-                st.info("1. GitHub 저장소에 벡터 저장소 파일이 포함되어 있는지 확인해주세요.")
+                st.info("1. 벡터 저장소 파일 구조를 확인해주세요.")
                 st.info("2. OpenAI API 키가 올바르게 설정되어 있는지 확인해주세요.")
                 st.session_state.vector_store_loaded = False
                 return False
@@ -164,8 +186,8 @@ with st.sidebar:
     
     # 벡터 저장소 선택
     vector_db_options = {
-        "제재 정보": "./data/vector_db/fss_sanctions",
-        "경영유의사항": "./data/vector_db/fss_management",
+        "제재 정보": "data/vector_db/fss_sanctions",  # './' 제거
+        "경영유의사항": "data/vector_db/fss_management",  # './' 제거
     }
     
     vector_db = st.selectbox(
