@@ -117,12 +117,23 @@ if "vector_store_loaded" not in st.session_state:
 
 # 벡터 저장소 로드 함수 (최초 1회만 실행)
 def load_vector_store():
+    """벡터 저장소를 로드하는 함수"""
     if not st.session_state.vector_store_loaded:
         with st.spinner("벡터 저장소 로드 중..."):
             try:
+                # 현재 스크립트의 디렉토리를 기준으로 상대 경로 설정
+                current_dir = os.path.dirname(os.path.abspath(__file__))
+                vector_db_path = os.path.join(current_dir, st.session_state.vector_db_path.lstrip('./'))
+                
+                # 벡터 저장소 디렉토리 존재 여부 확인
+                if not os.path.exists(vector_db_path):
+                    st.error(f"❌ 벡터 저장소 디렉토리를 찾을 수 없습니다: {vector_db_path}")
+                    st.info("GitHub 저장소에 벡터 저장소 파일이 포함되어 있는지 확인해주세요.")
+                    return False
+                
                 # 벡터 저장소만 로드하는 RAG 시스템 생성
                 st.session_state.rag_system = FSSRagSystem(
-                    vector_db_path=st.session_state.vector_db_path,
+                    vector_db_path=vector_db_path,
                     embed_model_name=st.session_state.embed_model,
                     use_openai_embeddings=st.session_state.use_openai_embeddings,
                     use_anthropic=False,  # 항상 False로 설정 (LLM은 별도로 초기화)
@@ -135,11 +146,14 @@ def load_vector_store():
                     st.sidebar.success("✅ 벡터 저장소 로드 성공!")
                     return True
                 else:
-                    st.sidebar.error("❌ 벡터 저장소 로드에 실패했습니다. 벡터 저장소 경로와 파일을 확인해주세요.")
+                    st.error("❌ 벡터 저장소 로드에 실패했습니다. 벡터 저장소 경로와 파일을 확인해주세요.")
+                    st.info("GitHub 저장소에 벡터 저장소 파일이 포함되어 있는지 확인해주세요.")
                     st.session_state.vector_store_loaded = False
                     return False
             except Exception as e:
-                st.sidebar.error(f"❌ 벡터 저장소 로드 실패: {str(e)}")
+                st.error(f"❌ 벡터 저장소 로드 실패: {str(e)}")
+                st.info("1. GitHub 저장소에 벡터 저장소 파일이 포함되어 있는지 확인해주세요.")
+                st.info("2. OpenAI API 키가 올바르게 설정되어 있는지 확인해주세요.")
                 st.session_state.vector_store_loaded = False
                 return False
     return True
