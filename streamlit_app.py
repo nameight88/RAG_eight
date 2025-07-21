@@ -123,11 +123,23 @@ def load_vector_store():
             try:
                 # 현재 스크립트의 디렉토리를 기준으로 상대 경로 설정
                 current_dir = os.path.dirname(os.path.abspath(__file__))
-                vector_db_path = os.path.join(current_dir, st.session_state.vector_db_path)
+                
+                # 클라우드 환경 확인 및 경로 설정
+                is_cloud = current_dir.startswith('/mount/src')
+                if is_cloud:
+                    # 클라우드 환경에서는 /mount/src/rag_eight을 기준으로 경로 설정
+                    base_dir = '/mount/src/rag_eight'
+                else:
+                    # 로컬 환경에서는 현재 디렉토리 사용
+                    base_dir = current_dir
+                
+                vector_db_path = os.path.join(base_dir, st.session_state.vector_db_path)
                 
                 # 디버그 정보 출력
                 st.write("디버그 정보:")
+                st.write(f"실행 환경: {'클라우드' if is_cloud else '로컬'}")
                 st.write(f"현재 디렉토리: {current_dir}")
+                st.write(f"기준 디렉토리: {base_dir}")
                 st.write(f"벡터 저장소 경로: {vector_db_path}")
                 st.write(f"경로 존재 여부: {os.path.exists(vector_db_path)}")
                 
@@ -145,20 +157,42 @@ def load_vector_store():
                     st.info("벡터 저장소 디렉토리 구조를 확인해주세요.")
                     return False
                 
+                # vector_store_info.json 파일 확인
+                info_file = os.path.join(vector_db_path, "vector_store_info.json")
+                if not os.path.exists(info_file):
+                    st.error(f"❌ vector_store_info.json 파일을 찾을 수 없습니다: {info_file}")
+                    return False
+                
+                # vector_store_info.json 파일 내용 확인
+                try:
+                    with open(info_file, 'r', encoding='utf-8') as f:
+                        info_data = json.load(f)
+                        st.write("벡터 저장소 정보:")
+                        st.write(info_data)
+                except Exception as e:
+                    st.error(f"❌ vector_store_info.json 파일 읽기 실패: {str(e)}")
+                    return False
+                
                 # FAISS 디렉토리 경로 확인
                 faiss_dir = os.path.join(vector_db_path, "faiss")
-                if st.session_state.use_faiss and not os.path.exists(faiss_dir):
-                    st.error(f"❌ FAISS 디렉토리를 찾을 수 없습니다: {faiss_dir}")
-                    st.info("FAISS 벡터 저장소 파일이 올바른 위치에 있는지 확인해주세요.")
-                    return False
+                if st.session_state.use_faiss:
+                    if not os.path.exists(faiss_dir):
+                        st.error(f"❌ FAISS 디렉토리를 찾을 수 없습니다: {faiss_dir}")
+                        return False
+                    # FAISS 파일 존재 여부 확인
+                    required_files = ['index.faiss', 'index.pkl']
+                    missing_files = [f for f in required_files if not os.path.exists(os.path.join(faiss_dir, f))]
+                    if missing_files:
+                        st.error(f"❌ FAISS 파일이 누락되었습니다: {', '.join(missing_files)}")
+                        return False
                 
                 # 벡터 저장소만 로드하는 RAG 시스템 생성
                 st.session_state.rag_system = FSSRagSystem(
                     vector_db_path=vector_db_path,
                     embed_model_name=st.session_state.embed_model,
                     use_openai_embeddings=st.session_state.use_openai_embeddings,
-                    use_anthropic=False,  # 항상 False로 설정 (LLM은 별도로 초기화)
-                    use_faiss=st.session_state.use_faiss  # FAISS 사용 여부
+                    use_anthropic=False,
+                    use_faiss=st.session_state.use_faiss
                 )
                 
                 # 벡터 저장소 로드 성공 여부 확인
@@ -168,8 +202,7 @@ def load_vector_store():
                     return True
                 else:
                     st.error("❌ 벡터 저장소 로드에 실패했습니다.")
-                    st.info("1. 벡터 저장소 파일이 올바른 위치에 있는지 확인해주세요.")
-                    st.info("2. vector_store_info.json 파일이 존재하는지 확인해주세요.")
+                    st.info("벡터 저장소 초기화에 실패했습니다. 로그를 확인해주세요.")
                     st.session_state.vector_store_loaded = False
                     return False
             except Exception as e:
