@@ -92,11 +92,12 @@ class FSSRagSystem:
         use_openai_embeddings: bool = True,
         use_faiss: bool = True,
         use_openai_llm: bool = True,
+        create_from_json: str = None,  # JSON 파일 경로 추가
     ) -> None:
         """FSS RAG 시스템 초기화"""
         
         # 설정 저장
-        self.vector_db_path = os.path.abspath(vector_db_path)
+        self.vector_db_path = os.path.abspath(vector_db_path) if vector_db_path else None
         self.embed_model_name = embed_model_name
         self.top_k = top_k
         self.use_anthropic = use_anthropic  # Anthropic Claude 사용 여부
@@ -104,12 +105,23 @@ class FSSRagSystem:
         self.use_openai_llm = use_openai_llm  # OpenAI LLM 사용 여부
         self.use_openai_embeddings = use_openai_embeddings  # OpenAI 임베딩 사용 여부
         self.use_faiss = use_faiss  # FAISS 사용 여부 (False면 Chroma 사용)
+        self.create_from_json = create_from_json  # JSON 파일에서 생성
         
         # 제재 데이터인지 경영유의인지 판단
-        if "sanctions" in vector_db_path:
-            self.db_type = "sanctions"
-        elif "management" in vector_db_path:
-            self.db_type = "management"
+        if create_from_json:
+            if "sanctions" in create_from_json:
+                self.db_type = "sanctions"
+            elif "management" in create_from_json:
+                self.db_type = "management"
+            else:
+                self.db_type = "unknown"
+        elif vector_db_path:
+            if "sanctions" in vector_db_path:
+                self.db_type = "sanctions"
+            elif "management" in vector_db_path:
+                self.db_type = "management"
+            else:
+                self.db_type = "unknown"
         else:
             self.db_type = "unknown"
             
@@ -125,8 +137,12 @@ class FSSRagSystem:
         self.llm = None
         self.qa_chain = None
         
-        # 벡터 저장소 로드 시도
-        self.load_vector_store()
+        # JSON 파일에서 생성하는 경우
+        if self.create_from_json:
+            self.create_vector_store_from_json()
+        # 기존 벡터 저장소 로드
+        elif self.vector_db_path:
+            self.load_vector_store()
     
     def get_embeddings(self):
         """임베딩 모델 가져오기 (캐시 활용)"""
@@ -1248,37 +1264,66 @@ class FSSRagSystem:
                         
                         print(f"내용: {source['content']}")
 
-    def _rebuild_vector_store_from_json(self):
-        """JSON 파일에서 벡터 저장소 재구성"""
+    def create_vector_store_from_json(self):
+        """JSON 파일에서 직접 벡터 저장소 생성"""
         try:
-            print("🔄 JSON 파일에서 벡터 저장소 재구성 중...")
+            print(f"📄 JSON 파일에서 벡터 저장소 생성 중: {self.create_from_json}")
             
-            # JSON 파일 경로 결정
-            json_filename = "fss_sanctions_parsed.json" if "sanctions" in self.vector_db_path else "fss_management_parsed.json"
-            json_path = os.path.join(self.vector_db_path, json_filename)
-            
-            if not os.path.exists(json_path):
-                print(f"❌ 원본 데이터 파일을 찾을 수 없습니다: {json_path}")
+            if not os.path.exists(self.create_from_json):
+                print(f"❌ JSON 파일을 찾을 수 없습니다: {self.create_from_json}")
                 return False
+            
+            # 임베딩 초기화
+            if self.use_openai_embeddings:
+                print(f"🧠 OpenAI 임베딩 API 초기화 중...")
+                if not self.openai_api_key:
+                    self.openai_api_key = os.getenv("OPENAI_API_KEY")
+                    if not self.openai_api_key:
+                        print("❌ OpenAI API 키가 설정되지 않았습니다.")
+                        return False
+                
+                try:
+                    from langchain_openai import OpenAIEmbeddings
+                    self.embeddings = OpenAIEmbeddings(
+                        model="text-embedding-3-large",
+                        openai_api_key=self.openai_api_key,
+                        show_progress_bar=True,
+                        request_timeout=60
+                    )
+                    print("✅ OpenAI 임베딩 초기화 완료")
+                except Exception as e:
+                    print(f"❌ OpenAI 임베딩 초기화 실패: {e}")
+                    return False
+            else:
+                print(f"🧠 HuggingFace 임베딩 초기화 중: {self.embed_model_name}")
+                from langchain_community.embeddings import HuggingFaceEmbeddings
+                self.embeddings = HuggingFaceEmbeddings(
+                    model_name=self.embed_model_name,
+                    model_kwargs={'device': 'cpu'},
+                    encode_kwargs={'normalize_embeddings': True}
+                )
+                print("✅ HuggingFace 임베딩 초기화 완료")
             
             # JSON 데이터 로드
-            with open(json_path, 'r', encoding='utf-8') as f:
+            with open(self.create_from_json, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-            
-            # 데이터 구조 확인
-            if isinstance(data, list):
-                documents_list = data
-            elif isinstance(data, dict) and 'documents' in data:
-                documents_list = data['documents']
-            else:
-                print(f"❌ 알 수 없는 JSON 데이터 구조: {type(data)}")
-                return False
             
             # 문서 생성
             from langchain_core.documents import Document
             documents = []
             
-            for doc in documents_list:
+            # 데이터 구조 확인
+            if isinstance(data, dict) and 'documents' in data:
+                docs_list = data['documents']
+            elif isinstance(data, list):
+                docs_list = data
+            else:
+                print(f"❌ 알 수 없는 JSON 데이터 구조: {type(data)}")
+                return False
+            
+            print(f"📚 {len(docs_list)}개의 문서 처리 중...")
+            
+            for doc in docs_list:
                 if not isinstance(doc, dict):
                     continue
                     
@@ -1313,7 +1358,7 @@ class FSSRagSystem:
                 }
                 
                 # 문서 타입 설정
-                if "sanctions" in self.vector_db_path:
+                if self.db_type == "sanctions":
                     metadata['doc_type'] = '제재정보'
                     if isinstance(content, dict):
                         metadata['sanction_type'] = content.get('sanction_type', '')
@@ -1343,27 +1388,38 @@ class FSSRagSystem:
                             metadata[key] = value
                 
                 if text.strip():  # 빈 텍스트는 제외
-                    print(f"📄 문서 로드: {metadata['institution']} ({metadata['date']})")
                     documents.append(Document(page_content=text, metadata=metadata))
+            
+            print(f"📄 {len(documents)}개의 문서 준비 완료")
             
             if not documents:
                 print("❌ 문서를 생성할 수 없습니다.")
                 return False
             
-            print(f"📄 {len(documents)}개의 문서를 생성했습니다.")
-            
             # FAISS 벡터 저장소 생성
-            from langchain_community.vectorstores import FAISS
-            self.vector_store = FAISS.from_documents(
-                documents,
-                self.embeddings
-            )
+            print("🔄 벡터 저장소 생성 중...")
+            if self.use_faiss:
+                from langchain_community.vectorstores import FAISS
+                self.vector_store = FAISS.from_documents(
+                    documents,
+                    self.embeddings
+                )
+                print("✅ FAISS 벡터 저장소 생성 완료")
+            else:
+                from langchain_community.vectorstores import Chroma
+                self.vector_store = Chroma.from_documents(
+                    documents,
+                    self.embeddings
+                )
+                print("✅ Chroma 벡터 저장소 생성 완료")
             
-            print("✅ 벡터 저장소 재구성 완료")
+            # 벡터 저장소 테스트
+            self.check_vector_store()
+            
             return True
             
         except Exception as e:
-            print(f"❌ 벡터 저장소 재구성 실패: {str(e)}")
+            print(f"❌ 벡터 저장소 생성 실패: {str(e)}")
             import traceback
             traceback.print_exc()
             return False

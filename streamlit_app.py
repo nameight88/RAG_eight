@@ -116,8 +116,70 @@ if "use_openai_llm" not in st.session_state:
     st.session_state.use_openai_llm = True  # OpenAI LLM 사용 여부 (기본값 True)
 if "vector_store_loaded" not in st.session_state:
     st.session_state.vector_store_loaded = False
+if "vector_store_created" not in st.session_state:
+    st.session_state.vector_store_created = False
 
-# OpenAI API 키 입력 위젯 추가
+# 벡터 저장소 생성 함수
+def create_vector_store():
+    """JSON 파일에서 벡터 저장소를 생성하는 함수"""
+    # API 키 확인
+    if not st.session_state.openai_api_key:
+        st.error("⚠️ OpenAI API 키를 입력해주세요!")
+        return False
+        
+    with st.spinner("벡터 저장소 생성 중..."):
+        try:
+            # 현재 스크립트의 디렉토리를 기준으로 상대 경로 설정
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            
+            # 클라우드 환경 확인 및 경로 설정
+            is_cloud = current_dir.startswith('/mount/src')
+            if is_cloud:
+                base_dir = '/mount/src/rag_eight'
+            else:
+                base_dir = current_dir
+            
+            # JSON 파일 경로 결정
+            json_filename = "fss_sanctions_parsed.json" if "sanctions" in st.session_state.vector_db_path else "fss_management_parsed.json"
+            json_path = os.path.join(base_dir, "data", json_filename)
+            
+            if not os.path.exists(json_path):
+                st.error(f"❌ JSON 파일을 찾을 수 없습니다: {json_path}")
+                return False
+            
+            st.info(f"📄 JSON 파일 로드 중: {json_path}")
+            
+            # OpenAI API 키 환경 변수 설정
+            os.environ["OPENAI_API_KEY"] = st.session_state.openai_api_key
+            
+            # RAG 시스템 초기화 (벡터 저장소 생성 모드)
+            from rag_system import FSSRagSystem
+            
+            # 메모리에 벡터 저장소 생성
+            rag_system = FSSRagSystem(
+                vector_db_path=None,  # 경로 없이 메모리에서 생성
+                embed_model_name=st.session_state.embed_model,
+                use_openai_embeddings=st.session_state.use_openai_embeddings,
+                use_anthropic=False,
+                use_faiss=st.session_state.use_faiss,
+                create_from_json=json_path  # JSON 파일에서 생성
+            )
+            
+            if rag_system.vector_store:
+                st.session_state.rag_system = rag_system
+                st.session_state.vector_store_created = True
+                st.session_state.vector_store_loaded = True
+                st.success("✅ 벡터 저장소 생성 및 로드 완료!")
+                return True
+            else:
+                st.error("❌ 벡터 저장소 생성에 실패했습니다.")
+                return False
+                
+        except Exception as e:
+            st.error(f"❌ 벡터 저장소 생성 실패: {str(e)}")
+            return False
+
+# 사이드바에 RAG 시스템 설정
 with st.sidebar:
     st.markdown("### API 키 설정")
     api_key = st.text_input("OpenAI API 키", value=st.session_state.openai_api_key, type="password")
@@ -131,124 +193,15 @@ with st.sidebar:
             os.environ["OPENAI_API_KEY"] = api_key
             if st.session_state.openai_api_key != api_key:
                 st.session_state.vector_store_loaded = False
+                st.session_state.vector_store_created = False
             st.success("✅ OpenAI API 키가 설정되었습니다.")
     
     if not st.session_state.openai_api_key:
         st.error("⚠️ OpenAI API 키가 필요합니다!")
         st.info("OpenAI API 키는 https://platform.openai.com/account/api-keys 에서 확인할 수 있습니다.")
-
-# 벡터 저장소 로드 함수 (최초 1회만 실행)
-def load_vector_store():
-    """벡터 저장소를 로드하는 함수"""
-    if not st.session_state.vector_store_loaded:
-        # API 키 확인
-        if not st.session_state.openai_api_key:
-            st.error("⚠️ OpenAI API 키를 입력해주세요!")
-            st.info("OpenAI API 키는 https://platform.openai.com/account/api-keys 에서 확인할 수 있습니다.")
-            return False
-            
-        # API 키 형식 검증
-        if not st.session_state.openai_api_key.startswith('sk-') or len(st.session_state.openai_api_key) < 40:
-            st.error("❌ 올바르지 않은 OpenAI API 키 형식입니다. 'sk-'로 시작하는 올바른 API 키를 입력해주세요.")
-            return False
-            
-        with st.spinner("벡터 저장소 로드 중..."):
-            try:
-                # 현재 스크립트의 디렉토리를 기준으로 상대 경로 설정
-                current_dir = os.path.dirname(os.path.abspath(__file__))
-                
-                # 클라우드 환경 확인 및 경로 설정
-                is_cloud = current_dir.startswith('/mount/src')
-                if is_cloud:
-                    base_dir = '/mount/src/rag_eight'
-                else:
-                    base_dir = current_dir
-                
-                vector_db_path = os.path.join(base_dir, st.session_state.vector_db_path)
-                
-                # 디버그 정보 출력
-                st.write("디버그 정보:")
-                st.write(f"실행 환경: {'클라우드' if is_cloud else '로컬'}")
-                st.write(f"현재 디렉토리: {current_dir}")
-                st.write(f"기준 디렉토리: {base_dir}")
-                st.write(f"벡터 저장소 경로: {vector_db_path}")
-                st.write(f"경로 존재 여부: {os.path.exists(vector_db_path)}")
-                st.write(f"OpenAI API 키 설정 여부: {bool(st.session_state.openai_api_key)}")
-                
-                if os.path.exists(vector_db_path):
-                    # 디렉토리 내용 출력
-                    st.write("디렉토리 내용:")
-                    for root, dirs, files in os.walk(vector_db_path):
-                        st.write(f"디렉토리: {root}")
-                        st.write(f"하위 디렉토리: {dirs}")
-                        st.write(f"파일들: {files}")
-                
-                # vector_store_info.json 파일 확인
-                info_file = os.path.join(vector_db_path, "vector_store_info.json")
-                if not os.path.exists(info_file):
-                    st.error(f"❌ vector_store_info.json 파일을 찾을 수 없습니다: {info_file}")
-                    return False
-                
-                # vector_store_info.json 파일 내용 확인
-                try:
-                    with open(info_file, 'r', encoding='utf-8') as f:
-                        info_data = json.load(f)
-                        st.write("벡터 저장소 정보:")
-                        st.write(info_data)
-                        
-                        # OpenAI 임베딩 사용 여부 확인
-                        if info_data.get("use_openai", False) and not st.session_state.openai_api_key:
-                            st.error("⚠️ 이 벡터 저장소는 OpenAI 임베딩을 사용합니다. API 키를 입력해주세요!")
-                            return False
-                except Exception as e:
-                    st.error(f"❌ vector_store_info.json 파일 읽기 실패: {str(e)}")
-                    return False
-                
-                # FAISS 디렉토리 경로 확인
-                faiss_dir = os.path.join(vector_db_path, "faiss")
-                if st.session_state.use_faiss:
-                    if not os.path.exists(faiss_dir):
-                        st.error(f"❌ FAISS 디렉토리를 찾을 수 없습니다: {faiss_dir}")
-                        return False
-                    # FAISS 파일 존재 여부 확인
-                    required_files = ['index.faiss', 'index.pkl']
-                    missing_files = [f for f in required_files if not os.path.exists(os.path.join(faiss_dir, f))]
-                    if missing_files:
-                        st.error(f"❌ FAISS 파일이 누락되었습니다: {', '.join(missing_files)}")
-                        return False
-                
-                # OpenAI API 키 환경 변수 설정
-                os.environ["OPENAI_API_KEY"] = st.session_state.openai_api_key
-                
-                # 벡터 저장소만 로드하는 RAG 시스템 생성
-                st.session_state.rag_system = FSSRagSystem(
-                    vector_db_path=vector_db_path,
-                    embed_model_name=st.session_state.embed_model,
-                    use_openai_embeddings=st.session_state.use_openai_embeddings,
-                    use_anthropic=False,
-                    use_faiss=st.session_state.use_faiss
-                )
-                
-                # 벡터 저장소 로드 성공 여부 확인
-                if st.session_state.rag_system.vector_store:
-                    st.session_state.vector_store_loaded = True
-                    st.sidebar.success("✅ 벡터 저장소 로드 성공!")
-                    return True
-                else:
-                    st.error("❌ 벡터 저장소 로드에 실패했습니다.")
-                    st.info("벡터 저장소 초기화에 실패했습니다. 로그를 확인해주세요.")
-                    st.session_state.vector_store_loaded = False
-                    return False
-            except Exception as e:
-                st.error(f"❌ 벡터 저장소 로드 실패: {str(e)}")
-                st.info("1. OpenAI API 키가 올바른지 확인해주세요.")
-                st.info("2. 벡터 저장소 파일 구조를 확인해주세요.")
-                st.session_state.vector_store_loaded = False
-                return False
-    return True
-
-# 사이드바에 RAG 시스템 설정
-with st.sidebar:
+    
+    st.markdown("---")
+    
     st.markdown("### 시스템 설정")
     
     # 벡터 저장소 선택
@@ -268,6 +221,7 @@ with st.sidebar:
     if st.session_state.vector_db_path != vector_db_options[vector_db]:
         st.session_state.vector_db_path = vector_db_options[vector_db]
         st.session_state.vector_store_loaded = False
+        st.session_state.vector_store_created = False
     
     # 임베딩 설정
     st.markdown("### 임베딩 설정")
@@ -278,6 +232,7 @@ with st.sidebar:
     if use_openai != st.session_state.use_openai_embeddings:
         st.session_state.use_openai_embeddings = use_openai
         st.session_state.vector_store_loaded = False  # 임베딩 모델이 변경되어 재로드 필요
+        st.session_state.vector_store_created = False
 
     # OpenAI API 키 확인
     if st.session_state.use_openai_embeddings:
@@ -310,14 +265,19 @@ with st.sidebar:
         if st.session_state.embed_model != embed_model_options[embed_model]:
             st.session_state.embed_model = embed_model_options[embed_model]
             st.session_state.vector_store_loaded = False
+            st.session_state.vector_store_created = False
     
-    # 벡터 저장소 로드 버튼
-    if not st.session_state.vector_store_loaded:
-        if st.button("벡터 저장소 로드", type="primary"):
-            if load_vector_store():
-                st.sidebar.success("✅ 벡터 저장소 로드 완료")
+    # 벡터 저장소 생성/로드 버튼
+    if not st.session_state.vector_store_created:
+        if st.button("벡터 저장소 생성", type="primary"):
+            if create_vector_store():
+                st.success("✅ 벡터 저장소 생성 완료")
     else:
-        st.success("✅ 벡터 저장소가 로드되었습니다")
+        st.success("✅ 벡터 저장소가 생성되었습니다")
+        if st.button("벡터 저장소 재생성"):
+            st.session_state.vector_store_created = False
+            st.session_state.vector_store_loaded = False
+            st.rerun()
     
     st.markdown("---")
     
