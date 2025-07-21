@@ -1,0 +1,7 @@
+{
+  "created_at": "2025-07-21 19:47:19",
+  "document_count": 3,
+  "embed_model": "text-embedding-3-large",
+  "use_openai": true,
+  "vector_store_type": "FAISS"
+}
