@@ -50,6 +50,14 @@ st.markdown("""
     font-weight: bold;
     color: #1E3A8A;
 }
+.source-content {
+    color: #1F2937;  /* 어두운 회색 */
+    margin-top: 0.5rem;
+}
+.source-metadata {
+    color: #374151;  /* 중간 톤의 회색 */
+    margin: 0.25rem 0;
+}
 .chat-message {
     padding: 1.5rem;
     border-radius: 0.5rem;
@@ -404,10 +412,10 @@ for i, message in enumerate(st.session_state.chat_history):
                         st.markdown(f"""
                         <div class="source-card">
                             <p class="source-title">출처 #{j+1}</p>
-                            <p><strong>기관:</strong> {metadata.get('institution', 'N/A')}</p>
-                            <p><strong>날짜:</strong> {date_to_display}</p>
-                            <p><strong>유형:</strong> {type_to_display}</p>
-                            <p>{source.get('content', '')[:300]}...</p>
+                            <p class="source-metadata"><strong>기관:</strong> {metadata.get('institution', 'N/A')}</p>
+                            <p class="source-metadata"><strong>날짜:</strong> {date_to_display}</p>
+                            <p class="source-metadata"><strong>유형:</strong> {type_to_display}</p>
+                            <div class="source-content">{source.get('content', '')[:300]}...</div>
                         </div>
                         """, unsafe_allow_html=True)
 
