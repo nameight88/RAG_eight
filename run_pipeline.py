@@ -284,6 +284,93 @@ def run_interactive_mode(args):
     rag_system.interactive_mode()
 
 
+def create_vector_stores(args):
+    """벡터 저장소 생성 및 저장"""
+    print("\n🔄 벡터 저장소 생성 시작...")
+    
+    # OpenAI API 키 확인
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    if not openai_api_key:
+        print("⚠️ OpenAI API 키가 설정되지 않았습니다.")
+        return False
+    
+    try:
+        # 제재 정보 벡터 저장소 생성
+        if not args.skip_sanctions:
+            sanctions_dir = os.path.join(args.vector_db_dir, "fss_sanctions")
+            os.makedirs(sanctions_dir, exist_ok=True)
+            
+            # RAG 시스템으로 벡터 저장소 생성
+            from rag_system import FSSRagSystem
+            sanctions_rag = FSSRagSystem(
+                vector_db_path=sanctions_dir,
+                embed_model_name=args.embed_model,
+                use_openai_embeddings=args.use_openai_embeddings,
+                use_anthropic=False,
+                use_faiss=args.use_faiss,
+                create_from_json=args.sanctions_json
+            )
+            
+            if not sanctions_rag.vector_store:
+                print("❌ 제재 정보 벡터 저장소 생성 실패")
+                return False
+            
+            # 벡터 저장소 정보 저장
+            info_path = os.path.join(sanctions_dir, "vector_store_info.json")
+            info = {
+                "created_at": datetime.now().isoformat(),
+                "embed_model": "text-embedding-3-large" if args.use_openai_embeddings else args.embed_model,
+                "use_openai": args.use_openai_embeddings,
+                "vector_store_type": "FAISS" if args.use_faiss else "Chroma"
+            }
+            with open(info_path, 'w', encoding='utf-8') as f:
+                json.dump(info, f, ensure_ascii=False, indent=2)
+            
+            print("✅ 제재 정보 벡터 저장소 생성 완료")
+        
+        # 경영유의사항 벡터 저장소 생성
+        if not args.skip_management:
+            management_dir = os.path.join(args.vector_db_dir, "fss_management")
+            os.makedirs(management_dir, exist_ok=True)
+            
+            # RAG 시스템으로 벡터 저장소 생성
+            from rag_system import FSSRagSystem
+            management_rag = FSSRagSystem(
+                vector_db_path=management_dir,
+                embed_model_name=args.embed_model,
+                use_openai_embeddings=args.use_openai_embeddings,
+                use_anthropic=False,
+                use_faiss=args.use_faiss,
+                create_from_json=args.management_json
+            )
+            
+            if not management_rag.vector_store:
+                print("❌ 경영유의사항 벡터 저장소 생성 실패")
+                return False
+            
+            # 벡터 저장소 정보 저장
+            info_path = os.path.join(management_dir, "vector_store_info.json")
+            info = {
+                "created_at": datetime.now().isoformat(),
+                "embed_model": "text-embedding-3-large" if args.use_openai_embeddings else args.embed_model,
+                "use_openai": args.use_openai_embeddings,
+                "vector_store_type": "FAISS" if args.use_faiss else "Chroma"
+            }
+            with open(info_path, 'w', encoding='utf-8') as f:
+                json.dump(info, f, ensure_ascii=False, indent=2)
+            
+            print("✅ 경영유의사항 벡터 저장소 생성 완료")
+        
+        print("\n🎉 벡터 저장소 생성 완료!")
+        print("생성된 벡터 저장소를 GitHub에 커밋하세요.")
+        return True
+        
+    except Exception as e:
+        print(f"❌ 벡터 저장소 생성 중 오류 발생: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return False
+
 def main():
     """메인 함수"""
     print("🚀 금융감독원 제재/경영유의사항 RAG 파이프라인 시작")
@@ -314,20 +401,14 @@ def main():
     if args.use_sample_data:
         create_sample_data(args.sanctions_json, args.management_json)
     
-    # 제재 정보 처리
-    if not args.skip_sanctions:
-        process_sanctions(args)
-    
-    # 경영유의사항 처리
-    if not args.skip_management:
-        process_management(args)
+    # 벡터 저장소 생성
+    create_vector_stores(args)
     
     # 대화형 모드 실행
     if args.interactive:
         run_interactive_mode(args)
     
     print("\n🎉 파이프라인 처리 완료!")
-
 
 if __name__ == "__main__":
     main() 

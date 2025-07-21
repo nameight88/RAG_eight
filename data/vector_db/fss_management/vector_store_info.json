@@ -1,0 +1,6 @@
+{
+  "created_at": "2025-07-21T22:16:29.614484",
+  "embed_model": "text-embedding-3-large",
+  "use_openai": true,
+  "vector_store_type": "FAISS"
+}

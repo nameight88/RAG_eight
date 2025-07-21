@@ -1396,14 +1396,38 @@ class FSSRagSystem:
                 print("❌ 문서를 생성할 수 없습니다.")
                 return False
             
+            # 배치 크기 계산 (OpenAI 토큰 제한 고려)
+            batch_size = 500  # 한 번에 처리할 문서 수
+            
             # FAISS 벡터 저장소 생성
             print("🔄 벡터 저장소 생성 중...")
             if self.use_faiss:
                 from langchain_community.vectorstores import FAISS
+                
+                # 첫 번째 배치로 벡터 저장소 초기화
+                first_batch = documents[:batch_size]
+                print(f"📦 첫 번째 배치 처리 중 (1-{len(first_batch)})")
                 self.vector_store = FAISS.from_documents(
-                    documents,
+                    first_batch,
                     self.embeddings
                 )
+                
+                # 나머지 배치 처리
+                for i in range(batch_size, len(documents), batch_size):
+                    batch = documents[i:i + batch_size]
+                    end_idx = min(i + batch_size, len(documents))
+                    print(f"📦 배치 처리 중 ({i+1}-{end_idx})")
+                    
+                    # 배치의 텍스트와 메타데이터 분리
+                    texts = [doc.page_content for doc in batch]
+                    metadatas = [doc.metadata for doc in batch]
+                    
+                    # 배치 추가
+                    self.vector_store.add_texts(
+                        texts,
+                        metadatas=metadatas
+                    )
+                
                 print("✅ FAISS 벡터 저장소 생성 완료")
             else:
                 from langchain_community.vectorstores import Chroma
