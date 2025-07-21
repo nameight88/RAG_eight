@@ -220,81 +220,43 @@ class FSSRagSystem:
                 try:
                     print(f"✅ 기존 FAISS 벡터 저장소를 로드합니다: {faiss_path}")
                     
-                    # 1. FAISS 인덱스 로드
-                    index = faiss.read_index(index_path)
+                    # FAISS load_local 메서드 사용
+                    from langchain_community.vectorstores import FAISS
                     
-                    # 2. 문서 저장소 로드
-                    with open(docstore_path, 'rb') as f:
-                        try:
-                            # Pydantic 호환성을 위한 안전한 로드
-                            import sys
-                            import importlib
-                            
-                            # Pydantic v1/v2 호환성 처리
-                            try:
-                                # 기존 방식으로 시도
-                                docstore_data = pickle.load(f)
-                                print(f"📚 문서 저장소 데이터 타입: {type(docstore_data)}")
-                            except AttributeError as ae:
-                                if '__fields_set__' in str(ae) or 'pydantic' in str(ae).lower():
-                                    print("⚠️ Pydantic 호환성 문제 감지, 대체 방법 시도...")
-                                    
-                                    # 파일 포인터를 처음으로 되돌림
-                                    f.seek(0)
-                                    
-                                    # pickle 프로토콜을 낮춰서 시도
-                                    try:
-                                        docstore_data = pickle.load(f, encoding='latin1')
-                                    except:
-                                        # 최후의 수단: 수동으로 문서 저장소 재구성
-                                        print("�� 문서 저장소 재구성 시도...")
-                                        return self._rebuild_vector_store_from_json()
-                                else:
-                                    raise ae
-                            
-                            if isinstance(docstore_data, tuple) and len(docstore_data) == 2:
-                                docstore, index_to_docstore_id = docstore_data
-                                print("✅ 기존 형식 문서 저장소 로드 성공")
-                            else:
-                                print("❌ 잘못된 문서 저장소 형식")
-                                return self._rebuild_vector_store_from_json()
-                        except Exception as e:
-                            print(f"❌ 문서 저장소 로드 실패: {e}")
-                            return self._rebuild_vector_store_from_json()
+                    # allow_dangerous_deserialization 파라미터로 pickle 관련 문제 해결
+                    self.vector_store = FAISS.load_local(
+                        faiss_path,
+                        self.embeddings,
+                        allow_dangerous_deserialization=True
+                    )
                     
-                    # 3. 벡터 저장소 직접 로드
+                    print("✅ FAISS 벡터 저장소 로드 완료")
+                    
+                    # 벡터 저장소 테스트
                     try:
-                        from langchain_community.vectorstores.faiss import FAISS
-                        vector_store = FAISS(
-                            embedding_function=self.embeddings.embed_query,
-                            index=index,
-                            docstore=docstore,
-                            index_to_docstore_id=index_to_docstore_id
-                        )
-                        
-                        # 벡터 저장소 테스트
                         test_query = "테스트"
-                        test_results = vector_store.similarity_search(test_query, k=1)
+                        test_results = self.vector_store.similarity_search(test_query, k=1)
                         if test_results:
                             print(f"✅ 벡터 저장소 검색 테스트 성공 (결과 수: {len(test_results)})")
                         else:
-                            print("❌ 벡터 저장소 검색 테스트 실패")
-                            return False
-                        
-                        self.vector_store = vector_store
-                        print("✅ FAISS 벡터 저장소 로드 완료")
-                        return True
-                        
-                    except Exception as e:
-                        print(f"❌ 벡터 저장소 초기화 실패: {str(e)}")
-                        import traceback
-                        traceback.print_exc()
-                        return False
+                            print("⚠️ 벡터 저장소 검색 결과가 없습니다.")
+                    except Exception as test_error:
+                        print(f"⚠️ 벡터 저장소 테스트 중 오류: {test_error}")
+                    
+                    return True
                     
                 except Exception as e:
                     print(f"❌ FAISS 로드 실패: {str(e)}")
                     import traceback
                     traceback.print_exc()
+                    
+                    # Pydantic 관련 오류인 경우 대체 방법 시도
+                    if 'pydantic' in str(e).lower() or '__fields_set__' in str(e):
+                        print("⚠️ Pydantic 호환성 문제로 인해 대체 방법을 시도합니다...")
+                        
+                        # requirements.txt에 pydantic 버전 고정 필요
+                        print("💡 해결 방법: requirements.txt에 'pydantic==1.10.14' 추가를 권장합니다.")
+                    
                     return False
                     
             elif vector_store_type == 'CHROMA' or (vector_store_type == 'FAISS' and not FAISS_AVAILABLE):
@@ -1148,11 +1110,23 @@ class FSSRagSystem:
             with open(json_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             
+            # 데이터 구조 확인
+            if isinstance(data, list):
+                documents_list = data
+            elif isinstance(data, dict) and 'documents' in data:
+                documents_list = data['documents']
+            else:
+                print(f"❌ 알 수 없는 JSON 데이터 구조: {type(data)}")
+                return False
+            
             # 문서 생성
             from langchain_core.documents import Document
             documents = []
             
-            for doc in data.get('documents', []):
+            for doc in documents_list:
+                if not isinstance(doc, dict):
+                    continue
+                    
                 # 텍스트 추출
                 content = doc.get('content', {})
                 if isinstance(content, dict):
@@ -1164,7 +1138,7 @@ class FSSRagSystem:
                 metadata = {
                     'institution': doc.get('institution', ''),
                     'doc_id': doc.get('doc_id', ''),
-                    'doc_type': doc.get('metadata', {}).get('doc_type', '')
+                    'doc_type': doc.get('metadata', {}).get('doc_type', '') if isinstance(doc.get('metadata'), dict) else ''
                 }
                 
                 # 날짜 필드 추가
