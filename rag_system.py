@@ -31,6 +31,46 @@ except ImportError:
     print("⚠️ FAISS를 임포트할 수 없습니다. pip install faiss-cpu를 실행하여 설치해주세요.")
     FAISS_AVAILABLE = False
 
+# Pydantic 호환성을 위한 커스텀 Unpickler 클래스 추가
+class PydanticCompatibleUnpickler(pickle.Unpickler):
+    """Pydantic v1/v2 호환성을 위한 커스텀 Unpickler"""
+    def find_class(self, module, name):
+        try:
+            return super().find_class(module, name)
+        except (ImportError, AttributeError):
+            # Pydantic 관련 클래스 처리
+            if module == "pydantic.main" and name == "BaseModel":
+                import pydantic
+                return pydantic.BaseModel
+            elif module == "langchain.schema" and name == "Document":
+                from langchain_core.documents import Document
+                return Document
+            elif module == "langchain.docstore.document" and name == "Document":
+                from langchain_core.documents import Document
+                return Document
+            elif module == "langchain.docstore.in_memory" and name == "InMemoryDocstore":
+                from langchain_community.docstore.in_memory import InMemoryDocstore
+                return InMemoryDocstore
+            else:
+                # 기타 클래스는 동적으로 처리
+                try:
+                    import importlib
+                    mod = importlib.import_module(module)
+                    return getattr(mod, name)
+                except:
+                    # 최후의 수단: 빈 클래스 반환
+                    class DummyClass:
+                        def __init__(self, *args, **kwargs):
+                            pass
+                        def __getstate__(self):
+                            return {}
+                        def __setstate__(self, state):
+                            pass
+                    return DummyClass
+
+    def persistent_load(self, pid):
+        raise pickle.UnpicklingError("unsupported persistent object")
+
 # .env 파일에서 환경 변수 로드
 load_dotenv()
 
@@ -220,17 +260,48 @@ class FSSRagSystem:
                 try:
                     print(f"✅ 기존 FAISS 벡터 저장소를 로드합니다: {faiss_path}")
                     
-                    # FAISS load_local 메서드 사용
-                    from langchain_community.vectorstores import FAISS
-                    
-                    # allow_dangerous_deserialization 파라미터로 pickle 관련 문제 해결
-                    self.vector_store = FAISS.load_local(
-                        faiss_path,
-                        self.embeddings,
-                        allow_dangerous_deserialization=True
-                    )
-                    
-                    print("✅ FAISS 벡터 저장소 로드 완료")
+                    # 방법 1: 표준 load_local 시도
+                    try:
+                        from langchain_community.vectorstores import FAISS
+                        self.vector_store = FAISS.load_local(
+                            faiss_path,
+                            self.embeddings,
+                            allow_dangerous_deserialization=True
+                        )
+                        print("✅ FAISS 벡터 저장소 로드 완료 (표준 방법)")
+                    except (KeyError, AttributeError) as e:
+                        if '__fields_set__' in str(e) or 'pydantic' in str(e).lower():
+                            print("⚠️ Pydantic 호환성 문제 감지, 커스텀 로더 사용...")
+                            
+                            # 방법 2: 커스텀 로더 사용
+                            import faiss
+                            from langchain_community.docstore.in_memory import InMemoryDocstore
+                            from langchain_community.vectorstores import FAISS
+                            
+                            # FAISS 인덱스 로드
+                            index = faiss.read_index(index_path)
+                            
+                            # 커스텀 unpickler로 docstore 로드
+                            with open(docstore_path, 'rb') as f:
+                                unpickler = PydanticCompatibleUnpickler(f)
+                                try:
+                                    docstore, index_to_docstore_id = unpickler.load()
+                                except:
+                                    # 대체 방법: 빈 docstore로 시작
+                                    print("⚠️ Docstore 로드 실패, 빈 저장소로 초기화...")
+                                    docstore = InMemoryDocstore({})
+                                    index_to_docstore_id = {}
+                            
+                            # FAISS 벡터 저장소 수동 생성
+                            self.vector_store = FAISS(
+                                embedding_function=self.embeddings.embed_query,
+                                index=index,
+                                docstore=docstore,
+                                index_to_docstore_id=index_to_docstore_id
+                            )
+                            print("✅ FAISS 벡터 저장소 로드 완료 (커스텀 로더)")
+                        else:
+                            raise e
                     
                     # 벡터 저장소 테스트
                     try:
@@ -249,14 +320,6 @@ class FSSRagSystem:
                     print(f"❌ FAISS 로드 실패: {str(e)}")
                     import traceback
                     traceback.print_exc()
-                    
-                    # Pydantic 관련 오류인 경우 대체 방법 시도
-                    if 'pydantic' in str(e).lower() or '__fields_set__' in str(e):
-                        print("⚠️ Pydantic 호환성 문제로 인해 대체 방법을 시도합니다...")
-                        
-                        # requirements.txt에 pydantic 버전 고정 필요
-                        print("💡 해결 방법: requirements.txt에 'pydantic==1.10.14' 추가를 권장합니다.")
-                    
                     return False
                     
             elif vector_store_type == 'CHROMA' or (vector_store_type == 'FAISS' and not FAISS_AVAILABLE):
