@@ -646,7 +646,7 @@ if __name__ == "__main__":
     
     # 입력 디렉토리와 출력 파일 설정
     input_directory = "../data/FSS_SANCTION/data/FSS_SANCTION"
-    output_file = "./data/FSS_SANCTION/data/fss_sanctions_parsed.json"
+    output_file = "./data/fss_sanctions_parsed.json"
     
     # 디렉토리 처리
     result = parser.process_directory(input_directory, output_file)
