@@ -1397,7 +1397,7 @@ class FSSRagSystem:
                 return False
             
             # 배치 크기 계산 (OpenAI 토큰 제한 고려)
-            batch_size = 500  # 한 번에 처리할 문서 수
+            batch_size = 256  # 한 번에 처리할 문서 수
             
             # FAISS 벡터 저장소 생성
             print("🔄 벡터 저장소 생성 중...")
@@ -1427,6 +1427,16 @@ class FSSRagSystem:
                         texts,
                         metadatas=metadatas
                     )
+                
+                # FAISS 벡터 저장소를 파일로 저장
+                if self.vector_db_path:
+                    faiss_dir = os.path.join(self.vector_db_path, "faiss")
+                    os.makedirs(faiss_dir, exist_ok=True)
+                    
+                    # index.faiss와 index.pkl 파일 저장
+                    print(f"💾 FAISS 벡터 저장소를 파일로 저장 중: {faiss_dir}")
+                    self.vector_store.save_local(faiss_dir)
+                    print("✅ FAISS 벡터 저장소 파일 저장 완료")
                 
                 print("✅ FAISS 벡터 저장소 생성 완료")
             else:
