@@ -226,18 +226,41 @@ class FSSRagSystem:
                     # 2. 문서 저장소 로드
                     with open(docstore_path, 'rb') as f:
                         try:
-                            docstore_data = pickle.load(f)
-                            print(f"📚 문서 저장소 데이터 타입: {type(docstore_data)}")
+                            # Pydantic 호환성을 위한 안전한 로드
+                            import sys
+                            import importlib
+                            
+                            # Pydantic v1/v2 호환성 처리
+                            try:
+                                # 기존 방식으로 시도
+                                docstore_data = pickle.load(f)
+                                print(f"📚 문서 저장소 데이터 타입: {type(docstore_data)}")
+                            except AttributeError as ae:
+                                if '__fields_set__' in str(ae) or 'pydantic' in str(ae).lower():
+                                    print("⚠️ Pydantic 호환성 문제 감지, 대체 방법 시도...")
+                                    
+                                    # 파일 포인터를 처음으로 되돌림
+                                    f.seek(0)
+                                    
+                                    # pickle 프로토콜을 낮춰서 시도
+                                    try:
+                                        docstore_data = pickle.load(f, encoding='latin1')
+                                    except:
+                                        # 최후의 수단: 수동으로 문서 저장소 재구성
+                                        print("�� 문서 저장소 재구성 시도...")
+                                        return self._rebuild_vector_store_from_json()
+                                else:
+                                    raise ae
                             
                             if isinstance(docstore_data, tuple) and len(docstore_data) == 2:
                                 docstore, index_to_docstore_id = docstore_data
                                 print("✅ 기존 형식 문서 저장소 로드 성공")
                             else:
                                 print("❌ 잘못된 문서 저장소 형식")
-                                return False
+                                return self._rebuild_vector_store_from_json()
                         except Exception as e:
                             print(f"❌ 문서 저장소 로드 실패: {e}")
-                            return False
+                            return self._rebuild_vector_store_from_json()
                     
                     # 3. 벡터 저장소 직접 로드
                     try:
@@ -1107,6 +1130,75 @@ class FSSRagSystem:
                             print(f"유형: {source['metadata'].get('management_type', 'N/A')}")
                         
                         print(f"내용: {source['content']}")
+
+    def _rebuild_vector_store_from_json(self):
+        """JSON 파일에서 벡터 저장소 재구성"""
+        try:
+            print("🔄 JSON 파일에서 벡터 저장소 재구성 중...")
+            
+            # JSON 파일 경로 결정
+            json_filename = "fss_sanctions_parsed.json" if "sanctions" in self.vector_db_path else "fss_management_parsed.json"
+            json_path = os.path.join(self.vector_db_path, json_filename)
+            
+            if not os.path.exists(json_path):
+                print(f"❌ 원본 데이터 파일을 찾을 수 없습니다: {json_path}")
+                return False
+            
+            # JSON 데이터 로드
+            with open(json_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            # 문서 생성
+            from langchain_core.documents import Document
+            documents = []
+            
+            for doc in data.get('documents', []):
+                # 텍스트 추출
+                content = doc.get('content', {})
+                if isinstance(content, dict):
+                    text = content.get('full_text', '') or str(content)
+                else:
+                    text = str(content)
+                
+                # 메타데이터 구성
+                metadata = {
+                    'institution': doc.get('institution', ''),
+                    'doc_id': doc.get('doc_id', ''),
+                    'doc_type': doc.get('metadata', {}).get('doc_type', '')
+                }
+                
+                # 날짜 필드 추가
+                if 'sanction_date' in doc:
+                    metadata['sanction_date'] = doc['sanction_date']
+                    metadata['date'] = doc['sanction_date']
+                elif 'disclosure_date' in doc:
+                    metadata['disclosure_date'] = doc['disclosure_date']
+                    metadata['date'] = doc['disclosure_date']
+                
+                if text.strip():  # 빈 텍스트는 제외
+                    documents.append(Document(page_content=text, metadata=metadata))
+            
+            if not documents:
+                print("❌ 문서를 생성할 수 없습니다.")
+                return False
+            
+            print(f"📄 {len(documents)}개의 문서를 생성했습니다.")
+            
+            # FAISS 벡터 저장소 생성
+            from langchain_community.vectorstores import FAISS
+            self.vector_store = FAISS.from_documents(
+                documents,
+                self.embeddings
+            )
+            
+            print("✅ 벡터 저장소 재구성 완료")
+            return True
+            
+        except Exception as e:
+            print(f"❌ 벡터 저장소 재구성 실패: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            return False
 
 
 # 사용 예시
