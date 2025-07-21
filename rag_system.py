@@ -310,7 +310,24 @@ class FSSRagSystem:
                                     # 텍스트 추출
                                     content = doc.get('content', {})
                                     if isinstance(content, dict):
-                                        text = content.get('full_text', '') or str(content)
+                                        # 제재 정보의 경우
+                                        full_text = content.get('full_text', '')
+                                        if not full_text:
+                                            # 상세 내용 구성
+                                            sanction_facts = content.get('sanction_facts', [])
+                                            facts_text = ""
+                                            for fact in sanction_facts:
+                                                if isinstance(fact, dict):
+                                                    facts_text += f"\n- {fact.get('title', '')}: {fact.get('content', '')}"
+                                            
+                                            fine_info = content.get('fine', {})
+                                            if isinstance(fine_info, dict):
+                                                fine_text = fine_info.get('text', '')
+                                            else:
+                                                fine_text = str(fine_info)
+                                            
+                                            full_text = f"제재사실:\n{facts_text}\n\n제재내용: {content.get('sanction_type', '')}\n{fine_text}\n{content.get('executive_sanction', '')}"
+                                        text = full_text
                                     else:
                                         text = str(content)
                                     
@@ -318,8 +335,17 @@ class FSSRagSystem:
                                     metadata = {
                                         'institution': doc.get('institution', ''),
                                         'doc_id': doc.get('doc_id', ''),
-                                        'doc_type': doc.get('metadata', {}).get('doc_type', '') if isinstance(doc.get('metadata'), dict) else ''
                                     }
+                                    
+                                    # 문서 타입 설정
+                                    if "sanctions" in self.vector_db_path:
+                                        metadata['doc_type'] = '제재정보'
+                                        if isinstance(content, dict):
+                                            metadata['sanction_type'] = content.get('sanction_type', '')
+                                    else:
+                                        metadata['doc_type'] = '경영유의사항'
+                                        if isinstance(content, dict):
+                                            metadata['management_type'] = content.get('management_type', '')
                                     
                                     # 날짜 필드 추가
                                     if 'sanction_date' in doc:
@@ -329,7 +355,20 @@ class FSSRagSystem:
                                         metadata['disclosure_date'] = doc['disclosure_date']
                                         metadata['date'] = doc['disclosure_date']
                                     
+                                    # 추가 메타데이터
+                                    doc_metadata = doc.get('metadata', {})
+                                    if isinstance(doc_metadata, dict):
+                                        # 규정 정보 추가
+                                        if 'regulations' in doc_metadata:
+                                            metadata['regulations'] = doc_metadata['regulations']
+                                        
+                                        # 기타 메타데이터 복사
+                                        for key, value in doc_metadata.items():
+                                            if key not in metadata and value:
+                                                metadata[key] = value
+                                    
                                     if text.strip():  # 빈 텍스트는 제외
+                                        print(f"📄 문서 로드: {metadata['institution']} ({metadata['date']})")
                                         documents.append(Document(page_content=text, metadata=metadata))
                                 
                                 print(f"📄 {len(documents)}개의 문서를 로드했습니다.")
@@ -1246,7 +1285,24 @@ class FSSRagSystem:
                 # 텍스트 추출
                 content = doc.get('content', {})
                 if isinstance(content, dict):
-                    text = content.get('full_text', '') or str(content)
+                    # 제재 정보의 경우
+                    full_text = content.get('full_text', '')
+                    if not full_text:
+                        # 상세 내용 구성
+                        sanction_facts = content.get('sanction_facts', [])
+                        facts_text = ""
+                        for fact in sanction_facts:
+                            if isinstance(fact, dict):
+                                facts_text += f"\n- {fact.get('title', '')}: {fact.get('content', '')}"
+                        
+                        fine_info = content.get('fine', {})
+                        if isinstance(fine_info, dict):
+                            fine_text = fine_info.get('text', '')
+                        else:
+                            fine_text = str(fine_info)
+                        
+                        full_text = f"제재사실:\n{facts_text}\n\n제재내용: {content.get('sanction_type', '')}\n{fine_text}\n{content.get('executive_sanction', '')}"
+                    text = full_text
                 else:
                     text = str(content)
                 
@@ -1254,8 +1310,17 @@ class FSSRagSystem:
                 metadata = {
                     'institution': doc.get('institution', ''),
                     'doc_id': doc.get('doc_id', ''),
-                    'doc_type': doc.get('metadata', {}).get('doc_type', '') if isinstance(doc.get('metadata'), dict) else ''
                 }
+                
+                # 문서 타입 설정
+                if "sanctions" in self.vector_db_path:
+                    metadata['doc_type'] = '제재정보'
+                    if isinstance(content, dict):
+                        metadata['sanction_type'] = content.get('sanction_type', '')
+                else:
+                    metadata['doc_type'] = '경영유의사항'
+                    if isinstance(content, dict):
+                        metadata['management_type'] = content.get('management_type', '')
                 
                 # 날짜 필드 추가
                 if 'sanction_date' in doc:
@@ -1265,7 +1330,20 @@ class FSSRagSystem:
                     metadata['disclosure_date'] = doc['disclosure_date']
                     metadata['date'] = doc['disclosure_date']
                 
+                # 추가 메타데이터
+                doc_metadata = doc.get('metadata', {})
+                if isinstance(doc_metadata, dict):
+                    # 규정 정보 추가
+                    if 'regulations' in doc_metadata:
+                        metadata['regulations'] = doc_metadata['regulations']
+                    
+                    # 기타 메타데이터 복사
+                    for key, value in doc_metadata.items():
+                        if key not in metadata and value:
+                            metadata[key] = value
+                
                 if text.strip():  # 빈 텍스트는 제외
+                    print(f"📄 문서 로드: {metadata['institution']} ({metadata['date']})")
                     documents.append(Document(page_content=text, metadata=metadata))
             
             if not documents:
