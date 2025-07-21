@@ -199,8 +199,8 @@ def load_vector_store():
 
 # 사이드바에 RAG 시스템 설정
 with st.sidebar:
-    # st.markdown("### API 키 설정")
-    # api_key = st.text_input("OpenAI API 키", value=st.session_state.openai_api_key, type="password")
+    st.markdown("### API 키 설정")
+    api_key = st.text_input("OpenAI API 키", value=st.session_state.openai_api_key, type="password")
     
     if api_key:
         # API 키 형식 검증
