@@ -281,25 +281,74 @@ class FSSRagSystem:
                             # FAISS 인덱스 로드
                             index = faiss.read_index(index_path)
                             
-                            # 커스텀 unpickler로 docstore 로드
-                            with open(docstore_path, 'rb') as f:
-                                unpickler = PydanticCompatibleUnpickler(f)
-                                try:
-                                    docstore, index_to_docstore_id = unpickler.load()
-                                except:
-                                    # 대체 방법: 빈 docstore로 시작
-                                    print("⚠️ Docstore 로드 실패, 빈 저장소로 초기화...")
-                                    docstore = InMemoryDocstore({})
-                                    index_to_docstore_id = {}
+                            # JSON 파일에서 문서 로드
+                            json_filename = "fss_sanctions_parsed.json" if "sanctions" in self.vector_db_path else "fss_management_parsed.json"
+                            json_path = os.path.join(self.vector_db_path, json_filename)
                             
-                            # FAISS 벡터 저장소 수동 생성
-                            self.vector_store = FAISS(
-                                embedding_function=self.embeddings.embed_query,
-                                index=index,
-                                docstore=docstore,
-                                index_to_docstore_id=index_to_docstore_id
-                            )
-                            print("✅ FAISS 벡터 저장소 로드 완료 (커스텀 로더)")
+                            if os.path.exists(json_path):
+                                print(f"📄 JSON 파일에서 문서 로드 중: {json_path}")
+                                with open(json_path, 'r', encoding='utf-8') as f:
+                                    data = json.load(f)
+                                
+                                # 문서 생성
+                                from langchain_core.documents import Document
+                                documents = []
+                                
+                                # 데이터 구조 확인
+                                if isinstance(data, dict) and 'documents' in data:
+                                    docs_list = data['documents']
+                                elif isinstance(data, list):
+                                    docs_list = data
+                                else:
+                                    print("❌ 알 수 없는 JSON 데이터 구조")
+                                    return False
+                                
+                                for doc in docs_list:
+                                    if not isinstance(doc, dict):
+                                        continue
+                                        
+                                    # 텍스트 추출
+                                    content = doc.get('content', {})
+                                    if isinstance(content, dict):
+                                        text = content.get('full_text', '') or str(content)
+                                    else:
+                                        text = str(content)
+                                    
+                                    # 메타데이터 구성
+                                    metadata = {
+                                        'institution': doc.get('institution', ''),
+                                        'doc_id': doc.get('doc_id', ''),
+                                        'doc_type': doc.get('metadata', {}).get('doc_type', '') if isinstance(doc.get('metadata'), dict) else ''
+                                    }
+                                    
+                                    # 날짜 필드 추가
+                                    if 'sanction_date' in doc:
+                                        metadata['sanction_date'] = doc['sanction_date']
+                                        metadata['date'] = doc['sanction_date']
+                                    elif 'disclosure_date' in doc:
+                                        metadata['disclosure_date'] = doc['disclosure_date']
+                                        metadata['date'] = doc['disclosure_date']
+                                    
+                                    if text.strip():  # 빈 텍스트는 제외
+                                        documents.append(Document(page_content=text, metadata=metadata))
+                                
+                                print(f"📄 {len(documents)}개의 문서를 로드했습니다.")
+                                
+                                # 문서 임베딩 생성
+                                print("🔄 문서 임베딩 생성 중...")
+                                texts = [doc.page_content for doc in documents]
+                                metadatas = [doc.metadata for doc in documents]
+                                
+                                # FAISS 벡터 저장소 생성
+                                self.vector_store = FAISS.from_texts(
+                                    texts,
+                                    self.embeddings,
+                                    metadatas=metadatas
+                                )
+                                print("✅ 벡터 저장소 재구성 완료")
+                            else:
+                                print(f"❌ JSON 파일을 찾을 수 없습니다: {json_path}")
+                                return False
                         else:
                             raise e
                     
@@ -309,10 +358,14 @@ class FSSRagSystem:
                         test_results = self.vector_store.similarity_search(test_query, k=1)
                         if test_results:
                             print(f"✅ 벡터 저장소 검색 테스트 성공 (결과 수: {len(test_results)})")
+                            # 첫 번째 결과의 메타데이터 출력
+                            print(f"📄 테스트 문서 메타데이터: {test_results[0].metadata}")
                         else:
                             print("⚠️ 벡터 저장소 검색 결과가 없습니다.")
                     except Exception as test_error:
                         print(f"⚠️ 벡터 저장소 테스트 중 오류: {test_error}")
+                        import traceback
+                        traceback.print_exc()
                     
                     return True
                     
