@@ -151,12 +151,12 @@ def load_vector_store():
                 vector_store_path = os.path.join(base_dir, st.session_state.vector_db_path)
                 
                 # 디버그 정보 출력
-                st.write("디버그 정보:")
-                st.write(f"실행 환경: {'클라우드' if is_cloud else '로컬'}")
-                st.write(f"현재 디렉토리: {current_dir}")
-                st.write(f"기준 디렉토리: {base_dir}")
-                st.write(f"벡터 저장소 경로: {vector_store_path}")
-                st.write(f"경로 존재 여부: {os.path.exists(vector_store_path)}")
+                # st.write("디버그 정보:")
+                # st.write(f"실행 환경: {'클라우드' if is_cloud else '로컬'}")
+                # st.write(f"현재 디렉토리: {current_dir}")
+                # st.write(f"기준 디렉토리: {base_dir}")
+                # st.write(f"벡터 저장소 경로: {vector_store_path}")
+                # st.write(f"경로 존재 여부: {os.path.exists(vector_store_path)}")
                 
                 # 벡터 저장소 정보 파일 확인
                 info_path = os.path.join(vector_store_path, "vector_store_info.json")
@@ -199,8 +199,8 @@ def load_vector_store():
 
 # 사이드바에 RAG 시스템 설정
 with st.sidebar:
-    st.markdown("### API 키 설정")
-    api_key = st.text_input("OpenAI API 키", value=st.session_state.openai_api_key, type="password")
+    # st.markdown("### API 키 설정")
+    # api_key = st.text_input("OpenAI API 키", value=st.session_state.openai_api_key, type="password")
     
     if api_key:
         # API 키 형식 검증
