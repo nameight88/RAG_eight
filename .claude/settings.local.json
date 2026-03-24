@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /d/work/rag/RAG_eight/*.py)",
+      "Bash(xargs grep:*)",
+      "Bash(grep -n \"^class \" /d/work/rag/RAG_eight/*.py)",
+      "Bash(grep -l \"^class\\\\|^def\" /d/work/rag/RAG_eight/*.py)",
+      "Bash(python -c \":*)",
+      "Bash(ls D:/work/rag/RAG_eight/*.py)",
+      "Bash(python3 -c \"import fastapi; print\\(fastapi.__version__\\)\")"
+    ]
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  }
+}
