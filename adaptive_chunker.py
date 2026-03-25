@@ -21,6 +21,7 @@ import chromadb
 import traceback
 from langchain.docstore.document import Document
 import datetime
+from date_normalizer import normalize_date as _normalize_date
 
 # .env 파일에서 환경 변수 로드
 load_dotenv()
@@ -311,12 +312,19 @@ class FSSAdaptiveChunker:
                 
                 # 문서 타입에 따라 필드명 결정
                 doc_type = doc.get('metadata', {}).get('doc_type', '')
-                
+
+                _raw_date = doc.get('date', '')
+                _norm_date = _normalize_date(_raw_date) or _raw_date
+                _year = int(_norm_date[:4]) if _norm_date and len(_norm_date) >= 4 and _norm_date[:4].isdigit() else 0
+                _month = int(_norm_date[5:7]) if _norm_date and len(_norm_date) >= 7 and _norm_date[5:7].isdigit() else 0
+
                 chunk = {
                     "id": f"{doc['doc_id']}-chunk-{i}",
                     "doc_id": doc['doc_id'],
                     "institution": doc['institution'],
-                    "date": doc.get('date', ''),
+                    "date": _norm_date,
+                    "year": _year,
+                    "month": _month,
                     "doc_type": doc_type,
                     "keywords": keywords_str,  # 리스트 대신 문자열로 저장
                     "chunk_index": i,
@@ -374,6 +382,8 @@ class FSSAdaptiveChunker:
                     "doc_id": chunk.get("doc_id", ""),
                     "institution": chunk.get("institution", ""),
                     "date": chunk.get("date", ""),
+                    "year": chunk.get("year", 0),
+                    "month": chunk.get("month", 0),
                     "doc_type": chunk.get("doc_type", ""),
                     "keywords": chunk.get("keywords", ""),
                     "chunk_index": chunk.get("chunk_index", 0),
@@ -494,6 +504,8 @@ class FSSAdaptiveChunker:
                             'doc_id': chunk.get('doc_id', ''),
                             'institution': chunk.get('institution', ''),
                             'date': chunk.get('date', ''),
+                            'year': chunk.get('year', 0),
+                            'month': chunk.get('month', 0),
                             'doc_type': chunk.get('doc_type', ''),
                             'keywords': chunk.get('keywords', '')
                         }
