@@ -5,7 +5,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 def test_explicit_date_from_overrides_auto():
     """명시적 date_from이 자동 추출 날짜 필터를 대체해야 한다"""
-    from rag_system import _apply_explicit_filters
+    from rag_filters import _apply_explicit_filters
 
     auto_filters = {'date_filter': 'date', 'date_value': '2022'}
     result = _apply_explicit_filters(
@@ -22,7 +22,7 @@ def test_explicit_date_from_overrides_auto():
 
 def test_explicit_institution_filter():
     """명시적 기관명 필터가 적용되어야 한다"""
-    from rag_system import _apply_explicit_filters
+    from rag_filters import _apply_explicit_filters
 
     auto_filters = {}
     result = _apply_explicit_filters(
@@ -37,7 +37,7 @@ def test_explicit_institution_filter():
 
 def test_no_explicit_filters_preserves_auto():
     """명시적 필터 없으면 자동 추출 결과가 유지된다"""
-    from rag_system import _apply_explicit_filters
+    from rag_filters import _apply_explicit_filters
 
     auto_filters = {'date_filter': 'date', 'date_value': '2022', 'doc_type': 'management'}
     result = _apply_explicit_filters(
@@ -53,7 +53,7 @@ def test_no_explicit_filters_preserves_auto():
 
 def test_all_explicit_filters():
     """모든 명시적 필터가 동시에 적용된다"""
-    from rag_system import _apply_explicit_filters
+    from rag_filters import _apply_explicit_filters
 
     auto_filters = {'date_filter': 'date', 'date_value': '2020'}
     result = _apply_explicit_filters(
