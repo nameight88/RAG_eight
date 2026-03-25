@@ -21,6 +21,7 @@ from dotenv import load_dotenv
 import chromadb
 from langchain.docstore.document import Document
 import datetime
+from date_normalizer import normalize_date as _normalize_date
 
 # .env 파일에서 환경 변수 로드
 load_dotenv()
@@ -217,11 +218,20 @@ class FSSSemanticChunker:
     
     def preprocess_document(self, doc: Dict[str, Any]) -> Dict[str, Any]:
         """문서 전처리"""
+        _raw_sanction_date = doc.get("sanction_date", "")
+        _norm_date = _normalize_date(_raw_sanction_date) or _raw_sanction_date
+        _year = int(_norm_date[:4]) if _norm_date and len(_norm_date) >= 4 and _norm_date[:4].isdigit() else 0
+        _month = int(_norm_date[5:7]) if _norm_date and len(_norm_date) >= 7 and _norm_date[5:7].isdigit() else 0
+
         # 필요한 필드 추출
         processed = {
             "id": doc.get("doc_id", ""),
             "institution": doc.get("institution", ""),
-            "sanction_date": doc.get("sanction_date", ""),
+            "sanction_date": _raw_sanction_date,
+            "date": _norm_date,
+            "doc_type": doc.get("metadata", {}).get("doc_type", "제재결과"),
+            "year": _year,
+            "month": _month,
             "sanction_type": doc.get("content", {}).get("sanction_type", ""),
             "fine_amount": doc.get("content", {}).get("fine", {}).get("amount", 0),
             "fine_text": doc.get("content", {}).get("fine", {}).get("text", ""),
@@ -278,6 +288,10 @@ class FSSSemanticChunker:
                     "doc_id": doc["id"],
                     "institution": doc["institution"],
                     "sanction_date": doc["sanction_date"],
+                    "date": doc.get("date", doc["sanction_date"]),
+                    "doc_type": doc.get("doc_type", "제재결과"),
+                    "year": doc.get("year", 0),
+                    "month": doc.get("month", 0),
                     "sanction_type": doc["sanction_type"],
                     "chunk_index": i,
                     "total_chunks": len(chunks),
@@ -306,13 +320,21 @@ class FSSSemanticChunker:
             # 문서 배열 생성
             documents = []
             for item in data:
+                _raw_date = item.get('sanction_date', '')
+                _norm_date = _normalize_date(_raw_date) or _raw_date
+                _year = int(_norm_date[:4]) if _norm_date and len(_norm_date) >= 4 and _norm_date[:4].isdigit() else 0
+                _month = int(_norm_date[5:7]) if _norm_date and len(_norm_date) >= 7 and _norm_date[5:7].isdigit() else 0
                 for chunk in item['chunks']:
                     doc = Document(
                         page_content=chunk['content'],
                         metadata={
                             'id': chunk['id'],
                             'institution': item['institution'],
-                            'sanction_date': item['sanction_date'],
+                            'sanction_date': _raw_date,
+                            'date': _norm_date,
+                            'doc_type': item.get('doc_type', '제재결과'),
+                            'year': _year,
+                            'month': _month,
                             'sanction_type': item['sanction_type'],
                             'violation_regulation': item.get('violation_regulation', '')
                         }
