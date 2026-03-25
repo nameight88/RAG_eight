@@ -22,6 +22,7 @@ from langchain_community.llms import HuggingFacePipeline
 from langchain_anthropic import ChatAnthropic
 from langchain.prompts import PromptTemplate
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from rag_filters import _apply_explicit_filters
 
 # FAISS 관련 임포트
 try:
@@ -718,7 +719,14 @@ class FSSRagSystem:
         
         return processed_query, filters
     
-    def answer_question(self, question: str) -> Dict[str, Any]:
+    def answer_question(
+        self,
+        question: str,
+        date_from: Optional[str] = None,
+        date_to: Optional[str] = None,
+        institution: Optional[str] = None,
+        doc_type: Optional[str] = None,
+    ) -> Dict[str, Any]:
         """질문에 답변"""
         try:
             # 벡터 저장소 체크
@@ -727,17 +735,18 @@ class FSSRagSystem:
                     "answer": "벡터 저장소가 로드되지 않았습니다. 먼저 벡터 저장소를 로드해주세요.",
                     "sources": []
                 }
-                
+
             # LLM 체크
             if not self.llm:
                 return {
                     "answer": "LLM이 초기화되지 않았습니다. 사이드바에서 'LLM 초기화' 버튼을 클릭해주세요.",
                     "sources": []
                 }
-                
+
             # 질문 전처리
             print(f"❓ 질문 처리: '{question}'")
             processed_query, filters = self.preprocess_query(question)
+            filters = _apply_explicit_filters(filters, date_from, date_to, institution, doc_type)
             
             # 문서 유형 필터 확인
             if 'doc_type' in filters and filters['doc_type'] != self.db_type:
