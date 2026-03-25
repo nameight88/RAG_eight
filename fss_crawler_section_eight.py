@@ -146,6 +146,7 @@ class FSSCrawler:
             return item
             
         try:
+            from date_normalizer import normalize_date as _normalize_date
             resp = self.session.get(detail_url, timeout=20)
             if resp.status_code != 200:
                 print(f"❌ 상세 조회 실패: 상태코드 {resp.status_code}")
@@ -174,7 +175,9 @@ class FSSCrawler:
             
             # 파일 다운로드
             save_path = self.base_dir / save_dir
-            date_str = re.sub(r'[^\d]', '', detail.get('date', ''))[:8] or datetime.now().strftime('%Y%m%d')
+            _normalized = _normalize_date(detail.get('date', ''))
+            date_str = _normalized.replace('-', '') if _normalized else datetime.now().strftime('%Y%m%d')
+            detail['date'] = _normalized or detail.get('date', '')
             institution = re.sub(r'[^\w\s-]', '', detail.get('institution', 'unknown'))
             institution = institution.replace(' ', '_')[:30]
             

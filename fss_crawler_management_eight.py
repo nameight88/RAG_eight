@@ -263,9 +263,11 @@ class FSSManagementCrawler:
             return item
             
         try:
+            from date_normalizer import normalize_date as _normalize_date
             # 파일 다운로드 준비
             save_path = self.base_dir / save_dir
-            date_str = re.sub(r'[^\d]', '', item.get('date', ''))[:8] or datetime.now().strftime('%Y%m%d')
+            _normalized = _normalize_date(item.get('date', ''))
+            date_str = _normalized.replace('-', '') if _normalized else datetime.now().strftime('%Y%m%d')
             institution = re.sub(r'[^\w\s-]', '', item.get('institution', 'unknown'))
             institution = institution.replace(' ', '_')[:30]
             
@@ -297,6 +299,7 @@ class FSSManagementCrawler:
                 
                 # 기본 정보만 저장 (내용 분석은 나중에)
                 detail = item.copy()
+                detail['date'] = _normalize_date(item.get('date', '')) or item.get('date', '')
                 detail['title'] = f"{institution} 경영유의사항"
                 detail['downloaded_files'] = downloaded_files
                 detail['download_count'] = len(downloaded_files)
