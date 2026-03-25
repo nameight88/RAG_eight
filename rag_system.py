@@ -718,7 +718,14 @@ class FSSRagSystem:
         
         return processed_query, filters
     
-    def answer_question(self, question: str) -> Dict[str, Any]:
+    def answer_question(
+        self,
+        question: str,
+        date_from: Optional[str] = None,
+        date_to: Optional[str] = None,
+        institution: Optional[str] = None,
+        doc_type: Optional[str] = None,
+    ) -> Dict[str, Any]:
         """질문에 답변"""
         try:
             # 벡터 저장소 체크
@@ -727,17 +734,18 @@ class FSSRagSystem:
                     "answer": "벡터 저장소가 로드되지 않았습니다. 먼저 벡터 저장소를 로드해주세요.",
                     "sources": []
                 }
-                
+
             # LLM 체크
             if not self.llm:
                 return {
                     "answer": "LLM이 초기화되지 않았습니다. 사이드바에서 'LLM 초기화' 버튼을 클릭해주세요.",
                     "sources": []
                 }
-                
+
             # 질문 전처리
             print(f"❓ 질문 처리: '{question}'")
             processed_query, filters = self.preprocess_query(question)
+            filters = _apply_explicit_filters(filters, date_from, date_to, institution, doc_type)
             
             # 문서 유형 필터 확인
             if 'doc_type' in filters and filters['doc_type'] != self.db_type:
@@ -1457,6 +1465,36 @@ class FSSRagSystem:
             import traceback
             traceback.print_exc()
             return False
+
+
+def _apply_explicit_filters(
+    auto_filters: Dict[str, Any],
+    date_from: Optional[str] = None,
+    date_to: Optional[str] = None,
+    institution: Optional[str] = None,
+    doc_type: Optional[str] = None,
+) -> Dict[str, Any]:
+    """
+    명시적 필터 파라미터를 자동 추출 필터에 병합한다.
+    명시적 파라미터가 있으면 해당 자동 추출값을 대체한다.
+    """
+    filters = auto_filters.copy()
+
+    if date_from is not None:
+        filters.pop('date_filter', None)
+        filters.pop('date_value', None)
+        filters['date_from'] = date_from
+
+    if date_to is not None:
+        filters['date_to'] = date_to
+
+    if institution is not None:
+        filters['institution'] = institution
+
+    if doc_type is not None:
+        filters['doc_type'] = doc_type
+
+    return filters
 
 
 # 사용 예시
