@@ -44,7 +44,11 @@ _rag_service: Optional[RagService] = None
 
 def get_rag_service() -> RagService:
     if _rag_service is None:
-        raise RuntimeError("RAG 서비스가 초기화되지 않았습니다.")
+        from fastapi import HTTPException
+        raise HTTPException(
+            status_code=503,
+            detail="RAG 서비스가 초기화되지 않았습니다. OPENAI_API_KEY 환경변수를 설정하세요.",
+        )
     return _rag_service
 
 
