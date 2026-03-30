@@ -84,7 +84,7 @@ async def _handle_chat(
 async def chat(
     request: ChatRequest,
     db: AsyncSession = Depends(get_db),
-    rag: RagService = Depends(get_rag_service),
 ):
+    rag = get_rag_service(request.filters.doc_type)
     result = await _handle_chat(request, db, rag)
     return ChatResponse(**result)

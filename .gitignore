@@ -3,6 +3,13 @@
 
 ### dotenv ###
 .env
+backend/.env
+
+### Project-specific ###
+*.db
+.claude/
+data/*.txt
+data/fss_management_parsed_corpus.json
 
 ### JupyterNotebooks ###
 # gitignore template for Jupyter Notebooks
@@ -265,3 +272,9 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,python,visualstudiocode,jupyternotebooks,dotenv
+
+/vetoc_db/*.faiss
+/vetoc_db/*.pkl
+
+*.faiss
+*.pkl

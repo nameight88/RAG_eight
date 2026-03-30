@@ -1,3 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* ── 라이트 테마 (기본) ── */
+:root {
+  --bg-base: #f9fafb;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f3f4f6;
+  --border: #e5e7eb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --user-bubble: #eff6ff;
+  --user-text: #1e40af;
+}
+
+/* ── 다크 테마 ── */
+[data-theme="dark"] {
+  --bg-base: #111827;
+  --bg-surface: #1f2937;
+  --bg-elevated: #374151;
+  --border: #4b5563;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --user-bubble: #1e3a5f;
+  --user-text: #bfdbfe;
+}

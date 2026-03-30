@@ -1,5 +1,5 @@
 {
-  "created_at": "2025-07-21T22:45:54.258730",
+  "created_at": "2026-03-26T21:19:03.882399",
   "embed_model": "text-embedding-3-large",
   "use_openai": true,
   "vector_store_type": "FAISS"

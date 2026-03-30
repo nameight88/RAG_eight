@@ -1,7 +1,13 @@
 """환경변수 설정 모듈."""
+import os
 from functools import lru_cache
+from pathlib import Path
 from typing import List
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+# 프로젝트 루트 (.env 위치)
+_ROOT = Path(__file__).resolve().parent.parent
+_ENV_FILE = str(_ROOT / ".env")
 
 
 class Settings(BaseSettings):
@@ -12,7 +18,7 @@ class Settings(BaseSettings):
     allowed_origins: List[str] = ["http://localhost:5173", "http://localhost:3000"]
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=_ENV_FILE,
         env_file_encoding="utf-8",
         extra="ignore",
     )

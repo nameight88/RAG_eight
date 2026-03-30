@@ -1,183 +1,207 @@
-# 금융감독원 제재/경영유의사항 RAG 시스템
+# FSS RAG — 금융감독원 제재/경영유의사항 챗봇
 
-금융감독원 제재 내역 및 경영유의사항을 활용한 검색 증강 생성(RAG) 시스템입니다. 이 시스템은 PDF, HWP, HWPX 파일에서 추출한 금융감독원 문서를 파싱하고, 벡터 저장소에 임베딩하여 질의응답 시스템을 구축합니다.
+금융감독원(FSS) 제재결과 및 경영유의사항 문서를 기반으로 한 RAG(Retrieval-Augmented Generation) 질의응답 시스템입니다.
 
-## 🌟 주요 기능
+---
 
-- **문서 파싱**: PDF, HWP, HWPX 파일에서 텍스트 및 구조화된 정보 추출
-- **적응형 청킹**: 문서 구조와 내용에 따라 최적화된 방식으로 청크 분할
-- **시맨틱 청킹**: 의미 기반으로 문서를 분할하여 질의응답 품질 향상
-- **벡터 임베딩**: 문서 청크를 벡터로 변환하여 벡터 저장소에 저장
-- **질의응답 시스템**: LLM을 활용한 RAG 기반 질의응답 제공
-- **웹 인터페이스**: Streamlit을 이용한 사용자 친화적 웹 인터페이스
+## 주요 기능
 
-## 📁 프로젝트 구조
+| 기능 | 내용 |
+|------|------|
+| **BM25 + Dense Hybrid Search** | BM25Okapi + FAISS 벡터 검색을 RRF(Reciprocal Rank Fusion)로 결합 |
+| **HyDE** | 질문 → LLM 가상 문서 생성 → 임베딩 검색으로 의미 공간 정렬 |
+| **BGE Reranker** | `BAAI/bge-reranker-v2-m3` Cross-encoder로 상위 30개 재정렬 |
+| **메타데이터 enriched 청킹** | 기관명·날짜·조항을 각 청크 prefix에 포함 (256자, overlap 30) |
+| **챗봇 UI** | ChatGPT 스타일 React 인터페이스, 마크다운 렌더링, 필터 사이드바 |
+| **대화 이력** | SQLite 기반 대화 저장/조회 |
+
+---
+
+## 기술 스택
+
+### Backend
+- **Python 3.11**
+- **FastAPI** + Uvicorn — REST API 서버
+- **LangChain** — RAG 파이프라인
+- **FAISS** — 벡터 유사도 검색
+- **rank-bm25** — BM25 키워드 검색
+- **FlagEmbedding** — BGE Cross-encoder Reranker
+- **OpenAI** — `text-embedding-3-large` 임베딩, `gpt-4o` LLM
+- **SQLite** (aiosqlite) — 로컬 대화 이력 저장
+
+### Frontend
+- **React 19** + TypeScript
+- **Vite 8** + TailwindCSS v4
+- **react-markdown** — AI 답변 마크다운 렌더링
+
+---
+
+## 프로젝트 구조
 
 ```
-parser_py/
-├── adaptive_chunker.py       # 경영유의사항 문서 적응형 청킹 모듈
-├── semantic_chunker.py       # 제재 문서 시맨틱 청킹 모듈
-├── rag_system.py             # RAG 질의응답 시스템
-├── streamlit_app.py          # Streamlit 웹 인터페이스
-├── run_pipeline.py           # 전체 파이프라인 실행 스크립트
-├── requirements.txt          # 필요 라이브러리
-├── document_parser.py        # 문서 파싱 기본 클래스
-├── fss_crawler_*.py          # 금감원 웹사이트 크롤러
-└── fss_doc_*_parser_*.py     # 특정 문서 유형 파서
+RAG_eight/
+├── rag_system.py              # RAG 핵심 엔진 (검색 + LLM)
+├── rag_filters.py             # 필터 전처리 유틸
+├── date_normalizer.py         # 날짜 정규화 (YYYY-MM-DD)
+├── fss_crawler_*.py           # FSS 웹사이트 크롤러
+├── fss_doc_*_parser_*.py      # PDF/HWP 문서 파서
+├── requirements.txt           # Python 의존성
+│
+├── backend/                   # FastAPI 서버
+│   ├── main.py                # 앱 진입점, CORS 설정
+│   ├── config.py              # 환경변수 (pydantic-settings)
+│   ├── database.py            # SQLite 초기화
+│   ├── models.py              # DB 모델
+│   ├── schemas.py             # Pydantic 스키마
+│   ├── rag_service.py         # RAG 시스템 싱글턴 관리
+│   └── routers/
+│       ├── chat.py            # POST /api/chat
+│       └── conversations.py   # GET /api/conversations
+│
+├── frontend/                  # React 프론트엔드
+│   └── src/
+│       ├── App.tsx
+│       ├── components/
+│       │   ├── Sidebar.tsx       # 대화 목록 + 필터
+│       │   ├── ChatWindow.tsx    # 메시지 영역 + 입력창
+│       │   ├── MessageBubble.tsx # 마크다운 렌더링
+│       │   ├── FilterBar.tsx     # 문서유형/날짜/기관 필터
+│       │   └── SourceCard.tsx    # 참고 문서 카드
+│       └── hooks/
+│           └── useChat.ts        # 채팅 상태 관리
+│
+└── data/
+    ├── fss_sanctions_parsed.json      # 제재결과 파싱 데이터 (4,320건)
+    ├── fss_management_parsed.json     # 경영유의사항 파싱 데이터 (64건)
+    └── vector_db/
+        ├── fss_sanctions/faiss/       # 제재 벡터 DB + BM25 인덱스
+        └── fss_management/faiss/      # 경영유의 벡터 DB + BM25 인덱스
 ```
 
-## 🛠️ 설치 방법
+---
 
-1. 가상환경 생성 및 활성화 (선택사항이지만 권장):
+## 검색 파이프라인
 
-```bash
-# 가상환경 생성
-python -m venv rag_env
-
-# 가상환경 활성화
-# Windows
-rag_env\Scripts\activate
-# macOS/Linux
-source rag_env/bin/activate
+```
+사용자 질문
+    │
+    ▼
+[HyDE] LLM → 가상 제재 문서 생성
+    │
+    ▼
+[Hybrid Search] BM25 + FAISS Dense → RRF 합산
+    │
+    ▼
+[Filter] 날짜 / 기관 / 문서유형 메타데이터 필터링
+    │
+    ▼
+[BGE Reranker] 상위 30개 → Cross-encoder 재정렬 → top-k 반환
+    │
+    ▼
+[GPT-4o] 컨텍스트 + 질문 → 최종 답변 생성
 ```
 
-2. 필요 패키지 설치:
+**점수 공식:** `cosine_similarity = 1 - L²/2` (단위 정규화 벡터 기준)
+
+---
+
+## 시작하기
+
+### 사전 요구사항
+
+- Python 3.11+
+- Node.js 18+
+- OpenAI API Key
+
+### 1. Python 환경 설정
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. 추가 필수 패키지 설치:
+### 2. 환경변수 설정
+
+프로젝트 루트에 `.env` 파일 생성:
+
+```env
+OPENAI_API_KEY=sk-...
+DATABASE_URL=sqlite+aiosqlite:///./test.db
+VECTOR_DB_PATH=data/vector_db/fss_sanctions
+VECTOR_DB_TYPE=FAISS
+```
+
+### 3. 데이터 크롤링 및 벡터 DB 구축 (최초 1회)
 
 ```bash
-# Accelerate 설치 (LLM 가속을 위해)
-pip install "accelerate>=0.26.0"
+# FSS 제재결과 크롤링
+python fss_crawler_section_eight.py
 
-# Watchdog 설치 (Streamlit 파일 감시를 위해)
-pip install watchdog
+# FSS 경영유의사항 크롤링
+python fss_crawler_management_eight.py
+
+# 벡터 DB 구축 (제재결과)
+python -c "
+from rag_system import FSSRagSystem
+rag = FSSRagSystem(vector_db_path='data/vector_db/fss_sanctions', use_openai_embeddings=True, use_faiss=True)
+rag.create_vector_store_from_json('data/fss_sanctions_parsed.json', db_type='sanctions')
+"
+
+# 벡터 DB 구축 (경영유의사항)
+python -c "
+from rag_system import FSSRagSystem
+rag = FSSRagSystem(vector_db_path='data/vector_db/fss_management', use_openai_embeddings=True, use_faiss=True)
+rag.create_vector_store_from_json('data/fss_management_parsed.json', db_type='management')
+"
 ```
 
-4. HWP 파일 처리를 위한 추가 패키지 설치:
+### 4. 백엔드 실행
 
 ```bash
-pip install --no-deps hwp5
+python -m uvicorn backend.main:app --reload --port 8000
 ```
 
-5. 시스템 구성:
-   - Python 3.8 이상
-   - 최소 8GB RAM
-   - 권장: CUDA 지원 GPU (LLM 실행 시)
-
-## 🚀 사용 방법
-
-### 1. 데이터 디렉토리 구조 확인
+### 5. 프론트엔드 실행
 
 ```bash
-# 데이터 디렉토리 생성
-mkdir -p data/vector_db/fss_sanctions data/vector_db/fss_management
+cd frontend
+npm install
+npm run dev
 ```
 
-### 2. 벡터 저장소 구축
+브라우저에서 `http://localhost:5174` 접속
 
-먼저 문서를 청킹하고 벡터 저장소를 구축합니다:
+---
 
-```bash
-# 제재 문서 벡터 저장소 구축
-python semantic_chunker.py
+## API 엔드포인트
 
-# 경영유의사항 문서 벡터 저장소 구축
-python adaptive_chunker.py
+| Method | Endpoint | 설명 |
+|--------|----------|------|
+| `POST` | `/api/chat` | 질문 전송 및 답변 수신 |
+| `GET` | `/api/conversations` | 대화 목록 조회 |
+| `GET` | `/api/conversations/{id}/messages` | 특정 대화 메시지 조회 |
+| `GET` | `/health` | 헬스 체크 |
+
+### POST /api/chat 예시
+
+```json
+{
+  "message": "2024년 은행권 제재 현황을 요약해줘",
+  "conversation_id": null,
+  "filters": {
+    "doc_type": "sanctions",
+    "date_from": "2024-01-01",
+    "date_to": "2024-12-31",
+    "institution": null
+  }
+}
 ```
 
-### 3. RAG 시스템 실행 (터미널)
+---
 
-터미널에서 대화형으로 RAG 시스템을 실행할 수 있습니다:
+## 질의 예시
 
-```bash
-python rag_system.py
-```
-
-메시지가 표시되면 사용할 벡터 DB 유형을 선택합니다 (1: 제재정보, 2: 경영유의사항).
-
-### 4. Streamlit 웹 인터페이스 실행
-
-웹 인터페이스를 통해 RAG 시스템을 사용하려면:
-
-```bash
-streamlit run streamlit_app.py
-```
-
-브라우저에서 `http://localhost:8501`로 접속하여 웹 인터페이스를 사용할 수 있습니다.
-
-### 5. 전체 파이프라인 실행
-
-크롤링부터 파싱, 청킹, 벡터 저장소 구축까지 전체 파이프라인을 실행하려면:
-
-```bash
-python run_pipeline.py
-```
-
-## 💬 질의응답 예시
-
-시스템은 다음과 같은 질문에 답변할 수 있습니다:
-
-- "최근 1년간 제재받은 은행 알려줘"
-- "신용정보법 위반 사례 있어?"
-- "주의 조치 받은 금융사 중 내부통제 문제였던 경우?"
-- "과징금 부과된 보험사 알려줘"
-- "전자금융 관련 경영유의사항은?"
-
-## 📊 시스템 구성도
-
-```
-[문서 파일(PDF/HWP/HWPX)] → [문서 파싱] → [청킹(적응형/시맨틱)] → [벡터 임베딩]
-                                                              ↓
-[사용자 질문] → [쿼리 처리] → [벡터 검색] → [관련 문서 검색] → [LLM 답변 생성] → [사용자 응답]
-```
-
-## 📝 참고사항
-
-- 벡터 저장소는 `./data/vector_db/` 디렉토리에 저장됩니다
-- 기본 LLM 모델은 `beomi/llama-2-ko-7b`입니다
-- 기본 임베딩 모델은 `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`입니다
-
-## ⚠️ 문제 해결
-
-### LLM 로드 관련 문제
-
-LLM 로드 시 다음과 같은 오류가 발생하면:
-```
-⚠️ LLM 로드 실패: Using `low_cpu_mem_usage=True`, a `device_map` or a `tp_plan` requires Accelerate
-```
-
-Accelerate 패키지를 설치하세요:
-```bash
-pip install "accelerate>=0.26.0"
-```
-
-### 메모리 부족 문제
-
-LLM 로드 시 메모리 부족 오류가 발생하면:
-1. 더 작은 LLM 모델을 선택하세요 (예: 1.3B 크기 모델)
-2. `rag_system.py` 파일에서 `model_kwargs` 에 `device_map="auto"` 대신 `device="cpu"` 로 변경하세요
-3. 가능하면 GPU가 있는 시스템에서 실행하세요
-
-### Streamlit 관련 문제
-
-Streamlit 실행 시 문제가 발생하면:
-1. Watchdog 패키지 설치: `pip install watchdog`
-2. 정확한 경로에서 실행되고 있는지 확인하세요: `cd /path/to/parser_py`
-3. 직접 Python 모듈로 실행: `python -m streamlit run streamlit_app.py`
-
-### 벡터 저장소 디렉토리 문제
-
-벡터 저장소가 존재하지 않는다는 오류가 나타나면:
-1. 데이터 디렉토리 구조 확인: `mkdir -p data/vector_db/fss_sanctions data/vector_db/fss_management`
-2. 청킹 모듈을 실행하여 벡터 저장소 구축: `python semantic_chunker.py`
-
-## 🧰 개선 방향
-
-- 🔄 다양한 LLM 모델 지원
-- 📈 검색 알고리즘 개선
-- 🧩 더 정교한 청킹 전략
-- 🌐 더 다양한 문서 소스 지원 
+- `2024년 은행권 제재 현황을 요약해줘`
+- `전자금융거래법 위반 사례 알려줘`
+- `최근 과태료 부과 사례는?`
+- `내부통제 관련 경영유의사항은?`
+- `신용정보법 위반으로 제재받은 기관은?`

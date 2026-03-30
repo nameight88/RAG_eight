@@ -14,13 +14,21 @@ async def lifespan(app: FastAPI):
     # RAG 서비스 초기화는 OPENAI_API_KEY가 있을 때만
     if settings.openai_api_key:
         from backend.rag_service import init_rag_service
+        use_faiss = settings.vector_db_type == "FAISS"
         try:
             init_rag_service(
                 vector_db_path=settings.vector_db_path,
-                use_faiss=(settings.vector_db_type == "FAISS"),
+                use_faiss=use_faiss,
             )
         except Exception as e:
             print(f"⚠️ RAG 서비스 초기화 실패 (계속 실행): {e}")
+        # 경영유의사항 DB도 초기화 (fss_sanctions → fss_management 경로 파생)
+        mgmt_path = settings.vector_db_path.replace("fss_sanctions", "fss_management")
+        if mgmt_path != settings.vector_db_path:
+            try:
+                init_rag_service(vector_db_path=mgmt_path, use_faiss=use_faiss)
+            except Exception as e:
+                print(f"⚠️ 경영유의사항 RAG 서비스 초기화 실패 (계속 실행): {e}")
     yield
 
 
@@ -29,8 +37,8 @@ app = FastAPI(title="FSS RAG API", version="1.0.0", lifespan=lifespan)
 settings = get_settings()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.allowed_origins,
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )

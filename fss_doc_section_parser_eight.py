@@ -32,90 +32,95 @@ def clean_text(text: str) -> str:
 
 
 def extract_text_from_hwp(hwp_file_path: str) -> str:
-    """hwp5txt 명령줄 도구를 사용하여 HWP 파일에서 텍스트 추출"""
+    """pyhwp Python API를 사용하여 HWP 파일에서 텍스트 추출"""
     try:
-        # 임시 텍스트 파일 경로
-        temp_txt_path = hwp_file_path + '.txt'
-        
-        # hwp5txt 명령 실행
-        command = f'hwp5txt "{hwp_file_path}" --output "{temp_txt_path}"'
-        result = os.system(command)
-        
-        if result == 0 and os.path.exists(temp_txt_path):
-            # 텍스트 파일 읽기
-            with open(temp_txt_path, 'r', encoding='utf-8') as f:
-                text_content = f.read()
-            
-            # 임시 파일 삭제
-            os.remove(temp_txt_path)
-            
-            if text_content and text_content.strip():
-                print(f"✅ hwp5txt로 텍스트 추출 성공: {len(text_content)} 문자")
-                return text_content.strip()
-            else:
-                print(f"⚠️ hwp5txt 결과 비어있음, 대체 방법 시도")
-                return extract_text_from_hwp_alternative(hwp_file_path)
+        from hwp5.hwp5txt import Hwp5File, TextTransform
+        from hwp5.errors import InvalidHwp5FileError
+        from contextlib import closing
+
+        text_transform = TextTransform()
+        transform = text_transform.transform_hwp5_to_text
+
+        output = io.BytesIO()
+        with closing(Hwp5File(hwp_file_path)) as hwp5file:
+            transform(hwp5file, output)
+
+        text_content = output.getvalue().decode('utf-8', errors='ignore')
+
+        if text_content and text_content.strip():
+            return text_content.strip()
         else:
-            print(f"⚠️ hwp5txt 명령 실패 (코드: {result}), 대체 방법 시도")
             return extract_text_from_hwp_alternative(hwp_file_path)
-            
+
     except Exception as e:
-        print(f"⚠️ hwp5txt 파싱 실패: {e}")
-        # 대체 방법 시도
         return extract_text_from_hwp_alternative(hwp_file_path)
 
 
 def extract_text_from_hwp_alternative(hwp_file_path: str) -> str:
-    """olefile을 사용한 HWP 파일 텍스트 추출 대체 방법"""
+    """olefile을 사용한 HWP 파일 텍스트 추출 대체 방법 (zlib 압축 해제 포함)"""
+    import zlib
     try:
-        # OLE 파일로 HWP 파일 열기
         ole = olefile.OleFileIO(hwp_file_path)
-        
-        # 텍스트 스트림 찾기
+
+        # BodyText 하위 Section 스트림 탐색
         text_streams = []
-        for stream_name in ole.listdir():
-            if isinstance(stream_name, list) and len(stream_name) > 0:
-                if 'BodyText' in stream_name[0] or 'Section' in stream_name[0]:
-                    text_streams.append(stream_name)
-        
-        # 텍스트 추출
+        for entry in ole.listdir():
+            if len(entry) >= 2 and entry[0] == 'BodyText' and entry[1].startswith('Section'):
+                text_streams.append(entry)
+
+        text_streams.sort(key=lambda x: x[1])  # Section0, Section1, ... 순서 정렬
+
         extracted_text = []
-        for stream in text_streams:
+        for stream_path in text_streams:
             try:
-                with ole.open(stream) as stream_data:
-                    # 바이너리 데이터 읽기
-                    data = stream_data.read()
-                    
-                    # 유니코드 텍스트 추출 시도
-                    try:
-                        # UTF-16 시도
-                        text = data.decode('utf-16le', errors='ignore')
-                        # 제어 문자 제거
-                        text = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', text)
-                        if text.strip():
-                            extracted_text.append(text.strip())
-                    except:
-                        # CP949 시도
-                        try:
-                            text = data.decode('cp949', errors='ignore')
-                            text = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', text)
-                            if text.strip():
-                                extracted_text.append(text.strip())
-                        except:
-                            pass
-            except:
+                stream_data = ole.openstream(stream_path)
+                raw = stream_data.read()
+                stream_data.close()
+
+                # HWP BodyText 스트림은 zlib deflate 압축 (앞 4바이트 = 원본 크기)
+                try:
+                    decompressed = zlib.decompress(raw[4:], -15)
+                except zlib.error:
+                    decompressed = raw  # 압축 안 된 경우 fallback
+
+                # HWP 레코드에서 HWPTAG_PARA_TEXT(0x42=66) 파싱
+                paragraphs = []
+                i = 0
+                while i + 4 <= len(decompressed):
+                    header = int.from_bytes(decompressed[i:i+4], 'little')
+                    tag_id = header & 0x3FF
+                    record_size = (header >> 20) & 0xFFF
+                    if record_size == 0xFFF and i + 8 <= len(decompressed):
+                        record_size = int.from_bytes(decompressed[i+4:i+8], 'little')
+                        i += 4
+                    i += 4
+                    if i + record_size > len(decompressed):
+                        break
+                    if tag_id == 66:  # HWPTAG_PARA_TEXT
+                        para_bytes = decompressed[i:i+record_size]
+                        para_text = para_bytes.decode('utf-16le', errors='ignore')
+                        # 특수 제어 문자(0x0D=단락 끝 등) 제거
+                        para_text = re.sub(r'[\x00-\x1f]', '', para_text)
+                        if para_text.strip():
+                            paragraphs.append(para_text.strip())
+                    i += record_size
+
+                if paragraphs:
+                    extracted_text.append('\n'.join(paragraphs))
+
+            except Exception:
                 continue
-        
+
         ole.close()
-        
+
         full_text = '\n'.join(extracted_text)
         if full_text.strip():
             return full_text
         else:
             return "HWP 파일 텍스트 추출 실패"
-            
+
     except Exception as e:
-        print(f"⚠️ olefile 파싱도 실패: {e}")
+        print(f"olefile 파싱 실패: {e}")
         return "HWP 파일 파싱 실패"
 
 
@@ -174,22 +179,22 @@ class FSSDocumentParser:
             return self.parse_sanction_content(full_text, file_path)
             
         except Exception as e:
-            print(f"❌ PDF 파싱 에러 {file_path}: {e}")
+            print(f"[오류] PDF 파싱 에러 {file_path}: {e}")
             return self.create_empty_result(file_path)
     
     def extract_from_hwp(self, file_path: str) -> Dict[str, Any]:
         """HWP 파일에서 제재 정보 추출"""
         try:
-            print(f"🔄 HWP 파일 파싱 시작: {os.path.basename(file_path)}")
+            print(f"[처리] HWP 파일 파싱 시작: {os.path.basename(file_path)}")
             
             # pyhwp를 사용한 직접 텍스트 추출
             full_text = extract_text_from_hwp(file_path)
             
-            if full_text and full_text.strip() and "파일 파싱 실패" not in full_text:
-                print(f"✅ HWP 텍스트 추출 성공: {len(full_text)} 문자")
+            if full_text and full_text.strip() and "실패" not in full_text:
+                print(f"[성공] HWP 텍스트 추출 성공: {len(full_text)} 문자")
                 return self.parse_sanction_content(full_text, file_path)
             else:
-                print(f"⚠️ HWP 직접 파싱 실패, HTML 변환 시도")
+                print(f"[경고] HWP 직접 파싱 실패, HTML 변환 시도")
                 
                 # HTML 변환 방법 시도
                 hwp_file_dir = os.path.dirname(file_path)
@@ -209,15 +214,15 @@ class FSSDocumentParser:
                         shutil.rmtree(html_file_dir)
                     
                     full_text = page.get_text(separator='\n')
-                    print(f"✅ HWP HTML 변환 성공: {len(full_text)} 문자")
+                    print(f"[성공] HWP HTML 변환 성공: {len(full_text)} 문자")
                     
                     return self.parse_sanction_content(full_text, file_path)
                 else:
-                    print(f"⚠️ HTML 변환도 실패, 기본 정보만 추출")
+                    print(f"[경고] HTML 변환도 실패, 기본 정보만 추출")
                     return self.extract_hwp_alternative(file_path)
             
         except Exception as e:
-            print(f"❌ HWP 파싱 에러 {file_path}: {e}")
+            print(f"[오류] HWP 파싱 에러 {file_path}: {e}")
             return self.extract_hwp_alternative(file_path)
     
     def extract_hwp_alternative(self, file_path: str) -> Dict[str, Any]:
@@ -269,11 +274,11 @@ class FSSDocumentParser:
                 "status": "HWP 변환 필요"
             }
             
-            print(f"📄 HWP 파일 기본 정보만 추출: {institution} ({date})")
+            print(f"[파일] HWP 파일 기본 정보만 추출: {institution} ({date})")
             return result
             
         except Exception as e:
-            print(f"❌ HWP 대체 처리 에러 {file_path}: {e}")
+            print(f"[오류] HWP 대체 처리 에러 {file_path}: {e}")
             return self.create_empty_result(file_path)
     
     def extract_from_hwpx(self, file_path: str) -> Dict[str, Any]:
@@ -309,7 +314,7 @@ class FSSDocumentParser:
             return self.parse_sanction_content(full_text, file_path)
             
         except Exception as e:
-            print(f"❌ HWPX 파싱 에러 {file_path}: {e}")
+            print(f"[오류] HWPX 파싱 에러 {file_path}: {e}")
             return self.create_empty_result(file_path)
     
     def parse_sanction_content(self, text: str, file_path: str) -> Dict[str, Any]:
@@ -567,7 +572,7 @@ class FSSDocumentParser:
         }
         
         if not os.path.exists(input_dir):
-            print(f"❌ 디렉토리가 존재하지 않습니다: {input_dir}")
+            print(f"[오류] 디렉토리가 존재하지 않습니다: {input_dir}")
             return {"data": results, "stats": stats}
         
         # 파일 목록 가져오기
@@ -577,14 +582,14 @@ class FSSDocumentParser:
                 files.append(os.path.join(input_dir, file_name))
         
         stats["total_files"] = len(files)
-        print(f"\n📁 총 {len(files)}개 파일 발견")
+        print(f"\n[폴더] 총 {len(files)}개 파일 발견")
         
         # 각 파일 처리
         for file_path in sorted(files):
             file_name = os.path.basename(file_path)
             ext = pathlib.Path(file_path).suffix.lower()
             
-            print(f"\n🔍 처리 중: {file_name}")
+            print(f"\n[검색] 처리 중: {file_name}")
             
             try:
                 if ext == '.pdf':
@@ -605,10 +610,10 @@ class FSSDocumentParser:
                     stats["processed_files"] += 1
                 
                 results.append(result)
-                print(f"✅ 완료: {result['institution']} ({result['date']})")
+                print(f"[성공] 완료: {result['institution']} ({result['date']})")
                 
             except Exception as e:
-                print(f"❌ 에러: {file_name} - {e}")
+                print(f"[오류] 에러: {file_name} - {e}")
                 stats["failed_files"] += 1
                 results.append(self.create_empty_result(file_path))
         
@@ -627,15 +632,15 @@ class FSSDocumentParser:
         with open(output_json, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, ensure_ascii=False, indent=2)
         
-        print(f"\n🎉 완료!")
-        print(f"📊 통계:")
+        print(f"\n[완료] 완료!")
+        print(f"[통계] 통계:")
         print(f"  - 전체 파일: {stats['total_files']}개")
         print(f"  - 성공: {stats['processed_files']}개")
         print(f"  - 실패: {stats['failed_files']}개")
         print(f"  - PDF: {stats['file_types']['pdf']}개")
         print(f"  - HWP: {stats['file_types']['hwp']}개")
         print(f"  - HWPX: {stats['file_types']['hwpx']}개")
-        print(f"\n💾 결과 저장: {output_json}")
+        print(f"\n[저장] 결과 저장: {output_json}")
         
         return output_data
 

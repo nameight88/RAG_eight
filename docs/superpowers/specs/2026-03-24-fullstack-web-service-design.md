@@ -1,8 +1,9 @@
-# Phase 2: 풀스택 웹 서비스 설계
+# Phase 2: FastAPI + React + PostgreSQL 풀스택 웹 서비스 설계
 
 **작성일:** 2026-03-24
 **프로젝트:** RAG_eight — 금융감독원 문서 RAG 챗봇 웹 서비스
 **목표:** Streamlit MVP를 FastAPI + React + PostgreSQL 3티어 서비스로 전환
+**배포 목적:** 포트폴리오 (무료 티어 기반)
 
 ---
 

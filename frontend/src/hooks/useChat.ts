@@ -67,7 +67,18 @@ export function useChat() {
         botMsg,
       ]);
     } catch (err) {
-      setMessages(prev => prev.filter(m => m.id !== tempId));
+      const errMsg: Message = {
+        id: `err-${Date.now()}`,
+        role: 'assistant',
+        content: '⚠️ 답변을 가져오는 데 실패했습니다. 잠시 후 다시 시도해주세요.',
+        sources: [],
+        created_at: new Date().toISOString(),
+      };
+      setMessages(prev => [
+        ...prev.filter(m => m.id !== tempId),
+        { ...tempUserMsg, id: `user-err-${Date.now()}` },
+        errMsg,
+      ]);
       console.error('Chat error:', err);
     } finally {
       setIsLoading(false);

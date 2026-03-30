@@ -11,18 +11,27 @@ import torch
 import pickle  # pickle 모듈 추가
 import numpy as np  # numpy 모듈 추가
 from typing import List, Dict, Any, Optional, Tuple
-from datetime import datetime, timedelta
+from datetime import datetime
 from dotenv import load_dotenv
-from langchain.chains import RetrievalQA
 from langchain_community.vectorstores import FAISS, Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
-# OpenAI 의존성 복원
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-from langchain_community.llms import HuggingFacePipeline
 from langchain_anthropic import ChatAnthropic
-from langchain.prompts import PromptTemplate
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 from rag_filters import _apply_explicit_filters
+
+# BM25 Hybrid Search
+try:
+    from rank_bm25 import BM25Okapi
+    BM25_AVAILABLE = True
+except ImportError:
+    BM25_AVAILABLE = False
+
+# BGE Reranker
+try:
+    from FlagEmbedding import FlagReranker
+    RERANKER_AVAILABLE = True
+except ImportError:
+    RERANKER_AVAILABLE = False
 
 # FAISS 관련 임포트
 try:
@@ -130,13 +139,18 @@ class FSSRagSystem:
         
         # OpenAI 설정
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
-        self.llm_model_name = "gpt-3.5-turbo"  # 기본 모델
+        self.llm_model_name = "gpt-4o"  # 기본 모델
         
         # 초기화
         self.embeddings = None
         self.vector_store = None
         self.llm = None
         self.qa_chain = None
+        # BM25 Hybrid Search
+        self.bm25_index = None        # BM25Okapi 인덱스
+        self.bm25_corpus = []         # 토큰화된 말뭉치 (검색용)
+        self.bm25_docs = []           # 원본 Document 객체 목록
+        self._reranker = None         # BGE Cross-encoder Reranker (lazy load)
         
         # JSON 파일에서 생성하는 경우
         if self.create_from_json:
@@ -364,13 +378,21 @@ class FSSRagSystem:
                                         if isinstance(content, dict):
                                             metadata['management_type'] = content.get('management_type', '')
                                     
-                                    # 날짜 필드 추가
-                                    if 'sanction_date' in doc:
-                                        metadata['sanction_date'] = doc['sanction_date']
-                                        metadata['date'] = doc['sanction_date']
-                                    elif 'disclosure_date' in doc:
-                                        metadata['disclosure_date'] = doc['disclosure_date']
-                                        metadata['date'] = doc['disclosure_date']
+                                    # 날짜 필드 추가 (date_normalizer로 정규화)
+                                    from date_normalizer import normalize_date as _norm_date
+                                    raw_date = (doc.get('date') or doc.get('sanction_date') or doc.get('disclosure_date') or '')
+                                    norm_date = _norm_date(raw_date) or raw_date
+                                    metadata['date'] = norm_date
+                                    if norm_date and len(norm_date) >= 7:
+                                        try:
+                                            metadata['year'] = int(norm_date[:4])
+                                            metadata['month'] = int(norm_date[5:7])
+                                        except ValueError:
+                                            metadata['year'] = 0
+                                            metadata['month'] = 0
+                                    else:
+                                        metadata['year'] = 0
+                                        metadata['month'] = 0
                                     
                                     # 추가 메타데이터
                                     doc_metadata = doc.get('metadata', {})
@@ -486,10 +508,164 @@ class FSSRagSystem:
                     print("⚠️ similarity_search 메서드 없음")
             except Exception as e:
                 print(f"❌ 테스트 검색 실패: {str(e)}")
-            
+
+            # BM25 인덱스 로드 (없으면 FAISS docstore에서 빌드)
+            if BM25_AVAILABLE:
+                faiss_dir = os.path.join(self.vector_db_path, "faiss")
+                if not self._load_bm25(faiss_dir):
+                    print("🔄 BM25 인덱스 없음 → FAISS docstore에서 빌드 중...")
+                    try:
+                        all_docs = list(self.vector_store.docstore._dict.values())
+                        self._build_bm25(all_docs)
+                        self._save_bm25(faiss_dir)
+                    except Exception as e:
+                        print(f"⚠️ BM25 빌드 실패: {e}")
+
         except Exception as e:
             print(f"❌ 벡터 저장소 확인 중 오류: {str(e)}")
-    
+
+    # ── BM25 Hybrid Search ──────────────────────────────────────────────
+
+    @staticmethod
+    def _tokenize_ko(text: str) -> List[str]:
+        """한국어 토크나이징: 공백 분리 + 2~4자 문자 n-gram 추가 (konlpy 없이 동작)"""
+        tokens = text.lower().split()
+        # 2~4자 n-gram 추가 (조항번호·기관명 부분 매칭용)
+        ngrams = []
+        for token in tokens:
+            for n in range(2, min(5, len(token) + 1)):
+                for i in range(len(token) - n + 1):
+                    ngrams.append(token[i:i + n])
+        return tokens + ngrams
+
+    def _build_bm25(self, docs) -> None:
+        """FAISS docstore의 Document 목록으로 BM25 인덱스 빌드"""
+        if not BM25_AVAILABLE:
+            return
+        self.bm25_docs = list(docs)
+        self.bm25_corpus = [self._tokenize_ko(d.page_content) for d in self.bm25_docs]
+        self.bm25_index = BM25Okapi(self.bm25_corpus)
+        print(f"✅ BM25 인덱스 빌드 완료 ({len(self.bm25_docs)}개 청크)")
+
+    def _save_bm25(self, save_dir: str) -> None:
+        """BM25 인덱스를 파일로 저장"""
+        if not self.bm25_index:
+            return
+        path = os.path.join(save_dir, "bm25_index.pkl")
+        with open(path, "wb") as f:
+            pickle.dump({"index": self.bm25_index, "corpus": self.bm25_corpus, "docs": self.bm25_docs}, f)
+        print(f"✅ BM25 인덱스 저장: {path}")
+
+    def _load_bm25(self, save_dir: str) -> bool:
+        """저장된 BM25 인덱스 로드"""
+        path = os.path.join(save_dir, "bm25_index.pkl")
+        if not os.path.exists(path):
+            return False
+        try:
+            with open(path, "rb") as f:
+                data = pickle.load(f)
+            self.bm25_index = data["index"]
+            self.bm25_corpus = data["corpus"]
+            self.bm25_docs = data["docs"]
+            print(f"✅ BM25 인덱스 로드 완료 ({len(self.bm25_docs)}개 청크)")
+            return True
+        except Exception as e:
+            print(f"⚠️ BM25 인덱스 로드 실패: {e}")
+            return False
+
+    def _hybrid_search(self, query: str, k: int = 50) -> List[Dict[str, Any]]:
+        """BM25 + Dense 검색 결과를 RRF로 합산"""
+        RRF_K = 60  # RRF 상수 (일반적으로 60 사용)
+        rrf_scores: Dict[str, float] = {}
+        doc_map: Dict[str, Any] = {}
+
+        # ── Dense 검색 (FAISS) ──
+        try:
+            dense_results = self.vector_store.similarity_search_with_score(query, k=k)
+            for rank, (doc, dist) in enumerate(dense_results):
+                doc_id = doc.metadata.get("doc_id", "") + doc.page_content[:30]
+                rrf_scores[doc_id] = rrf_scores.get(doc_id, 0) + 1 / (RRF_K + rank + 1)
+                doc_map[doc_id] = {"doc": doc, "dense_score": float(max(0.0, 1 - (dist ** 2) / 2))}
+        except Exception as e:
+            print(f"⚠️ Dense 검색 실패: {e}")
+
+        # ── BM25 검색 ──
+        if self.bm25_index and self.bm25_docs:
+            try:
+                tokens = self._tokenize_ko(query)
+                bm25_scores = self.bm25_index.get_scores(tokens)
+                # 상위 k개 인덱스
+                top_indices = sorted(range(len(bm25_scores)), key=lambda i: bm25_scores[i], reverse=True)[:k]
+                for rank, idx in enumerate(top_indices):
+                    if bm25_scores[idx] <= 0:
+                        break
+                    doc = self.bm25_docs[idx]
+                    doc_id = doc.metadata.get("doc_id", "") + doc.page_content[:30]
+                    rrf_scores[doc_id] = rrf_scores.get(doc_id, 0) + 1 / (RRF_K + rank + 1)
+                    if doc_id not in doc_map:
+                        doc_map[doc_id] = {"doc": doc, "dense_score": 0.0}
+                    doc_map[doc_id]["bm25_score"] = float(bm25_scores[idx])
+            except Exception as e:
+                print(f"⚠️ BM25 검색 실패: {e}")
+
+        # ── RRF 점수로 정렬 ──
+        ranked = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)
+        results = []
+        for doc_id, rrf in ranked:
+            entry = doc_map[doc_id]
+            doc = entry["doc"]
+            results.append({
+                "content": doc.page_content,
+                "metadata": doc.metadata,
+                "score": rrf,
+                "dense_score": entry.get("dense_score", 0.0),
+                "bm25_score": entry.get("bm25_score", 0.0),
+            })
+        return results
+
+    def _hyde_query(self, query: str) -> str:
+        """HyDE: LLM으로 가상 문서 생성 → 임베딩 검색에 활용"""
+        if not self.llm:
+            return query
+        try:
+            hyde_prompt = (
+                "당신은 금융감독원 제재 전문가입니다. "
+                "아래 질문에 대한 전형적인 금융감독원 제재 문서를 한국어로 2~3문장 작성하세요. "
+                "실제 제재 결과물처럼 기관명, 날짜, 위반 내용, 제재 조치를 포함하세요.\n\n"
+                f"질문: {query}\n\n가상 문서:"
+            )
+            result = self.llm.invoke(hyde_prompt)
+            hypothetical = result.content if hasattr(result, "content") else str(result)
+            print(f"💡 HyDE 가상 문서: {hypothetical[:100]}...")
+            return hypothetical.strip()
+        except Exception as e:
+            print(f"⚠️ HyDE 생성 실패 (원본 쿼리 사용): {e}")
+            return query
+
+    def _rerank(self, query: str, results: List[Dict[str, Any]], top_k: int = 10) -> List[Dict[str, Any]]:
+        """BGE Cross-encoder로 결과 재정렬"""
+        if not RERANKER_AVAILABLE or not results:
+            return results[:top_k]
+        try:
+            if not hasattr(self, "_reranker") or self._reranker is None:
+                print("🔄 BGE Reranker 로드 중 (BAAI/bge-reranker-v2-m3)...")
+                self._reranker = FlagReranker("BAAI/bge-reranker-v2-m3", use_fp16=False)
+                print("✅ BGE Reranker 로드 완료")
+            pairs = [[query, r["content"]] for r in results]
+            scores = self._reranker.compute_score(pairs, normalize=True)
+            if not isinstance(scores, list):
+                scores = [scores]
+            for item, s in zip(results, scores):
+                item["rerank_score"] = float(s)
+            reranked = sorted(results, key=lambda x: x.get("rerank_score", 0.0), reverse=True)
+            print(f"✅ Rerank 완료: top 점수 {reranked[0]['rerank_score']:.3f}")
+            return reranked[:top_k]
+        except Exception as e:
+            print(f"⚠️ Rerank 실패 (원본 순서 사용): {e}")
+            return results[:top_k]
+
+    # ────────────────────────────────────────────────────────────────────
+
     def initialize_llm(self) -> None:
         """LLM 초기화"""
         try:
@@ -544,9 +720,6 @@ class FSSRagSystem:
                     
                     # 모델 이름 호환성 확인
                     model_name = self.llm_model_name
-                    if model_name == "gpt-3.5-turbo":
-                        print("⚠️ 'gpt-3.5-turbo'는 레거시 이름입니다. 'gpt-3.5-turbo-0125'로 변경합니다.")
-                        model_name = "gpt-3.5-turbo-0125"
                     
                     # 임포트 시도
                     try:
@@ -764,8 +937,9 @@ class FSSRagSystem:
             if filters:
                 print(f"🔍 추출된 필터: {filters}")
             
-            # 문서 검색 수행
-            search_results = self.search_documents(processed_query, k=5)
+            # 문서 검색 수행 (날짜/기관 필터가 있으면 더 많이 검색)
+            search_k = 10 if filters else 5
+            search_results = self.search_documents(processed_query, k=search_k)
             
             # 검색 결과가 없는 경우
             if not search_results:
@@ -813,7 +987,8 @@ class FSSRagSystem:
                     
                     sources.append({
                         "content": content,
-                        "metadata": metadata
+                        "metadata": metadata,
+                        "score": doc.get("score", 1.0)
                     })
                 except Exception as doc_error:
                     print(f"⚠️ 문서 처리 오류 (무시됨): {doc_error}")
@@ -826,18 +1001,19 @@ class FSSRagSystem:
                     print(f"⚠️ 컨텍스트가 너무 깁니다: {len(context)}자 → 12000자로 자릅니다")
                     context = context[:12000] + "..."
                     
-                prompt = f"""당신은 금융감독원 제재 및 경영유의 정보 검색 시스템의 일부입니다. 
-다음은 검색된 금융감독원 관련 자료입니다:
+                prompt = f"""당신은 금융감독원 제재 및 경영유의 정보 전문 분석가입니다.
+아래는 검색된 금융감독원 제재/경영유의 자료입니다:
 
 {context}
 
 질문: {question}
 
-위 자료를 바탕으로 질문에 답변해주세요.
-1. 자료에 나오지 않는 내용이면 "관련 정보가 없습니다"라고 답변하세요.
-2. 기관명, 날짜, 제재 유형, 금액 등 구체적인 정보를 포함해서 답변하세요.
-3. 자료의 출처를 명확하게 인용하세요.
-4. 간결하고 명확하게 답변하세요.
+답변 지침:
+1. 위 자료에 있는 내용을 최대한 활용하여 구체적으로 답변하세요.
+2. 여러 문서가 있을 경우 공통 패턴, 주요 제재 유형, 대표 사례를 정리해 주세요.
+3. 기관명, 날짜, 제재 유형(과태료/업무정지/주의 등), 금액 등 구체적 정보를 포함하세요.
+4. 자료가 부족해도 있는 정보를 토대로 최선을 다해 답변하세요.
+5. 한국어로 답변하세요.
 """
 
                 print("🧠 LLM에 답변 요청 중...")
@@ -1011,101 +1187,49 @@ class FSSRagSystem:
             print(f"🔍 검색어: '{processed_query}', 필터: {filters}")
             
             try:
-                # 다양한 검색 방식 시도
-                docs = None
-                
-                # 1. 단순 검색 (가장 안정적)
-                try:
-                    print("📚 검색 방식 1: similarity_search 시도...")
-                    docs = self.vector_store.similarity_search(
-                        processed_query, 
-                        k=k*2  # 필터링 후 충분한 결과 확보를 위해 더 많이 검색
-                    )
-                    print(f"✅ 검색 성공: {len(docs)}개 문서 찾음")
-                except Exception as e1:
-                    print(f"⚠️ similarity_search 실패: {str(e1)}")
-                    
-                    # 2. 검색 문서 직접 구성
-                    try:
-                        print("📚 검색 방식 2: 직접 검색 시도...")
-                        if hasattr(self.vector_store, "_collection"):
-                            # Chroma용 검색
-                            from langchain_core.documents import Document
-                            
-                            # 임베딩 생성
-                            query_embedding = self.embeddings.embed_query(processed_query)
-                            
-                            # Chroma 컬렉션에서 직접 검색
-                            results = self.vector_store._collection.query(
-                                query_embeddings=[query_embedding],
-                                n_results=k*2
-                            )
-                            
-                            # 문서 구성
-                            docs = []
-                            for i, (id, dist) in enumerate(zip(results['ids'][0], results['distances'][0])):
-                                if i >= k*2:
-                                    break
-                                metadata = json.loads(results['metadatas'][0][i]) if results['metadatas'][0][i] else {}
-                                content = results['documents'][0][i] if results['documents'][0][i] else ""
-                                docs.append(Document(page_content=content, metadata=metadata))
-                            
-                            print(f"✅ Chroma 직접 검색 성공: {len(docs)}개 문서 찾음")
-                    except Exception as e2:
-                        print(f"⚠️ 직접 검색 실패: {str(e2)}")
-                        
-                        # 3. 최후의 방법 - 모든 문서 반환
-                        try:
-                            print("📚 검색 방식 3: 모든 문서 반환 시도...")
-                            if hasattr(self.vector_store, "docstore"):
-                                # FAISS용 모든 문서 가져오기
-                                all_docs = []
-                                for doc_id in list(self.vector_store.docstore._dict.values())[:k*2]:
-                                    all_docs.append(doc_id)
-                                docs = all_docs
-                                print(f"✅ 모든 문서 검색 성공: {len(docs)}개 문서 찾음")
-                        except Exception as e3:
-                            print(f"❌ 모든 검색 방식 실패: {str(e3)}")
-                            return []
-                
-                # 검색 결과 없으면 종료
-                if not docs or len(docs) == 0:
+                # 날짜 필터가 있으면 더 많이 검색 (필터링 후 k개 확보)
+                fetch_k = max(k * 10, 50) if filters else max(k * 3, 30)
+
+                # ── ② HyDE: 가상 문서로 검색 쿼리 보강 ──
+                hyde_query = self._hyde_query(processed_query)
+
+                # ── Hybrid Search (BM25 + Dense, RRF 합산) ──
+                if self.bm25_index:
+                    print("📚 BM25 + Dense Hybrid 검색 중...")
+                    hybrid_results = self._hybrid_search(hyde_query, k=fetch_k)
+                    print(f"✅ Hybrid 검색 완료: {len(hybrid_results)}개")
+                else:
+                    print("📚 Dense 검색 중 (BM25 없음)...")
+                    docs_with_scores = self.vector_store.similarity_search_with_score(hyde_query, k=fetch_k)
+                    hybrid_results = [
+                        {"content": d.page_content, "metadata": d.metadata, "score": float(max(0.0, 1 - (s ** 2) / 2))}
+                        for d, s in docs_with_scores
+                    ]
+                    print(f"✅ Dense 검색 완료: {len(hybrid_results)}개")
+
+                if not hybrid_results:
                     print("❌ 검색 결과가 없습니다.")
                     return []
-                
-                # 필터링 적용
+
+                # ── 필터링 적용 ──
                 filtered_results = []
-                
-                for doc in docs:
-                    metadata = doc.metadata if hasattr(doc, "metadata") else {}
-                    content = doc.page_content if hasattr(doc, "page_content") else str(doc)
-                    
-                    # 필터링 적용
-                    if filters and not self._match_filters(metadata, filters):
+                for item in hybrid_results:
+                    if filters and not self._match_filters(item["metadata"], filters):
                         continue
-                        
-                    result = {
-                        "content": content,
-                        "metadata": metadata,
-                        "score": 1.0  # 점수 정보 없음
-                    }
-                    filtered_results.append(result)
-                
+                    filtered_results.append(item)
+
                 print(f"✅ 필터링 후: {len(filtered_results)}개 문서 남음")
-                
-                # 결과가 없을 경우 필터 없이 반환
-                if not filtered_results and filters and docs:
-                    print("⚠️ 필터링 결과가 없어 필터 없이 모든 결과 반환")
-                    filtered_results = [
-                        {
-                            "content": doc.page_content if hasattr(doc, "page_content") else str(doc),
-                            "metadata": doc.metadata if hasattr(doc, "metadata") else {},
-                            "score": 1.0
-                        } for doc in docs[:k]
-                    ]
-                
-                # 최대 k개 반환
-                return filtered_results[:k]
+
+                # 결과가 없을 경우 필터 없이 상위 결과 반환
+                if not filtered_results and filters and hybrid_results:
+                    print("⚠️ 필터링 결과 없음 → 필터 제거 후 반환")
+                    filtered_results = hybrid_results
+
+                # ── ③ BGE Reranker: 원본 질문 기준으로 재정렬 ──
+                rerank_input = filtered_results[:min(30, len(filtered_results))]
+                final_results = self._rerank(processed_query, rerank_input, top_k=k)
+
+                return final_results
                 
             except Exception as e:
                 print(f"❌ 검색 중 오류: {str(e)}")
@@ -1376,14 +1500,22 @@ class FSSRagSystem:
                     if isinstance(content, dict):
                         metadata['management_type'] = content.get('management_type', '')
                 
-                # 날짜 필드 추가
-                if 'sanction_date' in doc:
-                    metadata['sanction_date'] = doc['sanction_date']
-                    metadata['date'] = doc['sanction_date']
-                elif 'disclosure_date' in doc:
-                    metadata['disclosure_date'] = doc['disclosure_date']
-                    metadata['date'] = doc['disclosure_date']
-                
+                # 날짜 필드 추가 (date_normalizer로 정규화)
+                from date_normalizer import normalize_date as _norm_date
+                raw_date = (doc.get('date') or doc.get('sanction_date') or doc.get('disclosure_date') or '')
+                norm_date = _norm_date(raw_date) or raw_date
+                metadata['date'] = norm_date
+                if norm_date and len(norm_date) >= 7:
+                    try:
+                        metadata['year'] = int(norm_date[:4])
+                        metadata['month'] = int(norm_date[5:7])
+                    except ValueError:
+                        metadata['year'] = 0
+                        metadata['month'] = 0
+                else:
+                    metadata['year'] = 0
+                    metadata['month'] = 0
+
                 # 추가 메타데이터
                 doc_metadata = doc.get('metadata', {})
                 if isinstance(doc_metadata, dict):
@@ -1396,15 +1528,58 @@ class FSSRagSystem:
                         if key not in metadata and value:
                             metadata[key] = value
                 
-                if text.strip():  # 빈 텍스트는 제외
-                    documents.append(Document(page_content=text, metadata=metadata))
-            
-            print(f"📄 {len(documents)}개의 문서 준비 완료")
-            
+                # 메타데이터 프리픽스 구성 (조항 + 날짜 → 임베딩 정확도 향상)
+                institution = metadata.get('institution', '')
+                date = metadata.get('date', '')
+                doc_type = metadata.get('doc_type', '')
+                sanction_type = metadata.get('sanction_type', '') or metadata.get('management_type', '')
+                regulations = metadata.get('regulations', [])
+                reg_str = ' / '.join(regulations) if regulations else ''
+
+                prefix_parts = []
+                if institution:
+                    prefix_parts.append(f"[기관: {institution}]")
+                if date:
+                    prefix_parts.append(f"[날짜: {date}]")
+                if doc_type:
+                    prefix_parts.append(f"[유형: {doc_type}]")
+                if sanction_type:
+                    prefix_parts.append(f"[제재: {sanction_type}]")
+                if reg_str:
+                    prefix_parts.append(f"[조항: {reg_str}]")
+                prefix = " ".join(prefix_parts)
+
+                # 텍스트가 너무 짧으면 (스캔 PDF 등) 메타데이터로 대체 청크 생성
+                if len(text.strip()) < 50:
+                    text = (
+                        f"기관명: {institution}\n"
+                        f"제재조치일: {date}\n"
+                        f"문서유형: {doc_type}\n"
+                        f"제재유형: {sanction_type}\n"
+                        f"관련조항: {reg_str}\n"
+                        f"(원문 스캔 문서)"
+                    )
+
+                # 256자 단위로 청킹 (overlap 30)
+                from langchain_text_splitters import RecursiveCharacterTextSplitter
+                splitter = RecursiveCharacterTextSplitter(
+                    chunk_size=256,
+                    chunk_overlap=30,
+                    separators=["\n\n", "\n", ". ", " ", ""],
+                )
+                chunks = splitter.split_text(text)
+                for chunk in chunks:
+                    if chunk.strip():
+                        # 프리픽스를 청크 앞에 붙여 임베딩 (메타데이터 컨텍스트 포함)
+                        enriched = f"{prefix}\n{chunk}" if prefix else chunk
+                        documents.append(Document(page_content=enriched, metadata=metadata))
+
+            print(f"📄 {len(documents)}개의 청크 준비 완료")
+
             if not documents:
                 print("❌ 문서를 생성할 수 없습니다.")
                 return False
-            
+
             # 배치 크기 계산 (OpenAI 토큰 제한 고려)
             batch_size = 256  # 한 번에 처리할 문서 수
             
@@ -1448,6 +1623,11 @@ class FSSRagSystem:
                     print("✅ FAISS 벡터 저장소 파일 저장 완료")
                 
                 print("✅ FAISS 벡터 저장소 생성 완료")
+
+                # BM25 인덱스 빌드 및 저장
+                if BM25_AVAILABLE:
+                    self._build_bm25(documents)
+                    self._save_bm25(faiss_dir)
             else:
                 from langchain_community.vectorstores import Chroma
                 self.vector_store = Chroma.from_documents(
@@ -1455,7 +1635,7 @@ class FSSRagSystem:
                     self.embeddings
                 )
                 print("✅ Chroma 벡터 저장소 생성 완료")
-            
+
             # 벡터 저장소 테스트
             self.check_vector_store()
             
@@ -1500,7 +1680,7 @@ if __name__ == "__main__":
         rag_system = FSSRagSystem(
             vector_db_path=vector_db_path,
             embed_model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-            llm_model_name="gpt-3.5-turbo",
+            llm_model_name="gpt-4o",
             top_k=5,
             use_openai_embeddings=False,  # 로컬 임베딩 사용
             use_openai_llm=True
